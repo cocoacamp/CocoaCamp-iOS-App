@@ -7,57 +7,67 @@
 //
 
 #import "FirstViewController.h"
-
+#import "CocoaCampAppDelegate.h"
+#import "ContactManager.h"
 
 @implementation FirstViewController
 
+//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+//    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
+//    }
+//    return self;
+//}
 
-/*
-// The designated initializer. Override to perform setup that is required before the view is loaded.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
-
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {
-}
-*/
-
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
-*/
 
-/*
-// Override to allow orientations other than the default portrait orientation.
+- (void)viewWillAppear:(BOOL)animated {
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
-*/
 
 - (void)didReceiveMemoryWarning {
-	// Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-	
-	// Release any cached data, images, etc that aren't in use.
 }
 
 - (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
 }
-
 
 - (void)dealloc {
     [super dealloc];
+}
+
+- (IBAction)initiateContactExchange:(id)sender { 
+	BumpContact *contact = [[BumpContact alloc] init]; 
+	contact.image = [UIImage imageNamed:@"someimage.png"]; 
+	contact.firstName = @"John"; 
+	contact.middleName = @"T.";
+	contact.lastName = @"Appleseed"; 
+	contact.prefix = @"Mr."; 
+	contact.suffix = @"Esquire"; 
+	contact.companyName = @"Bump"; 
+	contact.department = @"Engineering"; 
+	contact.jobTitle = @"Software Engineer";
+	NSMutableArray *email_list = [[NSMutableArray alloc] initWithCapacity:3]; 
+	NSMutableDictionary* email_addr = [[NSMutableDictionary alloc] initWithCapacity:2]; 
+	[email_addr setObject:@"api@bu.mp" forKey:BUMP_EMAIL_ADDRESS]; 
+	[email_addr setObject:BUMP_FIELD_TYPE_WORK forKey:BUMP_FIELD_TYPE];
+	[email_list addObject:email_addr]; 
+	[email_addr release];
+	email_addr = [[NSMutableDictionary alloc] initWithCapacity:2]; 
+	[email_addr setObject:@"someone@g.com" forKey:BUMP_EMAIL_ADDRESS]; 
+	[email_addr setObject:BUMP_FIELD_TYPE_HOME forKey:BUMP_FIELD_TYPE]; 
+	[email_list addObject:email_addr];
+	[email_addr release]; 
+	contact.emailAddresses = email_list;
+	
+	Bump *bump = [(CocoaCampAppDelegate *)[[UIApplication sharedApplication] delegate] bump];
+	[bump configParentView:self.view];
+	[bump connectToDoContactExchange:contact];
 }
 
 @end

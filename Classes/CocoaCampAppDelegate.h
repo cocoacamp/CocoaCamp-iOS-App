@@ -7,13 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Bump.h"
 
-@interface CocoaCampAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
+@interface CocoaCampAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate, BumpDelegate> {
     UIWindow *window;
     UITabBarController *tabBarController;
+	Bump *bump;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
+@property (nonatomic, retain) Bump *bump;
+
+- (void)initializeBump;
 
 @end

@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-
 @interface FirstViewController : UIViewController {
-
 }
+
+- (IBAction)initiateContactExchange:(id)sender;
 
 @end
