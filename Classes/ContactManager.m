@@ -185,5 +185,66 @@ static ContactManager *sharedInstance;
 
 BumpContact *BumpContactForAddressBookRecord(ABRecordRef record)
 {
-	return nil;
+	BumpContact *contact = [[BumpContact alloc] init];
+	
+	contact.firstName = (NSString *)ABRecordCopyValue(record, kABPersonFirstNameProperty);
+	[contact.firstName release];
+	contact.middleName = (NSString *)ABRecordCopyValue(record, kABPersonMiddleNameProperty);
+	[contact.middleName release];
+	contact.lastName = (NSString *)ABRecordCopyValue(record, kABPersonLastNameProperty);
+	[contact.lastName release];
+	contact.prefix = (NSString *)ABRecordCopyValue(record, kABPersonPrefixProperty);
+	[contact.prefix release];
+	contact.suffix = (NSString *)ABRecordCopyValue(record, kABPersonSuffixProperty);
+	[contact.suffix release];
+	contact.phoneticFirstName = (NSString *)ABRecordCopyValue(record, kABPersonFirstNamePhoneticProperty);
+	[contact.phoneticFirstName release];
+	contact.phoneticMiddleName = (NSString *)ABRecordCopyValue(record, kABPersonMiddleNamePhoneticProperty);
+	[contact.phoneticMiddleName release];
+	contact.phoneticLastName = (NSString *)ABRecordCopyValue(record, kABPersonLastNamePhoneticProperty);
+	[contact.phoneticLastName release];
+	contact.nickname = (NSString *)ABRecordCopyValue(record, kABPersonNicknameProperty);
+	[contact.nickname release];
+	contact.companyName = (NSString *)ABRecordCopyValue(record, kABPersonOrganizationProperty);
+	[contact.companyName release];
+	contact.department = (NSString *)ABRecordCopyValue(record, kABPersonDepartmentProperty);
+	[contact.department release];
+	contact.jobTitle = (NSString *)ABRecordCopyValue(record, kABPersonJobTitleProperty);
+	[contact.jobTitle release];
+	
+	contact.birthDay = (NSDate *)ABRecordCopyValue(record, kABPersonBirthdayProperty);
+	[contact.birthDay release];
+	
+	ABMultiValueRef emailValue = ABRecordCopyValue(record, kABPersonEmailProperty);
+	CFIndex emailCount = ABMultiValueGetCount(emailValue);
+	NSMutableArray *bumpEmails = [NSMutableArray arrayWithCapacity:emailCount];
+	for(CFIndex i = 0; i < emailCount; i++)
+	{
+		NSString *emailLabel = (NSString*)ABMultiValueCopyLabelAtIndex(emailValue, i);
+		NSString *bumpLabel = BUMP_FIELD_TYPE_OTHER;
+		if([emailLabel isEqual:(NSString *)kABHomeLabel])
+			bumpLabel = BUMP_FIELD_TYPE_HOME;
+		else if([emailLabel isEqual:(NSString *)kABWorkLabel])
+			bumpLabel = BUMP_FIELD_TYPE_WORK;
+		
+		NSString *emailAddress = (NSString*)ABMultiValueCopyValueAtIndex(emailValue, i);
+		NSDictionary *bumpEmail = [NSDictionary dictionaryWithObjectsAndKeys:bumpLabel, BUMP_FIELD_TYPE,
+																			 emailAddress, BUMP_EMAIL_ADDRESS,
+																			 nil];
+		[bumpEmails addObject:bumpEmail];
+
+		[emailLabel release];
+		[emailAddress release];
+	}
+	contact.emailAddresses = bumpEmails;
+	
+	// TODO: transfer websites
+	
+	// TODO: transfer phone numbers
+	
+	// TODO: transfer IM names
+	
+	return contact;
 }
+
+
