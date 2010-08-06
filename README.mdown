@@ -1,0 +1,23 @@
+CocoaCamp
+=========
+This iOS project is developed to meet the needs of the Atlanta CocoaCamp 2010 
+event with the intention of sharing with the rest of the Cocoa community.  
+
+
+Three20
+=======
+Three20 is a collection of iPhone UI classes, like a photo viewer, and general
+utilities, like an HTTP disk cache.  See the project resources for more info
+* [Three20.info][]
+* [Three20 Mailing List][]
+* [Three20 Scope][]
+
+Setting Up Your Project
+=======================
+1. Clone the three20 git repository: `git clone git://github.com/facebook/three20.git`.  
+   Store the repository parallel to the CocoaCamp xcode project, in the same parent directory, 
+   because Xcode will need to reference the files every time you compile your project.
+
+2. It should work at this point.  If you have any trouble, see the README.markdown in the
+   three20 project roor
+
