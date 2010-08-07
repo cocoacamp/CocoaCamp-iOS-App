@@ -1,0 +1,131 @@
+{
+    "sessions": [
+        {
+            "name": "Keynote",
+            "startTime": "8:45am",
+            "endTime": "9:15am",
+            "talks": [
+                {
+                    "title": "The Keynote",
+                    "speaker": "Bob",
+                    "location": "Coca Cola"
+                }
+            ]
+        },
+        {
+            "name": "Session 1",
+            "startTime": "9:30am",
+            "endTime": "10:15am",
+            "talks": [
+                {
+                    "title": "Core Data",
+                    "speaker": "Brian",
+                    "location": "Kentucky Fried Chicken"
+                },
+                {
+                    "title": "Location, Location, Location",
+                    "speaker": "Tom",
+                    "location": "Middle of Nowhere"
+                },
+                {
+                    "title": "Bing Maps",
+                    "speaker": "Scott",
+                    "location": "Home Depot"
+                }
+            ]
+        },
+        {
+            "name": "Session 2",
+            "startTime": "10:30am",
+            "endTime": "11:00am",
+            "talks": [
+                {
+                    "title": "Core Data",
+                    "speaker": "Brian",
+                    "location": "Kentucky Fried Chicken"
+                },
+                {
+                    "title": "Location, Location, Location",
+                    "speaker": "Tom",
+                    "location": "Middle of Nowhere"
+                },
+                {
+                    "title": "Bing Maps",
+                    "speaker": "Scott",
+                    "location": "Home Depot"
+                }
+            ]
+        },
+        
+        {
+            "name": "Session 3",
+            "startTime": "11:15am",
+            "endTime": "11:45am",
+            "talks": [
+                {
+                    "title": "Core Data",
+                    "speaker": "Brian",
+                    "location": "Kentucky Fried Chicken"
+                },
+                {
+                    "title": "Location, Location, Location",
+                    "speaker": "Tom",
+                    "location": "Middle of Nowhere"
+                },
+                {
+                    "title": "Bing Maps",
+                    "speaker": "Scott",
+                    "location": "Home Depot"
+                }
+            ]
+        },
+        
+        
+        {
+            "name": "Session 4",
+            "startTime": "12:00pm",
+            "endTime": "12:30pm",
+            "talks": [
+                {
+                    "title": "Core Data",
+                    "speaker": "Brian",
+                    "location": "Kentucky Fried Chicken"
+                },
+                {
+                    "title": "Location, Location, Location",
+                    "speaker": "Tom",
+                    "location": "Middle of Nowhere"
+                },
+                {
+                    "title": "Bing Maps",
+                    "speaker": "Scott",
+                    "location": "Home Depot"
+                }
+            ]
+        },
+        
+        
+        {
+            "name": "Session 5",
+            "startTime": "12:45pm",
+            "endTime": "1:15pm",
+            "talks": [
+                {
+                    "title": "Core Data",
+                    "speaker": "Brian",
+                    "location": "Kentucky Fried Chicken"
+                },
+                {
+                    "title": "Location, Location, Location",
+                    "speaker": "Tom",
+                    "location": "Middle of Nowhere"
+                },
+                {
+                    "title": "Bing Maps",
+                    "speaker": "Scott",
+                    "location": "Home Depot"
+                }
+            ]
+        }
+    ]
+}
