@@ -3,21 +3,34 @@ CocoaCamp
 This iOS project is developed to meet the needs of the Atlanta CocoaCamp 2010 
 event with the intention of sharing with the rest of the Cocoa community.  
 
+* [CocoaCamp iOS GitHub Master](http://github.com/cocoacamp/CocoaCamp-iOS-App)
+* [CocoaCamp Google Group](http://groups.google.com/group/cocoacamp-atlanta)
 
 Three20
 =======
 Three20 is a collection of iPhone UI classes, like a photo viewer, and general
-utilities, like an HTTP disk cache.  See the project resources for more info
-* [Three20.info][]
-* [Three20 Mailing List][]
-* [Three20 Scope][]
+utilities, like an HTTP disk cache.  See the project resources for more info  
+
+* [Three20 GitHub Master](http://github.com/facebook/three20)
+* [Three20.info](Three20.info)
 
 Setting Up Your Project
 =======================
-1. Clone the three20 git repository: `git clone git://github.com/facebook/three20.git`.  
-   Store the repository parallel to the CocoaCamp xcode project, in the same parent directory, 
+
+1. Fork the [CocoaCamp iOS GitHub Master](http://github.com/cocoacamp/CocoaCamp-iOS-App) project to your own GitHub account 
+
+2. Clone both our project and three20 to the same parent directory  
+
+        [Terminal]
+        cd ~/MyXcodeDevelopmentDirectory
+        git clone git://github.com/facebook/three20.git
+        git clone git@github.com:<your user name>/CocoaCamp-iOS-App.git
+        [/Terminal]
+
+
+   You need to tore the repository parallel to the CocoaCamp xcode project, in the same parent directory, 
    because Xcode will need to reference the files every time you compile your project.
 
-2. It should work at this point.  If you have any trouble, see the README.markdown in the
-   three20 project roor
+2. That's it!  As far as I know, it should work at this point.  If you have any trouble, see the README.markdown in the three20 project.  But please communicate through the [CocoaCamp Google Group](http://groups.google.com/group/cocoacamp-atlanta) so we can straighten it out.
+
 
