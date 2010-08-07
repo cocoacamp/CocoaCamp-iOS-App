@@ -15,9 +15,10 @@
 		03CD373A120D68940054728C /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CD3732120D68940054728C /* SBJsonBase.m */; };
 		03CD373B120D68940054728C /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CD3734120D68940054728C /* SBJsonParser.m */; };
 		03CD373C120D68940054728C /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CD3736120D68940054728C /* SBJsonWriter.m */; };
-		03CD37E4120D7A040054728C /* cool-speaker.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 03CD37E3120D7A040054728C /* cool-speaker.jpg */; };
 		03CD3801120D7BB70054728C /* serve.sh in Resources */ = {isa = PBXBuildFile; fileRef = 03CD37FE120D7BB70054728C /* serve.sh */; };
 		03CD3802120D7BB70054728C /* sessions.json in Resources */ = {isa = PBXBuildFile; fileRef = 03CD37FF120D7BB70054728C /* sessions.json */; };
+		03CD384D120D8B6A0054728C /* cool-speaker.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 03CD384C120D8B6A0054728C /* cool-speaker.jpg */; };
+		03CD3882120D904B0054728C /* speaker2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 03CD3881120D904B0054728C /* speaker2.jpg */; };
 		1D3623260D0F684500981E51 /* CocoaCampAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* CocoaCampAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -209,9 +210,10 @@
 		03CD3734120D68940054728C /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		03CD3735120D68940054728C /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		03CD3736120D68940054728C /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
-		03CD37E3120D7A040054728C /* cool-speaker.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cool-speaker.jpg"; sourceTree = "<group>"; };
 		03CD37FE120D7BB70054728C /* serve.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = serve.sh; sourceTree = "<group>"; };
 		03CD37FF120D7BB70054728C /* sessions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sessions.json; sourceTree = "<group>"; };
+		03CD384C120D8B6A0054728C /* cool-speaker.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "cool-speaker.jpg"; path = "web_mock/cool-speaker.jpg"; sourceTree = "<group>"; };
+		03CD3881120D904B0054728C /* speaker2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = speaker2.jpg; path = web_mock/speaker2.jpg; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* CocoaCampAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaCampAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* CocoaCampAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocoaCampAppDelegate.m; sourceTree = "<group>"; };
@@ -368,7 +370,8 @@
 		AB2AE44A11EBAA8500015C01 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				03CD37E3120D7A040054728C /* cool-speaker.jpg */,
+				03CD3881120D904B0054728C /* speaker2.jpg */,
+				03CD384C120D8B6A0054728C /* cool-speaker.jpg */,
 				AB2AE45811EBACF500015C01 /* iPhoneAppIcon.png */,
 				AB2AE45911EBACF500015C01 /* iPhoneAppIcon@2x.png */,
 				AB2AE44D11EBAA8E00015C01 /* 512x512.png */,
@@ -649,9 +652,10 @@
 				AB2AE45F11EBAD7D00015C01 /* LICENSE.txt in Resources */,
 				FB477AA2120CAAB700FA7C4E /* Three20.bundle in Resources */,
 				03CD36EE120D0F240054728C /* SessionViewController.xib in Resources */,
-				03CD37E4120D7A040054728C /* cool-speaker.jpg in Resources */,
 				03CD3801120D7BB70054728C /* serve.sh in Resources */,
 				03CD3802120D7BB70054728C /* sessions.json in Resources */,
+				03CD384D120D8B6A0054728C /* cool-speaker.jpg in Resources */,
+				03CD3882120D904B0054728C /* speaker2.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

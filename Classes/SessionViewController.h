@@ -11,8 +11,10 @@
 
 @interface SessionViewController : UITableViewController {
 	NSDictionary *sessions;
+	NSMutableDictionary *thumbnails;
 }
 
 @property (nonatomic, retain) NSDictionary *sessions;
+@property (nonatomic, retain) NSMutableDictionary *thumbnails;
 
 @end

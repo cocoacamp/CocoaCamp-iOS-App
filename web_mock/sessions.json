@@ -8,6 +8,7 @@
                 {
                     "title": "The Keynote",
                     "speaker": "Bob",
+					"thumbnail": "cool-speaker.jpg",
                     "location": "Coca Cola"
                 }
             ]
@@ -20,16 +21,19 @@
                 {
                     "title": "Core Data",
                     "speaker": "Brian",
+					"thumbnail": "speaker2.jpg",
                     "location": "Kentucky Fried Chicken"
                 },
                 {
                     "title": "Location, Location, Location",
                     "speaker": "Tom",
+					"thumbnail": "cool-speaker.jpg",
                     "location": "Middle of Nowhere"
                 },
                 {
                     "title": "Bing Maps",
                     "speaker": "Scott",
+					"thumbnail": "speaker2.jpg",
                     "location": "Home Depot"
                 }
             ]
@@ -42,16 +46,19 @@
                 {
                     "title": "Core Data",
                     "speaker": "Brian",
+					"thumbnail": "cool-speaker.jpg",
                     "location": "Kentucky Fried Chicken"
                 },
                 {
                     "title": "Location, Location, Location",
                     "speaker": "Tom",
+					"thumbnail": "cool-speaker.jpg",
                     "location": "Middle of Nowhere"
                 },
                 {
                     "title": "Bing Maps",
                     "speaker": "Scott",
+					"thumbnail": "speaker2.jpg",
                     "location": "Home Depot"
                 }
             ]
@@ -65,16 +72,19 @@
                 {
                     "title": "Core Data",
                     "speaker": "Brian",
+					"thumbnail": "cool-speaker.jpg",
                     "location": "Kentucky Fried Chicken"
                 },
                 {
                     "title": "Location, Location, Location",
                     "speaker": "Tom",
+					"thumbnail": "speaker2.jpg",
                     "location": "Middle of Nowhere"
                 },
                 {
                     "title": "Bing Maps",
                     "speaker": "Scott",
+					"thumbnail": "cool-speaker.jpg",
                     "location": "Home Depot"
                 }
             ]
@@ -89,16 +99,19 @@
                 {
                     "title": "Core Data",
                     "speaker": "Brian",
+					"thumbnail": "cool-speaker.jpg",
                     "location": "Kentucky Fried Chicken"
                 },
                 {
                     "title": "Location, Location, Location",
                     "speaker": "Tom",
+					"thumbnail": "speaker2.jpg",
                     "location": "Middle of Nowhere"
                 },
                 {
                     "title": "Bing Maps",
                     "speaker": "Scott",
+					"thumbnail": "cool-speaker.jpg",
                     "location": "Home Depot"
                 }
             ]
@@ -113,16 +126,19 @@
                 {
                     "title": "Core Data",
                     "speaker": "Brian",
+					"thumbnail": "cool-speaker.jpg",
                     "location": "Kentucky Fried Chicken"
                 },
                 {
                     "title": "Location, Location, Location",
                     "speaker": "Tom",
+					"thumbnail": "cool-speaker.jpg",
                     "location": "Middle of Nowhere"
                 },
                 {
                     "title": "Bing Maps",
                     "speaker": "Scott",
+					"thumbnail": "speaker2.jpg",
                     "location": "Home Depot"
                 }
             ]

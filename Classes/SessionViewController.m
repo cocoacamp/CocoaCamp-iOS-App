@@ -10,7 +10,7 @@
 #import "JSON.h"
 
 @implementation SessionViewController
-@synthesize sessions;
+@synthesize sessions, thumbnails;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -148,7 +148,7 @@
 	[locationLabel release];
 	
 	UIImageView *image = [[UIImageView alloc] initWithFrame: CGRectMake(10, 5, 50, 50)];
-	image.image = [UIImage imageNamed:@"cool-speaker.jpg"];
+	image.image = [UIImage imageWithData:[thumbnails objectForKey:[talk objectForKey:@"thumbnail"]]];
 	[cell.contentView addSubview:image];
 	
 	return cell;
@@ -246,10 +246,26 @@
 	
 	SBJSON *jsonParser = [SBJSON new];
 	
-	NSString *jsonString = [self stringWithUrl: [NSURL URLWithString: @"http:localhost:3000/sessions.json"]];
+	NSString *jsonString = [self stringWithUrl: [NSURL URLWithString: @"http://localhost:3000/sessions.json"]];
 	
 	// Parse the JSON into an Object
 	self.sessions = (NSDictionary *)[jsonParser objectWithString:jsonString error:NULL];
+	
+	
+	if (self.sessions != NULL){
+		// download thumbnails
+		self.thumbnails = [[NSMutableDictionary alloc] init];
+		NSArray *sessionsArray = [self.sessions objectForKey:@"sessions"];
+		for (NSDictionary *session in sessionsArray) {
+			NSArray *talks = [session objectForKey:@"talks"];
+			for (NSDictionary *talk in talks){
+				NSString *thumbURL = [NSString stringWithFormat:@"http://localhost:3000/%@", [talk objectForKey:@"thumbnail"]];
+				NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString: thumbURL]];
+				[self.thumbnails setValue:imageData forKey:[talk objectForKey:@"thumbnail"] ];
+			}
+		}
+		
+	}
 }
 
 
@@ -261,6 +277,7 @@
 
 - (void)dealloc {
     [super dealloc];
+	[thumbnails release];
 }
 
 
