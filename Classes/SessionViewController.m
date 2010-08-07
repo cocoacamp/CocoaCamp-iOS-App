@@ -103,54 +103,69 @@
 			cell = [[[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, 250, 60) reuseIdentifier:CellIdentifier] autorelease];
 		}
 		if (indexPath.section == 0)
-			[cell setText:@"cd web_mock"];
+			[cell.textLabel setText:@"cd web_mock"];
 		else if (indexPath.section == 1)
-			[cell setText:@"./serve.sh"];
+			[cell.textLabel setText:@"./serve.sh"];
 		else
-			[cell setText:@"Restart the App"];
+			[cell.textLabel setText:@"Restart the App"];
 
 		return cell;
 	}
 	
+	
+
+	
+	
+    CellIdentifier = @"cell";
+    
+	UILabel *bottomLabel;
+	UILabel *locationLabel;
+	UILabel *topLabel;
+	UIImageView *image;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, 250, 60) reuseIdentifier:CellIdentifier] autorelease];
+		topLabel = [[UILabel alloc] initWithFrame: CGRectMake(70, 10, 250, 25)];
+		topLabel.tag = 3;
+		[cell.contentView addSubview:topLabel];
+		[topLabel release];
+		
+		bottomLabel = [[UILabel alloc] initWithFrame: CGRectMake(70, 33, 200, 25)];
+		bottomLabel.tag = 1;
+		bottomLabel.textColor = [UIColor lightGrayColor];
+		bottomLabel.font = [UIFont boldSystemFontOfSize:12];
+		[cell.contentView addSubview:bottomLabel];
+		[bottomLabel release];
+		
+		locationLabel = [[UILabel alloc] initWithFrame: CGRectMake(140, 33, 170, 25)];
+		locationLabel.tag = 2;
+		locationLabel.textColor = [UIColor lightGrayColor];
+		locationLabel.font = [UIFont boldSystemFontOfSize:12];
+		locationLabel.textAlignment = UITextAlignmentRight; 			
+		[cell.contentView addSubview:locationLabel];
+		[locationLabel release];
+		
+		image = [[UIImageView alloc] initWithFrame: CGRectMake(10, 5, 50, 50)];
+		image.tag = 0;
+		[cell.contentView addSubview:image];
+		[image release];
+
+    }
+    
+	topLabel = (UILabel *)[cell viewWithTag:3];
+	bottomLabel = (UILabel *)[cell viewWithTag:1];
+	locationLabel = (UILabel *)[cell viewWithTag:2];
+	image = (UIImageView *)[cell viewWithTag:0];
 	
 	NSArray *sessionsArray = [self.sessions objectForKey:@"sessions"];
 	NSDictionary *session = [sessionsArray objectAtIndex:indexPath.section];
 	NSArray *talksArray = [session objectForKey:@"talks"];
 	NSDictionary *talk = [talksArray objectAtIndex:indexPath.row];
 	
-	
-    CellIdentifier = [NSString stringWithFormat: @"%@/%@", [session objectForKey:@"name"], [talk objectForKey:@"speaker"]];
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, 250, 60) reuseIdentifier:CellIdentifier] autorelease];
-    }
-    
-    // Configure the cell...
-	UILabel *topLabel = [[UILabel alloc] initWithFrame: CGRectMake(70, 10, 250, 25)];
 	topLabel.text = [talk objectForKey:@"title"];
-    [cell.contentView addSubview:topLabel];
-	[topLabel release];
-
-	UILabel *bottomLabel = [[UILabel alloc] initWithFrame: CGRectMake(70, 33, 200, 25)];
-	bottomLabel.textColor = [UIColor lightGrayColor];
-	bottomLabel.font = [UIFont boldSystemFontOfSize:12];
 	bottomLabel.text = [talk objectForKey:@"speaker"];
-	[cell.contentView addSubview:bottomLabel];
-	[bottomLabel release];
-	
-	UILabel *locationLabel = [[UILabel alloc] initWithFrame: CGRectMake(140, 33, 170, 25)];
-	locationLabel.textColor = [UIColor lightGrayColor];
-	locationLabel.font = [UIFont boldSystemFontOfSize:12];
 	locationLabel.text = [talk objectForKey:@"location"];
-	locationLabel.textAlignment = UITextAlignmentRight; 
-	[cell.contentView addSubview:locationLabel];
-	[locationLabel release];
-	
-	UIImageView *image = [[UIImageView alloc] initWithFrame: CGRectMake(10, 5, 50, 50)];
-	image.image = [UIImage imageWithData:[thumbnails objectForKey:[talk objectForKey:@"thumbnail"]]];
-	[cell.contentView addSubview:image];
-	
+	image.image = [UIImage imageWithData:[thumbnails objectForKey:[talk objectForKey:@"thumbnail"]]];	
 	return cell;
 }
 
