@@ -19,12 +19,13 @@ Setting Up Your Project
 
 1. Fork the [CocoaCamp iOS GitHub Master](http://github.com/cocoacamp/CocoaCamp-iOS-App) project to your own GitHub account 
 
-2. Clone both our project and three20 to the same parent directory  
+2. Clone both our project and three20 to the same parent directory (Obviously, you need [Git installed](http://help.github.com/mac-git-installation/))
 
         [Terminal]
         cd ~/MyXcodeDevelopmentDirectory
         git clone git://github.com/facebook/three20.git
         git clone git@github.com:<your user name>/CocoaCamp-iOS-App.git
+		open CocoaCamp-iOS-App/CocoaCamp.xcodeproj
         [/Terminal]
 
 
