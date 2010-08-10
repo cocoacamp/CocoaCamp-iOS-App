@@ -259,7 +259,7 @@ NSDateFormatter *timeFormatter;
 				NSString *thumbURL = [NSString stringWithFormat: @"http://cocoa:camp@cocoacamp.org/thumbnail/show?id=%@&w=50&h=50", regID];
 				NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString: thumbURL]];
 				[self.thumbnails setValue:imageData forKey:regID ];
-				NSLog(@"fetched thumbnail for %@ at %@", regID, thumbURL);
+				//NSLog(@"fetched thumbnail for %@ at %@", regID, thumbURL);
 			}
 		}
 		
