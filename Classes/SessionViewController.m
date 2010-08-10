@@ -10,7 +10,10 @@
 #import "JSON.h"
 
 @implementation SessionViewController
-@synthesize sessions, thumbnails;
+@synthesize schedules, thumbnails;
+
+NSDateFormatter *dateFormatter;
+NSDateFormatter *timeFormatter;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -57,88 +60,55 @@
 #pragma mark Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	if (self.sessions == NULL)
-		return 3;
-	NSArray * sessionsArray = [self.sessions objectForKey:@"sessions"];
-    return [sessionsArray count];
+    return [schedules count];
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	if (self.sessions == NULL)
-		return 1;
-	NSArray *sessionsArray = [self.sessions objectForKey:@"sessions"];
-	NSDictionary *session = [sessionsArray objectAtIndex:section];
-	NSArray *talksArray = [session objectForKey:@"talks"];
+	NSDictionary *schedule = [self.schedules objectAtIndex:section];
+	NSArray *talksArray = [schedule objectForKey:@"Talk"];
     return [talksArray count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	if (self.sessions == NULL){
-		if (section == 0)
-			return @"Step 1";
-		else if(section == 1)
-			return @"Step 2";
-		else
-			return @"Step 3";
-
-	}
-	
-	NSArray *sessionsArray = [self.sessions objectForKey:@"sessions"];
-	NSDictionary *session = [sessionsArray objectAtIndex:section];
-	return [NSString stringWithFormat:@"%@ (%@-%@)", 
-			[session objectForKey:@"name"], 
-			[session objectForKey:@"startTime"],
-			[session objectForKey:@"endTime"]];;
+	NSDictionary *schedule = [[self.schedules objectAtIndex:section] objectForKey:@"Schedule"];
+	NSDate *startTime = [dateFormatter dateFromString:[schedule objectForKey:@"start_time"]];
+	NSDate *endTime = [dateFormatter dateFromString:[schedule objectForKey:@"end_time"]];
+	return [NSString stringWithFormat:@"%@-%@ %@", 
+			[timeFormatter stringFromDate:startTime],
+			[timeFormatter stringFromDate:endTime],
+			[schedule objectForKey:@"name"]
+			];
 }
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-	NSString *CellIdentifier;
-	if (self.sessions == NULL){
-		CellIdentifier = @"cell";
-		UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-		if (cell == nil) {
-			cell = [[[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, 250, 60) reuseIdentifier:CellIdentifier] autorelease];
-		}
-		if (indexPath.section == 0)
-			[cell.textLabel setText:@"cd web_mock"];
-		else if (indexPath.section == 1)
-			[cell.textLabel setText:@"./serve.sh"];
-		else
-			[cell.textLabel setText:@"Restart the App"];
-
-		return cell;
-	}
-	
-	
 
 	
 	
-    CellIdentifier = @"cell";
+    static NSString *CellIdentifier = @"cell";
     
-	UILabel *bottomLabel;
+	UILabel *speakerLabel;
 	UILabel *locationLabel;
-	UILabel *topLabel;
+	UILabel *titleLabel;
 	UIImageView *image;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, 250, 60) reuseIdentifier:CellIdentifier] autorelease];
-		topLabel = [[UILabel alloc] initWithFrame: CGRectMake(70, 10, 250, 25)];
-		topLabel.tag = 3;
-		[cell.contentView addSubview:topLabel];
-		[topLabel release];
+		titleLabel = [[UILabel alloc] initWithFrame: CGRectMake(70, 10, 250, 25)];
+		titleLabel.tag = 3;
+		[cell.contentView addSubview:titleLabel];
+		[titleLabel release];
 		
-		bottomLabel = [[UILabel alloc] initWithFrame: CGRectMake(70, 33, 200, 25)];
-		bottomLabel.tag = 1;
-		bottomLabel.textColor = [UIColor lightGrayColor];
-		bottomLabel.font = [UIFont boldSystemFontOfSize:12];
-		[cell.contentView addSubview:bottomLabel];
-		[bottomLabel release];
+		speakerLabel = [[UILabel alloc] initWithFrame: CGRectMake(70, 33, 250, 25)];
+		speakerLabel.tag = 2;
+		speakerLabel.textColor = [UIColor lightGrayColor];
+		speakerLabel.font = [UIFont boldSystemFontOfSize:12];
+		[cell.contentView addSubview:speakerLabel];
+		[speakerLabel release];
 		
-		locationLabel = [[UILabel alloc] initWithFrame: CGRectMake(140, 33, 170, 25)];
-		locationLabel.tag = 2;
+		locationLabel = [[UILabel alloc] initWithFrame: CGRectMake(170, 33, 140, 25)];
+		locationLabel.tag = 1;
 		locationLabel.textColor = [UIColor lightGrayColor];
 		locationLabel.font = [UIFont boldSystemFontOfSize:12];
 		locationLabel.textAlignment = UITextAlignmentRight; 			
@@ -152,20 +122,26 @@
 
     }
     
-	topLabel = (UILabel *)[cell viewWithTag:3];
-	bottomLabel = (UILabel *)[cell viewWithTag:1];
-	locationLabel = (UILabel *)[cell viewWithTag:2];
+	titleLabel = (UILabel *)[cell viewWithTag:3];
+	speakerLabel = (UILabel *)[cell viewWithTag:2];
+	locationLabel = (UILabel *)[cell viewWithTag:1];
 	image = (UIImageView *)[cell viewWithTag:0];
 	
-	NSArray *sessionsArray = [self.sessions objectForKey:@"sessions"];
-	NSDictionary *session = [sessionsArray objectAtIndex:indexPath.section];
-	NSArray *talksArray = [session objectForKey:@"talks"];
-	NSDictionary *talk = [talksArray objectAtIndex:indexPath.row];
 	
-	topLabel.text = [talk objectForKey:@"title"];
-	bottomLabel.text = [talk objectForKey:@"speaker"];
-	locationLabel.text = [talk objectForKey:@"location"];
-	image.image = [UIImage imageWithData:[thumbnails objectForKey:[talk objectForKey:@"thumbnail"]]];	
+	NSDictionary *schedule = [self.schedules objectAtIndex:indexPath.section];
+	NSArray *talksArray = [schedule objectForKey:@"Talk"];
+	NSDictionary *talk = [talksArray objectAtIndex:indexPath.row];
+	NSString *regID = [talk objectForKey:@"register_id"];
+	NSDictionary *reg = [talk objectForKey: @"Register"];
+	
+	titleLabel.text = [talk objectForKey:@"title"];
+	
+	speakerLabel.text = [NSString stringWithFormat: @"%@ %@", 
+						[reg objectForKey: @"first_name"], 
+						[reg objectForKey: @"last_name"]];
+	locationLabel.text = [talk objectForKey: @"location"];
+	image.image = [UIImage imageWithData:[thumbnails objectForKey:regID]];
+	//image.image = [UIImage imageNamed:@"cool-speaker.jpg"];
 	return cell;
 }
 
@@ -259,26 +235,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
+	dateFormatter = [[NSDateFormatter alloc] init];
+	timeFormatter = [[NSDateFormatter alloc] init];
+	[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+	[timeFormatter setDateFormat:@"h:mm"];
+	
 	SBJSON *jsonParser = [SBJSON new];
 	
-	NSString *jsonString = [self stringWithUrl: [NSURL URLWithString: @"http://localhost:3000/sessions.json"]];
+	NSString *jsonString = [self stringWithUrl: [NSURL URLWithString: @"http://cocoa:camp@cocoacamp.org/schedule/json"]];
 	
 	// Parse the JSON into an Object
-	self.sessions = (NSDictionary *)[jsonParser objectWithString:jsonString error:NULL];
+	self.schedules = (NSArray *)[jsonParser objectWithString:jsonString error:NULL];
 	
 	
-	if (self.sessions != NULL){
+	if (self.schedules != NULL){
+		
 		// download thumbnails
 		self.thumbnails = [[NSMutableDictionary alloc] init];
-		NSArray *sessionsArray = [self.sessions objectForKey:@"sessions"];
-		for (NSDictionary *session in sessionsArray) {
-			NSArray *talks = [session objectForKey:@"talks"];
+		for (NSDictionary *schedule in self.schedules) {
+			NSArray *talks = [schedule objectForKey:@"Talk"];
 			for (NSDictionary *talk in talks){
-				NSString *thumbURL = [NSString stringWithFormat:@"http://localhost:3000/%@", [talk objectForKey:@"thumbnail"]];
+				NSString *regID = [talk objectForKey:@"register_id"];
+				NSString *thumbURL = [NSString stringWithFormat: @"http://cocoa:camp@cocoacamp.org/thumbnail/show?id=%@&w=50&h=50", regID];
 				NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString: thumbURL]];
-				[self.thumbnails setValue:imageData forKey:[talk objectForKey:@"thumbnail"] ];
+				[self.thumbnails setValue:imageData forKey:regID ];
+				NSLog(@"fetched thumbnail for %@ at %@", regID, thumbURL);
 			}
 		}
+		
 		
 	}
 }
