@@ -20,6 +20,7 @@
 		03CD373A120D68940054728C /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CD3732120D68940054728C /* SBJsonBase.m */; };
 		03CD373B120D68940054728C /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CD3734120D68940054728C /* SBJsonParser.m */; };
 		03CD373C120D68940054728C /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CD3736120D68940054728C /* SBJsonWriter.m */; };
+		03DA7C68121392E80011851D /* PortraitLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DA7C67121392E80011851D /* PortraitLoader.m */; };
 		1D3623260D0F684500981E51 /* CocoaCampAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* CocoaCampAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -218,6 +219,9 @@
 		03CD3734120D68940054728C /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		03CD3735120D68940054728C /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		03CD3736120D68940054728C /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		03DA7C66121392E80011851D /* PortraitLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PortraitLoader.h; sourceTree = "<group>"; };
+		03DA7C67121392E80011851D /* PortraitLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PortraitLoader.m; sourceTree = "<group>"; };
+		03DA7C69121394350011851D /* PortraitLoaderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PortraitLoaderDelegate.h; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* CocoaCampAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaCampAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* CocoaCampAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocoaCampAppDelegate.m; sourceTree = "<group>"; };
@@ -307,6 +311,9 @@
 				FB477AF0120CACEA00FA7C4E /* SecondViewController.m */,
 				03CD36EA120D0F240054728C /* SessionViewController.h */,
 				03CD36EB120D0F240054728C /* SessionViewController.m */,
+				03DA7C66121392E80011851D /* PortraitLoader.h */,
+				03DA7C67121392E80011851D /* PortraitLoader.m */,
+				03DA7C69121394350011851D /* PortraitLoaderDelegate.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -677,6 +684,7 @@
 				03CD373C120D68940054728C /* SBJsonWriter.m in Sources */,
 				03AF412B12120F8D0061D5DD /* FlickrController.m in Sources */,
 				03AF412D12120F8D0061D5DD /* FlickrPageViewController.m in Sources */,
+				03DA7C68121392E80011851D /* PortraitLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

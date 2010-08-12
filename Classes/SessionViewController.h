@@ -7,14 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PortraitLoaderDelegate.h"
 
-
-@interface SessionViewController : UITableViewController {
+@interface SessionViewController : UITableViewController <PortraitLoaderDelegate> {
 	NSArray *schedules;
 	NSMutableDictionary *thumbnails;
+	UIActivityIndicatorView *progressInd;
 }
 
 @property (nonatomic, retain) NSArray *schedules;
 @property (nonatomic, retain) NSMutableDictionary *thumbnails;
+@property (nonatomic, retain) UIActivityIndicatorView *progressInd;
 
+- (void) downloadImageFor: (NSString *) regID;
+- (UIActivityIndicatorView *)progressInd;
 @end

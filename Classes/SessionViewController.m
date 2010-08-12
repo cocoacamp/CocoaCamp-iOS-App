@@ -8,9 +8,11 @@
 
 #import "SessionViewController.h"
 #import "JSON.h"
+#import "PortraitLoader.h"
 
 @implementation SessionViewController
 @synthesize schedules, thumbnails;
+@synthesize progressInd;
 
 NSDateFormatter *dateFormatter;
 NSDateFormatter *timeFormatter;
@@ -60,7 +62,9 @@ NSDateFormatter *timeFormatter;
 #pragma mark Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [schedules count];
+	if (self.schedules == NULL)
+		return 0;
+    return [self.schedules count];
 }
 
 
@@ -83,15 +87,13 @@ NSDateFormatter *timeFormatter;
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
-	
-	
-    static NSString *CellIdentifier = @"cell";
+	static NSString *CellIdentifier = @"cell";
     
 	UILabel *speakerLabel;
 	UILabel *locationLabel;
 	UILabel *titleLabel;
 	UIImageView *image;
+	UIActivityIndicatorView *spinner;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, 250, 60) reuseIdentifier:CellIdentifier] autorelease];
@@ -119,14 +121,26 @@ NSDateFormatter *timeFormatter;
 		image.tag = 0;
 		[cell.contentView addSubview:image];
 		[image release];
+		 
 
+		spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(25, 10, 50, 50)];
+		spinner.tag = 5;
+		spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+		[spinner sizeToFit];
+		spinner.autoresizingMask = (UIViewAutoresizingFlexibleLeftMargin |
+										UIViewAutoresizingFlexibleRightMargin |
+										UIViewAutoresizingFlexibleTopMargin |
+										UIViewAutoresizingFlexibleBottomMargin);
+		[cell.contentView addSubview:spinner];
+		[spinner release];
+		
     }
     
 	titleLabel = (UILabel *)[cell viewWithTag:3];
 	speakerLabel = (UILabel *)[cell viewWithTag:2];
 	locationLabel = (UILabel *)[cell viewWithTag:1];
 	image = (UIImageView *)[cell viewWithTag:0];
-	
+	spinner = (UIActivityIndicatorView *)[cell viewWithTag:5];
 	
 	NSDictionary *schedule = [self.schedules objectAtIndex:indexPath.section];
 	NSArray *talksArray = [schedule objectForKey:@"Talk"];
@@ -140,12 +154,32 @@ NSDateFormatter *timeFormatter;
 						[reg objectForKey: @"first_name"], 
 						[reg objectForKey: @"last_name"]];
 	locationLabel.text = [talk objectForKey: @"location"];
-	image.image = [UIImage imageWithData:[thumbnails objectForKey:regID]];
-	//image.image = [UIImage imageNamed:@"cool-speaker.jpg"];
+	
+	NSData *imageData = [self.thumbnails objectForKey:regID];
+	
+	
+	if (imageData == NULL){
+		[self downloadImageFor: regID];
+		image.image = NULL;
+		[spinner startAnimating];
+	}else{
+		image.image = [UIImage imageWithData:imageData];
+		[spinner stopAnimating];
+	}
+	
 	return cell;
 }
 
+- (void) downloadImageFor: (NSString *) regID {
+	PortraitLoader *pl = [[PortraitLoader alloc] init];
+	[pl loadImage:regID delegate:self];
+	[pl release];
+}
 
+- (void) imageForReg: (NSString *)regID finishedLoading: (NSData *)imageData{
+	[self.thumbnails setObject:imageData forKey:regID];
+	[self.tableView reloadData];
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -213,41 +247,66 @@ NSDateFormatter *timeFormatter;
     // Relinquish ownership any cached data, images, etc that aren't in use.
 }
 
-- (NSString *)stringWithUrl:(NSURL *)url
-{
-	NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url
-												cachePolicy:NSURLRequestReturnCacheDataElseLoad
-											timeoutInterval:30];
-	// Fetch the JSON response
-	NSData *urlData;
-	NSURLResponse *response;
-	NSError *error;
-	
-	// Make synchronous request
-	urlData = [NSURLConnection sendSynchronousRequest:urlRequest
-									returningResponse:&response
-												error:&error];
-	
- 	// Construct a String around the Data from the response
-	return [[NSString alloc] initWithData:urlData encoding:NSUTF8StringEncoding];
+NSMutableData *data;
+
+- (void)connection:(NSURLConnection *)theConnection didReceiveData:(NSData *)incrementalData {
+	if (data==nil) { data = [[NSMutableData alloc] initWithCapacity:2048]; } 
+	[data appendData:incrementalData];
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection*)connection {
+	[connection release];
+	SBJSON *jsonParser = [SBJSON new];
+	NSString *jsonText = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+	self.schedules = [jsonParser objectWithString: jsonText error: NULL];
+	[self.progressInd removeFromSuperview];
+	[jsonText release];
+	[data release];
+	data = NULL;
+	[self.tableView reloadData];
+}
+
+- (UIActivityIndicatorView *)progressInd {
+	if (progressInd == nil)
+	{
+		CGRect frame = CGRectMake(self.view.frame.size.width/2-15, self.view.frame.size.height/2-15, 30, 30);
+		progressInd = [[UIActivityIndicatorView alloc] initWithFrame:frame];
+		[progressInd startAnimating];
+		progressInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+		[progressInd sizeToFit];
+		progressInd.autoresizingMask = (UIViewAutoresizingFlexibleLeftMargin |
+										UIViewAutoresizingFlexibleRightMargin |
+										UIViewAutoresizingFlexibleTopMargin |
+										UIViewAutoresizingFlexibleBottomMargin);
+		
+		progressInd.tag = 1;    // tag this view for later so we can remove it from recycled table cells
+	}
+	return progressInd;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	[self.view addSubview: self.progressInd];
 	
 	dateFormatter = [[NSDateFormatter alloc] init];
 	timeFormatter = [[NSDateFormatter alloc] init];
 	[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
 	[timeFormatter setDateFormat:@"h:mm"];
 	
-	SBJSON *jsonParser = [SBJSON new];
 	
-	NSString *jsonString = [self stringWithUrl: [NSURL URLWithString: @"http://cocoa:camp@cocoacamp.org/schedule/json"]];
+	
+	NSURL *url = [NSURL URLWithString: @"http://cocoa:camp@cocoacamp.org/schedule/json"];	
+	NSURLRequest* request = [NSURLRequest requestWithURL:url 
+											 cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+	[[NSURLConnection alloc] initWithRequest:request delegate:self];
+	
+	self.thumbnails = [[NSMutableDictionary alloc] init];
 	
 	// Parse the JSON into an Object
-	self.schedules = (NSArray *)[jsonParser objectWithString:jsonString error:NULL];
+	//self.schedules = (NSArray *)[jsonParser objectWithString:jsonString error:NULL];
 	
-	
+	/*
 	if (self.schedules != NULL){
 		
 		// download thumbnails
@@ -265,6 +324,7 @@ NSDateFormatter *timeFormatter;
 		
 		
 	}
+	 */
 }
 
 
