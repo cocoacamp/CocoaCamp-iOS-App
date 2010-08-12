@@ -1,15 +1,17 @@
-    //
-//  SecondViewController.m
+//
+//  SessionDetailViewController.m
 //  CocoaCamp
 //
-//  Created by Rusty Zarse on 8/6/10.
-//  Copyright 2010 LeVous, LLC. All rights reserved.
+//  Created by airportyh on 8/12/10.
+//  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "SessionDetailViewController.h"
+#import "AsyncImageView.h"
+#import "SessionViewController.h"
 
-
-@implementation SecondViewController
+@implementation SessionDetailViewController
+@synthesize talk, portraitImg, titleLbl, descriptionLbl;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -21,24 +23,35 @@
 }
 */
 
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {
-}
-*/
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	[self.navigationController setNavigationBarHidden:NO animated:YES];
+	self.title = @"Session Detail";
 	
-	self.title = @"Second View";
+	NSString *regID = [talk objectForKey:@"register_id"];
+	NSDictionary *reg = [talk objectForKey: @"Register"];
 	
-	TTStyledTextLabel *styledLabel = [[TTStyledTextLabel alloc] initWithFrame:CGRectMake(10.0, 80.0, 300.0, 400.0)];
-	[styledLabel setHtml:@"It's really pretty cool, no <b>way freakin' cool</b><img src=\"bundle://iPhoneAppIcon.png\"/> that this <i>library does so damn much!</i><br/><br/>rock http://scope.three20.info/"];
-	[[self view] addSubview:styledLabel];
-	[styledLabel release];
+	NSString *title = [talk objectForKey:@"title"];
+	
+	NSString *speaker = [NSString stringWithFormat: @"%@ %@", 
+						 [reg objectForKey: @"first_name"], 
+						 [reg objectForKey: @"last_name"]];
+	NSString *location = [talk objectForKey: @"location"];
+	
+	titleLbl.text = title;
+	
+	descriptionLbl.text = [NSString stringWithFormat:@"%@\n%@", speaker, location];
+	
+	NSString *thumbURL = [SessionViewController thumbnailURL:regID];
+	NSData *imageData = [AsyncImageView cachedImageDataFor: thumbURL];
+	NSLog(@"thumbURL: %@", thumbURL);
+	if (imageData != NULL){
+		NSLog(@"Image data retrieved from cache!");
+	}
+	portraitImg.image = [UIImage imageWithData:imageData];
+	portraitImg.autoresizingMask = ( UIViewAutoresizingFlexibleWidth || UIViewAutoresizingFlexibleHeight );
 	
 }
 

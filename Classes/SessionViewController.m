@@ -9,6 +9,7 @@
 #import "SessionViewController.h"
 #import "JSON.h"
 #import "AsyncImageView.h"
+#import "SessionDetailViewController.h"
 
 @implementation SessionViewController
 @synthesize schedules, thumbnails;
@@ -23,12 +24,12 @@ NSDateFormatter *timeFormatter;
 static NSString *BaseServiceURL = @"http://cocoa:camp@cocoacamp.org";
 
 
-- (NSURL *) schedulesURL{
++ (NSURL *) schedulesURL{
 	return [NSURL URLWithString: 
 			[NSString stringWithFormat: @"%@/schedule/json", BaseServiceURL]];
 }
 
-- (NSURL *) thumbnailURL: (NSString *)regID{
++ (NSURL *) thumbnailURL: (NSString *)regID{
 	return [NSURL URLWithString:
 			[NSString stringWithFormat: 
 			 @"%@/photos/atlanta/%@-100x100.jpg", BaseServiceURL, regID]];
@@ -85,23 +86,56 @@ static NSString *BaseServiceURL = @"http://cocoa:camp@cocoacamp.org";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	NSDictionary *schedule = [self.schedules objectAtIndex:section];
 	NSArray *talksArray = [schedule objectForKey:@"Talk"];
-    return [talksArray count];
+	int count = [talksArray count];
+	if (count == 0) return 1;
+	else return [talksArray count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
 	NSDictionary *schedule = [[self.schedules objectAtIndex:section] objectForKey:@"Schedule"];
 	NSDate *startTime = [dateFormatter dateFromString:[schedule objectForKey:@"start_time"]];
 	NSDate *endTime = [dateFormatter dateFromString:[schedule objectForKey:@"end_time"]];
-	return [NSString stringWithFormat:@"%@-%@ %@", 
-			[timeFormatter stringFromDate:startTime],
-			[timeFormatter stringFromDate:endTime],
-			[schedule objectForKey:@"name"]
-			];
+	NSArray *talksArray = [[self.schedules objectAtIndex:section] objectForKey:@"Talk"];
+	
+	NSString *timeDisplay = [NSString stringWithFormat:@"%@-%@", 
+							 [timeFormatter stringFromDate:startTime],
+							 [timeFormatter stringFromDate:endTime]];
+	
+	if ([talksArray count] <= 1)
+		return timeDisplay;
+	else {
+		return [NSString stringWithFormat:@"%@ %@", timeDisplay, [schedule objectForKey:@"name"]];
+	}
+
+	
 }
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	static NSString *CellIdentifier = @"cell";
+	
+	NSDictionary *schedule = [self.schedules objectAtIndex:indexPath.section];
+	NSArray *talksArray = [schedule objectForKey:@"Talk"];
+	
+	if ([talksArray count] == 0){
+		NSDictionary *sched = [schedule objectForKey:@"Schedule"];
+		UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+		if (cell == nil) {
+			cell = [[[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, 250, 60) reuseIdentifier:@"cell"] autorelease];
+			cell.textLabel.font = [UIFont boldSystemFontOfSize:16];
+		}
+		cell.textLabel.text = [sched objectForKey:@"name"];
+		return cell;
+	}
+	
+	
+	NSDictionary *talk = [talksArray objectAtIndex:indexPath.row];
+	NSString *regID = [talk objectForKey:@"register_id"];
+	NSDictionary *reg = [talk objectForKey: @"Register"];
+	NSString *speaker = [NSString stringWithFormat: @"%@ %@", 
+						 [reg objectForKey: @"first_name"], 
+						 [reg objectForKey: @"last_name"]];
+	
+	static NSString *CellIdentifier = @"talkCell";
     
 	UILabel *speakerLabel;
 	UILabel *locationLabel;
@@ -152,17 +186,9 @@ static NSString *BaseServiceURL = @"http://cocoa:camp@cocoacamp.org";
 	image = (AsyncImageView *)[cell viewWithTag:0];
 	spinner = (UIActivityIndicatorView *)[cell viewWithTag:5];
 	
-	NSDictionary *schedule = [self.schedules objectAtIndex:indexPath.section];
-	NSArray *talksArray = [schedule objectForKey:@"Talk"];
-	NSDictionary *talk = [talksArray objectAtIndex:indexPath.row];
-	NSString *regID = [talk objectForKey:@"register_id"];
-	NSDictionary *reg = [talk objectForKey: @"Register"];
 	
 	titleLabel.text = [talk objectForKey:@"title"];
 	
-	NSString *speaker = [NSString stringWithFormat: @"%@ %@", 
-					  [reg objectForKey: @"first_name"], 
-						 [reg objectForKey: @"last_name"]];
 	speakerLabel.text = speaker;
 	locationLabel.text = [talk objectForKey: @"location"];
 	
@@ -177,7 +203,7 @@ static NSString *BaseServiceURL = @"http://cocoa:camp@cocoacamp.org";
 	if (image == NULL){
 		image = [[AsyncImageView alloc] initWithFrame: CGRectMake(10, 5, 50, 50)];
 		image.tag = 0;
-		[image loadImageFromURL: [self thumbnailURL:regID]];
+		[image loadImageFromURL: [SessionViewController thumbnailURL:regID]];
 		[thumbnails setObject:image forKey:regID];
 		[image release];
 		[spinner startAnimating];
@@ -189,19 +215,11 @@ static NSString *BaseServiceURL = @"http://cocoa:camp@cocoacamp.org";
 	
 	return cell;
 }
-/*
-- (void) downloadImageFor: (NSString *) regID {
-	PortraitLoader *pl = [[PortraitLoader alloc] init];
-	[pl loadImage:regID delegate:self];
-	[pl release];
-}
 
 
-- (void) imageForReg: (NSString *)regID finishedLoading: (NSData *)imageData{
-	[self.thumbnails setObject:imageData forKey:regID];
-	[self.tableView reloadData];
-}
-*/
+
+
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -241,21 +259,21 @@ static NSString *BaseServiceURL = @"http://cocoa:camp@cocoacamp.org";
 }
 */
 
-
-
-
 #pragma mark -
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Navigation logic may go here. Create and push another view controller.
-	/*
-	 <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-	 [self.navigationController pushViewController:detailViewController animated:YES];
-	 [detailViewController release];
-	 */
+	SessionDetailViewController *detailViewController = [[SessionDetailViewController alloc] initWithNibName:@"SessionDetailViewController" bundle:nil];
+	
+	NSDictionary *schedule = [self.schedules objectAtIndex:indexPath.section];
+	NSArray *talksArray = [schedule objectForKey:@"Talk"];
+	NSDictionary *talk = [talksArray objectAtIndex:indexPath.row];
+	detailViewController.talk = talk;
+	
+	[self.navigationController pushViewController:detailViewController animated:YES];
+	[detailViewController release];
+	 
 }
 
 
@@ -309,6 +327,8 @@ NSMutableData *data;
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
+	self.title = @"Sessions";
+	
 	[self.view addSubview: self.progressInd];
 	
 	dateFormatter = [[NSDateFormatter alloc] init];
@@ -317,7 +337,7 @@ NSMutableData *data;
 	[timeFormatter setDateFormat:@"h:mm"];
 	
 	
-	NSURLRequest* request = [NSURLRequest requestWithURL: [self schedulesURL] 
+	NSURLRequest* request = [NSURLRequest requestWithURL: [SessionViewController schedulesURL] 
 											 cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
 	[[NSURLConnection alloc] initWithRequest:request delegate:self];
 	

@@ -17,10 +17,14 @@
 	NSURLConnection* connection; //keep a reference to the connection so we can cancel download in dealloc
 	NSMutableData* data; //keep reference to the data so we can collect it as it downloads
 	//but where is the UIImage reference? We keep it in self.subviews - no need to re-code what we have in the parent class
-	
+	NSURL *requestURL;
 }
 
+@property (nonatomic, retain) NSURL *requestURL;
+
 - (void)loadImageFromURL:(NSURL*)url;
-- (UIImage*) image;
+- (UIImage *) image;
+- (void) finish;
++ (NSData *)cachedImageDataFor:(NSURL*)url;
 
 @end

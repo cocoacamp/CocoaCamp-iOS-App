@@ -18,6 +18,8 @@
 @property (nonatomic, retain) NSMutableDictionary *thumbnails;
 @property (nonatomic, retain) UIActivityIndicatorView *progressInd;
 
-- (void) downloadImageFor: (NSString *) regID;
 - (UIActivityIndicatorView *)progressInd;
++ (NSURL *) schedulesURL;
++ (NSURL *) thumbnailURL: (NSString *)regID;
+
 @end
