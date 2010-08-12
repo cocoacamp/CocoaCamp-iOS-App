@@ -8,7 +8,7 @@
 
 #import "SessionViewController.h"
 #import "JSON.h"
-#import "PortraitLoader.h"
+#import "AsyncImageView.h"
 
 @implementation SessionViewController
 @synthesize schedules, thumbnails;
@@ -19,6 +19,20 @@ NSDateFormatter *timeFormatter;
 
 #pragma mark -
 #pragma mark View lifecycle
+
+static NSString *BaseServiceURL = @"http://cocoa:camp@cocoacamp.org";
+
+
+- (NSURL *) schedulesURL{
+	return [NSURL URLWithString: 
+			[NSString stringWithFormat: @"%@/schedule/json", BaseServiceURL]];
+}
+
+- (NSURL *) thumbnailURL: (NSString *)regID{
+	return [NSURL URLWithString:
+			[NSString stringWithFormat: 
+			 @"%@/photos/atlanta/%@-100x100.jpg", BaseServiceURL, regID]];
+}
 
 /*
 - (void)viewDidLoad {
@@ -92,7 +106,7 @@ NSDateFormatter *timeFormatter;
 	UILabel *speakerLabel;
 	UILabel *locationLabel;
 	UILabel *titleLabel;
-	UIImageView *image;
+	AsyncImageView *image;
 	UIActivityIndicatorView *spinner;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
@@ -116,11 +130,6 @@ NSDateFormatter *timeFormatter;
 		locationLabel.textAlignment = UITextAlignmentRight; 			
 		[cell.contentView addSubview:locationLabel];
 		[locationLabel release];
-		
-		image = [[UIImageView alloc] initWithFrame: CGRectMake(10, 5, 50, 50)];
-		image.tag = 0;
-		[cell.contentView addSubview:image];
-		[image release];
 		 
 
 		spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(25, 10, 50, 50)];
@@ -135,11 +144,12 @@ NSDateFormatter *timeFormatter;
 		[spinner release];
 		
     }
+
     
 	titleLabel = (UILabel *)[cell viewWithTag:3];
 	speakerLabel = (UILabel *)[cell viewWithTag:2];
 	locationLabel = (UILabel *)[cell viewWithTag:1];
-	image = (UIImageView *)[cell viewWithTag:0];
+	image = (AsyncImageView *)[cell viewWithTag:0];
 	spinner = (UIActivityIndicatorView *)[cell viewWithTag:5];
 	
 	NSDictionary *schedule = [self.schedules objectAtIndex:indexPath.section];
@@ -150,36 +160,48 @@ NSDateFormatter *timeFormatter;
 	
 	titleLabel.text = [talk objectForKey:@"title"];
 	
-	speakerLabel.text = [NSString stringWithFormat: @"%@ %@", 
-						[reg objectForKey: @"first_name"], 
-						[reg objectForKey: @"last_name"]];
+	NSString *speaker = [NSString stringWithFormat: @"%@ %@", 
+					  [reg objectForKey: @"first_name"], 
+						 [reg objectForKey: @"last_name"]];
+	speakerLabel.text = speaker;
 	locationLabel.text = [talk objectForKey: @"location"];
 	
-	NSData *imageData = [self.thumbnails objectForKey:regID];
+	NSLog(@"%@----------", speaker);
 	
-	
-	if (imageData == NULL){
-		[self downloadImageFor: regID];
-		image.image = NULL;
+	if (image != NULL){
+		NSLog(@"\tremoving from superview: %@", image);
+		[image removeFromSuperview];
+		NSLog(@"\tviewWithTag: 0 %@", [cell viewWithTag:0]);
+	}	
+	image = [self.thumbnails objectForKey:regID];
+	if (image == NULL){
+		image = [[AsyncImageView alloc] initWithFrame: CGRectMake(10, 5, 50, 50)];
+		image.tag = 0;
+		[image loadImageFromURL: [self thumbnailURL:regID]];
+		[thumbnails setObject:image forKey:regID];
+		[image release];
 		[spinner startAnimating];
 	}else{
-		image.image = [UIImage imageWithData:imageData];
+		NSLog(@"\talready have image for %@", speaker);
 		[spinner stopAnimating];
 	}
+	[cell.contentView addSubview:image];
 	
 	return cell;
 }
-
+/*
 - (void) downloadImageFor: (NSString *) regID {
 	PortraitLoader *pl = [[PortraitLoader alloc] init];
 	[pl loadImage:regID delegate:self];
 	[pl release];
 }
 
+
 - (void) imageForReg: (NSString *)regID finishedLoading: (NSData *)imageData{
 	[self.thumbnails setObject:imageData forKey:regID];
 	[self.tableView reloadData];
 }
+*/
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -295,36 +317,11 @@ NSMutableData *data;
 	[timeFormatter setDateFormat:@"h:mm"];
 	
 	
-	
-	NSURL *url = [NSURL URLWithString: @"http://cocoa:camp@cocoacamp.org/schedule/json"];	
-	NSURLRequest* request = [NSURLRequest requestWithURL:url 
+	NSURLRequest* request = [NSURLRequest requestWithURL: [self schedulesURL] 
 											 cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
 	[[NSURLConnection alloc] initWithRequest:request delegate:self];
 	
 	self.thumbnails = [[NSMutableDictionary alloc] init];
-	
-	// Parse the JSON into an Object
-	//self.schedules = (NSArray *)[jsonParser objectWithString:jsonString error:NULL];
-	
-	/*
-	if (self.schedules != NULL){
-		
-		// download thumbnails
-		self.thumbnails = [[NSMutableDictionary alloc] init];
-		for (NSDictionary *schedule in self.schedules) {
-			NSArray *talks = [schedule objectForKey:@"Talk"];
-			for (NSDictionary *talk in talks){
-				NSString *regID = [talk objectForKey:@"register_id"];
-				NSString *thumbURL = [NSString stringWithFormat: @"http://cocoa:camp@cocoacamp.org/thumbnail/show?id=%@&w=50&h=50", regID];
-				NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString: thumbURL]];
-				[self.thumbnails setValue:imageData forKey:regID ];
-				//NSLog(@"fetched thumbnail for %@ at %@", regID, thumbURL);
-			}
-		}
-		
-		
-	}
-	 */
 }
 
 
