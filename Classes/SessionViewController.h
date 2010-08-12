@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PortraitLoaderDelegate.h"
 
-@interface SessionViewController : UITableViewController <PortraitLoaderDelegate> {
+@interface SessionViewController : UITableViewController {
 	NSArray *schedules;
 	NSMutableDictionary *thumbnails;
 	UIActivityIndicatorView *progressInd;
