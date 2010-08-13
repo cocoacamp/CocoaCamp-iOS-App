@@ -9,7 +9,10 @@
 #import "SessionViewController.h"
 #import "JSON.h"
 #import "AsyncImageView.h"
+<<<<<<< HEAD
 #import "SessionDetailViewController.h"
+=======
+>>>>>>> 858ddc0ae162adb625b3d5af3635e4992fb0b4ab
 
 @implementation SessionViewController
 @synthesize schedules, thumbnails;
@@ -24,12 +27,20 @@ NSDateFormatter *timeFormatter;
 static NSString *BaseServiceURL = @"http://cocoa:camp@cocoacamp.org";
 
 
+<<<<<<< HEAD
 + (NSURL *) schedulesURL{
+=======
+- (NSURL *) schedulesURL{
+>>>>>>> 858ddc0ae162adb625b3d5af3635e4992fb0b4ab
 	return [NSURL URLWithString: 
 			[NSString stringWithFormat: @"%@/schedule/json", BaseServiceURL]];
 }
 
+<<<<<<< HEAD
 + (NSURL *) thumbnailURL: (NSString *)regID{
+=======
+- (NSURL *) thumbnailURL: (NSString *)regID{
+>>>>>>> 858ddc0ae162adb625b3d5af3635e4992fb0b4ab
 	return [NSURL URLWithString:
 			[NSString stringWithFormat: 
 			 @"%@/photos/atlanta/%@-100x100.jpg", BaseServiceURL, regID]];
@@ -120,6 +131,7 @@ static NSString *BaseServiceURL = @"http://cocoa:camp@cocoacamp.org";
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+<<<<<<< HEAD
 	
 	NSDictionary *schedule = [self.schedules objectAtIndex:indexPath.section];
 	NSArray *talksArray = [schedule objectForKey:@"Talk"];
@@ -144,6 +156,9 @@ static NSString *BaseServiceURL = @"http://cocoa:camp@cocoacamp.org";
 						 [reg objectForKey: @"last_name"]];
 	
 	static NSString *CellIdentifier = @"talkCell";
+=======
+	static NSString *CellIdentifier = @"cell";
+>>>>>>> 858ddc0ae162adb625b3d5af3635e4992fb0b4ab
     
 	UILabel *speakerLabel;
 	UILabel *locationLabel;
@@ -191,38 +206,81 @@ static NSString *BaseServiceURL = @"http://cocoa:camp@cocoacamp.org";
 	titleLabel = (UILabel *)[cell viewWithTag:3];
 	speakerLabel = (UILabel *)[cell viewWithTag:2];
 	locationLabel = (UILabel *)[cell viewWithTag:1];
+<<<<<<< HEAD
 	image = (AsyncImageView *)[cell viewWithTag:6];
 	spinner = (UIActivityIndicatorView *)[cell viewWithTag:5];
 	
+=======
+	image = (AsyncImageView *)[cell viewWithTag:0];
+	spinner = (UIActivityIndicatorView *)[cell viewWithTag:5];
+>>>>>>> 858ddc0ae162adb625b3d5af3635e4992fb0b4ab
 	
 	titleLabel.text = [talk objectForKey:@"title"];
 	
+<<<<<<< HEAD
 	speakerLabel.text = speaker;
 	locationLabel.text = [talk objectForKey: @"location"];
 	
 	if (image != NULL){
 		[image removeFromSuperview];
+=======
+	NSString *speaker = [NSString stringWithFormat: @"%@ %@", 
+					  [reg objectForKey: @"first_name"], 
+						 [reg objectForKey: @"last_name"]];
+	speakerLabel.text = speaker;
+	locationLabel.text = [talk objectForKey: @"location"];
+	
+	NSLog(@"%@----------", speaker);
+	
+	if (image != NULL){
+		NSLog(@"\tremoving from superview: %@", image);
+		[image removeFromSuperview];
+		NSLog(@"\tviewWithTag: 0 %@", [cell viewWithTag:0]);
+>>>>>>> 858ddc0ae162adb625b3d5af3635e4992fb0b4ab
 	}	
 	image = [self.thumbnails objectForKey:regID];
 	if (image == NULL){
 		image = [[AsyncImageView alloc] initWithFrame: CGRectMake(10, 5, 50, 50)];
+<<<<<<< HEAD
 		image.tag = 6;
 		[image loadImageFromURL: [SessionViewController thumbnailURL:regID]];
+=======
+		image.tag = 0;
+		[image loadImageFromURL: [self thumbnailURL:regID]];
+>>>>>>> 858ddc0ae162adb625b3d5af3635e4992fb0b4ab
 		[thumbnails setObject:image forKey:regID];
 		[image release];
 		[spinner startAnimating];
 	}else{
+<<<<<<< HEAD
+=======
+		NSLog(@"\talready have image for %@", speaker);
+>>>>>>> 858ddc0ae162adb625b3d5af3635e4992fb0b4ab
 		[spinner stopAnimating];
 	}
 	[cell.contentView addSubview:image];
 	
 	return cell;
 }
+/*
+- (void) downloadImageFor: (NSString *) regID {
+	PortraitLoader *pl = [[PortraitLoader alloc] init];
+	[pl loadImage:regID delegate:self];
+	[pl release];
+}
+
+
+<<<<<<< HEAD
 
 
 
-
-
+=======
+- (void) imageForReg: (NSString *)regID finishedLoading: (NSData *)imageData{
+	[self.thumbnails setObject:imageData forKey:regID];
+	[self.tableView reloadData];
+}
+*/
+>>>>>>> 858ddc0ae162adb625b3d5af3635e4992fb0b4ab
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -311,6 +369,7 @@ NSMutableData *data;
 	[data release];
 	data = NULL;
 	[self.tableView reloadData];
+<<<<<<< HEAD
 	
 	/* auto scroll to the current session */
 	
@@ -331,6 +390,8 @@ NSMutableData *data;
 	}
 	
 	
+=======
+>>>>>>> 858ddc0ae162adb625b3d5af3635e4992fb0b4ab
 }
 
 - (UIActivityIndicatorView *)progressInd {
@@ -354,8 +415,11 @@ NSMutableData *data;
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
+<<<<<<< HEAD
 	self.title = @"Sessions";
 	
+=======
+>>>>>>> 858ddc0ae162adb625b3d5af3635e4992fb0b4ab
 	[self.view addSubview: self.progressInd];
 	
 	dateFormatter = [[NSDateFormatter alloc] init];
@@ -363,7 +427,12 @@ NSMutableData *data;
 	[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
 	[timeFormatter setDateFormat:@"h:mm"];
 	
+<<<<<<< HEAD
 	NSURLRequest* request = [NSURLRequest requestWithURL: [SessionViewController schedulesURL] 
+=======
+	
+	NSURLRequest* request = [NSURLRequest requestWithURL: [self schedulesURL] 
+>>>>>>> 858ddc0ae162adb625b3d5af3635e4992fb0b4ab
 											 cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
 	[[NSURLConnection alloc] initWithRequest:request delegate:self];
 	

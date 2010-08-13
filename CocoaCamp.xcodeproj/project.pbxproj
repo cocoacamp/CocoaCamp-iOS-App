@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
 		0341222E12148A3400B376F7 /* SessionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0341222C12148A3400B376F7 /* SessionDetailViewController.m */; };
 		0341222F12148A3400B376F7 /* SessionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0341222D12148A3400B376F7 /* SessionDetailViewController.xib */; };
 		034A2BF412146D72009F39A6 /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A2BF312146D72009F39A6 /* AsyncImageView.m */; };
 		034A2BF812146E2A009F39A6 /* FlickrPageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034A2BF712146E2A009F39A6 /* FlickrPageView.xib */; };
 		034A2BFC12146E7B009F39A6 /* roundrecbuttonpress.png in Resources */ = {isa = PBXBuildFile; fileRef = 034A2BFB12146E7B009F39A6 /* roundrecbuttonpress.png */; };
 		034A2BFE12146E91009F39A6 /* headerBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 034A2BFD12146E91009F39A6 /* headerBackground.png */; };
+=======
+>>>>>>> 858ddc0ae162adb625b3d5af3635e4992fb0b4ab
 		03AF412B12120F8D0061D5DD /* FlickrController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AF412712120F8D0061D5DD /* FlickrController.m */; };
 		03AF412C12120F8D0061D5DD /* FlickrController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03AF412812120F8D0061D5DD /* FlickrController.xib */; };
 		03AF412D12120F8D0061D5DD /* FlickrPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AF412A12120F8D0061D5DD /* FlickrPageViewController.m */; };
@@ -26,6 +29,8 @@
 		03CD373A120D68940054728C /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CD3732120D68940054728C /* SBJsonBase.m */; };
 		03CD373B120D68940054728C /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CD3734120D68940054728C /* SBJsonParser.m */; };
 		03CD373C120D68940054728C /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CD3736120D68940054728C /* SBJsonWriter.m */; };
+		03DA7C68121392E80011851D /* PortraitLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DA7C67121392E80011851D /* PortraitLoader.m */; };
+		03DA7D32121421C00011851D /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DA7D31121421C00011851D /* AsyncImageView.m */; };
 		1D3623260D0F684500981E51 /* CocoaCampAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* CocoaCampAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -201,6 +206,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
 		0341222B12148A3400B376F7 /* SessionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDetailViewController.h; sourceTree = "<group>"; };
 		0341222C12148A3400B376F7 /* SessionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDetailViewController.m; sourceTree = "<group>"; };
 		0341222D12148A3400B376F7 /* SessionDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionDetailViewController.xib; sourceTree = "<group>"; };
@@ -209,6 +215,8 @@
 		034A2BF712146E2A009F39A6 /* FlickrPageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlickrPageView.xib; sourceTree = "<group>"; };
 		034A2BFB12146E7B009F39A6 /* roundrecbuttonpress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roundrecbuttonpress.png; sourceTree = "<group>"; };
 		034A2BFD12146E91009F39A6 /* headerBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = headerBackground.png; sourceTree = "<group>"; };
+=======
+>>>>>>> 858ddc0ae162adb625b3d5af3635e4992fb0b4ab
 		03AF412612120F8D0061D5DD /* FlickrController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrController.h; sourceTree = "<group>"; };
 		03AF412712120F8D0061D5DD /* FlickrController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrController.m; sourceTree = "<group>"; };
 		03AF412812120F8D0061D5DD /* FlickrController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlickrController.xib; sourceTree = "<group>"; };
@@ -232,6 +240,11 @@
 		03CD3734120D68940054728C /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		03CD3735120D68940054728C /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		03CD3736120D68940054728C /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		03DA7C66121392E80011851D /* PortraitLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PortraitLoader.h; sourceTree = "<group>"; };
+		03DA7C67121392E80011851D /* PortraitLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PortraitLoader.m; sourceTree = "<group>"; };
+		03DA7C69121394350011851D /* PortraitLoaderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PortraitLoaderDelegate.h; sourceTree = "<group>"; };
+		03DA7D30121421C00011851D /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
+		03DA7D31121421C00011851D /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* CocoaCampAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaCampAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* CocoaCampAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocoaCampAppDelegate.m; sourceTree = "<group>"; };
@@ -312,7 +325,10 @@
 				03AF412812120F8D0061D5DD /* FlickrController.xib */,
 				03AF412912120F8D0061D5DD /* FlickrPageViewController.h */,
 				03AF412A12120F8D0061D5DD /* FlickrPageViewController.m */,
+<<<<<<< HEAD
 				034A2BF712146E2A009F39A6 /* FlickrPageView.xib */,
+=======
+>>>>>>> 858ddc0ae162adb625b3d5af3635e4992fb0b4ab
 				03CD3729120D68940054728C /* JSON */,
 				28216C950DB411BC00E5133A /* FirstViewController.h */,
 				28216C960DB411BC00E5133A /* FirstViewController.m */,
@@ -322,11 +338,19 @@
 				FB477AF0120CACEA00FA7C4E /* SecondViewController.m */,
 				03CD36EA120D0F240054728C /* SessionViewController.h */,
 				03CD36EB120D0F240054728C /* SessionViewController.m */,
+<<<<<<< HEAD
 				034A2BF212146D72009F39A6 /* AsyncImageView.h */,
 				034A2BF312146D72009F39A6 /* AsyncImageView.m */,
 				0341222B12148A3400B376F7 /* SessionDetailViewController.h */,
 				0341222C12148A3400B376F7 /* SessionDetailViewController.m */,
 				0341222D12148A3400B376F7 /* SessionDetailViewController.xib */,
+=======
+				03DA7C66121392E80011851D /* PortraitLoader.h */,
+				03DA7C67121392E80011851D /* PortraitLoader.m */,
+				03DA7C69121394350011851D /* PortraitLoaderDelegate.h */,
+				03DA7D30121421C00011851D /* AsyncImageView.h */,
+				03DA7D31121421C00011851D /* AsyncImageView.m */,
+>>>>>>> 858ddc0ae162adb625b3d5af3635e4992fb0b4ab
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -389,9 +413,13 @@
 		AB2AE44A11EBAA8500015C01 /* images */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				034A2BFD12146E91009F39A6 /* headerBackground.png */,
 				03AF412E12120FA80061D5DD /* photoIcon.png */,
 				034A2BFB12146E7B009F39A6 /* roundrecbuttonpress.png */,
+=======
+				03AF412E12120FA80061D5DD /* photoIcon.png */,
+>>>>>>> 858ddc0ae162adb625b3d5af3635e4992fb0b4ab
 				03AF412F12120FA80061D5DD /* roundrecbuttonnorm.png */,
 				AB2AE45811EBACF500015C01 /* iPhoneAppIcon.png */,
 				AB2AE45911EBACF500015C01 /* iPhoneAppIcon@2x.png */,
@@ -676,10 +704,13 @@
 				03AF412C12120F8D0061D5DD /* FlickrController.xib in Resources */,
 				03AF413012120FA80061D5DD /* photoIcon.png in Resources */,
 				03AF413112120FA80061D5DD /* roundrecbuttonnorm.png in Resources */,
+<<<<<<< HEAD
 				034A2BF812146E2A009F39A6 /* FlickrPageView.xib in Resources */,
 				034A2BFC12146E7B009F39A6 /* roundrecbuttonpress.png in Resources */,
 				034A2BFE12146E91009F39A6 /* headerBackground.png in Resources */,
 				0341222F12148A3400B376F7 /* SessionDetailViewController.xib in Resources */,
+=======
+>>>>>>> 858ddc0ae162adb625b3d5af3635e4992fb0b4ab
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -703,8 +734,13 @@
 				03CD373C120D68940054728C /* SBJsonWriter.m in Sources */,
 				03AF412B12120F8D0061D5DD /* FlickrController.m in Sources */,
 				03AF412D12120F8D0061D5DD /* FlickrPageViewController.m in Sources */,
+<<<<<<< HEAD
 				034A2BF412146D72009F39A6 /* AsyncImageView.m in Sources */,
 				0341222E12148A3400B376F7 /* SessionDetailViewController.m in Sources */,
+=======
+				03DA7C68121392E80011851D /* PortraitLoader.m in Sources */,
+				03DA7D32121421C00011851D /* AsyncImageView.m in Sources */,
+>>>>>>> 858ddc0ae162adb625b3d5af3635e4992fb0b4ab
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
