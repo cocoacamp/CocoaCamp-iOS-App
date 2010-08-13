@@ -13,8 +13,7 @@
 @implementation SessionDetailViewController
 @synthesize talk, schedule, portraitImg, titleText, descriptionText;
 
-NSDateFormatter *dateFormatter;
-NSDateFormatter *timeFormatter;
+
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -31,8 +30,8 @@ NSDateFormatter *timeFormatter;
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	dateFormatter = [[NSDateFormatter alloc] init];
-	timeFormatter = [[NSDateFormatter alloc] init];
+	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+	NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
 	[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
 	[timeFormatter setDateFormat:@"h:mma"];
 	
@@ -70,6 +69,9 @@ NSDateFormatter *timeFormatter;
 	portraitImg.image = [UIImage imageWithData:imageData];
 	portraitImg.autoresizingMask = ( UIViewAutoresizingFlexibleWidth || UIViewAutoresizingFlexibleHeight );
 	
+	
+	[dateFormatter release];
+	[timeFormatter release];
 }
 
 

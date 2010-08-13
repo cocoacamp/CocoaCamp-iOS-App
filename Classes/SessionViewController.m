@@ -200,12 +200,8 @@ static NSString *BaseServiceURL = @"http://cocoa:camp@cocoacamp.org";
 	speakerLabel.text = speaker;
 	locationLabel.text = [talk objectForKey: @"location"];
 	
-	NSLog(@"%@----------", speaker);
-	
 	if (image != NULL){
-		NSLog(@"\tremoving from superview: %@", image);
 		[image removeFromSuperview];
-		NSLog(@"\tviewWithTag: 0 %@", [cell viewWithTag:6]);
 	}	
 	image = [self.thumbnails objectForKey:regID];
 	if (image == NULL){
@@ -216,7 +212,6 @@ static NSString *BaseServiceURL = @"http://cocoa:camp@cocoacamp.org";
 		[image release];
 		[spinner startAnimating];
 	}else{
-		NSLog(@"\talready have image for %@", speaker);
 		[spinner stopAnimating];
 	}
 	[cell.contentView addSubview:image];
