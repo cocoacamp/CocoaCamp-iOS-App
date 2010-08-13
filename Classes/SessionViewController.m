@@ -97,13 +97,21 @@ static NSString *BaseServiceURL = @"http://cocoa:camp@cocoacamp.org";
 	NSDate *endTime = [dateFormatter dateFromString:[schedule objectForKey:@"end_time"]];
 	NSArray *talksArray = [[self.schedules objectAtIndex:section] objectForKey:@"Talk"];
 	
+	
+	
 	NSString *timeDisplay = [NSString stringWithFormat:@"%@-%@", 
 							 [timeFormatter stringFromDate:startTime],
 							 [timeFormatter stringFromDate:endTime]];
 	
-	if ([talksArray count] <= 1)
+	int weekday = [[[NSCalendar currentCalendar] components:NSWeekdayCalendarUnit fromDate:startTime] weekday];
+	
+	if (weekday == 6){
+		return [NSString stringWithFormat:@"Friday Night %@", timeDisplay];
+	}else if (section == 1) {
+		return [NSString stringWithFormat:@"Saturday %@", timeDisplay];
+	}else if ([talksArray count] <= 1){
 		return timeDisplay;
-	else {
+	}else {
 		return [NSString stringWithFormat:@"%@ %@", timeDisplay, [schedule objectForKey:@"name"]];
 	}
 
@@ -183,7 +191,7 @@ static NSString *BaseServiceURL = @"http://cocoa:camp@cocoacamp.org";
 	titleLabel = (UILabel *)[cell viewWithTag:3];
 	speakerLabel = (UILabel *)[cell viewWithTag:2];
 	locationLabel = (UILabel *)[cell viewWithTag:1];
-	image = (AsyncImageView *)[cell viewWithTag:0];
+	image = (AsyncImageView *)[cell viewWithTag:6];
 	spinner = (UIActivityIndicatorView *)[cell viewWithTag:5];
 	
 	
@@ -197,12 +205,12 @@ static NSString *BaseServiceURL = @"http://cocoa:camp@cocoacamp.org";
 	if (image != NULL){
 		NSLog(@"\tremoving from superview: %@", image);
 		[image removeFromSuperview];
-		NSLog(@"\tviewWithTag: 0 %@", [cell viewWithTag:0]);
+		NSLog(@"\tviewWithTag: 0 %@", [cell viewWithTag:6]);
 	}	
 	image = [self.thumbnails objectForKey:regID];
 	if (image == NULL){
 		image = [[AsyncImageView alloc] initWithFrame: CGRectMake(10, 5, 50, 50)];
-		image.tag = 0;
+		image.tag = 6;
 		[image loadImageFromURL: [SessionViewController thumbnailURL:regID]];
 		[thumbnails setObject:image forKey:regID];
 		[image release];
@@ -264,11 +272,16 @@ static NSString *BaseServiceURL = @"http://cocoa:camp@cocoacamp.org";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Navigation logic may go here. Create and push another view controller.
-	SessionDetailViewController *detailViewController = [[SessionDetailViewController alloc] initWithNibName:@"SessionDetailViewController" bundle:nil];
-	
 	NSDictionary *schedule = [self.schedules objectAtIndex:indexPath.section];
 	NSArray *talksArray = [schedule objectForKey:@"Talk"];
+	if ([talksArray count] == 0) return;
+	
 	NSDictionary *talk = [talksArray objectAtIndex:indexPath.row];
+	
+	SessionDetailViewController *detailViewController = [[SessionDetailViewController alloc] initWithNibName:@"SessionDetailViewController" bundle:nil];
+	
+	
+	
 	detailViewController.talk = talk;
 	
 	[self.navigationController pushViewController:detailViewController animated:YES];
