@@ -280,9 +280,8 @@ static NSString *BaseServiceURL = @"http://cocoa:camp@cocoacamp.org";
 	
 	SessionDetailViewController *detailViewController = [[SessionDetailViewController alloc] initWithNibName:@"SessionDetailViewController" bundle:nil];
 	
-	
-	
 	detailViewController.talk = talk;
+	detailViewController.schedule = [schedule objectForKey:@"Schedule"];
 	
 	[self.navigationController pushViewController:detailViewController animated:YES];
 	[detailViewController release];

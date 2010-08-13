@@ -11,7 +11,10 @@
 #import "SessionViewController.h"
 
 @implementation SessionDetailViewController
-@synthesize talk, portraitImg, titleLbl, descriptionLbl;
+@synthesize talk, schedule, portraitImg, titleText, descriptionText;
+
+NSDateFormatter *dateFormatter;
+NSDateFormatter *timeFormatter;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -28,6 +31,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
+	dateFormatter = [[NSDateFormatter alloc] init];
+	timeFormatter = [[NSDateFormatter alloc] init];
+	[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+	[timeFormatter setDateFormat:@"h:mma"];
+	
 	self.title = @"Session Detail";
 	
 	NSString *regID = [talk objectForKey:@"register_id"];
@@ -35,18 +43,27 @@
 	
 	NSString *title = [talk objectForKey:@"title"];
 	
+	NSDate *startTime = [dateFormatter dateFromString:[schedule objectForKey:@"start_time"]];
+	NSDate *endTime = [dateFormatter dateFromString:[schedule objectForKey:@"end_time"]];
+	
 	NSString *speaker = [NSString stringWithFormat: @"%@ %@", 
 						 [reg objectForKey: @"first_name"], 
 						 [reg objectForKey: @"last_name"]];
+	NSString *company = [reg objectForKey:@"company"];
+	NSString *twitter = [reg objectForKey:@"twitter"];
 	NSString *location = [talk objectForKey: @"location"];
+	NSString *timeDisplay = [NSString stringWithFormat:@"%@-%@", 
+							 [timeFormatter stringFromDate:startTime],
+							 [timeFormatter stringFromDate:endTime]];
 	
-	titleLbl.text = title;
+	titleText.text = title;
+	titleText.font = [UIFont boldSystemFontOfSize:19];
 	
-	descriptionLbl.text = [NSString stringWithFormat:@"%@\n%@", speaker, location];
+	descriptionText.text = [NSString stringWithFormat:@"Presented by %@\n%@\nTwitter: @%@\nPresented at the %@ Room\nSaturday %@", 
+							speaker, company, twitter, location, timeDisplay];
 	
-	NSString *thumbURL = [SessionViewController thumbnailURL:regID];
+	NSURL *thumbURL = [SessionViewController thumbnailURL:regID];
 	NSData *imageData = [AsyncImageView cachedImageDataFor: thumbURL];
-	NSLog(@"thumbURL: %@", thumbURL);
 	if (imageData != NULL){
 		NSLog(@"Image data retrieved from cache!");
 	}
