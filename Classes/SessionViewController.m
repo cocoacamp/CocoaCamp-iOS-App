@@ -316,6 +316,26 @@ NSMutableData *data;
 	[data release];
 	data = NULL;
 	[self.tableView reloadData];
+	
+	/* auto scroll to the current session */
+	
+	//NSDate *now = [dateFormatter dateFromString: @"2010-09-25 18:00:00"];
+	NSDate *now = [NSDate date];
+	int count = 0;
+	for (NSDictionary *item in self.schedules){
+		NSDictionary *schedule = [item objectForKey:@"Schedule"];
+		NSDate *endTime = [dateFormatter dateFromString:[schedule objectForKey:@"end_time"]];
+		if ([now timeIntervalSinceDate:endTime] < 0.0){
+			NSUInteger section = count;
+			NSUInteger indexArr[] = {section, 0};
+			NSIndexPath *ipath = [NSIndexPath indexPathWithIndexes:indexArr length:2];
+			[self.tableView scrollToRowAtIndexPath:ipath atScrollPosition:UITableViewScrollPositionTop animated:NO];
+			break;
+		}
+		count++;
+	}
+	
+	
 }
 
 - (UIActivityIndicatorView *)progressInd {
@@ -347,7 +367,6 @@ NSMutableData *data;
 	timeFormatter = [[NSDateFormatter alloc] init];
 	[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
 	[timeFormatter setDateFormat:@"h:mm"];
-	
 	
 	NSURLRequest* request = [NSURLRequest requestWithURL: [SessionViewController schedulesURL] 
 											 cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
