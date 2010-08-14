@@ -31,17 +31,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-<<<<<<< HEAD
 	[self.navigationController setNavigationBarHidden:NO animated:YES];
 	
 	self.title = @"Second View";
 	
 	TTStyledTextLabel *styledLabel = [[TTStyledTextLabel alloc] initWithFrame:CGRectMake(10.0, 80.0, 300.0, 400.0)];
-=======
-	self.title = @"Sessions";
-	
-	TTStyledTextLabel *styledLabel = [[TTStyledTextLabel alloc] initWithFrame:CGRectMake(10.0, 80.0, 300.0, 80.0)];
->>>>>>> 858ddc0ae162adb625b3d5af3635e4992fb0b4ab
 	[styledLabel setHtml:@"It's really pretty cool, no <b>way freakin' cool</b><img src=\"bundle://iPhoneAppIcon.png\"/> that this <i>library does so damn much!</i><br/><br/>rock http://scope.three20.info/"];
 	[[self view] addSubview:styledLabel];
 	[styledLabel release];

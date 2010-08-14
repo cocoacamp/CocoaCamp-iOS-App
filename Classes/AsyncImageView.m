@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 #import "AsyncImageView.h"
 
@@ -20,17 +19,6 @@ static NSMutableDictionary *imageData;
 		}
 	}
 	
-=======
-@interface AsyncImageView : UIView {
-    NSURLConnection* connection;
-    NSMutableData* data;
-}
-@end
-
-@implementation AsyncImageView
-
-- (void)loadImageFromURL:(NSURL*)url {
->>>>>>> 858ddc0ae162adb625b3d5af3635e4992fb0b4ab
     if (connection!=nil) { [connection release]; }
     if (data!=nil) { [data release]; }
     NSURLRequest* request = [NSURLRequest requestWithURL:url
@@ -41,13 +29,10 @@ static NSMutableDictionary *imageData;
     //TODO error handling, what if connection is nil?
 }
 
-<<<<<<< HEAD
 + (NSData *)cachedImageDataFor:(NSURL*)url{
 	return [imageData objectForKey: [url absoluteURL]];
 }
 
-=======
->>>>>>> 858ddc0ae162adb625b3d5af3635e4992fb0b4ab
 - (void)connection:(NSURLConnection *)theConnection
 	didReceiveData:(NSData *)incrementalData {
     if (data==nil) {
@@ -57,15 +42,7 @@ static NSMutableDictionary *imageData;
     [data appendData:incrementalData];
 }
 
-<<<<<<< HEAD
 - (void)finish{
-=======
-- (void)connectionDidFinishLoading:(NSURLConnection*)theConnection {
-	
-    [connection release];
-    connection=nil;
-	
->>>>>>> 858ddc0ae162adb625b3d5af3635e4992fb0b4ab
     if ([[self subviews] count] > 0) {
         [[[self subviews] objectAtIndex:0] removeFromSuperview];
     }
@@ -78,7 +55,6 @@ static NSMutableDictionary *imageData;
     [self addSubview:imageView];
     imageView.frame = self.bounds;
     [imageView setNeedsLayout];
-<<<<<<< HEAD
     [self setNeedsLayout];	
 }
 
@@ -94,9 +70,6 @@ static NSMutableDictionary *imageData;
 	NSLog(@"Saved %@ to cache.", [self.requestURL absoluteURL]);
 	
 	[self finish];
-=======
-    [self setNeedsLayout];
->>>>>>> 858ddc0ae162adb625b3d5af3635e4992fb0b4ab
     [data release];
     data=nil;
 }
@@ -109,10 +82,7 @@ static NSMutableDictionary *imageData;
 - (void)dealloc {
     [connection cancel];
     [connection release];
-<<<<<<< HEAD
 	[requestURL release];
-=======
->>>>>>> 858ddc0ae162adb625b3d5af3635e4992fb0b4ab
     [data release];
     [super dealloc];
 }
