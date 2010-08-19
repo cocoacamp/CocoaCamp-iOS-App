@@ -14,6 +14,10 @@ utilities, like an HTTP disk cache.  See the project resources for more info
 * [Three20 GitHub Master](http://github.com/facebook/three20)
 * [Three20.info](Three20.info)
 
+Bump API
+========
+You'll need to download the Bump API. Download it from [here](http://bu.mp/apitutorial)
+
 Setting Up Your Project
 =======================
 
