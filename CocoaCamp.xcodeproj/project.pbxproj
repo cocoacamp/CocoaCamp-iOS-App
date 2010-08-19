@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0341222E12148A3400B376F7 /* SessionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0341222C12148A3400B376F7 /* SessionDetailViewController.m */; };
 		0341222F12148A3400B376F7 /* SessionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0341222D12148A3400B376F7 /* SessionDetailViewController.xib */; };
-		034A2BF412146D72009F39A6 /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A2BF312146D72009F39A6 /* AsyncImageView.m */; };
 		034A2BF812146E2A009F39A6 /* FlickrPageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034A2BF712146E2A009F39A6 /* FlickrPageView.xib */; };
 		034A2BFC12146E7B009F39A6 /* roundrecbuttonpress.png in Resources */ = {isa = PBXBuildFile; fileRef = 034A2BFB12146E7B009F39A6 /* roundrecbuttonpress.png */; };
 		034A2BFE12146E91009F39A6 /* headerBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 034A2BFD12146E91009F39A6 /* headerBackground.png */; };
@@ -204,8 +203,6 @@
 		0341222B12148A3400B376F7 /* SessionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDetailViewController.h; sourceTree = "<group>"; };
 		0341222C12148A3400B376F7 /* SessionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDetailViewController.m; sourceTree = "<group>"; };
 		0341222D12148A3400B376F7 /* SessionDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionDetailViewController.xib; sourceTree = "<group>"; };
-		034A2BF212146D72009F39A6 /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
-		034A2BF312146D72009F39A6 /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
 		034A2BF712146E2A009F39A6 /* FlickrPageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlickrPageView.xib; sourceTree = "<group>"; };
 		034A2BFB12146E7B009F39A6 /* roundrecbuttonpress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roundrecbuttonpress.png; sourceTree = "<group>"; };
 		034A2BFD12146E91009F39A6 /* headerBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = headerBackground.png; sourceTree = "<group>"; };
@@ -322,8 +319,6 @@
 				FB477AF0120CACEA00FA7C4E /* SecondViewController.m */,
 				03CD36EA120D0F240054728C /* SessionViewController.h */,
 				03CD36EB120D0F240054728C /* SessionViewController.m */,
-				034A2BF212146D72009F39A6 /* AsyncImageView.h */,
-				034A2BF312146D72009F39A6 /* AsyncImageView.m */,
 				0341222B12148A3400B376F7 /* SessionDetailViewController.h */,
 				0341222C12148A3400B376F7 /* SessionDetailViewController.m */,
 				0341222D12148A3400B376F7 /* SessionDetailViewController.xib */,
@@ -703,7 +698,6 @@
 				03CD373C120D68940054728C /* SBJsonWriter.m in Sources */,
 				03AF412B12120F8D0061D5DD /* FlickrController.m in Sources */,
 				03AF412D12120F8D0061D5DD /* FlickrPageViewController.m in Sources */,
-				034A2BF412146D72009F39A6 /* AsyncImageView.m in Sources */,
 				0341222E12148A3400B376F7 /* SessionDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -792,6 +786,7 @@
 				);
 				PREBINDING = NO;
 				SDKROOT = iphoneos4.0;
+				VALID_ARCHS = armv7;
 			};
 			name = Debug;
 		};

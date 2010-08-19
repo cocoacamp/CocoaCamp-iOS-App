@@ -8,7 +8,6 @@
 
 #import "SessionViewController.h"
 #import "JSON.h"
-#import "AsyncImageView.h"
 #import "SessionDetailViewController.h"
 
 @implementation SessionViewController
@@ -24,15 +23,13 @@ NSDateFormatter *timeFormatter;
 static NSString *BaseServiceURL = @"http://cocoa:camp@cocoacamp.org";
 
 
-+ (NSURL *) schedulesURL{
-	return [NSURL URLWithString: 
-			[NSString stringWithFormat: @"%@/schedule/json", BaseServiceURL]];
++ (NSString *) schedulesURL{
+	return [NSString stringWithFormat: @"%@/schedule/json", BaseServiceURL];
 }
 
-+ (NSURL *) thumbnailURL: (NSString *)regID{
-	return [NSURL URLWithString:
-			[NSString stringWithFormat: 
-			 @"%@/photos/atlanta/%@-100x100.jpg", BaseServiceURL, regID]];
++ (NSString *) thumbnailURL: (NSString *)regID{
+	return [NSString stringWithFormat: 
+			 @"%@/photos/atlanta/%@-100x100.jpg", BaseServiceURL, regID];
 }
 
 /*
@@ -148,12 +145,12 @@ static NSString *BaseServiceURL = @"http://cocoa:camp@cocoacamp.org";
 	UILabel *speakerLabel;
 	UILabel *locationLabel;
 	UILabel *titleLabel;
-	AsyncImageView *image;
+	TTImageView *ttImage;
 	UIActivityIndicatorView *spinner;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, 250, 60) reuseIdentifier:CellIdentifier] autorelease];
-		titleLabel = [[UILabel alloc] initWithFrame: CGRectMake(70, 10, 250, 25)];
+		titleLabel = [[UILabel alloc] initWithFrame: CGRectMake(70, 5, 250, 25)];
 		titleLabel.tag = 3;
 		[cell.contentView addSubview:titleLabel];
 		[titleLabel release];
@@ -185,13 +182,19 @@ static NSString *BaseServiceURL = @"http://cocoa:camp@cocoacamp.org";
 		[cell.contentView addSubview:spinner];
 		[spinner release];
 		
+		
+		ttImage = [[TTImageView alloc] initWithFrame: CGRectMake(0, 0, 60, 60)];
+		ttImage.tag = 6;
+		[cell.contentView addSubview:ttImage];
+		[ttImage release];
+		 
     }
 
     
 	titleLabel = (UILabel *)[cell viewWithTag:3];
 	speakerLabel = (UILabel *)[cell viewWithTag:2];
 	locationLabel = (UILabel *)[cell viewWithTag:1];
-	image = (AsyncImageView *)[cell viewWithTag:6];
+	ttImage = (TTImageView *)[cell viewWithTag:6];
 	spinner = (UIActivityIndicatorView *)[cell viewWithTag:5];
 	
 	
@@ -200,22 +203,8 @@ static NSString *BaseServiceURL = @"http://cocoa:camp@cocoacamp.org";
 	speakerLabel.text = speaker;
 	locationLabel.text = [talk objectForKey: @"location"];
 	
-	if (image != NULL){
-		[image removeFromSuperview];
-	}	
-	image = [self.thumbnails objectForKey:regID];
-	if (image == NULL){
-		image = [[AsyncImageView alloc] initWithFrame: CGRectMake(10, 5, 50, 50)];
-		image.tag = 6;
-		[image loadImageFromURL: [SessionViewController thumbnailURL:regID]];
-		[thumbnails setObject:image forKey:regID];
-		[image release];
-		[spinner startAnimating];
-	}else{
-		[spinner stopAnimating];
-	}
-	[cell.contentView addSubview:image];
-	
+	[ttImage unsetImage];
+	ttImage.urlPath = [SessionViewController thumbnailURL:regID];
 	return cell;
 }
 
@@ -354,7 +343,7 @@ NSMutableData *data;
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	self.title = @"Sessions";
+	self.title = @"Schedule";
 	
 	[self.view addSubview: self.progressInd];
 	
@@ -363,7 +352,7 @@ NSMutableData *data;
 	[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
 	[timeFormatter setDateFormat:@"h:mm"];
 	
-	NSURLRequest* request = [NSURLRequest requestWithURL: [SessionViewController schedulesURL] 
+	NSURLRequest* request = [NSURLRequest requestWithURL: [NSURL URLWithString:[SessionViewController schedulesURL]]
 											 cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
 	[[NSURLConnection alloc] initWithRequest:request delegate:self];
 	

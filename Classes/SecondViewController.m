@@ -34,7 +34,6 @@
 	[self.navigationController setNavigationBarHidden:NO animated:YES];
 	
 	self.title = @"Second View";
-	
 	TTStyledTextLabel *styledLabel = [[TTStyledTextLabel alloc] initWithFrame:CGRectMake(10.0, 80.0, 300.0, 400.0)];
 	[styledLabel setHtml:@"It's really pretty cool, no <b>way freakin' cool</b><img src=\"bundle://iPhoneAppIcon.png\"/> that this <i>library does so damn much!</i><br/><br/>rock http://scope.three20.info/"];
 	[[self view] addSubview:styledLabel];
