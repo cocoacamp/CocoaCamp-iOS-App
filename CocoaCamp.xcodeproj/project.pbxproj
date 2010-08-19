@@ -44,11 +44,14 @@
 		0363ADE4121CD987002055CA /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADDC121CD987002055CA /* calendar.png */; };
 		0363ADE5121CD987002055CA /* ContactExchangeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADDD121CD987002055CA /* ContactExchangeView.xib */; };
 		0363ADE6121CD987002055CA /* group.png in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADDE121CD987002055CA /* group.png */; };
-		0363ADE7121CD987002055CA /* SessionListTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADDF121CD987002055CA /* SessionListTableView.xib */; };
 		0363ADEC121CD9B2002055CA /* ContactManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0363ADE9121CD9B2002055CA /* ContactManager.m */; };
 		0363ADED121CD9B2002055CA /* SessionListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0363ADEB121CD9B2002055CA /* SessionListTableViewController.m */; };
 		0363ADF0121CD9D9002055CA /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 0363ADEF121CD9D9002055CA /* Session.m */; };
 		0363ADFE121CDA40002055CA /* libBump.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0363ADFD121CDA40002055CA /* libBump.a */; };
+		0363AF00121CDD81002055CA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0363AEFF121CDD81002055CA /* AudioToolbox.framework */; };
+		0363AF02121CDD8C002055CA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0363AF01121CDD8C002055CA /* CoreLocation.framework */; };
+		0363AF04121CDD9A002055CA /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0363AF03121CDD9A002055CA /* AddressBook.framework */; };
+		0363AF06121CDD9A002055CA /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0363AF05121CDD9A002055CA /* AddressBookUI.framework */; };
 		03AF412B12120F8D0061D5DD /* FlickrController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AF412712120F8D0061D5DD /* FlickrController.m */; };
 		03AF412C12120F8D0061D5DD /* FlickrController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03AF412812120F8D0061D5DD /* FlickrController.xib */; };
 		03AF412D12120F8D0061D5DD /* FlickrPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AF412A12120F8D0061D5DD /* FlickrPageViewController.m */; };
@@ -276,7 +279,6 @@
 		0363ADDC121CD987002055CA /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = calendar.png; path = Resources/calendar.png; sourceTree = "<group>"; };
 		0363ADDD121CD987002055CA /* ContactExchangeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ContactExchangeView.xib; path = Resources/ContactExchangeView.xib; sourceTree = "<group>"; };
 		0363ADDE121CD987002055CA /* group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = group.png; path = Resources/group.png; sourceTree = "<group>"; };
-		0363ADDF121CD987002055CA /* SessionListTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SessionListTableView.xib; path = Resources/SessionListTableView.xib; sourceTree = "<group>"; };
 		0363ADE8121CD9B2002055CA /* ContactManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactManager.h; sourceTree = "<group>"; };
 		0363ADE9121CD9B2002055CA /* ContactManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactManager.m; sourceTree = "<group>"; };
 		0363ADEA121CD9B2002055CA /* SessionListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionListTableViewController.h; sourceTree = "<group>"; };
@@ -284,6 +286,10 @@
 		0363ADEE121CD9D9002055CA /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
 		0363ADEF121CD9D9002055CA /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
 		0363ADFD121CDA40002055CA /* libBump.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBump.a; sourceTree = "<group>"; };
+		0363AEFF121CDD81002055CA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		0363AF01121CDD8C002055CA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0363AF03121CDD9A002055CA /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		0363AF05121CDD9A002055CA /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		03AF412612120F8D0061D5DD /* FlickrController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrController.h; sourceTree = "<group>"; };
 		03AF412712120F8D0061D5DD /* FlickrController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrController.m; sourceTree = "<group>"; };
 		03AF412812120F8D0061D5DD /* FlickrController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlickrController.xib; sourceTree = "<group>"; };
@@ -353,6 +359,10 @@
 				FB477A91120CA9E200FA7C4E /* libThree20UINavigator.a in Frameworks */,
 				FB477ADE120CAAD900FA7C4E /* QuartzCore.framework in Frameworks */,
 				0363ADFE121CDA40002055CA /* libBump.a in Frameworks */,
+				0363AF00121CDD81002055CA /* AudioToolbox.framework in Frameworks */,
+				0363AF02121CDD8C002055CA /* CoreLocation.framework in Frameworks */,
+				0363AF04121CDD9A002055CA /* AddressBook.framework in Frameworks */,
+				0363AF06121CDD9A002055CA /* AddressBookUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,7 +496,6 @@
 				0363ADDC121CD987002055CA /* calendar.png */,
 				0363ADDD121CD987002055CA /* ContactExchangeView.xib */,
 				0363ADDE121CD987002055CA /* group.png */,
-				0363ADDF121CD987002055CA /* SessionListTableView.xib */,
 				0363ADA3121CD960002055CA /* Bump_Resources */,
 				AB2AE44A11EBAA8500015C01 /* images */,
 				03CD36EC120D0F240054728C /* SessionViewController.xib */,
@@ -504,6 +513,10 @@
 				288765070DF74369002DB57D /* CoreGraphics.framework */,
 				FB477ADD120CAAD900FA7C4E /* QuartzCore.framework */,
 				0363ADFD121CDA40002055CA /* libBump.a */,
+				0363AEFF121CDD81002055CA /* AudioToolbox.framework */,
+				0363AF01121CDD8C002055CA /* CoreLocation.framework */,
+				0363AF03121CDD9A002055CA /* AddressBook.framework */,
+				0363AF05121CDD9A002055CA /* AddressBookUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -833,7 +846,6 @@
 				0363ADE4121CD987002055CA /* calendar.png in Resources */,
 				0363ADE5121CD987002055CA /* ContactExchangeView.xib in Resources */,
 				0363ADE6121CD987002055CA /* group.png in Resources */,
-				0363ADE7121CD987002055CA /* SessionListTableView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
