@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AddressBookUI/AddressBookUI.h>
 
-
-@interface FirstViewController : UIViewController {
-
+@interface FirstViewController : UIViewController<ABPeoplePickerNavigationControllerDelegate> {
+	ABRecordRef ownerContact;
 }
+
+- (IBAction)initiateContactExchange:(id)sender;
+- (void)performContactExchange;
 
 @end
