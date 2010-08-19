@@ -12,15 +12,15 @@
 @interface SessionDetailViewController : UIViewController {
 	NSDictionary *talk;
 	NSDictionary *schedule;
-	UIImageView *portraitImg;
+	TTImageView *portraitImg;
 	UITextView *titleText;
-	UITextView *descriptionText;
+	TTStyledTextLabel *descriptionText;
 }
 @property (nonatomic, retain) NSDictionary *talk;
 @property (nonatomic, retain) NSDictionary *schedule;
-@property (nonatomic, retain) IBOutlet UIImageView *portraitImg;
+@property (nonatomic, retain) IBOutlet TTImageView *portraitImg;
 @property (nonatomic, retain) IBOutlet UITextView *titleText;
-@property (nonatomic, retain) IBOutlet UITextView *descriptionText;
+@property (nonatomic, retain) IBOutlet TTStyledTextLabel *descriptionText;
 
 
 @end

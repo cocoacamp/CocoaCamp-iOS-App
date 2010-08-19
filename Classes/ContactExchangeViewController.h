@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <AddressBookUI/AddressBookUI.h>
 
-@interface FirstViewController : UIViewController<ABPeoplePickerNavigationControllerDelegate> {
+@interface ContactExchangeViewController : UIViewController<ABPeoplePickerNavigationControllerDelegate> {
 	ABRecordRef ownerContact;
 }
 

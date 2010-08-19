@@ -6,11 +6,11 @@
 //  Copyright __MyCompanyName__ 2010. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "ContactExchangeViewController.h"
 #import "CocoaCampAppDelegate.h"
 #import "ContactManager.h"
 
-@implementation FirstViewController
+@implementation ContactExchangeViewController
 
 //- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
 //    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {

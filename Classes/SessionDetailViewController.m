@@ -7,7 +7,6 @@
 //
 
 #import "SessionDetailViewController.h"
-#import "AsyncImageView.h"
 #import "SessionViewController.h"
 
 @implementation SessionDetailViewController
@@ -35,7 +34,7 @@
 	[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
 	[timeFormatter setDateFormat:@"h:mma"];
 	
-	self.title = @"Session Detail";
+	self.title = @"Talk Detail";
 	
 	NSString *regID = [talk objectForKey:@"register_id"];
 	NSDictionary *reg = [talk objectForKey: @"Register"];
@@ -58,17 +57,12 @@
 	titleText.text = title;
 	titleText.font = [UIFont boldSystemFontOfSize:19];
 	
-	descriptionText.text = [NSString stringWithFormat:@"Presented by %@\n%@\nTwitter: @%@\nPresented at the %@ Room\nSaturday %@", 
-							speaker, company, twitter, location, timeDisplay];
+	descriptionText.font = [UIFont systemFontOfSize:15];
+	descriptionText.html = [NSString stringWithFormat:@"<br>Presented by %@<br>%@<br>Twitter: <a href=\"http://twitter.com/%@\">@%@</a><br>Presented at the %@ Room<br>Saturday %@<br>", 
+							speaker, company, twitter, twitter, location, timeDisplay];
 	
-	NSURL *thumbURL = [SessionViewController thumbnailURL:regID];
-	NSData *imageData = [AsyncImageView cachedImageDataFor: thumbURL];
-	if (imageData != NULL){
-		NSLog(@"Image data retrieved from cache!");
-	}
-	portraitImg.image = [UIImage imageWithData:imageData];
-	portraitImg.autoresizingMask = ( UIViewAutoresizingFlexibleWidth || UIViewAutoresizingFlexibleHeight );
 	
+	portraitImg.urlPath = [SessionViewController thumbnailURL:regID];
 	
 	[dateFormatter release];
 	[timeFormatter release];
