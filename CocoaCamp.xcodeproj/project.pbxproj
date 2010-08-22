@@ -12,44 +12,6 @@
 		034A2BF812146E2A009F39A6 /* FlickrPageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034A2BF712146E2A009F39A6 /* FlickrPageView.xib */; };
 		034A2BFC12146E7B009F39A6 /* roundrecbuttonpress.png in Resources */ = {isa = PBXBuildFile; fileRef = 034A2BFB12146E7B009F39A6 /* roundrecbuttonpress.png */; };
 		034A2BFE12146E91009F39A6 /* headerBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 034A2BFD12146E91009F39A6 /* headerBackground.png */; };
-		0363ADBD121CD960002055CA /* bump_button_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADA4121CD960002055CA /* bump_button_blue.png */; };
-		0363ADBE121CD960002055CA /* bump_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADA5121CD960002055CA /* bump_close.png */; };
-		0363ADBF121CD960002055CA /* bump_close_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADA6121CD960002055CA /* bump_close_selected.png */; };
-		0363ADC0121CD960002055CA /* bump_content_area.png in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADA7121CD960002055CA /* bump_content_area.png */; };
-		0363ADC1121CD960002055CA /* bump_dropdown.png in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADA8121CD960002055CA /* bump_dropdown.png */; };
-		0363ADC2121CD960002055CA /* bump_hands_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADA9121CD960002055CA /* bump_hands_bg.png */; };
-		0363ADC3121CD960002055CA /* bump_lefthand.png in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADAA121CD960002055CA /* bump_lefthand.png */; };
-		0363ADC4121CD960002055CA /* bump_nameview.png in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADAB121CD960002055CA /* bump_nameview.png */; };
-		0363ADC5121CD960002055CA /* bump_no_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADAC121CD960002055CA /* bump_no_button.png */; };
-		0363ADC6121CD960002055CA /* bump_nonetwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADAD121CD960002055CA /* bump_nonetwork.png */; };
-		0363ADC7121CD960002055CA /* bump_popupdefault.png in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADAE121CD960002055CA /* bump_popupdefault.png */; };
-		0363ADC8121CD960002055CA /* bump_righthand.png in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADAF121CD960002055CA /* bump_righthand.png */; };
-		0363ADC9121CD960002055CA /* bump_signal1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADB0121CD960002055CA /* bump_signal1.png */; };
-		0363ADCA121CD960002055CA /* bump_signal2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADB1121CD960002055CA /* bump_signal2.png */; };
-		0363ADCB121CD960002055CA /* bump_signal3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADB2121CD960002055CA /* bump_signal3.png */; };
-		0363ADCC121CD960002055CA /* bump_signal4.png in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADB3121CD960002055CA /* bump_signal4.png */; };
-		0363ADCD121CD960002055CA /* bump_tap.aif in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADB4121CD960002055CA /* bump_tap.aif */; };
-		0363ADCE121CD960002055CA /* bump_titlebar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADB5121CD960002055CA /* bump_titlebar_bg.png */; };
-		0363ADCF121CD960002055CA /* bump_white_low.png in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADB6121CD960002055CA /* bump_white_low.png */; };
-		0363ADD0121CD960002055CA /* bump_yes_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADB7121CD960002055CA /* bump_yes_button.png */; };
-		0363ADD1121CD960002055CA /* BumpApiPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADB8121CD960002055CA /* BumpApiPopup.xib */; };
-		0363ADD2121CD960002055CA /* BumpChangeNameScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADB9121CD960002055CA /* BumpChangeNameScreen.xib */; };
-		0363ADD3121CD960002055CA /* BumpConfirmScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADBA121CD960002055CA /* BumpConfirmScreen.xib */; };
-		0363ADD4121CD960002055CA /* BumpPromptScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADBB121CD960002055CA /* BumpPromptScreen.xib */; };
-		0363ADD5121CD960002055CA /* BumpStartScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADBC121CD960002055CA /* BumpStartScreen.xib */; };
-		0363ADE0121CD987002055CA /* bird.png in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADD8121CD987002055CA /* bird.png */; };
-		0363ADE1121CD987002055CA /* bump_righthand.png in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADD9121CD987002055CA /* bump_righthand.png */; };
-		0363ADE2121CD987002055CA /* bump.png in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADDA121CD987002055CA /* bump.png */; };
-		0363ADE3121CD987002055CA /* bump@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADDB121CD987002055CA /* bump@2x.png */; };
-		0363ADE4121CD987002055CA /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADDC121CD987002055CA /* calendar.png */; };
-		0363ADE5121CD987002055CA /* ContactExchangeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADDD121CD987002055CA /* ContactExchangeView.xib */; };
-		0363ADE6121CD987002055CA /* group.png in Resources */ = {isa = PBXBuildFile; fileRef = 0363ADDE121CD987002055CA /* group.png */; };
-		0363ADEC121CD9B2002055CA /* ContactManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0363ADE9121CD9B2002055CA /* ContactManager.m */; };
-		0363ADFE121CDA40002055CA /* libBump.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0363ADFD121CDA40002055CA /* libBump.a */; };
-		0363AF00121CDD81002055CA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0363AEFF121CDD81002055CA /* AudioToolbox.framework */; };
-		0363AF02121CDD8C002055CA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0363AF01121CDD8C002055CA /* CoreLocation.framework */; };
-		0363AF04121CDD9A002055CA /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0363AF03121CDD9A002055CA /* AddressBook.framework */; };
-		0363AF06121CDD9A002055CA /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0363AF05121CDD9A002055CA /* AddressBookUI.framework */; };
 		03AF412B12120F8D0061D5DD /* FlickrController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AF412712120F8D0061D5DD /* FlickrController.m */; };
 		03AF412C12120F8D0061D5DD /* FlickrController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03AF412812120F8D0061D5DD /* FlickrController.xib */; };
 		03AF412D12120F8D0061D5DD /* FlickrPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AF412A12120F8D0061D5DD /* FlickrPageViewController.m */; };
@@ -67,9 +29,15 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
-		28216C970DB411BC00E5133A /* ContactExchangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28216C960DB411BC00E5133A /* ContactExchangeViewController.m */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
 		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
+		80C1A8BF1221CCCD007F7D7A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C1A8BE1221CCCD007F7D7A /* CoreLocation.framework */; };
+		80C1A8C31221CCD9007F7D7A /* libBump.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C1A8C21221CCD9007F7D7A /* libBump.a */; };
+		80C1A8C81221CCEB007F7D7A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C1A8C71221CCEB007F7D7A /* AudioToolbox.framework */; };
+		80C1A8D11221CD02007F7D7A /* ContactExchangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C1A8CE1221CD02007F7D7A /* ContactExchangeViewController.m */; };
+		80C1A8D21221CD02007F7D7A /* ContactManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C1A8D01221CD02007F7D7A /* ContactManager.m */; };
+		80C1A8D71221CD17007F7D7A /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C1A8D61221CD17007F7D7A /* AddressBook.framework */; };
+		80C1A8D91221CD17007F7D7A /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C1A8D81221CD17007F7D7A /* AddressBookUI.framework */; };
 		AB2AE44E11EBAA8E00015C01 /* 512x512.png in Resources */ = {isa = PBXBuildFile; fileRef = AB2AE44D11EBAA8E00015C01 /* 512x512.png */; };
 		AB2AE45A11EBACF500015C01 /* iPhoneAppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = AB2AE45811EBACF500015C01 /* iPhoneAppIcon.png */; };
 		AB2AE45B11EBACF500015C01 /* iPhoneAppIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB2AE45911EBACF500015C01 /* iPhoneAppIcon@2x.png */; };
@@ -242,47 +210,6 @@
 		034A2BF712146E2A009F39A6 /* FlickrPageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlickrPageView.xib; sourceTree = "<group>"; };
 		034A2BFB12146E7B009F39A6 /* roundrecbuttonpress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roundrecbuttonpress.png; sourceTree = "<group>"; };
 		034A2BFD12146E91009F39A6 /* headerBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = headerBackground.png; sourceTree = "<group>"; };
-		0363ADA4121CD960002055CA /* bump_button_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bump_button_blue.png; sourceTree = "<group>"; };
-		0363ADA5121CD960002055CA /* bump_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bump_close.png; sourceTree = "<group>"; };
-		0363ADA6121CD960002055CA /* bump_close_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bump_close_selected.png; sourceTree = "<group>"; };
-		0363ADA7121CD960002055CA /* bump_content_area.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bump_content_area.png; sourceTree = "<group>"; };
-		0363ADA8121CD960002055CA /* bump_dropdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bump_dropdown.png; sourceTree = "<group>"; };
-		0363ADA9121CD960002055CA /* bump_hands_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bump_hands_bg.png; sourceTree = "<group>"; };
-		0363ADAA121CD960002055CA /* bump_lefthand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bump_lefthand.png; sourceTree = "<group>"; };
-		0363ADAB121CD960002055CA /* bump_nameview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bump_nameview.png; sourceTree = "<group>"; };
-		0363ADAC121CD960002055CA /* bump_no_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bump_no_button.png; sourceTree = "<group>"; };
-		0363ADAD121CD960002055CA /* bump_nonetwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bump_nonetwork.png; sourceTree = "<group>"; };
-		0363ADAE121CD960002055CA /* bump_popupdefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bump_popupdefault.png; sourceTree = "<group>"; };
-		0363ADAF121CD960002055CA /* bump_righthand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bump_righthand.png; sourceTree = "<group>"; };
-		0363ADB0121CD960002055CA /* bump_signal1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bump_signal1.png; sourceTree = "<group>"; };
-		0363ADB1121CD960002055CA /* bump_signal2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bump_signal2.png; sourceTree = "<group>"; };
-		0363ADB2121CD960002055CA /* bump_signal3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bump_signal3.png; sourceTree = "<group>"; };
-		0363ADB3121CD960002055CA /* bump_signal4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bump_signal4.png; sourceTree = "<group>"; };
-		0363ADB4121CD960002055CA /* bump_tap.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = bump_tap.aif; sourceTree = "<group>"; };
-		0363ADB5121CD960002055CA /* bump_titlebar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bump_titlebar_bg.png; sourceTree = "<group>"; };
-		0363ADB6121CD960002055CA /* bump_white_low.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bump_white_low.png; sourceTree = "<group>"; };
-		0363ADB7121CD960002055CA /* bump_yes_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bump_yes_button.png; sourceTree = "<group>"; };
-		0363ADB8121CD960002055CA /* BumpApiPopup.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BumpApiPopup.xib; sourceTree = "<group>"; };
-		0363ADB9121CD960002055CA /* BumpChangeNameScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BumpChangeNameScreen.xib; sourceTree = "<group>"; };
-		0363ADBA121CD960002055CA /* BumpConfirmScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BumpConfirmScreen.xib; sourceTree = "<group>"; };
-		0363ADBB121CD960002055CA /* BumpPromptScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BumpPromptScreen.xib; sourceTree = "<group>"; };
-		0363ADBC121CD960002055CA /* BumpStartScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BumpStartScreen.xib; sourceTree = "<group>"; };
-		0363ADD6121CD96C002055CA /* Bump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bump.h; sourceTree = SOURCE_ROOT; };
-		0363ADD7121CD96C002055CA /* BumpContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BumpContact.h; sourceTree = SOURCE_ROOT; };
-		0363ADD8121CD987002055CA /* bird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bird.png; path = Resources/bird.png; sourceTree = "<group>"; };
-		0363ADD9121CD987002055CA /* bump_righthand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bump_righthand.png; path = Resources/bump_righthand.png; sourceTree = "<group>"; };
-		0363ADDA121CD987002055CA /* bump.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bump.png; path = Resources/bump.png; sourceTree = "<group>"; };
-		0363ADDB121CD987002055CA /* bump@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bump@2x.png"; path = "Resources/bump@2x.png"; sourceTree = "<group>"; };
-		0363ADDC121CD987002055CA /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = calendar.png; path = Resources/calendar.png; sourceTree = "<group>"; };
-		0363ADDD121CD987002055CA /* ContactExchangeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ContactExchangeView.xib; path = ../Resources/ContactExchangeView.xib; sourceTree = "<group>"; };
-		0363ADDE121CD987002055CA /* group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = group.png; path = Resources/group.png; sourceTree = "<group>"; };
-		0363ADE8121CD9B2002055CA /* ContactManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactManager.h; sourceTree = "<group>"; };
-		0363ADE9121CD9B2002055CA /* ContactManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactManager.m; sourceTree = "<group>"; };
-		0363ADFD121CDA40002055CA /* libBump.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBump.a; sourceTree = "<group>"; };
-		0363AEFF121CDD81002055CA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		0363AF01121CDD8C002055CA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		0363AF03121CDD9A002055CA /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
-		0363AF05121CDD9A002055CA /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		03AF412612120F8D0061D5DD /* FlickrController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrController.h; sourceTree = "<group>"; };
 		03AF412712120F8D0061D5DD /* FlickrController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrController.m; sourceTree = "<group>"; };
 		03AF412812120F8D0061D5DD /* FlickrController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlickrController.xib; sourceTree = "<group>"; };
@@ -292,7 +219,7 @@
 		03AF412F12120FA80061D5DD /* roundrecbuttonnorm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roundrecbuttonnorm.png; sourceTree = "<group>"; };
 		03CD36EA120D0F240054728C /* SessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionViewController.h; sourceTree = "<group>"; };
 		03CD36EB120D0F240054728C /* SessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionViewController.m; sourceTree = "<group>"; };
-		03CD36EC120D0F240054728C /* SessionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionViewController.xib; sourceTree = "<group>"; };
+		03CD36EC120D0F240054728C /* SessionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SessionViewController.xib; path = Classes/SessionViewController.xib; sourceTree = "<group>"; };
 		03CD372A120D68940054728C /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		03CD372B120D68940054728C /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
 		03CD372C120D68940054728C /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
@@ -311,12 +238,21 @@
 		1D3623250D0F684500981E51 /* CocoaCampAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocoaCampAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* CocoaCamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaCamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		28216C950DB411BC00E5133A /* ContactExchangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactExchangeViewController.h; sourceTree = "<group>"; };
-		28216C960DB411BC00E5133A /* ContactExchangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactExchangeViewController.m; sourceTree = "<group>"; };
 		288765070DF74369002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28A0AB4B0D9B1048005BE974 /* CocoaCamp_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaCamp_Prefix.pch; sourceTree = "<group>"; };
 		28AD73870D9D96C1002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		80C1A8BE1221CCCD007F7D7A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		80C1A8C21221CCD9007F7D7A /* libBump.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBump.a; sourceTree = "<group>"; };
+		80C1A8C71221CCEB007F7D7A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		80C1A8CD1221CD02007F7D7A /* ContactExchangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactExchangeViewController.h; sourceTree = "<group>"; };
+		80C1A8CE1221CD02007F7D7A /* ContactExchangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactExchangeViewController.m; sourceTree = "<group>"; };
+		80C1A8CF1221CD02007F7D7A /* ContactManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactManager.h; sourceTree = "<group>"; };
+		80C1A8D01221CD02007F7D7A /* ContactManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactManager.m; sourceTree = "<group>"; };
+		80C1A8D61221CD17007F7D7A /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		80C1A8D81221CD17007F7D7A /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		80C1A8F81221CDF4007F7D7A /* Bump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bump.h; sourceTree = SOURCE_ROOT; };
+		80C1A8F91221CDF4007F7D7A /* BumpContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BumpContact.h; sourceTree = SOURCE_ROOT; };
 		8D1107310486CEB800E47090 /* CocoaCamp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CocoaCamp-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		AB2AE44D11EBAA8E00015C01 /* 512x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 512x512.png; sourceTree = "<group>"; };
 		AB2AE45811EBACF500015C01 /* iPhoneAppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhoneAppIcon.png; sourceTree = "<group>"; };
@@ -331,6 +267,7 @@
 		FB477A63120CA9A500FA7C4E /* Three20UI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20UI.xcodeproj; path = ../three20/src/Three20UI/Three20UI.xcodeproj; sourceTree = SOURCE_ROOT; };
 		FB477AA1120CAAB700FA7C4E /* Three20.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Three20.bundle; path = ../three20/src/Three20.bundle; sourceTree = SOURCE_ROOT; };
 		FB477ADD120CAAD900FA7C4E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FB477AF0120CACEA00FA7C4E /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -349,49 +286,17 @@
 				FB477A90120CA9E200FA7C4E /* libThree20UICommon.a in Frameworks */,
 				FB477A91120CA9E200FA7C4E /* libThree20UINavigator.a in Frameworks */,
 				FB477ADE120CAAD900FA7C4E /* QuartzCore.framework in Frameworks */,
-				0363ADFE121CDA40002055CA /* libBump.a in Frameworks */,
-				0363AF00121CDD81002055CA /* AudioToolbox.framework in Frameworks */,
-				0363AF02121CDD8C002055CA /* CoreLocation.framework in Frameworks */,
-				0363AF04121CDD9A002055CA /* AddressBook.framework in Frameworks */,
-				0363AF06121CDD9A002055CA /* AddressBookUI.framework in Frameworks */,
+				80C1A8BF1221CCCD007F7D7A /* CoreLocation.framework in Frameworks */,
+				80C1A8C31221CCD9007F7D7A /* libBump.a in Frameworks */,
+				80C1A8C81221CCEB007F7D7A /* AudioToolbox.framework in Frameworks */,
+				80C1A8D71221CD17007F7D7A /* AddressBook.framework in Frameworks */,
+				80C1A8D91221CD17007F7D7A /* AddressBookUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0363ADA3121CD960002055CA /* Bump_Resources */ = {
-			isa = PBXGroup;
-			children = (
-				0363ADA4121CD960002055CA /* bump_button_blue.png */,
-				0363ADA5121CD960002055CA /* bump_close.png */,
-				0363ADA6121CD960002055CA /* bump_close_selected.png */,
-				0363ADA7121CD960002055CA /* bump_content_area.png */,
-				0363ADA8121CD960002055CA /* bump_dropdown.png */,
-				0363ADA9121CD960002055CA /* bump_hands_bg.png */,
-				0363ADAA121CD960002055CA /* bump_lefthand.png */,
-				0363ADAB121CD960002055CA /* bump_nameview.png */,
-				0363ADAC121CD960002055CA /* bump_no_button.png */,
-				0363ADAD121CD960002055CA /* bump_nonetwork.png */,
-				0363ADAE121CD960002055CA /* bump_popupdefault.png */,
-				0363ADAF121CD960002055CA /* bump_righthand.png */,
-				0363ADB0121CD960002055CA /* bump_signal1.png */,
-				0363ADB1121CD960002055CA /* bump_signal2.png */,
-				0363ADB2121CD960002055CA /* bump_signal3.png */,
-				0363ADB3121CD960002055CA /* bump_signal4.png */,
-				0363ADB4121CD960002055CA /* bump_tap.aif */,
-				0363ADB5121CD960002055CA /* bump_titlebar_bg.png */,
-				0363ADB6121CD960002055CA /* bump_white_low.png */,
-				0363ADB7121CD960002055CA /* bump_yes_button.png */,
-				0363ADB8121CD960002055CA /* BumpApiPopup.xib */,
-				0363ADB9121CD960002055CA /* BumpChangeNameScreen.xib */,
-				0363ADBA121CD960002055CA /* BumpConfirmScreen.xib */,
-				0363ADBB121CD960002055CA /* BumpPromptScreen.xib */,
-				0363ADBC121CD960002055CA /* BumpStartScreen.xib */,
-			);
-			path = Bump_Resources;
-			sourceTree = "<group>";
-		};
 		03CD3729120D68940054728C /* JSON */ = {
 			isa = PBXGroup;
 			children = (
@@ -415,10 +320,12 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				0363ADE8121CD9B2002055CA /* ContactManager.h */,
-				0363ADE9121CD9B2002055CA /* ContactManager.m */,
-				0363ADD6121CD96C002055CA /* Bump.h */,
-				0363ADD7121CD96C002055CA /* BumpContact.h */,
+				80C1A8F81221CDF4007F7D7A /* Bump.h */,
+				80C1A8F91221CDF4007F7D7A /* BumpContact.h */,
+				80C1A8CD1221CD02007F7D7A /* ContactExchangeViewController.h */,
+				80C1A8CE1221CD02007F7D7A /* ContactExchangeViewController.m */,
+				80C1A8CF1221CD02007F7D7A /* ContactManager.h */,
+				80C1A8D01221CD02007F7D7A /* ContactManager.m */,
 				03AF412612120F8D0061D5DD /* FlickrController.h */,
 				03AF412712120F8D0061D5DD /* FlickrController.m */,
 				03AF412812120F8D0061D5DD /* FlickrController.xib */,
@@ -426,14 +333,11 @@
 				03AF412A12120F8D0061D5DD /* FlickrPageViewController.m */,
 				034A2BF712146E2A009F39A6 /* FlickrPageView.xib */,
 				03CD3729120D68940054728C /* JSON */,
-				28216C950DB411BC00E5133A /* ContactExchangeViewController.h */,
-				28216C960DB411BC00E5133A /* ContactExchangeViewController.m */,
-				0363ADDD121CD987002055CA /* ContactExchangeView.xib */,
 				1D3623240D0F684500981E51 /* CocoaCampAppDelegate.h */,
 				1D3623250D0F684500981E51 /* CocoaCampAppDelegate.m */,
+				FB477AF0120CACEA00FA7C4E /* SecondViewController.m */,
 				03CD36EA120D0F240054728C /* SessionViewController.h */,
 				03CD36EB120D0F240054728C /* SessionViewController.m */,
-				03CD36EC120D0F240054728C /* SessionViewController.xib */,
 				0341222B12148A3400B376F7 /* SessionDetailViewController.h */,
 				0341222C12148A3400B376F7 /* SessionDetailViewController.m */,
 				0341222D12148A3400B376F7 /* SessionDetailViewController.xib */,
@@ -454,7 +358,6 @@
 			children = (
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
-				0363ADA3121CD960002055CA /* Bump_Resources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				FB4779BC120CA66E00FA7C4E /* Dependencies */,
 				FB477987120CA57C00FA7C4E /* Libraries */,
@@ -477,15 +380,10 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AB2AE44A11EBAA8500015C01 /* images */,
+				03CD36EC120D0F240054728C /* SessionViewController.xib */,
 				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* CocoaCamp-Info.plist */,
-				0363ADD8121CD987002055CA /* bird.png */,
-				0363ADD9121CD987002055CA /* bump_righthand.png */,
-				0363ADDA121CD987002055CA /* bump.png */,
-				0363ADDB121CD987002055CA /* bump@2x.png */,
-				0363ADDC121CD987002055CA /* calendar.png */,
-				0363ADDE121CD987002055CA /* group.png */,
-				AB2AE44A11EBAA8500015C01 /* images */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -493,15 +391,15 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				80C1A8C21221CCD9007F7D7A /* libBump.a */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765070DF74369002DB57D /* CoreGraphics.framework */,
 				FB477ADD120CAAD900FA7C4E /* QuartzCore.framework */,
-				0363ADFD121CDA40002055CA /* libBump.a */,
-				0363AEFF121CDD81002055CA /* AudioToolbox.framework */,
-				0363AF01121CDD8C002055CA /* CoreLocation.framework */,
-				0363AF03121CDD9A002055CA /* AddressBook.framework */,
-				0363AF05121CDD9A002055CA /* AddressBookUI.framework */,
+				80C1A8BE1221CCCD007F7D7A /* CoreLocation.framework */,
+				80C1A8C71221CCEB007F7D7A /* AudioToolbox.framework */,
+				80C1A8D61221CD17007F7D7A /* AddressBook.framework */,
+				80C1A8D81221CD17007F7D7A /* AddressBookUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -799,38 +697,6 @@
 				034A2BFC12146E7B009F39A6 /* roundrecbuttonpress.png in Resources */,
 				034A2BFE12146E91009F39A6 /* headerBackground.png in Resources */,
 				0341222F12148A3400B376F7 /* SessionDetailViewController.xib in Resources */,
-				0363ADBD121CD960002055CA /* bump_button_blue.png in Resources */,
-				0363ADBE121CD960002055CA /* bump_close.png in Resources */,
-				0363ADBF121CD960002055CA /* bump_close_selected.png in Resources */,
-				0363ADC0121CD960002055CA /* bump_content_area.png in Resources */,
-				0363ADC1121CD960002055CA /* bump_dropdown.png in Resources */,
-				0363ADC2121CD960002055CA /* bump_hands_bg.png in Resources */,
-				0363ADC3121CD960002055CA /* bump_lefthand.png in Resources */,
-				0363ADC4121CD960002055CA /* bump_nameview.png in Resources */,
-				0363ADC5121CD960002055CA /* bump_no_button.png in Resources */,
-				0363ADC6121CD960002055CA /* bump_nonetwork.png in Resources */,
-				0363ADC7121CD960002055CA /* bump_popupdefault.png in Resources */,
-				0363ADC8121CD960002055CA /* bump_righthand.png in Resources */,
-				0363ADC9121CD960002055CA /* bump_signal1.png in Resources */,
-				0363ADCA121CD960002055CA /* bump_signal2.png in Resources */,
-				0363ADCB121CD960002055CA /* bump_signal3.png in Resources */,
-				0363ADCC121CD960002055CA /* bump_signal4.png in Resources */,
-				0363ADCD121CD960002055CA /* bump_tap.aif in Resources */,
-				0363ADCE121CD960002055CA /* bump_titlebar_bg.png in Resources */,
-				0363ADCF121CD960002055CA /* bump_white_low.png in Resources */,
-				0363ADD0121CD960002055CA /* bump_yes_button.png in Resources */,
-				0363ADD1121CD960002055CA /* BumpApiPopup.xib in Resources */,
-				0363ADD2121CD960002055CA /* BumpChangeNameScreen.xib in Resources */,
-				0363ADD3121CD960002055CA /* BumpConfirmScreen.xib in Resources */,
-				0363ADD4121CD960002055CA /* BumpPromptScreen.xib in Resources */,
-				0363ADD5121CD960002055CA /* BumpStartScreen.xib in Resources */,
-				0363ADE0121CD987002055CA /* bird.png in Resources */,
-				0363ADE1121CD987002055CA /* bump_righthand.png in Resources */,
-				0363ADE2121CD987002055CA /* bump.png in Resources */,
-				0363ADE3121CD987002055CA /* bump@2x.png in Resources */,
-				0363ADE4121CD987002055CA /* calendar.png in Resources */,
-				0363ADE5121CD987002055CA /* ContactExchangeView.xib in Resources */,
-				0363ADE6121CD987002055CA /* group.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -843,7 +709,6 @@
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* CocoaCampAppDelegate.m in Sources */,
-				28216C970DB411BC00E5133A /* ContactExchangeViewController.m in Sources */,
 				03CD36ED120D0F240054728C /* SessionViewController.m in Sources */,
 				03CD3737120D68940054728C /* NSObject+SBJSON.m in Sources */,
 				03CD3738120D68940054728C /* NSString+SBJSON.m in Sources */,
@@ -854,7 +719,8 @@
 				03AF412B12120F8D0061D5DD /* FlickrController.m in Sources */,
 				03AF412D12120F8D0061D5DD /* FlickrPageViewController.m in Sources */,
 				0341222E12148A3400B376F7 /* SessionDetailViewController.m in Sources */,
-				0363ADEC121CD9B2002055CA /* ContactManager.m in Sources */,
+				80C1A8D11221CD02007F7D7A /* ContactExchangeViewController.m in Sources */,
+				80C1A8D21221CD02007F7D7A /* ContactManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
