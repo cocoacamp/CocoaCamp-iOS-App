@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		030893A31226F05D0088A584 /* ContactExchangeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 030893A21226F05D0088A584 /* ContactExchangeView.xib */; };
 		030894811226F1E40088A584 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 030894801226F1E40088A584 /* MessageUI.framework */; };
+		0308948E1226F2A90088A584 /* RegistrantListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0308948D1226F2A90088A584 /* RegistrantListView.xib */; };
+		030894911226F2CA0088A584 /* AttendeeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 030894901226F2CA0088A584 /* AttendeeListViewController.m */; };
+		030894971226F2DB0088A584 /* Registrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 030894931226F2DB0088A584 /* Registrant.m */; };
+		030894981226F2DB0088A584 /* RegistrantDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 030894941226F2DB0088A584 /* RegistrantDetailView.xib */; };
+		030894991226F2DB0088A584 /* RegistrantDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 030894961226F2DB0088A584 /* RegistrantDetailViewController.m */; };
+		030894A31226F4100088A584 /* PresenterListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 030894A21226F4100088A584 /* PresenterListViewController.m */; };
 		0341222E12148A3400B376F7 /* SessionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0341222C12148A3400B376F7 /* SessionDetailViewController.m */; };
 		0341222F12148A3400B376F7 /* SessionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0341222D12148A3400B376F7 /* SessionDetailViewController.xib */; };
 		034654EE12269693005A5D6C /* bump_button_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 034654D512269693005A5D6C /* bump_button_blue.png */; };
@@ -236,6 +242,16 @@
 /* Begin PBXFileReference section */
 		030893A21226F05D0088A584 /* ContactExchangeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ContactExchangeView.xib; path = Resources/ContactExchangeView.xib; sourceTree = "<group>"; };
 		030894801226F1E40088A584 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		0308948D1226F2A90088A584 /* RegistrantListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrantListView.xib; sourceTree = "<group>"; };
+		0308948F1226F2CA0088A584 /* AttendeeListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendeeListViewController.h; sourceTree = "<group>"; };
+		030894901226F2CA0088A584 /* AttendeeListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendeeListViewController.m; sourceTree = "<group>"; };
+		030894921226F2DB0088A584 /* Registrant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Registrant.h; sourceTree = "<group>"; };
+		030894931226F2DB0088A584 /* Registrant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Registrant.m; sourceTree = "<group>"; };
+		030894941226F2DB0088A584 /* RegistrantDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrantDetailView.xib; sourceTree = "<group>"; };
+		030894951226F2DB0088A584 /* RegistrantDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrantDetailViewController.h; sourceTree = "<group>"; };
+		030894961226F2DB0088A584 /* RegistrantDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrantDetailViewController.m; sourceTree = "<group>"; };
+		030894A11226F4100088A584 /* PresenterListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresenterListViewController.h; sourceTree = "<group>"; };
+		030894A21226F4100088A584 /* PresenterListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresenterListViewController.m; sourceTree = "<group>"; };
 		0341222B12148A3400B376F7 /* SessionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDetailViewController.h; sourceTree = "<group>"; };
 		0341222C12148A3400B376F7 /* SessionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDetailViewController.m; sourceTree = "<group>"; };
 		0341222D12148A3400B376F7 /* SessionDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionDetailViewController.xib; sourceTree = "<group>"; };
@@ -412,6 +428,15 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				030894A11226F4100088A584 /* PresenterListViewController.h */,
+				030894A21226F4100088A584 /* PresenterListViewController.m */,
+				030894921226F2DB0088A584 /* Registrant.h */,
+				030894931226F2DB0088A584 /* Registrant.m */,
+				030894941226F2DB0088A584 /* RegistrantDetailView.xib */,
+				030894951226F2DB0088A584 /* RegistrantDetailViewController.h */,
+				030894961226F2DB0088A584 /* RegistrantDetailViewController.m */,
+				0308948F1226F2CA0088A584 /* AttendeeListViewController.h */,
+				030894901226F2CA0088A584 /* AttendeeListViewController.m */,
 				80C1A8F81221CDF4007F7D7A /* Bump.h */,
 				80C1A8F91221CDF4007F7D7A /* BumpContact.h */,
 				80C1A8CD1221CD02007F7D7A /* ContactExchangeViewController.h */,
@@ -472,6 +497,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0308948D1226F2A90088A584 /* RegistrantListView.xib */,
 				030893A21226F05D0088A584 /* ContactExchangeView.xib */,
 				AB2AE44A11EBAA8500015C01 /* images */,
 				03CD36EC120D0F240054728C /* SessionViewController.xib */,
@@ -823,6 +849,8 @@
 				0346550512269693005A5D6C /* BumpPromptScreen.xib in Resources */,
 				0346550612269693005A5D6C /* BumpStartScreen.xib in Resources */,
 				030893A31226F05D0088A584 /* ContactExchangeView.xib in Resources */,
+				0308948E1226F2A90088A584 /* RegistrantListView.xib in Resources */,
+				030894981226F2DB0088A584 /* RegistrantDetailView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -847,6 +875,10 @@
 				0341222E12148A3400B376F7 /* SessionDetailViewController.m in Sources */,
 				80C1A8D11221CD02007F7D7A /* ContactExchangeViewController.m in Sources */,
 				80C1A8D21221CD02007F7D7A /* ContactManager.m in Sources */,
+				030894911226F2CA0088A584 /* AttendeeListViewController.m in Sources */,
+				030894971226F2DB0088A584 /* Registrant.m in Sources */,
+				030894991226F2DB0088A584 /* RegistrantDetailViewController.m in Sources */,
+				030894A31226F4100088A584 /* PresenterListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
