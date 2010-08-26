@@ -34,6 +34,8 @@
 		282CCBFE0DB6C98000C4EA27 /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282CCBFD0DB6C98000C4EA27 /* SecondView.xib */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
 		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
+		4186E37412204CCD00CABCB7 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4186E37312204CCD00CABCB7 /* MessageUI.framework */; };
+		4186E40412206D3700CABCB7 /* flickrbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 4186E40312206D3700CABCB7 /* flickrbackground.png */; };
 		AB2AE44E11EBAA8E00015C01 /* 512x512.png in Resources */ = {isa = PBXBuildFile; fileRef = AB2AE44D11EBAA8E00015C01 /* 512x512.png */; };
 		AB2AE45A11EBACF500015C01 /* iPhoneAppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = AB2AE45811EBACF500015C01 /* iPhoneAppIcon.png */; };
 		AB2AE45B11EBACF500015C01 /* iPhoneAppIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB2AE45911EBACF500015C01 /* iPhoneAppIcon@2x.png */; };
@@ -244,6 +246,8 @@
 		28A0AB4B0D9B1048005BE974 /* CocoaCamp_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaCamp_Prefix.pch; sourceTree = "<group>"; };
 		28AD73870D9D96C1002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4186E37312204CCD00CABCB7 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		4186E40312206D3700CABCB7 /* flickrbackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flickrbackground.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* CocoaCamp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CocoaCamp-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		AB2AE44D11EBAA8E00015C01 /* 512x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 512x512.png; sourceTree = "<group>"; };
 		AB2AE45811EBACF500015C01 /* iPhoneAppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhoneAppIcon.png; sourceTree = "<group>"; };
@@ -278,6 +282,7 @@
 				FB477A90120CA9E200FA7C4E /* libThree20UICommon.a in Frameworks */,
 				FB477A91120CA9E200FA7C4E /* libThree20UINavigator.a in Frameworks */,
 				FB477ADE120CAAD900FA7C4E /* QuartzCore.framework in Frameworks */,
+				4186E37412204CCD00CABCB7 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +387,7 @@
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765070DF74369002DB57D /* CoreGraphics.framework */,
 				FB477ADD120CAAD900FA7C4E /* QuartzCore.framework */,
+				4186E37312204CCD00CABCB7 /* MessageUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -389,6 +395,7 @@
 		AB2AE44A11EBAA8500015C01 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				4186E40312206D3700CABCB7 /* flickrbackground.png */,
 				034A2BFD12146E91009F39A6 /* headerBackground.png */,
 				03AF412E12120FA80061D5DD /* photoIcon.png */,
 				034A2BFB12146E7B009F39A6 /* roundrecbuttonpress.png */,
@@ -680,6 +687,7 @@
 				034A2BFC12146E7B009F39A6 /* roundrecbuttonpress.png in Resources */,
 				034A2BFE12146E91009F39A6 /* headerBackground.png in Resources */,
 				0341222F12148A3400B376F7 /* SessionDetailViewController.xib in Resources */,
+				4186E40412206D3700CABCB7 /* flickrbackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
