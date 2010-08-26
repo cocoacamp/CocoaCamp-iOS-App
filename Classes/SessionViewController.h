@@ -19,7 +19,7 @@
 @property (nonatomic, retain) UIActivityIndicatorView *progressInd;
 
 - (UIActivityIndicatorView *)progressInd;
-+ (NSURL *) schedulesURL;
-+ (NSURL *) thumbnailURL: (NSString *)regID;
++ (NSString *) schedulesURL;
++ (NSString *) thumbnailURL: (NSString *)regID;
 
 @end
