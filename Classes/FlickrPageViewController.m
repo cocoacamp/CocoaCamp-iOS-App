@@ -30,7 +30,8 @@
     
 	[super viewWillAppear:animated];
 	
-	NSURL *cocoaFlickr = [[NSURL alloc] initWithString:@"http://www.flickr.com/photos/52319257@N06/"];
+	NSURL *cocoaFlickr = [[NSURL alloc] initWithString:@"http://m.flickr.com/#/photos/52319257@N06/"];
+
 	NSURLRequest *request = [[NSURLRequest alloc] initWithURL:cocoaFlickr];
 	
 	[aWebView loadRequest: request];
@@ -87,9 +88,11 @@
     [super viewWillDisappear:animated];
 }
 */
+
 /*
 - (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
+
+ 	[super viewDidDisappear:animated];
 }
 */
 /*
