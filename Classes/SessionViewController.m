@@ -146,7 +146,6 @@ static NSString *BaseServiceURL = @"http://cocoa:camp@cocoacamp.org";
 	UILabel *locationLabel;
 	UILabel *titleLabel;
 	TTImageView *ttImage;
-	UIActivityIndicatorView *spinner;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, 250, 60) reuseIdentifier:CellIdentifier] autorelease];
@@ -169,22 +168,11 @@ static NSString *BaseServiceURL = @"http://cocoa:camp@cocoacamp.org";
 		locationLabel.textAlignment = UITextAlignmentRight; 			
 		[cell.contentView addSubview:locationLabel];
 		[locationLabel release];
-		 
-
-		spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(25, 10, 50, 50)];
-		spinner.tag = 5;
-		spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
-		[spinner sizeToFit];
-		spinner.autoresizingMask = (UIViewAutoresizingFlexibleLeftMargin |
-										UIViewAutoresizingFlexibleRightMargin |
-										UIViewAutoresizingFlexibleTopMargin |
-										UIViewAutoresizingFlexibleBottomMargin);
-		[cell.contentView addSubview:spinner];
-		[spinner release];
 		
 		
 		ttImage = [[TTImageView alloc] initWithFrame: CGRectMake(0, 0, 60, 60)];
-		ttImage.tag = 6;
+		ttImage.defaultImage = [UIImage imageNamed:@"loading.png"];
+		ttImage.tag = 4;
 		[cell.contentView addSubview:ttImage];
 		[ttImage release];
 		 
@@ -194,8 +182,7 @@ static NSString *BaseServiceURL = @"http://cocoa:camp@cocoacamp.org";
 	titleLabel = (UILabel *)[cell viewWithTag:3];
 	speakerLabel = (UILabel *)[cell viewWithTag:2];
 	locationLabel = (UILabel *)[cell viewWithTag:1];
-	ttImage = (TTImageView *)[cell viewWithTag:6];
-	spinner = (UIActivityIndicatorView *)[cell viewWithTag:5];
+	ttImage = (TTImageView *)[cell viewWithTag:4];
 	
 	
 	titleLabel.text = [talk objectForKey:@"title"];
@@ -203,8 +190,9 @@ static NSString *BaseServiceURL = @"http://cocoa:camp@cocoacamp.org";
 	speakerLabel.text = speaker;
 	locationLabel.text = [talk objectForKey: @"location"];
 	
-	[ttImage unsetImage];
+	[ttImage setImage: nil];
 	ttImage.urlPath = [SessionViewController thumbnailURL:regID];
+		
 	return cell;
 }
 
