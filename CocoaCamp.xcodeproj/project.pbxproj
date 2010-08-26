@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		030893A31226F05D0088A584 /* ContactExchangeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 030893A21226F05D0088A584 /* ContactExchangeView.xib */; };
+		030894811226F1E40088A584 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 030894801226F1E40088A584 /* MessageUI.framework */; };
 		0341222E12148A3400B376F7 /* SessionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0341222C12148A3400B376F7 /* SessionDetailViewController.m */; };
 		0341222F12148A3400B376F7 /* SessionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0341222D12148A3400B376F7 /* SessionDetailViewController.xib */; };
 		034654EE12269693005A5D6C /* bump_button_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 034654D512269693005A5D6C /* bump_button_blue.png */; };
@@ -234,6 +235,7 @@
 
 /* Begin PBXFileReference section */
 		030893A21226F05D0088A584 /* ContactExchangeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ContactExchangeView.xib; path = Resources/ContactExchangeView.xib; sourceTree = "<group>"; };
+		030894801226F1E40088A584 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		0341222B12148A3400B376F7 /* SessionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDetailViewController.h; sourceTree = "<group>"; };
 		0341222C12148A3400B376F7 /* SessionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDetailViewController.m; sourceTree = "<group>"; };
 		0341222D12148A3400B376F7 /* SessionDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionDetailViewController.xib; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 				80C1A8C81221CCEB007F7D7A /* AudioToolbox.framework in Frameworks */,
 				80C1A8D71221CD17007F7D7A /* AddressBook.framework in Frameworks */,
 				80C1A8D91221CD17007F7D7A /* AddressBookUI.framework in Frameworks */,
+				030894811226F1E40088A584 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +493,7 @@
 				80C1A8C71221CCEB007F7D7A /* AudioToolbox.framework */,
 				80C1A8D61221CD17007F7D7A /* AddressBook.framework */,
 				80C1A8D81221CD17007F7D7A /* AddressBookUI.framework */,
+				030894801226F1E40088A584 /* MessageUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
