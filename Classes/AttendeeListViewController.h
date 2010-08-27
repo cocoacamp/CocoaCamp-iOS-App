@@ -13,6 +13,7 @@
 	NSMutableArray *attendees;
 	NSDictionary *dictRegistrant;
 	NSMutableData *responseData;
+	UIImage *presenterIcon;
 }
 
 @property (nonatomic, retain) NSDictionary *dictRegistrant;

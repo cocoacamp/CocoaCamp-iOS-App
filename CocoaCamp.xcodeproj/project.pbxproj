@@ -87,6 +87,8 @@
 		FB477A91120CA9E200FA7C4E /* libThree20UINavigator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB477A81120CA9A500FA7C4E /* libThree20UINavigator.a */; };
 		FB477AA2120CAAB700FA7C4E /* Three20.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FB477AA1120CAAB700FA7C4E /* Three20.bundle */; };
 		FB477ADE120CAAD900FA7C4E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB477ADD120CAAD900FA7C4E /* QuartzCore.framework */; };
+		FBF7E8231227E55000B7A710 /* keynote-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FBF7E8211227E55000B7A710 /* keynote-icon.png */; };
+		FBF7E8241227E55000B7A710 /* keynote-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBF7E8221227E55000B7A710 /* keynote-icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -343,6 +345,8 @@
 		FB477A63120CA9A500FA7C4E /* Three20UI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20UI.xcodeproj; path = ../three20/src/Three20UI/Three20UI.xcodeproj; sourceTree = SOURCE_ROOT; };
 		FB477AA1120CAAB700FA7C4E /* Three20.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Three20.bundle; path = ../three20/src/Three20.bundle; sourceTree = SOURCE_ROOT; };
 		FB477ADD120CAAD900FA7C4E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FBF7E8211227E55000B7A710 /* keynote-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "keynote-icon.png"; path = "Resources/keynote-icon.png"; sourceTree = "<group>"; };
+		FBF7E8221227E55000B7A710 /* keynote-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "keynote-icon@2x.png"; path = "Resources/keynote-icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -527,6 +531,8 @@
 		AB2AE44A11EBAA8500015C01 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				FBF7E8211227E55000B7A710 /* keynote-icon.png */,
+				FBF7E8221227E55000B7A710 /* keynote-icon@2x.png */,
 				035B9D45122693520038129A /* loading.png */,
 				035B9D39122691540038129A /* calendar.png */,
 				035B9D3A122691540038129A /* group.png */,
@@ -851,6 +857,8 @@
 				030893A31226F05D0088A584 /* ContactExchangeView.xib in Resources */,
 				0308948E1226F2A90088A584 /* RegistrantListView.xib in Resources */,
 				030894981226F2DB0088A584 /* RegistrantDetailView.xib in Resources */,
+				FBF7E8231227E55000B7A710 /* keynote-icon.png in Resources */,
+				FBF7E8241227E55000B7A710 /* keynote-icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -47,7 +47,7 @@
 	responseData = [[NSMutableData data] retain];
 	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://cocoa:camp@cocoacamp.org/registers/json?user_name=cocoa&password=camp"]];
 	[[NSURLConnection alloc] initWithRequest:request delegate:self ];
-	
+	presenterIcon = [UIImage imageNamed:@"keynote-icon.png"];
 	[self.tableView reloadData];
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -119,14 +119,13 @@
 	{
 		currentReg = [listRegistrant objectAtIndex:index];
 		NSDictionary* dictCurrRegData = [currentReg objectForKey:@"Register"];
-		NSString *presenter = [dictCurrRegData objectForKey:@"present"];
+		
 		NSString *regName = [dictCurrRegData objectForKey:@"first_name"];
 		regName = [regName stringByAppendingString:@" "];
 		regName = [regName stringByAppendingString:[dictCurrRegData objectForKey:@"last_name"]];
 		
-		if ([presenter isEqualToString:@"0"]){
-		   [listAttendees addObject:dictCurrRegData];
-		}
+		[listAttendees addObject:dictCurrRegData];
+		
 	}
 	
 	NSSortDescriptor *lnameDesc = [[NSSortDescriptor alloc] initWithKey:@"last_name" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
@@ -180,6 +179,15 @@
 	regName = [regName stringByAppendingString:@" "];
 	regName = [regName stringByAppendingString:[currentReg objectForKey:@"last_name"]];		
 
+	// add icon if presenting
+	NSString *presenter = [currentReg objectForKey:@"present"];
+	if ([presenter isEqualToString:@"1"]){
+		[[cell imageView] setImage:presenterIcon];
+	}else {
+		[[cell imageView] setImage:nil];
+	}
+
+		
 	[[cell textLabel] setText: regName];
     [[cell detailTextLabel] setText:[currentReg objectForKey:@"company"]];
     
