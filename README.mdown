@@ -72,7 +72,7 @@ then do:
 
     git fetch cocoacamp 
     git merge cocoacamp/master 
-Now you've completed the merge on your local repo. 
+If you don't have any merge conflicts then you've completed the merge on your local repo. If you get merge conflicts you will still have to merge manually. Rule of thumb: code files are easy to merge, nib files are not. After manually merging, follow the steps in *Committing Your Work*.
 
 Committing Your Work
 ====================
@@ -90,7 +90,7 @@ Git Workflow
 ============
 
 Going forward, this is the recommended git workflow(note, this is 
-different from what I said today at our last lunch): 
+different from what I said at our last lunch): 
 
 1. Work as you normally would. 
 2. When you are done with a set of changes, commit all files and push 
