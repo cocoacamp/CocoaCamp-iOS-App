@@ -66,7 +66,7 @@ if you do have local changes on either file, throw away the changes by:
 
 If you'd never done this before, you'll need to add cocoacamp as a remote repo(you only need to do this the first time):
 
-    git remote add cocoacamp https://airportyh@github.com/cocoacamp/CocoaCamp-iOS-App.git
+    git remote add cocoacamp http://github.com/cocoacamp/CocoaCamp-iOS-App.git
 
 then do: 
 
