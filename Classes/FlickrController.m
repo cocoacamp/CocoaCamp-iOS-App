@@ -63,7 +63,7 @@
 	flickrSendButton.frame = CGRectMake(self.view.bounds.size.width - 237, 3, 75, 60);
 	[flickrSendButton setBackgroundImage:roundrecbuttonnormstretch forState:UIControlStateNormal];
 	[flickrSendButton setBackgroundImage:roundrecbuttonpressstretch  forState:UIControlStateHighlighted];			
-	[flickrSendButton setTitleColor:[UIColor whiteColor]  forState:UIControlStateNormal];
+	[flickrSendButton setTitleColor:[UIColor yellowColor]  forState:UIControlStateNormal];
 	[flickrSendButton.titleLabel setFont:[UIFont boldSystemFontOfSize:10]];
 	flickrSendButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;	
 	flickrSendButton.titleLabel.textAlignment = UITextAlignmentCenter;	
@@ -82,9 +82,6 @@
 	flickrViewButton.titleLabel.textAlignment = UITextAlignmentCenter;	
 	flickrViewButton.titleLabel.lineBreakMode = UILineBreakModeWordWrap;	
 	[flickrViewButton addTarget:self action:@selector (flickrView) forControlEvents:UIControlEventTouchUpInside];
-	
-	
-	
 	
 	UIView *whiteView = [[UIView alloc] initWithFrame:CGRectMake(0, 0,self.view.bounds.size.width,65)];
 	whiteView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"headerBackground.png"]];	
@@ -108,13 +105,16 @@
 	[self.view bringSubviewToFront:headerView];
 	
 	[self.view addSubview: headerView];	
+	
+	imageView.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"flickrbackground.png"]];
+	
 	[headerView release];
 		
 }
 	
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];	
-		
+	//imageView.image = nil;
 }	
 
 
@@ -136,7 +136,7 @@
 			
 		UIImagePickerController *picker = [[UIImagePickerController alloc] init];
 		picker.delegate = self;
-		picker.allowsEditing = NO;
+		picker.allowsEditing = YES;
 		picker.sourceType = UIImagePickerControllerSourceTypeCamera; 
 		[self presentModalViewController:picker animated:YES];
 		[picker release];
@@ -159,7 +159,7 @@
 			 UIImagePickerControllerSourceTypePhotoLibrary]) {
 			UIImagePickerController *picker = [[UIImagePickerController alloc] init];
 			picker.delegate = self;
-			picker.allowsEditing = NO;
+			picker.allowsEditing = YES;
 			picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
 			[self presentModalViewController:picker animated:YES];
 			[picker release];
@@ -211,7 +211,10 @@
 							  otherButtonTitles:nil];
 		[flickAlert show];
 		[flickAlert release];
-	}	else {
+	 }	
+	else {
+		
+		/*
 		UIAlertView *flickAlert = [[UIAlertView alloc] 
 				initWithTitle:@"Flickr Upload" 
 					message:@"This feature is not active yet" 
@@ -219,10 +222,51 @@
 					cancelButtonTitle:@"Cancel" 
 					otherButtonTitles:nil];
 		[flickAlert show];
-		[flickAlert release];	}
+		[flickAlert release];	
+		 */
+		
+		MFMailComposeViewController *mail = [[MFMailComposeViewController alloc] init];
+		mail.mailComposeDelegate = self;
+		
+		if ([MFMailComposeViewController canSendMail]) {
+			
+			[mail setSubject:@"Cocoa Camp 2010"];
+	  	[mail setToRecipients:  [NSArray arrayWithObject:@"cases90values@photos.flickr.com"]];
+			
+			NSData *imageData = UIImagePNGRepresentation(imageView.image);		
+			[mail addAttachmentData:imageData mimeType:@"image/png" fileName:@"CocoaCamp"];
+			
+			[self presentModalViewController:mail animated:YES]; 
+			
+		} else {
+			
+			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Message Failed" message:@"This device is not configured to send email" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+			[alert show];
+			[alert release];
+			
+		}
+		[mail release];
+	}
+	}
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
+	[self dismissModalViewControllerAnimated:YES];
+
+if (result == MFMailComposeResultFailed) {
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Upload Failed" message:@"Your email has failed to send" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+	[alert show];
+	[alert release];
+} 
+
+if (result == MFMailComposeResultSent) {
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Flickr Upload Sent" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+	[alert show];
+	[alert release];
+}
 
 	
-	}
+}
+
 
 - (void)flickrView  {
 	
@@ -240,7 +284,7 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
 	
 	
-	UIImage *selectedImage = [info objectForKey:@"UIImagePickerControllerOriginalImage"];	
+	UIImage *selectedImage = [info objectForKey:@"UIImagePickerControllerEditedImage"];	
 	imageView.image = selectedImage;
 	
 	[picker dismissModalViewControllerAnimated:YES];
@@ -254,4 +298,5 @@
 	
 
 @end
-	
+
+

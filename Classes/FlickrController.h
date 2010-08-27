@@ -5,8 +5,11 @@
  
  */
 
+#import <MessageUI/MessageUI.h>
 
-@interface FlickrController : UIViewController  <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
+
+
+@interface FlickrController : UIViewController  <UIImagePickerControllerDelegate, UINavigationControllerDelegate,MFMailComposeViewControllerDelegate> {
     @private
 	IBOutlet UIImageView *imageView;
 	UIButton *takePictureButton;
