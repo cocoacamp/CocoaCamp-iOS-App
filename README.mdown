@@ -39,3 +39,71 @@ Setting Up Your Project
 2. That's it!  As far as I know, it should work at this point.  If you have any trouble, see the README.markdown in the three20 project.  But please communicate through the [CocoaCamp Google Group](http://groups.google.com/group/cocoacamp-atlanta) so we can straighten it out.
 
 
+Current State 
+=============
+There are 4 tabs:
+ 
+1. Schedule - conference schedule 
+2. People - bump contact exchange UI 
+3. Flickr - take pictures and share with other attendees on Flickr 
+4. You - identify yourself on the app so that you can use bump contact 
+exchange(maybe should merge this w People in the future?) 
+
+Merging from Main Trunk 
+=======================
+
+To merge the changes from upstream(for this time and future 
+instances), first do a: 
+
+    git status 
+and make sure you don't have local changes on either of these files:
+ 
+    CocoaCamp.xcodeproj/project.pbxproj 
+    MainWindow.xib 
+if you do have local changes on either file, throw away the changes by: 
+
+    git checkout <filepath>
+
+If you'd never done this before, you'll need to add cocoacamp as a remote repo(you only need to do this the first time):
+
+    git remote add cocoacamp http://github.com/cocoacamp/CocoaCamp-iOS-App.git
+
+then do: 
+
+    git fetch cocoacamp 
+    git merge cocoacamp/master 
+If you don't have any merge conflicts then you've completed the merge on your local repo. If you get merge conflicts you will still have to merge manually. Rule of thumb: code files are easy to merge, nib files are not. After manually merging, follow the steps in *Committing Your Work*.
+
+Committing Your Work
+====================
+First add each new file you newly created by: 
+
+    git add <filepath> 
+then if you want to commit all modified files do: 
+
+    git commit -am "put commit comment here" 
+then push it to github: 
+
+    git push origin master
+
+Git Workflow
+============
+
+Going forward, this is the recommended git workflow(note, this is 
+different from what I said at our last lunch): 
+
+1. Work as you normally would. 
+2. When you are done with a set of changes, commit all files and push 
+to your fork on github. Follow instructions in *Committing Your Work*.
+3. Email me at (airportyh@gmail.com) or send me a pull request at 
+(airportyh) and kindly ask to merge your changes. I'll get to it as 
+soon as I can(usually same day, except for weekend). If there are any 
+special instructions that can help me, such as what frameworks you've 
+added, or what controller/nib should go on what tab in the MainWindow 
+nib, please write me a note. 
+4. I'll email you back or comment on your pull request(which should in 
+turn notify you via email) when I'm done w the merge. Then at this 
+point, follow the *Merging from Main Trunk* instructions above to merge back to 
+your repo. Between the time you send me the pull request and 
+the time I am done with the merge, it's best that you don't do 
+anything that modifies *CocoaCamp.xcodeproj/project.pbxproj* or *MainWindow.xib*.
