@@ -251,6 +251,16 @@ static NSString *BaseServiceURL = @"http://cocoa:camp@cocoacamp.org";
 }
 */
 
+
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+	NSDictionary *schedule = [self.schedules objectAtIndex:indexPath.section];
+	NSArray *talksArray = [schedule objectForKey:@"Talk"];
+	if ([talksArray count] == 0)
+		return nil;
+	else
+		return indexPath;
+}
+
 #pragma mark -
 #pragma mark Table view delegate
 
