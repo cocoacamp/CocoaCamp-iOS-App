@@ -7,20 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MyStyledTextLabel.h"
 
 @interface SessionDetailViewController : UIViewController {
 	NSDictionary *talk;
 	NSDictionary *schedule;
 	TTImageView *portraitImg;
 	UITextView *titleText;
-	TTStyledTextLabel *descriptionText;
+	MyStyledTextLabel *descriptionText;
 }
 @property (nonatomic, retain) NSDictionary *talk;
 @property (nonatomic, retain) NSDictionary *schedule;
 @property (nonatomic, retain) IBOutlet TTImageView *portraitImg;
 @property (nonatomic, retain) IBOutlet UITextView *titleText;
-@property (nonatomic, retain) IBOutlet TTStyledTextLabel *descriptionText;
+@property (nonatomic, retain) IBOutlet MyStyledTextLabel *descriptionText;
 
 
 @end

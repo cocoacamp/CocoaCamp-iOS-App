@@ -8,6 +8,7 @@
 
 #import "SessionDetailViewController.h"
 #import "SessionViewController.h"
+#import "SessionDetailWebView.h"
 
 @implementation SessionDetailViewController
 @synthesize talk, schedule, portraitImg, titleText, descriptionText;
@@ -49,17 +50,26 @@
 						 [reg objectForKey: @"last_name"]];
 	NSString *company = [reg objectForKey:@"company"];
 	NSString *twitter = [reg objectForKey:@"twitter"];
+	if ([twitter length] == 0)
+		twitter = @"yourtwitter";
 	NSString *location = [talk objectForKey: @"location"];
 	NSString *timeDisplay = [NSString stringWithFormat:@"%@-%@", 
 							 [timeFormatter stringFromDate:startTime],
 							 [timeFormatter stringFromDate:endTime]];
 	
+	
+	
 	titleText.text = title;
 	titleText.font = [UIFont boldSystemFontOfSize:19];
 	
+	descriptionText.delegate = self;
+	
+	NSString *twitterDisplay = twitterDisplay = [NSString stringWithFormat:@"<br>Twitter: <a href=\"http://twitter.com/%@\">@%@</a>", twitter, twitter];
+	
 	descriptionText.font = [UIFont systemFontOfSize:15];
-	descriptionText.html = [NSString stringWithFormat:@"<br>Presented by %@<br>%@<br>Twitter: <a href=\"http://twitter.com/%@\">@%@</a><br>Presented at the %@ Room<br>Saturday %@<br>", 
-							speaker, company, twitter, twitter, location, timeDisplay];
+	descriptionText.html = [NSString stringWithFormat:
+							@"<br>Presented by %@<br>%@%@<br>Presented at the %@ Room<br>Saturday %@<br>", 
+							speaker, company, twitterDisplay, location, timeDisplay];
 	
 	
 	portraitImg.urlPath = [SessionViewController thumbnailURL:regID];
@@ -69,13 +79,23 @@
 }
 
 
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+- (void)didEndTouchOnANode{
+	SessionDetailWebView *webView = [[SessionDetailWebView alloc] initWithNibName:@"SessionDetailWebView" bundle:nil];
+		
+	[self.navigationController pushViewController:webView animated:YES];	
+	
+	self.title = @"Talk Detail";
+	
+	NSDictionary *reg = [talk objectForKey: @"Register"];
+	NSString *twitter = [reg objectForKey:@"twitter"];
+	
+	NSURL *url = [NSURL URLWithString: [NSString stringWithFormat: @"http://twitter.com/%@", twitter]];
+	webView.title = [NSString stringWithFormat:@"@%@", twitter];
+	[webView loadURL:url];
+	[webView release];
+
+	
 }
-*/
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
