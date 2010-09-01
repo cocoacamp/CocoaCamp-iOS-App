@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		030893A31226F05D0088A584 /* ContactExchangeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 030893A21226F05D0088A584 /* ContactExchangeView.xib */; };
+		030894811226F1E40088A584 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 030894801226F1E40088A584 /* MessageUI.framework */; };
+		0308948E1226F2A90088A584 /* RegistrantListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0308948D1226F2A90088A584 /* RegistrantListView.xib */; };
+		030894911226F2CA0088A584 /* AttendeeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 030894901226F2CA0088A584 /* AttendeeListViewController.m */; };
+		030894971226F2DB0088A584 /* Registrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 030894931226F2DB0088A584 /* Registrant.m */; };
+		030894981226F2DB0088A584 /* RegistrantDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 030894941226F2DB0088A584 /* RegistrantDetailView.xib */; };
+		030894991226F2DB0088A584 /* RegistrantDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 030894961226F2DB0088A584 /* RegistrantDetailViewController.m */; };
+		030894A31226F4100088A584 /* PresenterListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 030894A21226F4100088A584 /* PresenterListViewController.m */; };
 		0341222E12148A3400B376F7 /* SessionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0341222C12148A3400B376F7 /* SessionDetailViewController.m */; };
 		0341222F12148A3400B376F7 /* SessionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0341222D12148A3400B376F7 /* SessionDetailViewController.xib */; };
 		034654EE12269693005A5D6C /* bump_button_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 034654D512269693005A5D6C /* bump_button_blue.png */; };
@@ -54,6 +61,9 @@
 		03CD373A120D68940054728C /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CD3732120D68940054728C /* SBJsonBase.m */; };
 		03CD373B120D68940054728C /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CD3734120D68940054728C /* SBJsonParser.m */; };
 		03CD373C120D68940054728C /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CD3736120D68940054728C /* SBJsonWriter.m */; };
+		03FE5A76122C77900054B9ED /* MyStyledTextLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FE5A75122C77900054B9ED /* MyStyledTextLabel.m */; };
+		03FE5A93122C79DA0054B9ED /* SessionDetailWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FE5A91122C79DA0054B9ED /* SessionDetailWebView.m */; };
+		03FE5A94122C79DA0054B9ED /* SessionDetailWebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03FE5A92122C79DA0054B9ED /* SessionDetailWebView.xib */; };
 		1D3623260D0F684500981E51 /* CocoaCampAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* CocoaCampAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -80,6 +90,8 @@
 		FB477A91120CA9E200FA7C4E /* libThree20UINavigator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB477A81120CA9A500FA7C4E /* libThree20UINavigator.a */; };
 		FB477AA2120CAAB700FA7C4E /* Three20.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FB477AA1120CAAB700FA7C4E /* Three20.bundle */; };
 		FB477ADE120CAAD900FA7C4E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB477ADD120CAAD900FA7C4E /* QuartzCore.framework */; };
+		FBF7E8231227E55000B7A710 /* keynote-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FBF7E8211227E55000B7A710 /* keynote-icon.png */; };
+		FBF7E8241227E55000B7A710 /* keynote-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBF7E8221227E55000B7A710 /* keynote-icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -234,6 +246,17 @@
 
 /* Begin PBXFileReference section */
 		030893A21226F05D0088A584 /* ContactExchangeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ContactExchangeView.xib; path = Resources/ContactExchangeView.xib; sourceTree = "<group>"; };
+		030894801226F1E40088A584 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		0308948D1226F2A90088A584 /* RegistrantListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrantListView.xib; sourceTree = "<group>"; };
+		0308948F1226F2CA0088A584 /* AttendeeListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendeeListViewController.h; sourceTree = "<group>"; };
+		030894901226F2CA0088A584 /* AttendeeListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendeeListViewController.m; sourceTree = "<group>"; };
+		030894921226F2DB0088A584 /* Registrant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Registrant.h; sourceTree = "<group>"; };
+		030894931226F2DB0088A584 /* Registrant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Registrant.m; sourceTree = "<group>"; };
+		030894941226F2DB0088A584 /* RegistrantDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrantDetailView.xib; sourceTree = "<group>"; };
+		030894951226F2DB0088A584 /* RegistrantDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrantDetailViewController.h; sourceTree = "<group>"; };
+		030894961226F2DB0088A584 /* RegistrantDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrantDetailViewController.m; sourceTree = "<group>"; };
+		030894A11226F4100088A584 /* PresenterListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresenterListViewController.h; sourceTree = "<group>"; };
+		030894A21226F4100088A584 /* PresenterListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresenterListViewController.m; sourceTree = "<group>"; };
 		0341222B12148A3400B376F7 /* SessionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDetailViewController.h; sourceTree = "<group>"; };
 		0341222C12148A3400B376F7 /* SessionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDetailViewController.m; sourceTree = "<group>"; };
 		0341222D12148A3400B376F7 /* SessionDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionDetailViewController.xib; sourceTree = "<group>"; };
@@ -291,6 +314,11 @@
 		03CD3734120D68940054728C /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		03CD3735120D68940054728C /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		03CD3736120D68940054728C /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		03FE5A74122C77900054B9ED /* MyStyledTextLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyStyledTextLabel.h; sourceTree = "<group>"; };
+		03FE5A75122C77900054B9ED /* MyStyledTextLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyStyledTextLabel.m; sourceTree = "<group>"; };
+		03FE5A90122C79DA0054B9ED /* SessionDetailWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDetailWebView.h; sourceTree = "<group>"; };
+		03FE5A91122C79DA0054B9ED /* SessionDetailWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDetailWebView.m; sourceTree = "<group>"; };
+		03FE5A92122C79DA0054B9ED /* SessionDetailWebView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionDetailWebView.xib; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* CocoaCampAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaCampAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* CocoaCampAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocoaCampAppDelegate.m; sourceTree = "<group>"; };
@@ -325,6 +353,8 @@
 		FB477A63120CA9A500FA7C4E /* Three20UI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20UI.xcodeproj; path = ../three20/src/Three20UI/Three20UI.xcodeproj; sourceTree = SOURCE_ROOT; };
 		FB477AA1120CAAB700FA7C4E /* Three20.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Three20.bundle; path = ../three20/src/Three20.bundle; sourceTree = SOURCE_ROOT; };
 		FB477ADD120CAAD900FA7C4E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FBF7E8211227E55000B7A710 /* keynote-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "keynote-icon.png"; path = "Resources/keynote-icon.png"; sourceTree = "<group>"; };
+		FBF7E8221227E55000B7A710 /* keynote-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "keynote-icon@2x.png"; path = "Resources/keynote-icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -348,6 +378,7 @@
 				80C1A8C81221CCEB007F7D7A /* AudioToolbox.framework in Frameworks */,
 				80C1A8D71221CD17007F7D7A /* AddressBook.framework in Frameworks */,
 				80C1A8D91221CD17007F7D7A /* AddressBookUI.framework in Frameworks */,
+				030894811226F1E40088A584 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +440,15 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				030894A11226F4100088A584 /* PresenterListViewController.h */,
+				030894A21226F4100088A584 /* PresenterListViewController.m */,
+				030894921226F2DB0088A584 /* Registrant.h */,
+				030894931226F2DB0088A584 /* Registrant.m */,
+				030894941226F2DB0088A584 /* RegistrantDetailView.xib */,
+				030894951226F2DB0088A584 /* RegistrantDetailViewController.h */,
+				030894961226F2DB0088A584 /* RegistrantDetailViewController.m */,
+				0308948F1226F2CA0088A584 /* AttendeeListViewController.h */,
+				030894901226F2CA0088A584 /* AttendeeListViewController.m */,
 				80C1A8F81221CDF4007F7D7A /* Bump.h */,
 				80C1A8F91221CDF4007F7D7A /* BumpContact.h */,
 				80C1A8CD1221CD02007F7D7A /* ContactExchangeViewController.h */,
@@ -429,6 +469,11 @@
 				0341222B12148A3400B376F7 /* SessionDetailViewController.h */,
 				0341222C12148A3400B376F7 /* SessionDetailViewController.m */,
 				0341222D12148A3400B376F7 /* SessionDetailViewController.xib */,
+				03FE5A74122C77900054B9ED /* MyStyledTextLabel.h */,
+				03FE5A75122C77900054B9ED /* MyStyledTextLabel.m */,
+				03FE5A90122C79DA0054B9ED /* SessionDetailWebView.h */,
+				03FE5A91122C79DA0054B9ED /* SessionDetailWebView.m */,
+				03FE5A92122C79DA0054B9ED /* SessionDetailWebView.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -469,6 +514,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0308948D1226F2A90088A584 /* RegistrantListView.xib */,
 				030893A21226F05D0088A584 /* ContactExchangeView.xib */,
 				AB2AE44A11EBAA8500015C01 /* images */,
 				03CD36EC120D0F240054728C /* SessionViewController.xib */,
@@ -490,6 +536,7 @@
 				80C1A8C71221CCEB007F7D7A /* AudioToolbox.framework */,
 				80C1A8D61221CD17007F7D7A /* AddressBook.framework */,
 				80C1A8D81221CD17007F7D7A /* AddressBookUI.framework */,
+				030894801226F1E40088A584 /* MessageUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -497,6 +544,8 @@
 		AB2AE44A11EBAA8500015C01 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				FBF7E8211227E55000B7A710 /* keynote-icon.png */,
+				FBF7E8221227E55000B7A710 /* keynote-icon@2x.png */,
 				035B9D45122693520038129A /* loading.png */,
 				035B9D39122691540038129A /* calendar.png */,
 				035B9D3A122691540038129A /* group.png */,
@@ -819,6 +868,11 @@
 				0346550512269693005A5D6C /* BumpPromptScreen.xib in Resources */,
 				0346550612269693005A5D6C /* BumpStartScreen.xib in Resources */,
 				030893A31226F05D0088A584 /* ContactExchangeView.xib in Resources */,
+				0308948E1226F2A90088A584 /* RegistrantListView.xib in Resources */,
+				030894981226F2DB0088A584 /* RegistrantDetailView.xib in Resources */,
+				FBF7E8231227E55000B7A710 /* keynote-icon.png in Resources */,
+				FBF7E8241227E55000B7A710 /* keynote-icon@2x.png in Resources */,
+				03FE5A94122C79DA0054B9ED /* SessionDetailWebView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -843,6 +897,12 @@
 				0341222E12148A3400B376F7 /* SessionDetailViewController.m in Sources */,
 				80C1A8D11221CD02007F7D7A /* ContactExchangeViewController.m in Sources */,
 				80C1A8D21221CD02007F7D7A /* ContactManager.m in Sources */,
+				030894911226F2CA0088A584 /* AttendeeListViewController.m in Sources */,
+				030894971226F2DB0088A584 /* Registrant.m in Sources */,
+				030894991226F2DB0088A584 /* RegistrantDetailViewController.m in Sources */,
+				030894A31226F4100088A584 /* PresenterListViewController.m in Sources */,
+				03FE5A76122C77900054B9ED /* MyStyledTextLabel.m in Sources */,
+				03FE5A93122C79DA0054B9ED /* SessionDetailWebView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

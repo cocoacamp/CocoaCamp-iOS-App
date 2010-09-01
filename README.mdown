@@ -66,13 +66,13 @@ if you do have local changes on either file, throw away the changes by:
 
 If you'd never done this before, you'll need to add cocoacamp as a remote repo(you only need to do this the first time):
 
-    git remote add cocoacamp https://airportyh@github.com/cocoacamp/CocoaCamp-iOS-App.git
+    git remote add cocoacamp http://github.com/cocoacamp/CocoaCamp-iOS-App.git
 
 then do: 
 
     git fetch cocoacamp 
     git merge cocoacamp/master 
-Now you've completed the merge on your local repo. 
+If you don't have any merge conflicts then you've completed the merge on your local repo. If you get merge conflicts you will still have to merge manually. Rule of thumb: code files are easy to merge, nib files are not. After manually merging, follow the steps in *Committing Your Work*.
 
 Committing Your Work
 ====================
@@ -90,7 +90,7 @@ Git Workflow
 ============
 
 Going forward, this is the recommended git workflow(note, this is 
-different from what I said today at our last lunch): 
+different from what I said at our last lunch): 
 
 1. Work as you normally would. 
 2. When you are done with a set of changes, commit all files and push 
@@ -107,4 +107,3 @@ point, follow the *Merging from Main Trunk* instructions above to merge back to
 your repo. Between the time you send me the pull request and 
 the time I am done with the merge, it's best that you don't do 
 anything that modifies *CocoaCamp.xcodeproj/project.pbxproj* or *MainWindow.xib*.
-

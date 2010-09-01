@@ -146,7 +146,6 @@ static NSString *BaseServiceURL = @"http://cocoa:camp@cocoacamp.org";
 	UILabel *locationLabel;
 	UILabel *titleLabel;
 	TTImageView *ttImage;
-	UIActivityIndicatorView *spinner;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, 250, 60) reuseIdentifier:CellIdentifier] autorelease];
@@ -169,22 +168,11 @@ static NSString *BaseServiceURL = @"http://cocoa:camp@cocoacamp.org";
 		locationLabel.textAlignment = UITextAlignmentRight; 			
 		[cell.contentView addSubview:locationLabel];
 		[locationLabel release];
-		 
-
-		spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(25, 10, 50, 50)];
-		spinner.tag = 5;
-		spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
-		[spinner sizeToFit];
-		spinner.autoresizingMask = (UIViewAutoresizingFlexibleLeftMargin |
-										UIViewAutoresizingFlexibleRightMargin |
-										UIViewAutoresizingFlexibleTopMargin |
-										UIViewAutoresizingFlexibleBottomMargin);
-		[cell.contentView addSubview:spinner];
-		[spinner release];
 		
 		
 		ttImage = [[TTImageView alloc] initWithFrame: CGRectMake(0, 0, 60, 60)];
-		ttImage.tag = 6;
+		ttImage.defaultImage = [UIImage imageNamed:@"loading.png"];
+		ttImage.tag = 4;
 		[cell.contentView addSubview:ttImage];
 		[ttImage release];
 		 
@@ -194,8 +182,7 @@ static NSString *BaseServiceURL = @"http://cocoa:camp@cocoacamp.org";
 	titleLabel = (UILabel *)[cell viewWithTag:3];
 	speakerLabel = (UILabel *)[cell viewWithTag:2];
 	locationLabel = (UILabel *)[cell viewWithTag:1];
-	ttImage = (TTImageView *)[cell viewWithTag:6];
-	spinner = (UIActivityIndicatorView *)[cell viewWithTag:5];
+	ttImage = (TTImageView *)[cell viewWithTag:4];
 	
 	
 	titleLabel.text = [talk objectForKey:@"title"];
@@ -203,54 +190,11 @@ static NSString *BaseServiceURL = @"http://cocoa:camp@cocoacamp.org";
 	speakerLabel.text = speaker;
 	locationLabel.text = [talk objectForKey: @"location"];
 	
-	[ttImage unsetImage];
+	[ttImage setImage: nil];
 	ttImage.urlPath = [SessionViewController thumbnailURL:regID];
+		
 	return cell;
 }
-
-
-
-
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 	NSDictionary *schedule = [self.schedules objectAtIndex:indexPath.section];
@@ -260,6 +204,17 @@ static NSString *BaseServiceURL = @"http://cocoa:camp@cocoacamp.org";
 	else
 		return indexPath;
 }
+
+/*
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+	NSDictionary *schedule = [self.schedules objectAtIndex:indexPath.section];
+	NSArray *talksArray = [schedule objectForKey:@"Talk"];
+	if ([talksArray count] == 0)
+		return nil;
+	else
+		return indexPath;
+}
+*/
 
 #pragma mark -
 #pragma mark Table view delegate
