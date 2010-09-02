@@ -8,7 +8,6 @@
 
 #import "SessionDetailViewController.h"
 #import "SessionViewController.h"
-#import "SessionDetailWebView.h"
 
 @implementation SessionDetailViewController
 @synthesize talk, schedule, portraitImg, titleText, descriptionText;
@@ -79,22 +78,15 @@
 }
 
 
-- (void)didEndTouchOnANode{
-	SessionDetailWebView *webView = [[SessionDetailWebView alloc] initWithNibName:@"SessionDetailWebView" bundle:nil];
-		
-	[self.navigationController pushViewController:webView animated:YES];	
-	
-	self.title = @"Talk Detail";
-	
+- (void)didEndTouchOnANode{	
 	NSDictionary *reg = [talk objectForKey: @"Register"];
 	NSString *twitter = [reg objectForKey:@"twitter"];
 	
 	NSURL *url = [NSURL URLWithString: [NSString stringWithFormat: @"http://twitter.com/%@", twitter]];
-	webView.title = [NSString stringWithFormat:@"@%@", twitter];
-	[webView loadURL:url];
-	[webView release];
-
 	
+	TTWebController *webController = [[TTWebController alloc] initWithNavigatorURL: url query: nil];
+	[self.navigationController pushViewController:webController animated:YES];
+	[webController release];
 }
 
 - (void)didReceiveMemoryWarning {

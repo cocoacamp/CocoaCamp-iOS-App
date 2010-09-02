@@ -62,8 +62,6 @@
 		03CD373B120D68940054728C /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CD3734120D68940054728C /* SBJsonParser.m */; };
 		03CD373C120D68940054728C /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CD3736120D68940054728C /* SBJsonWriter.m */; };
 		03FE5A76122C77900054B9ED /* MyStyledTextLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FE5A75122C77900054B9ED /* MyStyledTextLabel.m */; };
-		03FE5A93122C79DA0054B9ED /* SessionDetailWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FE5A91122C79DA0054B9ED /* SessionDetailWebView.m */; };
-		03FE5A94122C79DA0054B9ED /* SessionDetailWebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03FE5A92122C79DA0054B9ED /* SessionDetailWebView.xib */; };
 		1D3623260D0F684500981E51 /* CocoaCampAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* CocoaCampAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -261,7 +259,6 @@
 		030894961226F2DB0088A584 /* RegistrantDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrantDetailViewController.m; sourceTree = "<group>"; };
 		030894A11226F4100088A584 /* PresenterListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresenterListViewController.h; sourceTree = "<group>"; };
 		030894A21226F4100088A584 /* PresenterListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresenterListViewController.m; sourceTree = "<group>"; };
-		0341222B12148A3400B376F7 /* SessionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDetailViewController.h; sourceTree = "<group>"; };
 		0341222C12148A3400B376F7 /* SessionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDetailViewController.m; sourceTree = "<group>"; };
 		0341222D12148A3400B376F7 /* SessionDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionDetailViewController.xib; sourceTree = "<group>"; };
 		034654D512269693005A5D6C /* bump_button_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bump_button_blue.png; sourceTree = "<group>"; };
@@ -302,7 +299,6 @@
 		03AF412A12120F8D0061D5DD /* FlickrPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPageViewController.m; sourceTree = "<group>"; };
 		03AF412E12120FA80061D5DD /* photoIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photoIcon.png; sourceTree = "<group>"; };
 		03AF412F12120FA80061D5DD /* roundrecbuttonnorm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roundrecbuttonnorm.png; sourceTree = "<group>"; };
-		03CD36EA120D0F240054728C /* SessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionViewController.h; sourceTree = "<group>"; };
 		03CD36EB120D0F240054728C /* SessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionViewController.m; sourceTree = "<group>"; };
 		03CD36EC120D0F240054728C /* SessionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SessionViewController.xib; path = Classes/SessionViewController.xib; sourceTree = "<group>"; };
 		03CD372A120D68940054728C /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
@@ -320,9 +316,6 @@
 		03CD3736120D68940054728C /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		03FE5A74122C77900054B9ED /* MyStyledTextLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyStyledTextLabel.h; sourceTree = "<group>"; };
 		03FE5A75122C77900054B9ED /* MyStyledTextLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyStyledTextLabel.m; sourceTree = "<group>"; };
-		03FE5A90122C79DA0054B9ED /* SessionDetailWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDetailWebView.h; sourceTree = "<group>"; };
-		03FE5A91122C79DA0054B9ED /* SessionDetailWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDetailWebView.m; sourceTree = "<group>"; };
-		03FE5A92122C79DA0054B9ED /* SessionDetailWebView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionDetailWebView.xib; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* CocoaCampAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaCampAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* CocoaCampAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocoaCampAppDelegate.m; sourceTree = "<group>"; };
@@ -473,16 +466,11 @@
 				03CD3729120D68940054728C /* JSON */,
 				1D3623240D0F684500981E51 /* CocoaCampAppDelegate.h */,
 				1D3623250D0F684500981E51 /* CocoaCampAppDelegate.m */,
-				03CD36EA120D0F240054728C /* SessionViewController.h */,
 				03CD36EB120D0F240054728C /* SessionViewController.m */,
-				0341222B12148A3400B376F7 /* SessionDetailViewController.h */,
 				0341222C12148A3400B376F7 /* SessionDetailViewController.m */,
 				0341222D12148A3400B376F7 /* SessionDetailViewController.xib */,
 				03FE5A74122C77900054B9ED /* MyStyledTextLabel.h */,
 				03FE5A75122C77900054B9ED /* MyStyledTextLabel.m */,
-				03FE5A90122C79DA0054B9ED /* SessionDetailWebView.h */,
-				03FE5A91122C79DA0054B9ED /* SessionDetailWebView.m */,
-				03FE5A92122C79DA0054B9ED /* SessionDetailWebView.xib */,
 				809FDB22122EDD7400528305 /* TwitterFeedTableViewController.h */,
 				809FDB23122EDD7400528305 /* TwitterFeedTableViewController.m */,
 				809FDB24122EDD7400528305 /* TwitterFeedTableView.xib */,
@@ -893,7 +881,6 @@
 				030894981226F2DB0088A584 /* RegistrantDetailView.xib in Resources */,
 				FBF7E8231227E55000B7A710 /* keynote-icon.png in Resources */,
 				FBF7E8241227E55000B7A710 /* keynote-icon@2x.png in Resources */,
-				03FE5A94122C79DA0054B9ED /* SessionDetailWebView.xib in Resources */,
 				809FDB21122EDD2B00528305 /* bird.png in Resources */,
 				809FDB26122EDD7400528305 /* TwitterFeedTableView.xib in Resources */,
 				809FDBD9122EF15E00528305 /* TwitterFeedTableViewCell.xib in Resources */,
@@ -925,7 +912,6 @@
 				030894991226F2DB0088A584 /* RegistrantDetailViewController.m in Sources */,
 				030894A31226F4100088A584 /* PresenterListViewController.m in Sources */,
 				03FE5A76122C77900054B9ED /* MyStyledTextLabel.m in Sources */,
-				03FE5A93122C79DA0054B9ED /* SessionDetailWebView.m in Sources */,
 				809FDB25122EDD7400528305 /* TwitterFeedTableViewController.m in Sources */,
 				809FDCC4122F074600528305 /* NSString+XMLEntities.m in Sources */,
 			);
