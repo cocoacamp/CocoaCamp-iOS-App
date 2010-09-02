@@ -62,8 +62,6 @@
 		03CD373B120D68940054728C /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CD3734120D68940054728C /* SBJsonParser.m */; };
 		03CD373C120D68940054728C /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CD3736120D68940054728C /* SBJsonWriter.m */; };
 		03FE5A76122C77900054B9ED /* MyStyledTextLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FE5A75122C77900054B9ED /* MyStyledTextLabel.m */; };
-		03FE5A93122C79DA0054B9ED /* SessionDetailWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FE5A91122C79DA0054B9ED /* SessionDetailWebView.m */; };
-		03FE5A94122C79DA0054B9ED /* SessionDetailWebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03FE5A92122C79DA0054B9ED /* SessionDetailWebView.xib */; };
 		1D3623260D0F684500981E51 /* CocoaCampAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* CocoaCampAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -316,9 +314,6 @@
 		03CD3736120D68940054728C /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		03FE5A74122C77900054B9ED /* MyStyledTextLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyStyledTextLabel.h; sourceTree = "<group>"; };
 		03FE5A75122C77900054B9ED /* MyStyledTextLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyStyledTextLabel.m; sourceTree = "<group>"; };
-		03FE5A90122C79DA0054B9ED /* SessionDetailWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDetailWebView.h; sourceTree = "<group>"; };
-		03FE5A91122C79DA0054B9ED /* SessionDetailWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDetailWebView.m; sourceTree = "<group>"; };
-		03FE5A92122C79DA0054B9ED /* SessionDetailWebView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionDetailWebView.xib; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* CocoaCampAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaCampAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* CocoaCampAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocoaCampAppDelegate.m; sourceTree = "<group>"; };
@@ -471,9 +466,6 @@
 				0341222D12148A3400B376F7 /* SessionDetailViewController.xib */,
 				03FE5A74122C77900054B9ED /* MyStyledTextLabel.h */,
 				03FE5A75122C77900054B9ED /* MyStyledTextLabel.m */,
-				03FE5A90122C79DA0054B9ED /* SessionDetailWebView.h */,
-				03FE5A91122C79DA0054B9ED /* SessionDetailWebView.m */,
-				03FE5A92122C79DA0054B9ED /* SessionDetailWebView.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -872,7 +864,6 @@
 				030894981226F2DB0088A584 /* RegistrantDetailView.xib in Resources */,
 				FBF7E8231227E55000B7A710 /* keynote-icon.png in Resources */,
 				FBF7E8241227E55000B7A710 /* keynote-icon@2x.png in Resources */,
-				03FE5A94122C79DA0054B9ED /* SessionDetailWebView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -902,7 +893,6 @@
 				030894991226F2DB0088A584 /* RegistrantDetailViewController.m in Sources */,
 				030894A31226F4100088A584 /* PresenterListViewController.m in Sources */,
 				03FE5A76122C77900054B9ED /* MyStyledTextLabel.m in Sources */,
-				03FE5A93122C79DA0054B9ED /* SessionDetailWebView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
