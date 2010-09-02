@@ -7,9 +7,14 @@
 //
 
 #import "AttendeeListViewController.h"
+#import "CocoaCampAppDelegate.h"
 #import "RegistrantDetailViewController.h"
+#import "ContactManager.h"
 #import <Three20/Three20.h>
 #import "JSON.h"
+#import "Bump.h"
+
+NSString *AppUserRegistrantIDKey = @"AppUserRegistrantIDKey";
 
 @implementation AttendeeListViewController
 @synthesize attendees, responseData, dictRegistrant;
@@ -58,7 +63,7 @@
 - (void)viewWillAppear:(BOOL)animated {	
     [super viewWillAppear:animated];
 	//Set the title
-	self.navigationItem.title = @"CocoaCamp Attendees";	
+	self.navigationItem.title = @"Attendees";	
 	[self.tableView reloadData];
 }
 
@@ -145,7 +150,63 @@
 	
 }
 
+#pragma mark -
+#pragma mark Contact exchange methods
 
+- (IBAction)initiateContactExchange:(id)sender {
+	NSNumber *appUserRegistrantID = [[NSUserDefaults standardUserDefaults] objectForKey:AppUserRegistrantIDKey];
+	if(appUserRegistrantID)
+	{
+		[self performContactExchange];
+	}
+	else
+	{
+		UIAlertView *noIdentityAlertView = [[UIAlertView alloc] initWithTitle:@"No User Identity" 
+																	  message:@"Please set your identity by tapping \"This Is Me!\" in your attendee profile" 
+																	 delegate:self 
+															cancelButtonTitle:@"Got it" 
+															otherButtonTitles:nil];
+		[noIdentityAlertView show];
+		[noIdentityAlertView release];
+	}
+}
+
+- (void)performContactExchange {
+	NSNumber *appUserRegistrantID = [[NSUserDefaults standardUserDefaults] objectForKey:AppUserRegistrantIDKey];
+	NSDictionary *appUserDictionary = nil;
+	
+	if(!appUserRegistrantID)
+	{
+		NSLog(@"Did not receive a valid registrant id in performContactExchange. Bailing...");
+		return;
+	}
+	
+	// walk the list of attendees to find the current user. *sigh*
+	for(NSDictionary *attendee in attendees)
+	{
+		if([[attendee valueForKey:@"id"] isEqual:[appUserRegistrantID stringValue]])
+			appUserDictionary = attendee; // got lucky
+	}
+	
+	if(appUserDictionary)
+	{
+		Registrant *appUser = [[Registrant alloc] init];
+		appUser.firstName = [appUserDictionary objectForKey:@"first_name"];
+		appUser.lastName = [appUserDictionary objectForKey:@"last_name"];
+		appUser.company = [appUserDictionary objectForKey:@"company"];
+		appUser.twitter = [appUserDictionary objectForKey:@"twitter"];
+		appUser.industry = [appUserDictionary objectForKey:@"industry"];
+		appUser.email = [appUserDictionary objectForKey:@"email"];
+		appUser.rid = [NSNumber numberWithInt:[[appUserDictionary objectForKey:@"id"] integerValue]];
+		
+		BumpContact *bumpContact = [[ContactManager sharedInstance] bumpContactForRegistrant:appUser];
+		Bump *bump = [(CocoaCampAppDelegate *)[[UIApplication sharedApplication] delegate] bump];
+		[bump configParentView:self.view];
+		[bump connectToDoContactExchange:bumpContact];
+		
+		[appUser release];
+	}
+}
 
 #pragma mark -
 #pragma mark Table view data source
@@ -256,14 +317,17 @@
 	reg.company = [currentReg objectForKey:@"company"];
 	reg.twitter = [currentReg objectForKey:@"twitter"];
 	reg.industry = [currentReg objectForKey:@"industry"];
+	reg.email = [currentReg objectForKey:@"email"];
+	reg.rid = [NSNumber numberWithInt:[[currentReg objectForKey:@"id"] integerValue]];
 	
 	NSLog(@"Attendee selected: %@ %@", reg.firstName, reg.lastName);
 	
 	detailViewController.currRegistrant = reg;
-     // Pass the selected object to the new view controller.
-	 [self.navigationController pushViewController:detailViewController animated:YES];
-	 [detailViewController release];
+	// Pass the selected object to the new view controller.
+	[self.navigationController pushViewController:detailViewController animated:YES];
+	[detailViewController release];
 	
+	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 

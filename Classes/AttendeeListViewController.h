@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+extern NSString *AppUserRegistrantIDKey;
 
 @interface AttendeeListViewController : UITableViewController {
 	NSMutableArray *attendees;
@@ -19,4 +20,8 @@
 @property (nonatomic, retain) NSDictionary *dictRegistrant;
 @property (nonatomic, retain) NSMutableData *responseData;
 @property (nonatomic, retain) NSMutableArray *attendees;
+
+- (IBAction)initiateContactExchange:(id)sender;
+- (void)performContactExchange;
+
 @end

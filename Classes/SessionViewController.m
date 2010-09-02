@@ -150,6 +150,7 @@ static NSString *BaseServiceURL = @"http://cocoa:camp@cocoacamp.org";
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, 250, 60) reuseIdentifier:CellIdentifier] autorelease];
 		titleLabel = [[UILabel alloc] initWithFrame: CGRectMake(70, 5, 250, 25)];
+		titleLabel.highlightedTextColor = [UIColor whiteColor];
 		titleLabel.tag = 3;
 		[cell.contentView addSubview:titleLabel];
 		[titleLabel release];

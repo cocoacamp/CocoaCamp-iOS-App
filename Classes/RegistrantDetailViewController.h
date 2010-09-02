@@ -11,6 +11,8 @@
 
 @class Registrant;
 
+extern NSString *AppUserRegistrantIDKey;
+
 @interface RegistrantDetailViewController : UIViewController {
 	Registrant *currRegistrant;	
 	IBOutlet UILabel *industryLabel;
@@ -27,5 +29,6 @@
 @property (nonatomic, retain) UILabel *twitterLabel;
 @property (nonatomic, retain) UILabel *nameLabel;
 
+- (IBAction)storeCurrentProfileAsIdentity;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "ContactManager.h"
 #import "BumpContact.h"
+#import "Registrant.h"
 
 static ContactManager *sharedInstance;
 
@@ -36,6 +37,22 @@ static ContactManager *sharedInstance;
 	if(!error && ABAddressBookHasUnsavedChanges(addressBook))
 		ABAddressBookSave(addressBook, &error);
 	return (NSError *)error;
+}
+
+- (BumpContact *)bumpContactForRegistrant:(Registrant *)registrant
+{
+	if(!registrant)
+	{
+		NSLog(@"Received nil registration in bumpContactForRegistrant - for shame!");
+		return nil;
+	}
+	
+	BumpContact *contact = [[BumpContact alloc] init];
+	contact.firstName = registrant.firstName;
+	contact.lastName = registrant.lastName;
+	contact.companyName = registrant.company;
+	
+	return [contact autorelease];
 }
 
 @end

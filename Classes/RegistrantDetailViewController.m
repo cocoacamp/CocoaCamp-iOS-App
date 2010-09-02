@@ -15,7 +15,7 @@
 
 #pragma mark -
 #pragma mark View lifecycle
-			   
+
 - (void) viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
@@ -30,10 +30,15 @@
 	companyLabel.text = currRegistrant.company;
 	industryLabel.text = currRegistrant.industry;
 	emailLabel.text = currRegistrant.email;
-	twitterLabel.text = currRegistrant.twitter;	
+	twitterLabel.text = currRegistrant.twitter;
+	
+	self.navigationItem.title = regName;
 }
 
-
+- (void)storeCurrentProfileAsIdentity {
+	[[NSUserDefaults standardUserDefaults] setObject:currRegistrant.rid forKey:AppUserRegistrantIDKey];
+	NSLog(@"Wrote %@ to defaults as registrant ID for current user.", currRegistrant.rid);
+}
 
 #pragma mark -
 #pragma mark Memory management
