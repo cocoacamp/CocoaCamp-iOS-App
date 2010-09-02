@@ -25,6 +25,7 @@
 	
 	self.navigationItem.leftBarButtonItem = refreshItem;
 	
+	 
 	SearchResultsPhotoSource *ps = [[SearchResultsPhotoSource alloc] initWithModel:CreateSearchModelWithCurrentSettings()];
 	realModel = [[ps underlyingModel] retain];
 	[self.photoSource load:TTURLRequestCachePolicyNoCache more:NO];
@@ -43,7 +44,5 @@
 	[self.photoSource performSelector:@selector(reset)];
 	[self.photoSource load:TTURLRequestCachePolicyNoCache more:NO];
 }
-
-
 
 @end
