@@ -61,10 +61,6 @@ static NSString *RFC822DateFormat = @"EEE, dd MMM yyyy HH:mm:ss z";
     [super viewDidAppear:animated];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return UIInterfaceOrientationIsPortrait(interfaceOrientation);
-}
-
 - (void)refreshTweets {
 	[self.view addSubview:activityIndicator];
 	tweetData = [[NSMutableData alloc] init];

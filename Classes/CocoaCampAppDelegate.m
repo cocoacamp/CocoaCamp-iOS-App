@@ -32,14 +32,9 @@
 	[map from:@"tt://people" toViewController:[AttendeeListViewController class]];
 	[map from:@"tt://twitter" toViewController:[TwitterFeedTableViewController class]];
 	
-	//if (![navigator restoreViewControllers]) {
-		[navigator openURLAction:[TTURLAction actionWithURLPath:@"tt://tabs"]];
-	//}
+	[navigator openURLAction:[TTURLAction actionWithURLPath:@"tt://tabs"]];
 	
-    /*
-	[window addSubview:tabBarController.view];
-    [window makeKeyAndVisible];
-	*/
+	
 	[self initializeBump];
 	return YES;
 }

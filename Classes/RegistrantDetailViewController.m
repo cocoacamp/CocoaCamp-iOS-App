@@ -34,7 +34,7 @@ NSString *AppUserRegistrantIDKey = @"AppUserRegistrantIDKey";
 	
 	nameLabel.text = regName;
 	
-	self.navigationItem.title = [NSString stringWithFormat: @"Hi, %@ %@!", currRegistrant.firstName, currRegistrant.lastName];
+	self.navigationItem.title = regName;
 	[self storeCurrentProfileAsIdentity];
 
 }
@@ -98,15 +98,6 @@ NSString *AppUserRegistrantIDKey = @"AppUserRegistrantIDKey";
 		return;
 	}
 	Registrant *appUser = self.currRegistrant;
-	/*
-	appUser.firstName = [appUserDictionary objectForKey:@"first_name"];
-	appUser.lastName = [appUserDictionary objectForKey:@"last_name"];
-	appUser.company = [appUserDictionary objectForKey:@"company"];
-	appUser.twitter = [appUserDictionary objectForKey:@"twitter"];
-	appUser.industry = [appUserDictionary objectForKey:@"industry"];
-	appUser.email = [appUserDictionary objectForKey:@"email"];
-	appUser.rid = [NSNumber numberWithInt:[[appUserDictionary objectForKey:@"id"] integerValue]];
-	*/
 	BumpContact *bumpContact = [[ContactManager sharedInstance] bumpContactForRegistrant:appUser];
 	Bump *bump = [(CocoaCampAppDelegate *)[[UIApplication sharedApplication] delegate] bump];
 	[bump configParentView:self.view];
