@@ -11,21 +11,17 @@
 
 @class Registrant;
 
+extern NSString *AppUserRegistrantIDKey;
+
 @interface RegistrantDetailViewController : UIViewController {
-	Registrant *currRegistrant;	
-	IBOutlet UILabel *industryLabel;
-	IBOutlet UILabel *emailLabel;
-	IBOutlet UILabel *twitterLabel;
+	Registrant *currRegistrant;
 	IBOutlet UILabel *nameLabel;
-	IBOutlet UILabel *companyLabel;
 }
 
 @property (nonatomic, retain) Registrant *currRegistrant;
-@property (nonatomic, retain) UILabel *companyLabel;
-@property (nonatomic, retain) UILabel *industryLabel;
-@property (nonatomic, retain) UILabel *emailLabel;
-@property (nonatomic, retain) UILabel *twitterLabel;
 @property (nonatomic, retain) UILabel *nameLabel;
 
-
+- (IBAction)storeCurrentProfileAsIdentity;
+- (IBAction)initiateContactExchange:(id)sender;
+- (void)performContactExchange;
 @end

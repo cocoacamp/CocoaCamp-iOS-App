@@ -75,6 +75,11 @@
 		03D540BD122FE001004DBF63 /* FlickrThumbnailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D540BC122FE001004DBF63 /* FlickrThumbnailView.m */; };
 		03D54117122FEC87004DBF63 /* FlickrAddPhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D54115122FEC87004DBF63 /* FlickrAddPhotoController.m */; };
 		03D54118122FEC87004DBF63 /* FlickrAddPhotoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03D54116122FEC87004DBF63 /* FlickrAddPhotoController.xib */; };
+		03F7D4A212326E1B007FE8C7 /* TwitterFeedTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03F7D49E12326E1B007FE8C7 /* TwitterFeedTableView.xib */; };
+		03F7D4A312326E1B007FE8C7 /* TwitterFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03F7D49F12326E1B007FE8C7 /* TwitterFeedTableViewCell.xib */; };
+		03F7D4A412326E1B007FE8C7 /* TwitterFeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F7D4A112326E1B007FE8C7 /* TwitterFeedTableViewController.m */; };
+		03F7D4D41232713C007FE8C7 /* bird.png in Resources */ = {isa = PBXBuildFile; fileRef = 03F7D4D31232713C007FE8C7 /* bird.png */; };
+		03F7D4D912327248007FE8C7 /* NSString+XMLEntities.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F7D4D812327248007FE8C7 /* NSString+XMLEntities.m */; };
 		1D3623260D0F684500981E51 /* CocoaCampAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* CocoaCampAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -84,7 +89,6 @@
 		80C1A8BF1221CCCD007F7D7A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C1A8BE1221CCCD007F7D7A /* CoreLocation.framework */; };
 		80C1A8C31221CCD9007F7D7A /* libBump.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C1A8C21221CCD9007F7D7A /* libBump.a */; };
 		80C1A8C81221CCEB007F7D7A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C1A8C71221CCEB007F7D7A /* AudioToolbox.framework */; };
-		80C1A8D11221CD02007F7D7A /* ContactExchangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C1A8CE1221CD02007F7D7A /* ContactExchangeViewController.m */; };
 		80C1A8D21221CD02007F7D7A /* ContactManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C1A8D01221CD02007F7D7A /* ContactManager.m */; };
 		80C1A8D71221CD17007F7D7A /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C1A8D61221CD17007F7D7A /* AddressBook.framework */; };
 		80C1A8D91221CD17007F7D7A /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C1A8D81221CD17007F7D7A /* AddressBookUI.framework */; };
@@ -353,6 +357,13 @@
 		03D54114122FEC87004DBF63 /* FlickrAddPhotoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAddPhotoController.h; sourceTree = "<group>"; };
 		03D54115122FEC87004DBF63 /* FlickrAddPhotoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrAddPhotoController.m; sourceTree = "<group>"; };
 		03D54116122FEC87004DBF63 /* FlickrAddPhotoController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlickrAddPhotoController.xib; sourceTree = "<group>"; };
+		03F7D49E12326E1B007FE8C7 /* TwitterFeedTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TwitterFeedTableView.xib; sourceTree = "<group>"; };
+		03F7D49F12326E1B007FE8C7 /* TwitterFeedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TwitterFeedTableViewCell.xib; sourceTree = "<group>"; };
+		03F7D4A012326E1B007FE8C7 /* TwitterFeedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterFeedTableViewController.h; sourceTree = "<group>"; };
+		03F7D4A112326E1B007FE8C7 /* TwitterFeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterFeedTableViewController.m; sourceTree = "<group>"; };
+		03F7D4D31232713C007FE8C7 /* bird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bird.png; path = Resources/bird.png; sourceTree = "<group>"; };
+		03F7D4D712327248007FE8C7 /* NSString+XMLEntities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XMLEntities.h"; sourceTree = "<group>"; };
+		03F7D4D812327248007FE8C7 /* NSString+XMLEntities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XMLEntities.m"; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* CocoaCampAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaCampAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* CocoaCampAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocoaCampAppDelegate.m; sourceTree = "<group>"; };
@@ -365,8 +376,6 @@
 		80C1A8BE1221CCCD007F7D7A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		80C1A8C21221CCD9007F7D7A /* libBump.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBump.a; sourceTree = "<group>"; };
 		80C1A8C71221CCEB007F7D7A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		80C1A8CD1221CD02007F7D7A /* ContactExchangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactExchangeViewController.h; sourceTree = "<group>"; };
-		80C1A8CE1221CD02007F7D7A /* ContactExchangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactExchangeViewController.m; sourceTree = "<group>"; };
 		80C1A8CF1221CD02007F7D7A /* ContactManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactManager.h; sourceTree = "<group>"; };
 		80C1A8D01221CD02007F7D7A /* ContactManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactManager.m; sourceTree = "<group>"; };
 		80C1A8D61221CD17007F7D7A /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
@@ -531,8 +540,6 @@
 				030894901226F2CA0088A584 /* AttendeeListViewController.m */,
 				80C1A8F81221CDF4007F7D7A /* Bump.h */,
 				80C1A8F91221CDF4007F7D7A /* BumpContact.h */,
-				80C1A8CD1221CD02007F7D7A /* ContactExchangeViewController.h */,
-				80C1A8CE1221CD02007F7D7A /* ContactExchangeViewController.m */,
 				80C1A8CF1221CD02007F7D7A /* ContactManager.h */,
 				80C1A8D01221CD02007F7D7A /* ContactManager.m */,
 				03AF412612120F8D0061D5DD /* FlickrController.h */,
@@ -557,6 +564,12 @@
 				03D54116122FEC87004DBF63 /* FlickrAddPhotoController.xib */,
 				03AE932212309B6200C188E9 /* TabController.h */,
 				03AE932312309B6200C188E9 /* TabController.m */,
+				03F7D49E12326E1B007FE8C7 /* TwitterFeedTableView.xib */,
+				03F7D49F12326E1B007FE8C7 /* TwitterFeedTableViewCell.xib */,
+				03F7D4A012326E1B007FE8C7 /* TwitterFeedTableViewController.h */,
+				03F7D4A112326E1B007FE8C7 /* TwitterFeedTableViewController.m */,
+				03F7D4D712327248007FE8C7 /* NSString+XMLEntities.h */,
+				03F7D4D812327248007FE8C7 /* NSString+XMLEntities.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -626,6 +639,7 @@
 		AB2AE44A11EBAA8500015C01 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				03F7D4D31232713C007FE8C7 /* bird.png */,
 				FBF7E8211227E55000B7A710 /* keynote-icon.png */,
 				FBF7E8221227E55000B7A710 /* keynote-icon@2x.png */,
 				035B9D45122693520038129A /* loading.png */,
@@ -955,6 +969,9 @@
 				FBF7E8231227E55000B7A710 /* keynote-icon.png in Resources */,
 				FBF7E8241227E55000B7A710 /* keynote-icon@2x.png in Resources */,
 				03D54118122FEC87004DBF63 /* FlickrAddPhotoController.xib in Resources */,
+				03F7D4A212326E1B007FE8C7 /* TwitterFeedTableView.xib in Resources */,
+				03F7D4A312326E1B007FE8C7 /* TwitterFeedTableViewCell.xib in Resources */,
+				03F7D4D41232713C007FE8C7 /* bird.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -977,7 +994,6 @@
 				03AF412B12120F8D0061D5DD /* FlickrController.m in Sources */,
 				03AF412D12120F8D0061D5DD /* FlickrPageViewController.m in Sources */,
 				0341222E12148A3400B376F7 /* SessionDetailViewController.m in Sources */,
-				80C1A8D11221CD02007F7D7A /* ContactExchangeViewController.m in Sources */,
 				80C1A8D21221CD02007F7D7A /* ContactManager.m in Sources */,
 				030894911226F2CA0088A584 /* AttendeeListViewController.m in Sources */,
 				030894971226F2DB0088A584 /* Registrant.m in Sources */,
@@ -996,6 +1012,8 @@
 				03D540BD122FE001004DBF63 /* FlickrThumbnailView.m in Sources */,
 				03D54117122FEC87004DBF63 /* FlickrAddPhotoController.m in Sources */,
 				03AE932412309B6200C188E9 /* TabController.m in Sources */,
+				03F7D4A412326E1B007FE8C7 /* TwitterFeedTableViewController.m in Sources */,
+				03F7D4D912327248007FE8C7 /* NSString+XMLEntities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

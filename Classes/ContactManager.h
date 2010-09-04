@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <AddressBook/AddressBook.h>
 #import "BumpContact.h"
+#import "Registrant.h"
 
 @interface ContactManager : NSObject {
 	ABAddressBookRef addressBook;
@@ -16,7 +17,7 @@
 
 + (ContactManager *)sharedInstance;
 - (NSError *)addContactForBumpContact:(BumpContact *)contact;
-
+- (BumpContact *)bumpContactForRegistrant:(Registrant *)registrant;
 @end
 
 @interface BumpContact (AddressBook)

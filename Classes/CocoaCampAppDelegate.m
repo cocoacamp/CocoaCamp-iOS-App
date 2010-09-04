@@ -10,7 +10,8 @@
 #import "ContactManager.h"
 #import "SessionViewController.h"
 #import "FlickrThumbnailView.h"
-#import "ContactExchangeViewController.h"
+#import "AttendeeListViewController.h"
+#import "TwitterFeedTableViewController.h"
 #import "TabController.h"
 
 @implementation CocoaCampAppDelegate
@@ -28,7 +29,8 @@
 	[map from:@"tt://tabs" toViewController:[TabController class]];
 	[map from:@"tt://schedule" toViewController:[SessionViewController class]];
 	[map from:@"tt://flickr" toViewController:[FlickrThumbnailView class]];
-	[map from:@"tt://people" toViewController:[ContactExchangeViewController class]];
+	[map from:@"tt://people" toViewController:[AttendeeListViewController class]];
+	[map from:@"tt://twitter" toViewController:[TwitterFeedTableViewController class]];
 	
 	//if (![navigator restoreViewControllers]) {
 		[navigator openURLAction:[TTURLAction actionWithURLPath:@"tt://tabs"]];

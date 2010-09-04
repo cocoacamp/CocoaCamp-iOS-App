@@ -8,32 +8,41 @@
 
 #import "RegistrantDetailViewController.h"
 #import "Registrant.h"
+#import "ContactManager.h"
+#import "Bump.h"
+#import "CocoaCampAppDelegate.h"
+
 
 
 @implementation RegistrantDetailViewController
-@synthesize currRegistrant, companyLabel, industryLabel, emailLabel, twitterLabel, nameLabel;
+@synthesize currRegistrant, nameLabel;
+
+
+NSString *AppUserRegistrantIDKey = @"AppUserRegistrantIDKey";
 
 #pragma mark -
 #pragma mark View lifecycle
-			   
+
+
+
 - (void) viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
+
 	
-	NSString *regName = currRegistrant.firstName;
-	regName = [regName stringByAppendingString:@" "];
-	regName = [regName stringByAppendingString: currRegistrant.lastName];
+	NSString *regName = [NSString stringWithFormat: @"Hi, %@ %@!", currRegistrant.firstName, currRegistrant.lastName];
 	
 	nameLabel.text = regName;
 	
-	NSLog(@"Name = %@ %@ %@", currRegistrant.firstName, currRegistrant.lastName, currRegistrant.company);
-	companyLabel.text = currRegistrant.company;
-	industryLabel.text = currRegistrant.industry;
-	emailLabel.text = currRegistrant.email;
-	twitterLabel.text = currRegistrant.twitter;	
+	self.navigationItem.title = [NSString stringWithFormat: @"Hi, %@ %@!", currRegistrant.firstName, currRegistrant.lastName];
+	[self storeCurrentProfileAsIdentity];
+
 }
 
-
+- (void)storeCurrentProfileAsIdentity {
+	[[NSUserDefaults standardUserDefaults] setObject:currRegistrant.rid forKey:AppUserRegistrantIDKey];
+	NSLog(@"Wrote %@ to defaults as registrant ID for current user.", currRegistrant.rid);
+}
 
 #pragma mark -
 #pragma mark Memory management
@@ -53,14 +62,59 @@
 
 - (void)dealloc {
     [currRegistrant release];
-	[companyLabel release]; 
-	[industryLabel release];
-	[emailLabel release];
-	[twitterLabel release];
 	[nameLabel release];
 	[super dealloc];
 }
 
+
+
+#pragma mark -
+#pragma mark Contact exchange methods
+
+- (IBAction)initiateContactExchange:(id)sender {
+	NSNumber *appUserRegistrantID = [[NSUserDefaults standardUserDefaults] objectForKey:AppUserRegistrantIDKey];
+	if(appUserRegistrantID)
+	{
+		[self performContactExchange];
+	}
+	else
+	{
+		UIAlertView *noIdentityAlertView = [[UIAlertView alloc] initWithTitle:@"No User Identity" 
+																	  message:@"Please set your identity by tapping \"This Is Me!\" in your attendee profile" 
+																	 delegate:self 
+															cancelButtonTitle:@"Got it" 
+															otherButtonTitles:nil];
+		[noIdentityAlertView show];
+		[noIdentityAlertView release];
+	}
+}
+
+- (void)performContactExchange {
+	NSNumber *appUserRegistrantID = [[NSUserDefaults standardUserDefaults] objectForKey:AppUserRegistrantIDKey];
+	
+	if(!appUserRegistrantID)
+	{
+		NSLog(@"Did not receive a valid registrant id in performContactExchange. Bailing...");
+		return;
+	}
+	Registrant *appUser = self.currRegistrant;
+	/*
+	appUser.firstName = [appUserDictionary objectForKey:@"first_name"];
+	appUser.lastName = [appUserDictionary objectForKey:@"last_name"];
+	appUser.company = [appUserDictionary objectForKey:@"company"];
+	appUser.twitter = [appUserDictionary objectForKey:@"twitter"];
+	appUser.industry = [appUserDictionary objectForKey:@"industry"];
+	appUser.email = [appUserDictionary objectForKey:@"email"];
+	appUser.rid = [NSNumber numberWithInt:[[appUserDictionary objectForKey:@"id"] integerValue]];
+	*/
+	BumpContact *bumpContact = [[ContactManager sharedInstance] bumpContactForRegistrant:appUser];
+	Bump *bump = [(CocoaCampAppDelegate *)[[UIApplication sharedApplication] delegate] bump];
+	[bump configParentView:self.view];
+	[bump connectToDoContactExchange:bumpContact];
+	
+	[appUser release];
+	
+}
 
 @end
 

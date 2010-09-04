@@ -7,17 +7,15 @@
 //
 
 #import "TabController.h"
-#import "SessionViewController.h"
-#import "FlickrThumbnailView.h"
-#import "ContactExchangeViewController.h"
 
 @implementation TabController
 
 - (void)viewDidLoad {
 	[self setTabURLs:[NSArray arrayWithObjects:
+					  @"tt://people",
 					  @"tt://schedule",
 					  @"tt://flickr",
-					  @"tt://people",
+					  @"tt://twitter",
 					  nil]];
 }
 

@@ -11,21 +11,43 @@
 #import <Three20/Three20.h>
 #import "JSON.h"
 
+
+
 @implementation AttendeeListViewController
-@synthesize attendees, responseData, dictRegistrant;
+@synthesize attendees, responseData, dictRegistrant, progressInd;
 
 #pragma mark -
 #pragma mark Initialization
 
-/*
-- (id)initWithStyle:(UITableViewStyle)style {
-    // Override initWithStyle: if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-    if ((self = [super initWithStyle:style])) {
-    }
-    return self;
+-(id)initWithNibName:(NSString *)nibName bundle:(NSBundle *)bundle {
+	if (self = [super initWithNibName:nibName bundle:bundle]){
+		self.title = @"Hi! And you are...?";
+		UIImage* image = [UIImage imageNamed:@"group.png"];
+		self.tabBarItem = [[[UITabBarItem alloc] initWithTitle:@"People" image:image tag:0] autorelease];
+		UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Not you?" style:UIBarButtonItemStylePlain target:nil action:nil];
+		self.navigationItem.backBarButtonItem = backButton;
+		[backButton release];
+	}
+	return self;
 }
-*/
 
+- (UIActivityIndicatorView *)progressInd {
+	if (progressInd == nil)
+	{
+		CGRect frame = CGRectMake(self.view.frame.size.width/2-15, self.view.frame.size.height/2-15, 30, 30);
+		progressInd = [[UIActivityIndicatorView alloc] initWithFrame:frame];
+		[progressInd startAnimating];
+		progressInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+		[progressInd sizeToFit];
+		progressInd.autoresizingMask = (UIViewAutoresizingFlexibleLeftMargin |
+										UIViewAutoresizingFlexibleRightMargin |
+										UIViewAutoresizingFlexibleTopMargin |
+										UIViewAutoresizingFlexibleBottomMargin);
+		
+		progressInd.tag = 1;    // tag this view for later so we can remove it from recycled table cells
+	}
+	return progressInd;
+}
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -44,9 +66,12 @@
 	// fields with URLs that will be visited when the row is selected
 	
 	//Initialize the array.
-	responseData = [[NSMutableData data] retain];
-	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://cocoa:camp@cocoacamp.org/registers/json?user_name=cocoa&password=camp"]];
-	[[NSURLConnection alloc] initWithRequest:request delegate:self ];
+	if (responseData == nil){
+		responseData = [[NSMutableData data] retain];
+		NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://cocoa:camp@cocoacamp.org/registers/json?user_name=cocoa&password=camp"]];
+		[[NSURLConnection alloc] initWithRequest:request delegate:self ];
+		[self.view addSubview: self.progressInd];
+	}
 	presenterIcon = [UIImage imageNamed:@"keynote-icon.png"];
 	[self.tableView reloadData];
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -55,35 +80,10 @@
 
 
 
-- (void)viewWillAppear:(BOOL)animated {	
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-	//Set the title
-	self.navigationItem.title = @"CocoaCamp Attendees";	
 	[self.tableView reloadData];
 }
-
-/*
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-*/
-/*
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-}
-*/
-/*
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-}
-*/
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
 
 #pragma mark -
 #pragma mark WebService 
@@ -101,7 +101,7 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     //[connection release];
-	
+	[self.progressInd removeFromSuperview];
     NSString *responseString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
     [responseData release];
 	
@@ -144,8 +144,6 @@
 	[self.tableView reloadData];
 	
 }
-
-
 
 #pragma mark -
 #pragma mark Table view data source
@@ -256,14 +254,17 @@
 	reg.company = [currentReg objectForKey:@"company"];
 	reg.twitter = [currentReg objectForKey:@"twitter"];
 	reg.industry = [currentReg objectForKey:@"industry"];
+	reg.email = [currentReg objectForKey:@"email"];
+	reg.rid = [NSNumber numberWithInt:[[currentReg objectForKey:@"id"] integerValue]];
 	
 	NSLog(@"Attendee selected: %@ %@", reg.firstName, reg.lastName);
 	
 	detailViewController.currRegistrant = reg;
-     // Pass the selected object to the new view controller.
-	 [self.navigationController pushViewController:detailViewController animated:YES];
-	 [detailViewController release];
+	// Pass the selected object to the new view controller.
+	[self.navigationController pushViewController:detailViewController animated:YES];
+	[detailViewController release];
 	
+	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 
@@ -287,9 +288,13 @@
 	[responseData release];
 	[dictRegistrant release];
 	[attendees release];
+	[progressInd release];
     [super dealloc];
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation{
+	return YES;
+}
 
 @end
 
