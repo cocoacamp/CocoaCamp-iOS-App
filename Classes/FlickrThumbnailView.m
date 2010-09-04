@@ -24,14 +24,18 @@
 }
 
 - (void)viewDidLoad{
+	self.view.autoresizesSubviews = YES;
+	self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+	
 	UIBarButtonItem *addItem = [[UIBarButtonItem alloc] 
 							 initWithTitle:@"Add" style:UIBarButtonItemStylePlain 
 							 target:self action:@selector(addPhoto)];
 	self.navigationItem.rightBarButtonItem = addItem;
 	
-	UIBarButtonItem *refreshItem = [[UIBarButtonItem alloc] 
-							 initWithTitle:@"Refresh" style:UIBarButtonItemStylePlain 
-							 target:self action:@selector(refresh)];
+	UIBarButtonItem *refreshItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
+												   target:self 
+												   action:@selector(refresh)] autorelease];
+	
 	
 	self.navigationItem.leftBarButtonItem = refreshItem;
 	
@@ -54,6 +58,10 @@
 - (void)refresh{
 	[self.photoSource performSelector:@selector(reset)];
 	[self.photoSource load:TTURLRequestCachePolicyNoCache more:NO];
+}
+
+- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation{
+	return YES;
 }
 
 @end

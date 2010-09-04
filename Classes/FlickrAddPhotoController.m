@@ -126,5 +126,8 @@
 		[selectedImage release];
 }
 
+- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation{
+	return YES;
+}
 
 @end

@@ -284,7 +284,6 @@ NSMutableData *data;
 	}}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation{
-	NSLog(@"session rotate");
 	return YES;
 }
 

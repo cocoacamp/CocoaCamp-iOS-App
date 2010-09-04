@@ -21,9 +21,5 @@
 					  nil]];
 }
 
-- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation{
-	NSLog(@"tabbar rotate");
-	return YES;
-}
 
 @end
