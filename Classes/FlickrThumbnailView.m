@@ -12,6 +12,16 @@
 
 @implementation FlickrThumbnailView
 
+-(id)initWithNibName:(NSString *)nibName bundle:(NSBundle *)bundle {
+	if (self = [super initWithNibName:nibName bundle:bundle]){
+		self.title = @"Flickr Wall";
+		UIImage* image = [UIImage imageNamed:@"photoIcon.png"];
+		self.tabBarItem = [[[UITabBarItem alloc] initWithTitle:self.title image:image tag:0] autorelease];
+		//self.wantsFullScreenLayout = NO;
+		self.hidesBottomBarWhenPushed = NO;
+	}
+	return self;
+}
 
 - (void)viewDidLoad{
 	UIBarButtonItem *addItem = [[UIBarButtonItem alloc] 
@@ -25,11 +35,12 @@
 	
 	self.navigationItem.leftBarButtonItem = refreshItem;
 	
-	 
-	SearchResultsPhotoSource *ps = [[SearchResultsPhotoSource alloc] initWithModel:CreateSearchModelWithCurrentSettings()];
-	realModel = [[ps underlyingModel] retain];
-	[self.photoSource load:TTURLRequestCachePolicyNoCache more:NO];
-	self.photoSource = ps;
+	if (self.photoSource == nil){
+		SearchResultsPhotoSource *ps = [[SearchResultsPhotoSource alloc] initWithModel:CreateSearchModelWithCurrentSettings()];
+		realModel = [[ps underlyingModel] retain];
+		[self.photoSource load:TTURLRequestCachePolicyNoCache more:NO];
+		self.photoSource = ps;
+	}
 	
 }
 

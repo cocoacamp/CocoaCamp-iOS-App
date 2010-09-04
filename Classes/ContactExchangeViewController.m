@@ -12,17 +12,21 @@
 
 @implementation ContactExchangeViewController
 
-//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-//    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-//    }
-//    return self;
-//}
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    if ((self = [super initWithNibName:@"ContactExchangeView" bundle:nibBundleOrNil])) {
+		self.title = @"Contacts";
+		UIImage* image = [UIImage imageNamed:@"group.png"];
+		self.tabBarItem = [[[UITabBarItem alloc] initWithTitle:self.title image:image tag:0] autorelease];
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+	[self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {

@@ -10,12 +10,10 @@
 
 @interface SessionViewController : UITableViewController {
 	NSArray *schedules;
-	NSMutableDictionary *thumbnails;
 	UIActivityIndicatorView *progressInd;
 }
 
 @property (nonatomic, retain) NSArray *schedules;
-@property (nonatomic, retain) NSMutableDictionary *thumbnails;
 @property (nonatomic, retain) UIActivityIndicatorView *progressInd;
 
 - (UIActivityIndicatorView *)progressInd;

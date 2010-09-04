@@ -49,8 +49,6 @@
 						 [reg objectForKey: @"last_name"]];
 	NSString *company = [reg objectForKey:@"company"];
 	NSString *twitter = [reg objectForKey:@"twitter"];
-	if ([twitter length] == 0)
-		twitter = @"yourtwitter";
 	NSString *location = [talk objectForKey: @"location"];
 	NSString *timeDisplay = [NSString stringWithFormat:@"%@-%@", 
 							 [timeFormatter stringFromDate:startTime],
@@ -61,9 +59,9 @@
 	titleText.text = title;
 	titleText.font = [UIFont boldSystemFontOfSize:19];
 	
-	descriptionText.delegate = self;
-	
-	NSString *twitterDisplay = twitterDisplay = [NSString stringWithFormat:@"<br>Twitter: <a href=\"http://twitter.com/%@\">@%@</a>", twitter, twitter];
+	NSString *twitterDisplay = @"";
+	if ([twitter length] > 0)
+		twitterDisplay = [NSString stringWithFormat:@"<br>Twitter: <a href=\"http://mobile.twitter.com/%@\">@%@</a>", twitter, twitter];
 	
 	descriptionText.font = [UIFont systemFontOfSize:15];
 	descriptionText.html = [NSString stringWithFormat:
@@ -75,18 +73,6 @@
 	
 	[dateFormatter release];
 	[timeFormatter release];
-}
-
-
-- (void)didEndTouchOnANode{	
-	NSDictionary *reg = [talk objectForKey: @"Register"];
-	NSString *twitter = [reg objectForKey:@"twitter"];
-	
-	NSURL *url = [NSURL URLWithString: [NSString stringWithFormat: @"http://twitter.com/%@", twitter]];
-	
-	TTWebController *webController = [[TTWebController alloc] initWithNavigatorURL: url query: nil];
-	[self.navigationController pushViewController:webController animated:YES];
-	[webController release];
 }
 
 - (void)didReceiveMemoryWarning {

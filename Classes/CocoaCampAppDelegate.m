@@ -8,6 +8,10 @@
 
 #import "CocoaCampAppDelegate.h"
 #import "ContactManager.h"
+#import "SessionViewController.h"
+#import "FlickrThumbnailView.h"
+#import "ContactExchangeViewController.h"
+#import "TabController.h"
 
 @implementation CocoaCampAppDelegate
 @synthesize window;
@@ -15,8 +19,25 @@
 @synthesize bump;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-    [window addSubview:tabBarController.view];
+	TTNavigator* navigator = [TTNavigator navigator];
+	navigator.supportsShakeToReload = YES;
+	navigator.persistenceMode = TTNavigatorPersistenceModeAll;
+	
+	TTURLMap* map = navigator.URLMap;
+	[map from:@"*" toViewController:[TTWebController class]];
+	[map from:@"tt://tabs" toViewController:[TabController class]];
+	[map from:@"tt://schedule" toViewController:[SessionViewController class]];
+	[map from:@"tt://flickr" toViewController:[FlickrThumbnailView class]];
+	[map from:@"tt://people" toViewController:[ContactExchangeViewController class]];
+	
+	//if (![navigator restoreViewControllers]) {
+		[navigator openURLAction:[TTURLAction actionWithURLPath:@"tt://tabs"]];
+	//}
+	
+    /*
+	[window addSubview:tabBarController.view];
     [window makeKeyAndVisible];
+	*/
 	[self initializeBump];
 	return YES;
 }

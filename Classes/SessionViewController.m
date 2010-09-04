@@ -11,7 +11,7 @@
 #import "SessionDetailViewController.h"
 
 @implementation SessionViewController
-@synthesize schedules, thumbnails;
+@synthesize schedules;
 @synthesize progressInd;
 
 NSDateFormatter *dateFormatter;
@@ -32,42 +32,14 @@ static NSString *BaseServiceURL = @"http://cocoa:camp@cocoacamp.org";
 			 @"%@/photos/atlanta/%@-100x100.jpg", BaseServiceURL, regID];
 }
 
-/*
-- (void)viewDidLoad {
-    [super viewDidLoad];
-
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+-(id)initWithNibName:(NSString *)nibName bundle:(NSBundle *)bundle {
+	if (self = [super initWithNibName:@"SessionViewController" bundle:bundle]){
+		self.title = @"Schedule";
+		UIImage* image = [UIImage imageNamed:@"calendar.png"];
+		self.tabBarItem = [[[UITabBarItem alloc] initWithTitle:self.title image:image tag:0] autorelease];
+	}
+	return self;
 }
-*/
-
-/*
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-*/
-/*
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-*/
-/*
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-}
-*/
-/*
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-}
-*/
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
 
 
 #pragma mark -
@@ -296,23 +268,25 @@ NSMutableData *data;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
 	
-	self.title = @"Schedule";
-	
-	[self.view addSubview: self.progressInd];
 	
 	dateFormatter = [[NSDateFormatter alloc] init];
 	timeFormatter = [[NSDateFormatter alloc] init];
 	[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
 	[timeFormatter setDateFormat:@"h:mm"];
 	
-	NSURLRequest* request = [NSURLRequest requestWithURL: [NSURL URLWithString:[SessionViewController schedulesURL]]
-											 cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
-	[[NSURLConnection alloc] initWithRequest:request delegate:self];
-	
-	self.thumbnails = [[NSMutableDictionary alloc] init];
-}
+	if (self.schedules == nil){
+		[self.view addSubview: self.progressInd];
+		NSURLRequest* request = [NSURLRequest requestWithURL: [NSURL URLWithString:[SessionViewController schedulesURL]]
+												 cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+		[[NSURLConnection alloc] initWithRequest:request delegate:self];
+	}}
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation{
+	NSLog(@"session rotate");
+	return YES;
+}
 
 - (void)viewDidUnload {
     // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
@@ -322,7 +296,6 @@ NSMutableData *data;
 
 - (void)dealloc {
     [super dealloc];
-	[thumbnails release];
 }
 
 
