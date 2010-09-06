@@ -14,7 +14,7 @@
 
 
 @implementation AttendeeListViewController
-@synthesize attendees, responseData, dictRegistrant, progressInd;
+@synthesize attendees, responseData, dictRegistrant, progressInd, attendeeIndex, lstGroupedAttendees;
 
 #pragma mark -
 #pragma mark Initialization
@@ -26,6 +26,7 @@
 		self.tabBarItem = [[[UITabBarItem alloc] initWithTitle:@"People" image:image tag:0] autorelease];
 		UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Not you?" style:UIBarButtonItemStylePlain target:nil action:nil];
 		self.navigationItem.backBarButtonItem = backButton;
+		
 		[backButton release];
 	}
 	return self;
@@ -73,15 +74,15 @@
 		[self.view addSubview: self.progressInd];
 	}
 	presenterIcon = [UIImage imageNamed:@"keynote-icon.png"];
-	[self.tableView reloadData];
+
+	//[self.tableView reloadData];
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-
-
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+	//NSLog(@"ViewWillAppear");
 	[self.tableView reloadData];
 }
 
@@ -114,51 +115,77 @@
 	NSDictionary* currentReg = nil;
 	NSMutableArray *listAttendees = [[NSMutableArray alloc] initWithObjects:nil];
 	
-	
 	for (index = 0; index < [listRegistrant count]; index++)
 	{
 		currentReg = [listRegistrant objectAtIndex:index];
 		NSDictionary* dictCurrRegData = [currentReg objectForKey:@"Register"];
-		
-		NSString *regName = [dictCurrRegData objectForKey:@"first_name"];
-		regName = [regName stringByAppendingString:@" "];
-		regName = [regName stringByAppendingString:[dictCurrRegData objectForKey:@"last_name"]];
-		
 		[listAttendees addObject:dictCurrRegData];
-		
 	}
 	
 	NSSortDescriptor *lnameDesc = [[NSSortDescriptor alloc] initWithKey:@"last_name" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
 	NSSortDescriptor *fnameDesc = [[NSSortDescriptor alloc] initWithKey:@"first_name" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
 	
-	[listAttendees sortUsingDescriptors:[NSMutableArray arrayWithObjects: fnameDesc, lnameDesc, nil]];
-	//[listAttendees sortUsingDescriptors:[NSMutableArray arrayWithObjects:fnameDesc, nil]];
+	[listAttendees sortUsingDescriptors:[NSMutableArray arrayWithObjects: lnameDesc, fnameDesc, nil]];
 	[lnameDesc release], lnameDesc = nil;
 	[fnameDesc release], fnameDesc = nil;
 	
+	NSMutableArray *lstReg = [[NSMutableArray alloc] init];  
+	self.lstGroupedAttendees = lstReg;
+	[lstReg release];
+	NSMutableArray *regIndex = [NSMutableArray new];
+	NSMutableDictionary *lastUserRow = [[NSMutableDictionary alloc] init];
+    NSMutableArray *usersAtThisIndex = [[NSMutableArray alloc] init];
+	NSMutableDictionary *userRow = [[NSMutableDictionary alloc] init];
+	NSString *prevChar = @"";
+	for (NSDictionary *row in listAttendees) {		
+		NSString *lastName = [row valueForKey:@"last_name"];
+		char alphabet = [lastName characterAtIndex:0] ;
+		NSString *currChar = [[NSString stringWithFormat:@"%C", alphabet] capitalizedString];
+       
+		if (![regIndex containsObject: currChar]){  
+			// if there was a previous index of users, store them in the userRow array
+			if ([usersAtThisIndex count] > 0)
+			{
+				[userRow setValue:prevChar forKey:@"headerTitle"];
+				[userRow setValue:usersAtThisIndex forKey:@"rowValues"]; 
+				[lstGroupedAttendees addObject:userRow];
+				[usersAtThisIndex release];
+				usersAtThisIndex = [[NSMutableArray alloc] init];
+				[userRow release];
+				userRow = [[NSMutableDictionary alloc] init];
+			}
+			
+			// Create a new index
+			[regIndex addObject: currChar];
+			prevChar = currChar;
+		}		
+		[usersAtThisIndex addObject:row];
+	}
+	//Add last user index
+	[lastUserRow setValue:prevChar forKey:@"headerTitle"];
+	[lastUserRow setValue:usersAtThisIndex forKey:@"rowValues"];
+	[lstGroupedAttendees addObject:lastUserRow];
+	[lastUserRow release];
+	 
+	attendeeIndex = [[lstReg valueForKey:@"headerTitle"] retain];
+	NSLog(@"%@", lstGroupedAttendees);
+	NSLog(@"%@", attendeeIndex);
 	self.attendees = listAttendees;
-	NSLog(@"%@ attendees",  [NSString stringWithFormat:@"%d", [self.attendees count]]);
-
 	[listAttendees release];
-	
 	[self.tableView reloadData];
-	
 }
 
 #pragma mark -
 #pragma mark Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
-    return 1;
+	return [lstGroupedAttendees count];
 }
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [attendees count];
+	return [[[lstGroupedAttendees objectAtIndex:section] objectForKey:@"rowValues"] count];
 }
-
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -167,11 +194,12 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+       cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
     
 	// Configure the cell...
-	NSDictionary* currentReg = [attendees objectAtIndex:indexPath.row];
+	NSDictionary* currentReg = [[[lstGroupedAttendees objectAtIndex:indexPath.section] objectForKey:@"rowValues"]
+												   objectAtIndex:indexPath.row];
 	
 	NSString *regName = [currentReg objectForKey:@"first_name"];
 	regName = [regName stringByAppendingString:@" "];
@@ -188,49 +216,21 @@
 		
 	[[cell textLabel] setText: regName];
     [[cell detailTextLabel] setText:[currentReg objectForKey:@"company"]];
-    
     return cell;
 }
 
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+-(NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView{
+	return [lstGroupedAttendees valueForKey:@"headerTitle"];	
 }
-*/
-
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+ 
+-(NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index{	
+	return [attendeeIndex indexOfObject:title];
 }
-*/
 
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+- (NSString *)tableView:(UITableView *)aTableView titleForHeaderInSection:(NSInteger) section{
+	return [[lstGroupedAttendees objectAtIndex:section] objectForKey:@"headerTitle"];
 }
-*/
-
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 
 #pragma mark -
@@ -289,6 +289,8 @@
 	[dictRegistrant release];
 	[attendees release];
 	[progressInd release];
+	[attendeeIndex release];
+	[lstGroupedAttendees release];
     [super dealloc];
 }
 

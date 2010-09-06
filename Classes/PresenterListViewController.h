@@ -17,4 +17,5 @@
 
 @property (nonatomic, retain) NSDictionary *dictRegistrant;
 @property (nonatomic, retain) NSMutableData *responseData;
-@property (nonatomic, retain) NSMutableArray *presenters;@end
+@property (nonatomic, retain) NSMutableArray *presenters;
+@end
