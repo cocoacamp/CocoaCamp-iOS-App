@@ -168,8 +168,8 @@
 	[lastUserRow release];
 	 
 	attendeeIndex = [[lstReg valueForKey:@"headerTitle"] retain];
-	NSLog(@"%@", lstGroupedAttendees);
-	NSLog(@"%@", attendeeIndex);
+	//NSLog(@"%@", lstGroupedAttendees);
+	//NSLog(@"%@", attendeeIndex);
 	self.attendees = listAttendees;
 	[listAttendees release];
 	[self.tableView reloadData];
@@ -257,7 +257,7 @@
 	reg.email = [currentReg objectForKey:@"email"];
 	reg.rid = [NSNumber numberWithInt:[[currentReg objectForKey:@"id"] integerValue]];
 	
-	NSLog(@"Attendee selected: %@ %@", reg.firstName, reg.lastName);
+	//NSLog(@"Attendee selected: %@ %@", reg.firstName, reg.lastName);
 	
 	detailViewController.currRegistrant = reg;
 	// Pass the selected object to the new view controller.
