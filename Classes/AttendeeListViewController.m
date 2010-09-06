@@ -212,7 +212,6 @@
 	}else {
 		[[cell imageView] setImage:nil];
 	}
-
 		
 	[[cell textLabel] setText: regName];
     [[cell detailTextLabel] setText:[currentReg objectForKey:@"company"]];
@@ -239,9 +238,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Navigation logic may go here. Create and push another view controller.
 	
-	 RegistrantDetailViewController *detailViewController = [[RegistrantDetailViewController alloc] initWithNibName:@"RegistrantDetailView" bundle:nil];
+	RegistrantDetailViewController *detailViewController = [[RegistrantDetailViewController alloc] initWithNibName:@"RegistrantDetailView" bundle:nil];
 	
-	NSDictionary* currentReg = [attendees objectAtIndex:indexPath.row];
+	NSDictionary* currentReg = [[[lstGroupedAttendees objectAtIndex:indexPath.section] objectForKey:@"rowValues"]
+								objectAtIndex:indexPath.row];
 	
 	NSString *regName = [currentReg objectForKey:@"first_name"];
 	regName = [regName stringByAppendingString:@" "];
