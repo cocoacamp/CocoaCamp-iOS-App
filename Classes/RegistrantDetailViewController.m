@@ -121,12 +121,18 @@ NSString *AppUserRegistrantIDKey = @"AppUserRegistrantIDKey";
 
 - (void) bumpDidDisconnect:(BumpDisconnectReason)reason {
 	NSLog(@"Bump disconnected for reason %d", reason);
-	
+	if (reason != END_USER_QUIT){
+		[self bumpFailed];
+	}
+	self.loading.hidden = YES;
+	[self.loading stopAnimating];
 }
 
 - (void) bumpConnectFailed:(BumpConnectFailedReason)reason {
 	NSLog(@"Bump connect failed for reason %d", reason);
-	[self bumpFailed];
+	if (reason != FAIL_USER_CANCELED){
+		[self bumpFailed];
+	}
 	self.loading.hidden = YES;
 	[self.loading stopAnimating];
 }

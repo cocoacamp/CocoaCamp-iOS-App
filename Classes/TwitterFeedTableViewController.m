@@ -17,9 +17,9 @@ static NSString *RFC822DateFormat = @"EEE, dd MMM yyyy HH:mm:ss z";
 
 -(id)initWithNibName:(NSString *)nibName bundle:(NSBundle *)bundle {
 	if (self = [super initWithNibName:nibName bundle:bundle]){
-		self.title = @"Twitter";
+		self.title = @"Twitter Fall";
 		UIImage* image = [UIImage imageNamed:@"bird.png"];
-		self.tabBarItem = [[[UITabBarItem alloc] initWithTitle:@"Twitter" image:image tag:0] autorelease];
+		self.tabBarItem = [[[UITabBarItem alloc] initWithTitle:@"Twitter Fall" image:image tag:0] autorelease];
 	}
 	return self;
 }
@@ -55,17 +55,9 @@ static NSString *RFC822DateFormat = @"EEE, dd MMM yyyy HH:mm:ss z";
 	}
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-	
-	
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-
 - (void)refreshTweets {
+	if (isLoading) return;
+	isLoading = YES;
 	[self.view addSubview:activityIndicator];
 	tweetData = [[NSMutableData alloc] init];
 	NSURL *searchURL = [NSURL URLWithString:[TweetSearchURL stringByAppendingString:tweetSearchURLSuffix]];
@@ -116,9 +108,10 @@ static NSString *RFC822DateFormat = @"EEE, dd MMM yyyy HH:mm:ss z";
 	[twitterJSON release];
 	[tweetData release];
 	[connection release];
-
+	[jsonParser release];
 	[self.tableView reloadData];
 	[activityIndicator removeFromSuperview];
+	isLoading = NO;
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {

@@ -15,6 +15,7 @@
 	NSDateFormatter *dateParser;
 	NSString *tweetSearchURLSuffix;
 	UIActivityIndicatorView *activityIndicator;
+	BOOL isLoading;
 }
 
 - (void)refreshTweets;

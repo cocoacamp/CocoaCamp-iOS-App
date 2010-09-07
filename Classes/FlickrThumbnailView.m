@@ -56,6 +56,8 @@
 }
 
 - (void)refresh{
+	if (self.photoSource.isLoading)
+		return;
 	[self.photoSource performSelector:@selector(reset)];
 	[self.photoSource load:TTURLRequestCachePolicyNoCache more:NO];
 }

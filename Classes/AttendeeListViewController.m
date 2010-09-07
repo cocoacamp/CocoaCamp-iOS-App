@@ -133,7 +133,6 @@
 	// selected user
 	NSString *selectedId = [[NSUserDefaults standardUserDefaults] objectForKey: @"AppUserRegistrantIDKey"];
 	
-	NSLog(@"selected ID: %@", selectedId);
 	NSDictionary *selectedReg = nil;
 	
 	NSMutableArray *lstReg = [[NSMutableArray alloc] init];  
@@ -149,7 +148,6 @@
 		if (selectedReg == nil && [id isEqual:selectedId]){
 			selectedReg = row;
 		}
-		NSLog(@"id %@", id);
 		NSString *lastName = [row valueForKey:@"last_name"];
 		char alphabet = [lastName characterAtIndex:0] ;
 		NSString *currChar = [[NSString stringWithFormat:@"%C", alphabet] capitalizedString];
