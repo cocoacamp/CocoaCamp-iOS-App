@@ -73,21 +73,7 @@ NSString *AppUserRegistrantIDKey = @"AppUserRegistrantIDKey";
 #pragma mark Contact exchange methods
 
 - (IBAction)initiateContactExchange:(id)sender {
-	NSNumber *appUserRegistrantID = [[NSUserDefaults standardUserDefaults] objectForKey:AppUserRegistrantIDKey];
-	if(appUserRegistrantID)
-	{
-		[self performContactExchange];
-	}
-	else
-	{
-		UIAlertView *noIdentityAlertView = [[UIAlertView alloc] initWithTitle:@"No User Identity" 
-																	  message:@"Please set your identity by tapping \"This Is Me!\" in your attendee profile" 
-																	 delegate:self 
-															cancelButtonTitle:@"Got it" 
-															otherButtonTitles:nil];
-		[noIdentityAlertView show];
-		[noIdentityAlertView release];
-	}
+	[self performContactExchange];
 }
 
 - (Bump *)bump{
@@ -95,31 +81,23 @@ NSString *AppUserRegistrantIDKey = @"AppUserRegistrantIDKey";
 }
 
 - (void)performContactExchange {
-	NSNumber *appUserRegistrantID = [[NSUserDefaults standardUserDefaults] objectForKey:AppUserRegistrantIDKey];
-	
-	if(!appUserRegistrantID)
-	{
-		NSLog(@"Did not receive a valid registrant id in performContactExchange. Bailing...");
-		return;
-	}
-	Registrant *appUser = self.currRegistrant;
+	isExchanging = YES;
 	Bump *bump = self.bump;
 	[bump configParentView:self.view];
 	[bump setDelegate:self];
-	//[bump connectToDoContactExchange:bumpContact];
 	[bump connect];
-	[appUser release];
 	self.loading.hidden = NO;
 	[self.loading startAnimating];
 }
 
 - (void) bumpDidConnect {
 	NSLog(@"Bump successfully connected");
-	NSData *data = [NSKeyedArchiver archivedDataWithRootObject:currRegistrant];
+	NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.currRegistrant];
 	[self.bump send:data];
 }
 
 - (void) bumpDidDisconnect:(BumpDisconnectReason)reason {
+	if (!isExchanging) return;
 	NSLog(@"Bump disconnected for reason %d", reason);
 	if (reason != END_USER_QUIT){
 		[self bumpFailed];
@@ -129,8 +107,9 @@ NSString *AppUserRegistrantIDKey = @"AppUserRegistrantIDKey";
 }
 
 - (void) bumpConnectFailed:(BumpConnectFailedReason)reason {
+	if (!isExchanging) return;
 	NSLog(@"Bump connect failed for reason %d", reason);
-	if (reason != FAIL_USER_CANCELED){
+	if (reason != FAIL_USER_CANCELED && reason != FAIL_NETWORK_UNAVAILABLE){
 		[self bumpFailed];
 	}
 	self.loading.hidden = YES;
@@ -138,8 +117,12 @@ NSString *AppUserRegistrantIDKey = @"AppUserRegistrantIDKey";
 }
 
 - (void) bumpDataReceived:(NSData *)chunk{
+	self.loading.hidden = YES;
+	[self.loading stopAnimating];
+	isExchanging = NO;
 	Registrant *contact = [NSKeyedUnarchiver unarchiveObjectWithData:chunk];
 	NSLog(@"Got contact: %@, %@, %@", contact.firstName, contact.lastName, contact.email);
+	
 	
 	NSError *failed = [contact saveAddressBookContact];
 	if (failed){
@@ -156,8 +139,7 @@ NSString *AppUserRegistrantIDKey = @"AppUserRegistrantIDKey";
 		[alert release];
 	}
 	
-	self.loading.hidden = YES;
-	[self.loading stopAnimating];
+	
 }
 
 - (void)bumpFailed{

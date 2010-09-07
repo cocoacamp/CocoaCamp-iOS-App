@@ -17,6 +17,7 @@ extern NSString *AppUserRegistrantIDKey;
 	Registrant *currRegistrant;
 	IBOutlet UILabel *nameLabel;
 	IBOutlet UIActivityIndicatorView *loading;
+	BOOL isExchanging;
 }
 
 @property (nonatomic, retain) Registrant *currRegistrant;
