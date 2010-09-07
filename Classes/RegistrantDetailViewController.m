@@ -25,9 +25,8 @@ NSString *AppUserRegistrantIDKey = @"AppUserRegistrantIDKey";
 
 
 
-- (void) viewWillAppear:(BOOL)animated
+- (void) viewDidLoad
 {
-	[super viewWillAppear:animated];
 
 	
 	NSString *regName = [NSString stringWithFormat: @"Hi, %@ %@!", currRegistrant.firstName, currRegistrant.lastName];

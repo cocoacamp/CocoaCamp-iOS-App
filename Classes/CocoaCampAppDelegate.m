@@ -34,7 +34,6 @@
 	
 	[navigator openURLAction:[TTURLAction actionWithURLPath:@"tt://tabs"]];
 	
-	
 	[self initializeBump];
 	return YES;
 }

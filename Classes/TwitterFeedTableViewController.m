@@ -31,30 +31,34 @@ static NSString *RFC822DateFormat = @"EEE, dd MMM yyyy HH:mm:ss z";
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	tweets = [[NSMutableArray alloc] init];
-	tweetSearchURLSuffix = @"?q=cocoacamp";
-	
-	dateParser = [[NSDateFormatter alloc] init];
-	[dateParser setDateFormat:RFC822DateFormat];
-	
-	CGRect frame = CGRectMake(self.view.frame.size.width/2-15, self.view.frame.size.height/2-15-30, 30, 30);
-	activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:frame];
-	[activityIndicator startAnimating];
-	activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
-	[activityIndicator sizeToFit];
-	activityIndicator.autoresizingMask = (UIViewAutoresizingFlexibleLeftMargin |
-									UIViewAutoresizingFlexibleRightMargin |
-									UIViewAutoresizingFlexibleTopMargin |
-									UIViewAutoresizingFlexibleBottomMargin);
-	
-	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
-																							target:self 
-																							action:@selector(refreshTweets)] autorelease];
+	if (tweets == nil){
+		tweets = [[NSMutableArray alloc] init];
+		tweetSearchURLSuffix = @"?q=cocoacamp";
+		
+		dateParser = [[NSDateFormatter alloc] init];
+		[dateParser setDateFormat:RFC822DateFormat];
+		
+		CGRect frame = CGRectMake(self.view.frame.size.width/2-15, self.view.frame.size.height/2-15, 30, 30);
+		activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:frame];
+		[activityIndicator startAnimating];
+		activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+		[activityIndicator sizeToFit];
+		activityIndicator.autoresizingMask = (UIViewAutoresizingFlexibleLeftMargin |
+										UIViewAutoresizingFlexibleRightMargin |
+										UIViewAutoresizingFlexibleTopMargin |
+										UIViewAutoresizingFlexibleBottomMargin);
+		
+		self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
+																								target:self 
+																								action:@selector(refreshTweets)] autorelease];
+		[self refreshTweets];
+	}
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-	[self refreshTweets];
+	
+	
 }
 
 - (void)viewDidAppear:(BOOL)animated {
