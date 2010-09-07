@@ -14,7 +14,6 @@
 		030894971226F2DB0088A584 /* Registrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 030894931226F2DB0088A584 /* Registrant.m */; };
 		030894981226F2DB0088A584 /* RegistrantDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 030894941226F2DB0088A584 /* RegistrantDetailView.xib */; };
 		030894991226F2DB0088A584 /* RegistrantDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 030894961226F2DB0088A584 /* RegistrantDetailViewController.m */; };
-		030894A31226F4100088A584 /* PresenterListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 030894A21226F4100088A584 /* PresenterListViewController.m */; };
 		0341222E12148A3400B376F7 /* SessionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0341222C12148A3400B376F7 /* SessionDetailViewController.m */; };
 		0341222F12148A3400B376F7 /* SessionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0341222D12148A3400B376F7 /* SessionDetailViewController.xib */; };
 		034654EE12269693005A5D6C /* bump_button_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 034654D512269693005A5D6C /* bump_button_blue.png */; };
@@ -270,8 +269,6 @@
 		030894941226F2DB0088A584 /* RegistrantDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrantDetailView.xib; sourceTree = "<group>"; };
 		030894951226F2DB0088A584 /* RegistrantDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrantDetailViewController.h; sourceTree = "<group>"; };
 		030894961226F2DB0088A584 /* RegistrantDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrantDetailViewController.m; sourceTree = "<group>"; };
-		030894A11226F4100088A584 /* PresenterListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresenterListViewController.h; sourceTree = "<group>"; };
-		030894A21226F4100088A584 /* PresenterListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresenterListViewController.m; sourceTree = "<group>"; };
 		0341222B12148A3400B376F7 /* SessionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDetailViewController.h; sourceTree = "<group>"; };
 		0341222C12148A3400B376F7 /* SessionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDetailViewController.m; sourceTree = "<group>"; };
 		0341222D12148A3400B376F7 /* SessionDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionDetailViewController.xib; sourceTree = "<group>"; };
@@ -529,8 +526,6 @@
 				03D53EBA122FCD7E004DBF63 /* SearchResultsModel.h */,
 				03D53EBB122FCD7E004DBF63 /* SearchResultsModel.m */,
 				03D53EAC122FCD5E004DBF63 /* Flickr */,
-				030894A11226F4100088A584 /* PresenterListViewController.h */,
-				030894A21226F4100088A584 /* PresenterListViewController.m */,
 				030894921226F2DB0088A584 /* Registrant.h */,
 				030894931226F2DB0088A584 /* Registrant.m */,
 				030894941226F2DB0088A584 /* RegistrantDetailView.xib */,
@@ -998,7 +993,6 @@
 				030894911226F2CA0088A584 /* AttendeeListViewController.m in Sources */,
 				030894971226F2DB0088A584 /* Registrant.m in Sources */,
 				030894991226F2DB0088A584 /* RegistrantDetailViewController.m in Sources */,
-				030894A31226F4100088A584 /* PresenterListViewController.m in Sources */,
 				03D53EB3122FCD5E004DBF63 /* FlickrSearchResultsModel.m in Sources */,
 				03D53EB4122FCD5E004DBF63 /* FlickrJSONResponse.m in Sources */,
 				03D53EBC122FCD7E004DBF63 /* SearchResult.m in Sources */,

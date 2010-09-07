@@ -8,20 +8,24 @@
 
 #import <UIKit/UIKit.h>
 #import "Registrant.h"
-
+#import "Bump.h"
 @class Registrant;
 
 extern NSString *AppUserRegistrantIDKey;
 
-@interface RegistrantDetailViewController : UIViewController {
+@interface RegistrantDetailViewController : UIViewController <BumpDelegate> {
 	Registrant *currRegistrant;
 	IBOutlet UILabel *nameLabel;
+	IBOutlet UIActivityIndicatorView *loading;
 }
 
 @property (nonatomic, retain) Registrant *currRegistrant;
 @property (nonatomic, retain) UILabel *nameLabel;
+@property (readonly) Bump *bump;
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *loading;
 
 - (IBAction)storeCurrentProfileAsIdentity;
 - (IBAction)initiateContactExchange:(id)sender;
 - (void)performContactExchange;
+- (void)bumpFailed;
 @end

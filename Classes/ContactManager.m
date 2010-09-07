@@ -23,8 +23,8 @@ static ContactManager *sharedInstance;
 - (id)init {
 	if((self = [super init]))
 	{
-		addressBook = ABAddressBookCreate();
-		NSAssert(addressBook, @"Unable to get an address book instance.");
+		//addressBook = ABAddressBookCreate();
+		//NSAssert(addressBook, @"Unable to get an address book instance.");
 	}
 	
 	return self;
@@ -51,11 +51,23 @@ static ContactManager *sharedInstance;
 	contact.firstName = registrant.firstName;
 	contact.lastName = registrant.lastName;
 	contact.companyName = registrant.company;
-	
-	return [contact autorelease];
+	NSMutableDictionary *twitterEntry = [[NSMutableDictionary alloc] init];
+	NSString *twitterURL = [NSString stringWithFormat: @"http://twitter.com/%@", registrant.twitter];
+	[twitterEntry setObject:twitterURL forKey:BUMP_URL];
+	[twitterEntry setObject:BUMP_FIELD_TYPE_HOME forKey:BUMP_FIELD_TYPE];
+	NSArray *webURLs = [NSArray arrayWithObjects: twitterEntry, nil];
+	contact.webUrls = webURLs;
+	NSMutableDictionary *emailEntry = [[NSMutableDictionary alloc] init];
+	[emailEntry setObject:registrant.email forKey:BUMP_EMAIL_ADDRESS];
+	[emailEntry setObject:BUMP_FIELD_TYPE_HOME forKey:BUMP_FIELD_TYPE];
+	NSArray *emailAddresses = [NSArray arrayWithObjects:emailEntry, nil];
+	contact.emailAddresses = emailAddresses;
+	return contact;
 }
 
 @end
+
+
 
 @implementation BumpContact (AddressBook)
 - (ABRecordRef)addressBookContact {

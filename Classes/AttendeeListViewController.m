@@ -12,7 +12,6 @@
 #import "JSON.h"
 
 
-
 @implementation AttendeeListViewController
 @synthesize attendees, responseData, dictRegistrant, progressInd, attendeeIndex, lstGroupedAttendees;
 
@@ -78,6 +77,8 @@
 	//[self.tableView reloadData];
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -129,6 +130,12 @@
 	[lnameDesc release], lnameDesc = nil;
 	[fnameDesc release], fnameDesc = nil;
 	
+	// selected user
+	NSString *selectedId = [[NSUserDefaults standardUserDefaults] objectForKey: @"AppUserRegistrantIDKey"];
+	
+	NSLog(@"selected ID: %@", selectedId);
+	NSDictionary *selectedReg = nil;
+	
 	NSMutableArray *lstReg = [[NSMutableArray alloc] init];  
 	self.lstGroupedAttendees = lstReg;
 	[lstReg release];
@@ -137,7 +144,12 @@
     NSMutableArray *usersAtThisIndex = [[NSMutableArray alloc] init];
 	NSMutableDictionary *userRow = [[NSMutableDictionary alloc] init];
 	NSString *prevChar = @"";
-	for (NSDictionary *row in listAttendees) {		
+	for (NSDictionary *row in listAttendees) {	
+		NSString *id = [row valueForKey:@"id"];
+		if (selectedReg == nil && [id isEqual:selectedId]){
+			selectedReg = row;
+		}
+		NSLog(@"id %@", id);
 		NSString *lastName = [row valueForKey:@"last_name"];
 		char alphabet = [lastName characterAtIndex:0] ;
 		NSString *currChar = [[NSString stringWithFormat:@"%C", alphabet] capitalizedString];
@@ -161,6 +173,9 @@
 		}		
 		[usersAtThisIndex addObject:row];
 	}
+	
+	
+	
 	//Add last user index
 	[lastUserRow setValue:prevChar forKey:@"headerTitle"];
 	[lastUserRow setValue:usersAtThisIndex forKey:@"rowValues"];
@@ -173,6 +188,10 @@
 	self.attendees = listAttendees;
 	[listAttendees release];
 	[self.tableView reloadData];
+	
+	if (selectedReg){
+		[self drillDown:selectedReg animated: NO];
+	}
 }
 
 #pragma mark -
@@ -201,17 +220,9 @@
 	NSDictionary* currentReg = [[[lstGroupedAttendees objectAtIndex:indexPath.section] objectForKey:@"rowValues"]
 												   objectAtIndex:indexPath.row];
 	
-	NSString *regName = [currentReg objectForKey:@"first_name"];
-	regName = [regName stringByAppendingString:@" "];
-	regName = [regName stringByAppendingString:[currentReg objectForKey:@"last_name"]];		
-
-	// add icon if presenting
-	NSString *presenter = [currentReg objectForKey:@"present"];
-	if ([presenter isEqualToString:@"1"]){
-		[[cell imageView] setImage:presenterIcon];
-	}else {
-		[[cell imageView] setImage:nil];
-	}
+	NSString *regName = [currentReg objectForKey:@"last_name"];
+	regName = [regName stringByAppendingString:@", "];
+	regName = [regName stringByAppendingString:[currentReg objectForKey:@"first_name"]];
 		
 	[[cell textLabel] setText: regName];
     [[cell detailTextLabel] setText:[currentReg objectForKey:@"company"]];
@@ -236,12 +247,17 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
-	
-	RegistrantDetailViewController *detailViewController = [[RegistrantDetailViewController alloc] initWithNibName:@"RegistrantDetailView" bundle:nil];
-	
+    
 	NSDictionary* currentReg = [[[lstGroupedAttendees objectAtIndex:indexPath.section] objectForKey:@"rowValues"]
 								objectAtIndex:indexPath.row];
+	
+	[self drillDown: currentReg animated: YES];
+	
+	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void)drillDown: (NSDictionary *)currentReg animated: (BOOL)animated{
+	RegistrantDetailViewController *detailViewController = [[RegistrantDetailViewController alloc] initWithNibName:@"RegistrantDetailView" bundle:nil];
 	
 	NSString *regName = [currentReg objectForKey:@"first_name"];
 	regName = [regName stringByAppendingString:@" "];
@@ -255,16 +271,14 @@
 	reg.twitter = [currentReg objectForKey:@"twitter"];
 	reg.industry = [currentReg objectForKey:@"industry"];
 	reg.email = [currentReg objectForKey:@"email"];
-	reg.rid = [NSNumber numberWithInt:[[currentReg objectForKey:@"id"] integerValue]];
+	reg.rid = [currentReg objectForKey:@"id"];
 	
 	//NSLog(@"Attendee selected: %@ %@", reg.firstName, reg.lastName);
 	
 	detailViewController.currRegistrant = reg;
 	// Pass the selected object to the new view controller.
-	[self.navigationController pushViewController:detailViewController animated:YES];
+	[self.navigationController pushViewController:detailViewController animated:animated];
 	[detailViewController release];
-	
-	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 

@@ -40,27 +40,9 @@
 
 - (void)initializeBump {
 	bump = [[Bump alloc] init];
-	[bump configAPIKey:@"d8eac91285fa4abfa421c0051a7c0d22"]; 
-	[bump setDelegate:self]; 
+	[bump configAPIKey:@"e2c02bad55a14a129ca2498a4c20e924"]; 
 	[bump configHistoryMessage:@"%1 exchanged contacts with %2"]; 
 	[bump configActionMessage:@"Bump with another attendee to swap contacts."];
-}
-
-- (void) bumpDidConnect {
-	NSLog(@"Bump successfully connected");
-}
-
-- (void) bumpDidDisconnect:(BumpDisconnectReason)reason {
-	NSLog(@"Bump disconnected for reason %d", reason);
-}
-
-- (void) bumpConnectFailed:(BumpConnectFailedReason)reason {
-	NSLog(@"Bump connect failed for reason %d", reason);
-}
-
-- (void) bumpContactExchangeSuccess:(BumpContact *)contact {
-	NSLog(@"Received a contact via exchange. Will save to address book...");
-	[[ContactManager sharedInstance] addContactForBumpContact:contact];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

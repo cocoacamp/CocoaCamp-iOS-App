@@ -15,7 +15,7 @@
 
 
 @implementation RegistrantDetailViewController
-@synthesize currRegistrant, nameLabel;
+@synthesize currRegistrant, nameLabel, loading;
 
 
 NSString *AppUserRegistrantIDKey = @"AppUserRegistrantIDKey";
@@ -23,7 +23,9 @@ NSString *AppUserRegistrantIDKey = @"AppUserRegistrantIDKey";
 #pragma mark -
 #pragma mark View lifecycle
 
-
+- (void) viewWillAppear:(BOOL)animated{
+	self.loading.hidden = YES;
+}
 
 - (void) viewDidLoad
 {
@@ -88,6 +90,10 @@ NSString *AppUserRegistrantIDKey = @"AppUserRegistrantIDKey";
 	}
 }
 
+- (Bump *)bump{
+	return [(CocoaCampAppDelegate *)[[UIApplication sharedApplication] delegate] bump];
+}
+
 - (void)performContactExchange {
 	NSNumber *appUserRegistrantID = [[NSUserDefaults standardUserDefaults] objectForKey:AppUserRegistrantIDKey];
 	
@@ -97,14 +103,68 @@ NSString *AppUserRegistrantIDKey = @"AppUserRegistrantIDKey";
 		return;
 	}
 	Registrant *appUser = self.currRegistrant;
-	BumpContact *bumpContact = [[ContactManager sharedInstance] bumpContactForRegistrant:appUser];
-	Bump *bump = [(CocoaCampAppDelegate *)[[UIApplication sharedApplication] delegate] bump];
+	Bump *bump = self.bump;
 	[bump configParentView:self.view];
-	[bump connectToDoContactExchange:bumpContact];
-	
+	[bump setDelegate:self];
+	//[bump connectToDoContactExchange:bumpContact];
+	[bump connect];
 	[appUser release];
+	self.loading.hidden = NO;
+	[self.loading startAnimating];
+}
+
+- (void) bumpDidConnect {
+	NSLog(@"Bump successfully connected");
+	NSData *data = [NSKeyedArchiver archivedDataWithRootObject:currRegistrant];
+	[self.bump send:data];
+}
+
+- (void) bumpDidDisconnect:(BumpDisconnectReason)reason {
+	NSLog(@"Bump disconnected for reason %d", reason);
 	
 }
 
+- (void) bumpConnectFailed:(BumpConnectFailedReason)reason {
+	NSLog(@"Bump connect failed for reason %d", reason);
+	[self bumpFailed];
+	self.loading.hidden = YES;
+	[self.loading stopAnimating];
+}
+
+- (void) bumpDataReceived:(NSData *)chunk{
+	Registrant *contact = [NSKeyedUnarchiver unarchiveObjectWithData:chunk];
+	NSLog(@"Got contact: %@, %@, %@", contact.firstName, contact.lastName, contact.email);
+	
+	NSError *failed = [contact saveAddressBookContact];
+	if (failed){
+		[self bumpFailed];
+	}else {
+		NSString *message = [NSString stringWithFormat:@"%@ has been saved to your address book!", contact.fullName];
+		UIAlertView *alert = [[UIAlertView alloc] 
+							  initWithTitle:@"" 
+							  message:message
+							  delegate:nil 
+							  cancelButtonTitle:@"Hooray!" 
+							  otherButtonTitles:nil];
+		[alert show];
+		[alert release];
+	}
+	
+	self.loading.hidden = YES;
+	[self.loading stopAnimating];
+}
+
+- (void)bumpFailed{
+	self.loading.hidden = YES;
+	[self.loading stopAnimating];
+	UIAlertView *alert = [[UIAlertView alloc] 
+						  initWithTitle:@"Sorry" 
+						  message:@"I had some trouble exchanging contacts. I Don't know what to say. Use pen and paper?"
+						  delegate:nil 
+						  cancelButtonTitle:@"Bummer, man!" 
+						  otherButtonTitles:nil];
+	[alert show];
+	[alert release];
+}
 @end
 

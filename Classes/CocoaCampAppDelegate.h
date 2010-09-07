@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Bump.h"
 
-@interface CocoaCampAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate, BumpDelegate> {
+@interface CocoaCampAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
     UIWindow *window;
     UITabBarController *tabBarController;
 	Bump *bump;

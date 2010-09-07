@@ -29,5 +29,5 @@ extern NSString *AppUserRegistrantIDKey;
 @property (nonatomic, retain) NSMutableArray *lstGroupedAttendees;
 @property (nonatomic, retain) NSMutableArray *attendeeIndex;
 
-
+- (void)drillDown: (NSDictionary *)reg animated: (BOOL)animated;
 @end
