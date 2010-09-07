@@ -71,7 +71,7 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<object class="NSFont" key="IBUIFont">
-							<string key="NSName">Futura-CondensedExtraBold</string>
+							<string key="NSName">Helvetica-Bold</string>
 							<double key="NSSize">30</double>
 							<int key="NSfFlags">16</int>
 						</object>
@@ -102,8 +102,8 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<string key="IBUIText">Made a new friend?</string>
-						<object class="NSFont" key="IBUIFont" id="77925596">
-							<string key="NSName">Futura-Medium</string>
+						<object class="NSFont" key="IBUIFont" id="533499054">
+							<string key="NSName">Optima-Regular</string>
 							<double key="NSSize">30</double>
 							<int key="NSfFlags">16</int>
 						</object>
@@ -149,7 +149,7 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<string key="IBUIText">Hi, John Joe!</string>
-						<reference key="IBUIFont" ref="77925596"/>
+						<reference key="IBUIFont" ref="533499054"/>
 						<object class="NSColor" key="IBUITextColor">
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC41MDE5NjA4MTQgMCAwAA</bytes>
@@ -158,7 +158,7 @@
 						<int key="IBUIBaselineAdjustment">1</int>
 						<float key="IBUIMinimumFontSize">10</float>
 					</object>
-					<object class="IBUIActivityIndicatorView" id="676353710">
+					<object class="IBUIActivityIndicatorView" id="145490931">
 						<reference key="NSNextResponder" ref="290701187"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{150, 170}, {20, 20}}</string>
@@ -212,7 +212,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">loading</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="676353710"/>
+						<reference key="destination" ref="145490931"/>
 					</object>
 					<int key="connectionID">39</int>
 				</object>
@@ -247,7 +247,7 @@
 							<reference ref="242475881"/>
 							<reference ref="519192342"/>
 							<reference ref="169167009"/>
-							<reference ref="676353710"/>
+							<reference ref="145490931"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -278,7 +278,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">38</int>
-						<reference key="object" ref="676353710"/>
+						<reference key="object" ref="145490931"/>
 						<reference key="parent" ref="290701187"/>
 					</object>
 				</object>
