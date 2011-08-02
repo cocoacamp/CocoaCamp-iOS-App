@@ -4,7 +4,7 @@
 
 #import "FlickrJSONResponse.h"
 #import "SearchResult.h"
-#import "JSON/JSON.h"
+#import "JSON.h"
 
 @implementation FlickrJSONResponse
 
