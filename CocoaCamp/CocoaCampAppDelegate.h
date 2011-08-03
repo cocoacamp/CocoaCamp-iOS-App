@@ -12,6 +12,9 @@
 @interface CocoaCampAppDelegate : NSObject <UIApplicationDelegate>
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
+
+@property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
+
 @property (nonatomic, retain) Bump *bump;
 
 @end

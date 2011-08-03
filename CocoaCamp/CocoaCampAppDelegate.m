@@ -16,7 +16,7 @@
 
 @implementation CocoaCampAppDelegate
 
-@synthesize window = _window, bump;
+@synthesize window = _window, tabBarController, bump;
 
 - (void)initializeBump {
 	bump = [[Bump alloc] init];

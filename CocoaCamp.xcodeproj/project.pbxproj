@@ -16,6 +16,8 @@
 		320CC833B8AF0ACFD35E6225 /* libThree20Style.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320CC833B8AF0ACFD35E6224 /* libThree20Style.a */; };
 		320D7DCCE32703ACAB9A45E5 /* libThree20.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320D7DCCE32703ACAB9A45E4 /* libThree20.a */; };
 		320F2C48872C2E2C4DF86205 /* libThree20UI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320F2C48872C2E2C4DF86204 /* libThree20UI.a */; };
+		A904B51813E8E63300E021CF /* SearchResultsPhotoSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A98E11E813E8A60300ABD295 /* SearchResultsPhotoSource.m */; };
+		A904B53013E8EBE400E021CF /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A904B52F13E8EBE400E021CF /* MainWindow.xib */; };
 		A976F96713E8AA0C007E9290 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A976F96613E8AA0C007E9290 /* MessageUI.framework */; };
 		A976F96B13E8AA7A007E9290 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A976F96A13E8AA7A007E9290 /* AudioToolbox.framework */; };
 		A976F96D13E8AA96007E9290 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A976F96C13E8AA96007E9290 /* CoreLocation.framework */; };
@@ -309,6 +311,7 @@
 		320CC833B8AF0ACFD35E6220 /* Three20Style.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20Style.xcodeproj; path = ../three20/src/Three20Style/Three20Style.xcodeproj; sourceTree = SOURCE_ROOT; };
 		320D7DCCE32703ACAB9A45E0 /* Three20.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20.xcodeproj; path = ../three20/src/Three20/Three20.xcodeproj; sourceTree = SOURCE_ROOT; };
 		320F2C48872C2E2C4DF86200 /* Three20UI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20UI.xcodeproj; path = ../three20/src/Three20UI/Three20UI.xcodeproj; sourceTree = SOURCE_ROOT; };
+		A904B52F13E8EBE400E021CF /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		A976F96613E8AA0C007E9290 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		A976F96A13E8AA7A007E9290 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		A976F96C13E8AA96007E9290 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -703,9 +706,9 @@
 		A98E11EE13E8A60300ABD295 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A98E11F113E8A60300ABD295 /* Flickr */,
 				A98E11EF13E8A60300ABD295 /* AttendeeListViewController.h */,
 				A98E11F013E8A60300ABD295 /* AttendeeListViewController.m */,
-				A98E11F113E8A60300ABD295 /* Flickr */,
 				A98E11FA13E8A60300ABD295 /* RegistrantDetailViewController.h */,
 				A98E11FB13E8A60300ABD295 /* RegistrantDetailViewController.m */,
 				A98E11FC13E8A60300ABD295 /* SearchPhotosViewController.h */,
@@ -873,6 +876,7 @@
 				A9D7C3C813E8A2B300604772 /* CocoaCamp-Info.plist */,
 				A9D7C3C913E8A2B300604772 /* InfoPlist.strings */,
 				A9D7C3CC13E8A2B300604772 /* main.m */,
+				A904B52F13E8EBE400E021CF /* MainWindow.xib */,
 				A9D7C3CE13E8A2B300604772 /* CocoaCamp-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -1195,6 +1199,7 @@
 				A98E127413E8A63700ABD295 /* photoIcon.png in Resources */,
 				A98E127513E8A63700ABD295 /* roundrecbuttonnorm.png in Resources */,
 				A98E127613E8A63700ABD295 /* roundrecbuttonpress.png in Resources */,
+				A904B53013E8EBE400E021CF /* MainWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1274,6 +1279,7 @@
 				A9D7C3F613E8A2B400604772 /* CocoaCampTests.m in Sources */,
 				A98E127F13E8A73400ABD295 /* GTMNSDictionary+URLArguments.m in Sources */,
 				A98E128113E8A73400ABD295 /* GTMNSString+URLArguments.m in Sources */,
+				A904B51813E8E63300E021CF /* SearchResultsPhotoSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1426,6 +1432,7 @@
 					"\"$(SRCROOT)/CocoaCamp/Classes/Bump\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1441,6 +1448,7 @@
 					"\"$(SRCROOT)/CocoaCamp/Classes/Bump\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
