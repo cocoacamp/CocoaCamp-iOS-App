@@ -18,6 +18,10 @@
 		320F2C48872C2E2C4DF86205 /* libThree20UI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320F2C48872C2E2C4DF86204 /* libThree20UI.a */; };
 		A904B51813E8E63300E021CF /* SearchResultsPhotoSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A98E11E813E8A60300ABD295 /* SearchResultsPhotoSource.m */; };
 		A904B53013E8EBE400E021CF /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A904B52F13E8EBE400E021CF /* MainWindow.xib */; };
+		A904B53313E8F2B200E021CF /* AttendeeListJson.js in Resources */ = {isa = PBXBuildFile; fileRef = A904B53213E8F2B200E021CF /* AttendeeListJson.js */; };
+		A904B53B13E8F37600E021CF /* WebServiceUrlManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A904B53A13E8F37600E021CF /* WebServiceUrlManager.m */; };
+		A904B53C13E8F37600E021CF /* WebServiceUrlManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A904B53A13E8F37600E021CF /* WebServiceUrlManager.m */; };
+		A904B53D13E8F7AB00E021CF /* AttendeeListJson.js in Sources */ = {isa = PBXBuildFile; fileRef = A904B53213E8F2B200E021CF /* AttendeeListJson.js */; };
 		A976F96713E8AA0C007E9290 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A976F96613E8AA0C007E9290 /* MessageUI.framework */; };
 		A976F96B13E8AA7A007E9290 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A976F96A13E8AA7A007E9290 /* AudioToolbox.framework */; };
 		A976F96D13E8AA96007E9290 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A976F96C13E8AA96007E9290 /* CoreLocation.framework */; };
@@ -312,6 +316,9 @@
 		320D7DCCE32703ACAB9A45E0 /* Three20.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20.xcodeproj; path = ../three20/src/Three20/Three20.xcodeproj; sourceTree = SOURCE_ROOT; };
 		320F2C48872C2E2C4DF86200 /* Three20UI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20UI.xcodeproj; path = ../three20/src/Three20UI/Three20UI.xcodeproj; sourceTree = SOURCE_ROOT; };
 		A904B52F13E8EBE400E021CF /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		A904B53213E8F2B200E021CF /* AttendeeListJson.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = AttendeeListJson.js; sourceTree = "<group>"; };
+		A904B53913E8F37600E021CF /* WebServiceUrlManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebServiceUrlManager.h; path = WebService/WebServiceUrlManager.h; sourceTree = "<group>"; };
+		A904B53A13E8F37600E021CF /* WebServiceUrlManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebServiceUrlManager.m; path = WebService/WebServiceUrlManager.m; sourceTree = "<group>"; };
 		A976F96613E8AA0C007E9290 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		A976F96A13E8AA7A007E9290 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		A976F96C13E8AA96007E9290 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -567,6 +574,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		A904B53113E8F2B200E021CF /* SampleWebServiceData */ = {
+			isa = PBXGroup;
+			children = (
+				A904B53213E8F2B200E021CF /* AttendeeListJson.js */,
+			);
+			path = SampleWebServiceData;
+			sourceTree = "<group>";
+		};
+		A904B53413E8F2E100E021CF /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				A904B53913E8F37600E021CF /* WebServiceUrlManager.h */,
+				A904B53A13E8F37600E021CF /* WebServiceUrlManager.m */,
+			);
+			name = WebService;
+			sourceTree = "<group>";
+		};
 		A98E11A713E8A60300ABD295 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -577,6 +601,7 @@
 				A98E11E913E8A60300ABD295 /* Three20Adapters */,
 				A98E11EE13E8A60300ABD295 /* ViewControllers */,
 				A98E120813E8A60300ABD295 /* Views */,
+				A904B53413E8F2E100E021CF /* WebService */,
 				A98E121013E8A60300ABD295 /* Xml */,
 			);
 			path = Classes;
@@ -768,6 +793,7 @@
 		A98E125213E8A63700ABD295 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A904B53113E8F2B200E021CF /* SampleWebServiceData */,
 				320B6C86F11D9990244A9730 /* Three20.bundle */,
 				A98E125313E8A63700ABD295 /* 512x512.png */,
 				A98E125413E8A63700ABD295 /* bird.png */,
@@ -1143,6 +1169,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A904B53313E8F2B200E021CF /* AttendeeListJson.js in Resources */,
 				320B6C86F11D9990244A9731 /* Three20.bundle in Resources */,
 				A9D7C3CB13E8A2B300604772 /* InfoPlist.strings in Resources */,
 				A9D7C3D813E8A2B300604772 /* MainWindow_iPhone.xib in Resources */,
@@ -1269,6 +1296,7 @@
 				A98E125113E8A60300ABD295 /* NSString+XMLEntities.m in Sources */,
 				A98E127E13E8A73400ABD295 /* GTMNSDictionary+URLArguments.m in Sources */,
 				A98E128013E8A73400ABD295 /* GTMNSString+URLArguments.m in Sources */,
+				A904B53B13E8F37600E021CF /* WebServiceUrlManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1280,6 +1308,8 @@
 				A98E127F13E8A73400ABD295 /* GTMNSDictionary+URLArguments.m in Sources */,
 				A98E128113E8A73400ABD295 /* GTMNSString+URLArguments.m in Sources */,
 				A904B51813E8E63300E021CF /* SearchResultsPhotoSource.m in Sources */,
+				A904B53C13E8F37600E021CF /* WebServiceUrlManager.m in Sources */,
+				A904B53D13E8F7AB00E021CF /* AttendeeListJson.js in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

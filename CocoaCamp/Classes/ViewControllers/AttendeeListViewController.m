@@ -8,6 +8,7 @@
 
 #import "AttendeeListViewController.h"
 #import "RegistrantDetailViewController.h"
+#import "WebServiceUrlManager.h"
 #import <Three20/Three20.h>
 #import "JSON.h"
 
@@ -68,7 +69,12 @@
 	//Initialize the array.
 	if (responseData == nil){
 		responseData = [[NSMutableData data] retain];
-		NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://cocoa:camp@cocoacamp.org/registers/json?user_name=cocoa&password=camp"]];
+        //FIXME: use a factory method to create this class so it can be shared and managed 
+        WebServiceUrlManager *urlManager = [[WebServiceUrlManager alloc] init];
+        NSURL *attendeeListUrl = [urlManager attendeeListUrl];
+		[urlManager release]; //if using a factory, remove the release
+        
+        NSURLRequest *request = [NSURLRequest requestWithURL:attendeeListUrl];
 		[[NSURLConnection alloc] initWithRequest:request delegate:self ];
 		[self.view addSubview: self.progressInd];
 	}
