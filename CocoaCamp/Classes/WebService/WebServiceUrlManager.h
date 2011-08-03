@@ -9,9 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface WebServiceUrlManager : NSObject{
-    NSURL *attendeeListUrl;
+    NSURL *attendeeListUrl, *twitterSearchUrl;
+    NSString *twitterFallSearchString;
 }
 
-@property(readonly, nonatomic) NSURL *attendeeListUrl;
+@property(readonly, nonatomic, copy) NSURL *attendeeListUrl, *twitterSearchUrl;
+@property(readonly, nonatomic, copy) NSString *twitterFallSearchString;
 
 @end

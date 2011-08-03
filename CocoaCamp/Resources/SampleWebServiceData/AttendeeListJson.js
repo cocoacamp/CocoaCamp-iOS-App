@@ -1,5 +1,4 @@
-[ // Attendee list 
-	// Descriptive example
+[ 
 	{
 		"Register": {
 			"last_name":"string",
@@ -9,11 +8,10 @@
 			"industry":"string",
 			"email":"string",
 			"id":"string"
-		}
+		},
+		"_comment":"Descriptive Example"
 
-	}
-	, // next item
-	// Two real examples
+	},
 	{
 		"Register": {
 			"last_name":"Flintstone",
@@ -23,7 +21,8 @@
 			"industry":"Dinocrane Operator",
 			"email":"fred@bedrock.com",
 			"id":"ff7879er"
-		}
+		},
+		"_comment":"Real Example"
 	},
 	{
 		"Register": {
@@ -34,6 +33,7 @@
 			"industry":"Repossession",
 			"email":"braney@bedrock.com",
 			"id":"6"
-		}
+		},
+		"_comment":"Desscriptive Example"
 	}
  ]

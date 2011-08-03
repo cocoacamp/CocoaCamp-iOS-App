@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>twitterSearchUrl</key>
+	<string>http://search.twitter.com/search.json</string>
+	<key>twitterFallSearchString</key>
+	<string>patent</string>
+	<key>attendeeListUrl</key>
+	<string>http://cocoa:camp@cocoacamp.org/registers/json?user_name=cocoa&amp;password=camp</string>
+</dict>
+</plist>

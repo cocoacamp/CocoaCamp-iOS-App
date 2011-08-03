@@ -22,6 +22,8 @@
 		A904B53B13E8F37600E021CF /* WebServiceUrlManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A904B53A13E8F37600E021CF /* WebServiceUrlManager.m */; };
 		A904B53C13E8F37600E021CF /* WebServiceUrlManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A904B53A13E8F37600E021CF /* WebServiceUrlManager.m */; };
 		A904B53D13E8F7AB00E021CF /* AttendeeListJson.js in Sources */ = {isa = PBXBuildFile; fileRef = A904B53213E8F2B200E021CF /* AttendeeListJson.js */; };
+		A904B53F13E978E800E021CF /* webServiceConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = A904B53E13E978E800E021CF /* webServiceConfig.plist */; };
+		A904B54013E978E800E021CF /* webServiceConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = A904B53E13E978E800E021CF /* webServiceConfig.plist */; };
 		A976F96713E8AA0C007E9290 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A976F96613E8AA0C007E9290 /* MessageUI.framework */; };
 		A976F96B13E8AA7A007E9290 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A976F96A13E8AA7A007E9290 /* AudioToolbox.framework */; };
 		A976F96D13E8AA96007E9290 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A976F96C13E8AA96007E9290 /* CoreLocation.framework */; };
@@ -319,6 +321,7 @@
 		A904B53213E8F2B200E021CF /* AttendeeListJson.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = AttendeeListJson.js; sourceTree = "<group>"; };
 		A904B53913E8F37600E021CF /* WebServiceUrlManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebServiceUrlManager.h; path = WebService/WebServiceUrlManager.h; sourceTree = "<group>"; };
 		A904B53A13E8F37600E021CF /* WebServiceUrlManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebServiceUrlManager.m; path = WebService/WebServiceUrlManager.m; sourceTree = "<group>"; };
+		A904B53E13E978E800E021CF /* webServiceConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = webServiceConfig.plist; sourceTree = "<group>"; };
 		A976F96613E8AA0C007E9290 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		A976F96A13E8AA7A007E9290 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		A976F96C13E8AA96007E9290 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -813,6 +816,7 @@
 				A98E126213E8A63700ABD295 /* photoIcon.png */,
 				A98E126313E8A63700ABD295 /* roundrecbuttonnorm.png */,
 				A98E126413E8A63700ABD295 /* roundrecbuttonpress.png */,
+				A904B53E13E978E800E021CF /* webServiceConfig.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1227,6 +1231,7 @@
 				A98E127513E8A63700ABD295 /* roundrecbuttonnorm.png in Resources */,
 				A98E127613E8A63700ABD295 /* roundrecbuttonpress.png in Resources */,
 				A904B53013E8EBE400E021CF /* MainWindow.xib in Resources */,
+				A904B53F13E978E800E021CF /* webServiceConfig.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1236,6 +1241,7 @@
 			files = (
 				A9D7C3F213E8A2B400604772 /* InfoPlist.strings in Resources */,
 				A9D7C3F413E8A2B400604772 /* CocoaCampTests.h in Resources */,
+				A904B54013E978E800E021CF /* webServiceConfig.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

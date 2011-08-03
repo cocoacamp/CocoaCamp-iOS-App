@@ -9,10 +9,10 @@
 #import "TwitterFeedTableViewController.h"
 #import "SBJSON.h"
 #import "NSString+XMLEntities.h"
+#import "WebServiceUrlManager.h"
 
 @implementation TwitterFeedTableViewController
 
-static NSString *TweetSearchURL = @"http://search.twitter.com/search.json";
 static NSString *RFC822DateFormat = @"EEE, dd MMM yyyy HH:mm:ss z";
 
 -(id)initWithNibName:(NSString *)nibName bundle:(NSBundle *)bundle {
@@ -20,7 +20,11 @@ static NSString *RFC822DateFormat = @"EEE, dd MMM yyyy HH:mm:ss z";
 		self.title = @"Twitter Fall";
 		UIImage* image = [UIImage imageNamed:@"bird.png"];
 		self.tabBarItem = [[[UITabBarItem alloc] initWithTitle:@"Twitter Fall" image:image tag:0] autorelease];
-	}
+        WebServiceUrlManager *urlManager = [[WebServiceUrlManager alloc] init];
+        tweetSearchUrl = [urlManager twitterSearchUrl];
+        tweetSearchString = [urlManager twitterFallSearchString];
+        [urlManager release];
+    }
 	return self;
 }
 
@@ -33,7 +37,7 @@ static NSString *RFC822DateFormat = @"EEE, dd MMM yyyy HH:mm:ss z";
 	
 	if (tweets == nil){
 		tweets = [[NSMutableArray alloc] init];
-		tweetSearchURLSuffix = @"?q=cocoacamp";
+		tweetSearchURLSuffix = [NSString stringWithFormat:@"?q=%@", tweetSearchString];
 		
 		dateParser = [[NSDateFormatter alloc] init];
 		[dateParser setDateFormat:RFC822DateFormat];
@@ -60,7 +64,8 @@ static NSString *RFC822DateFormat = @"EEE, dd MMM yyyy HH:mm:ss z";
 	isLoading = YES;
 	[self.view addSubview:activityIndicator];
 	tweetData = [[NSMutableData alloc] init];
-	NSURL *searchURL = [NSURL URLWithString:[TweetSearchURL stringByAppendingString:tweetSearchURLSuffix]];
+    NSString *searchUrlPath = [tweetSearchUrl absoluteString];
+	NSURL *searchURL = [NSURL URLWithString:[searchUrlPath stringByAppendingString:tweetSearchURLSuffix]];
 	
 	NSLog(@"Issuing request for tweets to URL: %@", searchURL);
 	

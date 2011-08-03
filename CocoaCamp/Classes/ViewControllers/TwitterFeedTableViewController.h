@@ -13,7 +13,8 @@
 	NSMutableData *tweetData;
 	NSArray *tweets;
 	NSDateFormatter *dateParser;
-	NSString *tweetSearchURLSuffix;
+    NSURL *tweetSearchUrl;
+	NSString *tweetSearchString, *tweetSearchURLSuffix;
 	UIActivityIndicatorView *activityIndicator;
 	BOOL isLoading;
 }
