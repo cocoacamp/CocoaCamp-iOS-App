@@ -8,5 +8,7 @@
 	<string>patent</string>
 	<key>attendeeListUrl</key>
 	<string>http://cocoa:camp@cocoacamp.org/registers/json?user_name=cocoa&amp;password=camp</string>
+	<key>sessionListUrl</key>
+	<string>http://cocoa:camp@cocoacamp.org/schedule/json</string>
 </dict>
 </plist>

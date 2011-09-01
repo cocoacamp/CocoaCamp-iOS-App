@@ -17,6 +17,7 @@ extern NSString *AppUserRegistrantIDKey;
 	Registrant *currRegistrant;
 	IBOutlet UILabel *nameLabel;
 	IBOutlet UIActivityIndicatorView *loading;
+    UIView *headerView;
 	BOOL isExchanging;
 }
 
@@ -24,6 +25,7 @@ extern NSString *AppUserRegistrantIDKey;
 @property (nonatomic, retain) UILabel *nameLabel;
 @property (readonly) Bump *bump;
 @property (nonatomic, retain) IBOutlet UIActivityIndicatorView *loading;
+@property (nonatomic, retain) IBOutlet UIView *headerView;
 
 - (IBAction)storeCurrentProfileAsIdentity;
 - (IBAction)initiateContactExchange:(id)sender;

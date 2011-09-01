@@ -11,7 +11,7 @@
 #import "WebServiceUrlManager.h"
 #import <Three20/Three20.h>
 #import "JSON.h"
-
+#import "CCBranding.h"
 
 @implementation AttendeeListViewController
 @synthesize attendees, responseData, dictRegistrant, progressInd, attendeeIndex, lstGroupedAttendees;
@@ -53,10 +53,32 @@
 #pragma mark -
 #pragma mark View lifecycle
 
+- (void)applyBrandingIfPresent{
+    
+    CCBranding *branding = [[CCBranding alloc] init];
+    [branding applyConfiguredBrandingToTableView:[self tableView]];
+    [branding release];
+}
+
+// opted for a different solution though this worked
+- (void)updateTableViewWithLogoIfPresent{
+
+    CCBranding *branding = [[CCBranding alloc] init];
+    UIImage *logoImage = [branding logoImage];
+    if (logoImage) {
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:logoImage];
+        UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, imageView.frame.size.height)];
+        [headerView addSubview:imageView];
+        [self.tableView setTableHeaderView:headerView];
+    }
+    
+}
+
 - (void)viewDidLoad {
 	
     [super viewDidLoad];
 	
+    [self applyBrandingIfPresent];
 	// Uncomment this to see how the table looks with the grouped style
 	//self.tableViewStyle = UITableViewStyleGrouped;
 	

@@ -9,6 +9,7 @@
 #import "SessionViewController.h"
 #import "JSON.h"
 #import "SessionDetailViewController.h"
+#import "CCBranding.h"
 
 @implementation SessionViewController
 @synthesize schedules;
@@ -278,9 +279,16 @@ NSMutableData *data;
 	return progressInd;
 }
 
+- (void)applyBrandingIfPresent{
+    
+    CCBranding *branding = [[CCBranding alloc] init];
+    [branding applyConfiguredBrandingToTableView:[self tableView]];
+    [branding release];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    [self applyBrandingIfPresent];
 	
 	
 	dateFormatter = [[NSDateFormatter alloc] init];

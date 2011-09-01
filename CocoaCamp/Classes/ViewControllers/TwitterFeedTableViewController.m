@@ -10,6 +10,7 @@
 #import "SBJSON.h"
 #import "NSString+XMLEntities.h"
 #import "WebServiceUrlManager.h"
+#import "CCBranding.h"
 
 @implementation TwitterFeedTableViewController
 
@@ -31,13 +32,22 @@ static NSString *RFC822DateFormat = @"EEE, dd MMM yyyy HH:mm:ss z";
 
 #pragma mark -
 #pragma mark View lifecycle
+- (void)applyBrandingIfPresent{
+    
+    CCBranding *branding = [[CCBranding alloc] init];
+    [branding applyConfiguredBrandingToTableView:[self tableView]];
+    [branding release];
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
+    [self applyBrandingIfPresent];
+     
 	if (tweets == nil){
 		tweets = [[NSMutableArray alloc] init];
-		tweetSearchURLSuffix = [NSString stringWithFormat:@"?q=%@", tweetSearchString];
+		tweetSearchURLSuffix = [[NSString stringWithFormat:@"?q=%@", tweetSearchString] retain];
 		
 		dateParser = [[NSDateFormatter alloc] init];
 		[dateParser setDateFormat:RFC822DateFormat];

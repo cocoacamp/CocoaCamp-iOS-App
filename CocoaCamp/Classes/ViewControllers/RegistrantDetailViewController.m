@@ -11,10 +11,11 @@
 #import "ContactManager.h"
 #import "Bump.h"
 #import "CocoaCampAppDelegate.h"
-
+#import "CCBranding.h"
 
 
 @implementation RegistrantDetailViewController
+@synthesize headerView;
 @synthesize currRegistrant, nameLabel, loading;
 
 
@@ -27,6 +28,14 @@ NSString *AppUserRegistrantIDKey = @"AppUserRegistrantIDKey";
 	self.loading.hidden = YES;
 }
 
+- (void)updateTableViewWithHeaderIfPresent{
+    CCBranding *branding = [[CCBranding alloc] init];
+    UIView *configuredHeaderView = [branding headerView];
+    if (configuredHeaderView) {
+        [[self headerView] addSubview:configuredHeaderView];
+    }
+}
+
 - (void) viewDidLoad
 {
 
@@ -37,6 +46,8 @@ NSString *AppUserRegistrantIDKey = @"AppUserRegistrantIDKey";
 	
 	self.navigationItem.title = regName;
 	[self storeCurrentProfileAsIdentity];
+    
+    [self updateTableViewWithHeaderIfPresent];
 
 }
 
@@ -56,6 +67,7 @@ NSString *AppUserRegistrantIDKey = @"AppUserRegistrantIDKey";
 }
 
 - (void)viewDidUnload {
+    [self setHeaderView:nil];
     // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
     // For example: self.myOutlet = nil;
 }
@@ -64,6 +76,7 @@ NSString *AppUserRegistrantIDKey = @"AppUserRegistrantIDKey";
 - (void)dealloc {
     [currRegistrant release];
 	[nameLabel release];
+    [headerView release];
 	[super dealloc];
 }
 

@@ -24,6 +24,16 @@
 		A904B53D13E8F7AB00E021CF /* AttendeeListJson.js in Sources */ = {isa = PBXBuildFile; fileRef = A904B53213E8F2B200E021CF /* AttendeeListJson.js */; };
 		A904B53F13E978E800E021CF /* webServiceConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = A904B53E13E978E800E021CF /* webServiceConfig.plist */; };
 		A904B54013E978E800E021CF /* webServiceConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = A904B53E13E978E800E021CF /* webServiceConfig.plist */; };
+		A938403B140FC0D100349F35 /* Napaba-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A938403A140FC0D100349F35 /* Napaba-logo.png */; };
+		A938403C140FC0D100349F35 /* Napaba-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A938403A140FC0D100349F35 /* Napaba-logo.png */; };
+		A938403E140FC10E00349F35 /* branded.plist in Resources */ = {isa = PBXBuildFile; fileRef = A938403D140FC10E00349F35 /* branded.plist */; };
+		A938403F140FC10E00349F35 /* branded.plist in Resources */ = {isa = PBXBuildFile; fileRef = A938403D140FC10E00349F35 /* branded.plist */; };
+		A9384047140FC4A500349F35 /* CCBranding.m in Sources */ = {isa = PBXBuildFile; fileRef = A9384046140FC4A500349F35 /* CCBranding.m */; };
+		A9384048140FC4A500349F35 /* CCBranding.m in Sources */ = {isa = PBXBuildFile; fileRef = A9384046140FC4A500349F35 /* CCBranding.m */; };
+		A938404A140FFDFB00349F35 /* NapabaHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9384049140FFDFB00349F35 /* NapabaHeaderView.xib */; };
+		A938404B140FFDFB00349F35 /* NapabaHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9384049140FFDFB00349F35 /* NapabaHeaderView.xib */; };
+		A938404D1410054800349F35 /* Napaba-Background.png in Resources */ = {isa = PBXBuildFile; fileRef = A938404C1410054800349F35 /* Napaba-Background.png */; };
+		A938404E1410054800349F35 /* Napaba-Background.png in Resources */ = {isa = PBXBuildFile; fileRef = A938404C1410054800349F35 /* Napaba-Background.png */; };
 		A976F96713E8AA0C007E9290 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A976F96613E8AA0C007E9290 /* MessageUI.framework */; };
 		A976F96B13E8AA7A007E9290 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A976F96A13E8AA7A007E9290 /* AudioToolbox.framework */; };
 		A976F96D13E8AA96007E9290 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A976F96C13E8AA96007E9290 /* CoreLocation.framework */; };
@@ -322,6 +332,13 @@
 		A904B53913E8F37600E021CF /* WebServiceUrlManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebServiceUrlManager.h; path = WebService/WebServiceUrlManager.h; sourceTree = "<group>"; };
 		A904B53A13E8F37600E021CF /* WebServiceUrlManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebServiceUrlManager.m; path = WebService/WebServiceUrlManager.m; sourceTree = "<group>"; };
 		A904B53E13E978E800E021CF /* webServiceConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = webServiceConfig.plist; sourceTree = "<group>"; };
+		A938403A140FC0D100349F35 /* Napaba-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Napaba-logo.png"; sourceTree = "<group>"; };
+		A938403D140FC10E00349F35 /* branded.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = branded.plist; sourceTree = "<group>"; };
+		A9384040140FC19800349F35 /* CocoaCampConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaCampConstants.h; sourceTree = "<group>"; };
+		A9384045140FC4A500349F35 /* CCBranding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBranding.h; sourceTree = "<group>"; };
+		A9384046140FC4A500349F35 /* CCBranding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBranding.m; sourceTree = "<group>"; };
+		A9384049140FFDFB00349F35 /* NapabaHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NapabaHeaderView.xib; sourceTree = "<group>"; };
+		A938404C1410054800349F35 /* Napaba-Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Napaba-Background.png"; sourceTree = "<group>"; };
 		A976F96613E8AA0C007E9290 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		A976F96A13E8AA7A007E9290 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		A976F96C13E8AA96007E9290 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -594,6 +611,26 @@
 			name = WebService;
 			sourceTree = "<group>";
 		};
+		A9384039140FC08000349F35 /* NAPABA */ = {
+			isa = PBXGroup;
+			children = (
+				A938404C1410054800349F35 /* Napaba-Background.png */,
+				A938403A140FC0D100349F35 /* Napaba-logo.png */,
+				A9384049140FFDFB00349F35 /* NapabaHeaderView.xib */,
+			);
+			name = NAPABA;
+			path = BrandedImages/NAPABA;
+			sourceTree = "<group>";
+		};
+		A9384044140FC48100349F35 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A9384045140FC4A500349F35 /* CCBranding.h */,
+				A9384046140FC4A500349F35 /* CCBranding.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		A98E11A713E8A60300ABD295 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -602,6 +639,7 @@
 				A98E11CC13E8A60300ABD295 /* Json */,
 				A98E11DD13E8A60300ABD295 /* Model */,
 				A98E11E913E8A60300ABD295 /* Three20Adapters */,
+				A9384044140FC48100349F35 /* UI */,
 				A98E11EE13E8A60300ABD295 /* ViewControllers */,
 				A98E120813E8A60300ABD295 /* Views */,
 				A904B53413E8F2E100E021CF /* WebService */,
@@ -796,6 +834,7 @@
 		A98E125213E8A63700ABD295 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A9384039140FC08000349F35 /* NAPABA */,
 				A904B53113E8F2B200E021CF /* SampleWebServiceData */,
 				320B6C86F11D9990244A9730 /* Three20.bundle */,
 				A98E125313E8A63700ABD295 /* 512x512.png */,
@@ -817,6 +856,7 @@
 				A98E126313E8A63700ABD295 /* roundrecbuttonnorm.png */,
 				A98E126413E8A63700ABD295 /* roundrecbuttonpress.png */,
 				A904B53E13E978E800E021CF /* webServiceConfig.plist */,
+				A938403D140FC10E00349F35 /* branded.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -896,6 +936,7 @@
 				A9D7C3D913E8A2B300604772 /* iPad */,
 				A98E125213E8A63700ABD295 /* Resources */,
 				A9D7C3C713E8A2B300604772 /* Supporting Files */,
+				A9384040140FC19800349F35 /* CocoaCampConstants.h */,
 			);
 			path = CocoaCamp;
 			sourceTree = "<group>";
@@ -1232,6 +1273,10 @@
 				A98E127613E8A63700ABD295 /* roundrecbuttonpress.png in Resources */,
 				A904B53013E8EBE400E021CF /* MainWindow.xib in Resources */,
 				A904B53F13E978E800E021CF /* webServiceConfig.plist in Resources */,
+				A938403B140FC0D100349F35 /* Napaba-logo.png in Resources */,
+				A938403E140FC10E00349F35 /* branded.plist in Resources */,
+				A938404A140FFDFB00349F35 /* NapabaHeaderView.xib in Resources */,
+				A938404D1410054800349F35 /* Napaba-Background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1242,6 +1287,10 @@
 				A9D7C3F213E8A2B400604772 /* InfoPlist.strings in Resources */,
 				A9D7C3F413E8A2B400604772 /* CocoaCampTests.h in Resources */,
 				A904B54013E978E800E021CF /* webServiceConfig.plist in Resources */,
+				A938403C140FC0D100349F35 /* Napaba-logo.png in Resources */,
+				A938403F140FC10E00349F35 /* branded.plist in Resources */,
+				A938404B140FFDFB00349F35 /* NapabaHeaderView.xib in Resources */,
+				A938404E1410054800349F35 /* Napaba-Background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1303,6 +1352,7 @@
 				A98E127E13E8A73400ABD295 /* GTMNSDictionary+URLArguments.m in Sources */,
 				A98E128013E8A73400ABD295 /* GTMNSString+URLArguments.m in Sources */,
 				A904B53B13E8F37600E021CF /* WebServiceUrlManager.m in Sources */,
+				A9384047140FC4A500349F35 /* CCBranding.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1316,6 +1366,7 @@
 				A904B51813E8E63300E021CF /* SearchResultsPhotoSource.m in Sources */,
 				A904B53C13E8F37600E021CF /* WebServiceUrlManager.m in Sources */,
 				A904B53D13E8F7AB00E021CF /* AttendeeListJson.js in Sources */,
+				A9384048140FC4A500349F35 /* CCBranding.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
