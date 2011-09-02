@@ -18,6 +18,8 @@
 					  @"tt://schedule",
 					  @"tt://flickr",
 					  @"tt://twitter",
+					  @"tt://news",
+                      
 					  nil]];
 }
 

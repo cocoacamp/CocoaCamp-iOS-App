@@ -34,6 +34,31 @@
 		A938404B140FFDFB00349F35 /* NapabaHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9384049140FFDFB00349F35 /* NapabaHeaderView.xib */; };
 		A938404D1410054800349F35 /* Napaba-Background.png in Resources */ = {isa = PBXBuildFile; fileRef = A938404C1410054800349F35 /* Napaba-Background.png */; };
 		A938404E1410054800349F35 /* Napaba-Background.png in Resources */ = {isa = PBXBuildFile; fileRef = A938404C1410054800349F35 /* Napaba-Background.png */; };
+		A93840581410133000349F35 /* news-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A93840561410133000349F35 /* news-icon.png */; };
+		A93840591410133000349F35 /* news-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A93840561410133000349F35 /* news-icon.png */; };
+		A938405A1410133000349F35 /* news-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A93840571410133000349F35 /* news-icon@2x.png */; };
+		A938405B1410133000349F35 /* news-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A93840571410133000349F35 /* news-icon@2x.png */; };
+		A93840621410194300349F35 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A93840611410194300349F35 /* GDataXMLNode.m */; };
+		A93840631410194300349F35 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A93840611410194300349F35 /* GDataXMLNode.m */; };
+		A93840651410198100349F35 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A93840641410198000349F35 /* libxml2.dylib */; };
+		A9384070141019D400349F35 /* RssDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9384068141019D400349F35 /* RssDetailsViewController.m */; };
+		A9384071141019D400349F35 /* RssDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9384068141019D400349F35 /* RssDetailsViewController.m */; };
+		A9384072141019D400349F35 /* RssDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9384069141019D400349F35 /* RssDetailsViewController.xib */; };
+		A9384073141019D400349F35 /* RssDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9384069141019D400349F35 /* RssDetailsViewController.xib */; };
+		A9384074141019D400349F35 /* RssNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A938406B141019D400349F35 /* RssNewsViewController.m */; };
+		A9384075141019D400349F35 /* RssNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A938406B141019D400349F35 /* RssNewsViewController.m */; };
+		A9384076141019D400349F35 /* RSSLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = A938406D141019D400349F35 /* RSSLoader.m */; };
+		A9384077141019D400349F35 /* RSSLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = A938406D141019D400349F35 /* RSSLoader.m */; };
+		A9384078141019D400349F35 /* RssTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A938406F141019D400349F35 /* RssTableHeaderView.m */; };
+		A9384079141019D400349F35 /* RssTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A938406F141019D400349F35 /* RssTableHeaderView.m */; };
+		A938407C14101A2F00349F35 /* arss_back.png in Resources */ = {isa = PBXBuildFile; fileRef = A938407A14101A2E00349F35 /* arss_back.png */; };
+		A938407D14101A2F00349F35 /* arss_back.png in Resources */ = {isa = PBXBuildFile; fileRef = A938407A14101A2E00349F35 /* arss_back.png */; };
+		A938407E14101A2F00349F35 /* arss_header.png in Resources */ = {isa = PBXBuildFile; fileRef = A938407B14101A2E00349F35 /* arss_header.png */; };
+		A938407F14101A2F00349F35 /* arss_header.png in Resources */ = {isa = PBXBuildFile; fileRef = A938407B14101A2E00349F35 /* arss_header.png */; };
+		A93840BC14101BC200349F35 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A93840641410198000349F35 /* libxml2.dylib */; };
+		A93840C11410232200349F35 /* HeaderSponsorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A93840BF1410232100349F35 /* HeaderSponsorsViewController.m */; };
+		A93840C5141024FB00349F35 /* HeaderSponsorView.m in Sources */ = {isa = PBXBuildFile; fileRef = A93840C4141024FB00349F35 /* HeaderSponsorView.m */; };
+		A93840C6141024FB00349F35 /* HeaderSponsorView.m in Sources */ = {isa = PBXBuildFile; fileRef = A93840C4141024FB00349F35 /* HeaderSponsorView.m */; };
 		A976F96713E8AA0C007E9290 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A976F96613E8AA0C007E9290 /* MessageUI.framework */; };
 		A976F96B13E8AA7A007E9290 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A976F96A13E8AA7A007E9290 /* AudioToolbox.framework */; };
 		A976F96D13E8AA96007E9290 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A976F96C13E8AA96007E9290 /* CoreLocation.framework */; };
@@ -339,6 +364,26 @@
 		A9384046140FC4A500349F35 /* CCBranding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBranding.m; sourceTree = "<group>"; };
 		A9384049140FFDFB00349F35 /* NapabaHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NapabaHeaderView.xib; sourceTree = "<group>"; };
 		A938404C1410054800349F35 /* Napaba-Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Napaba-Background.png"; sourceTree = "<group>"; };
+		A93840561410133000349F35 /* news-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news-icon.png"; sourceTree = "<group>"; };
+		A93840571410133000349F35 /* news-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news-icon@2x.png"; sourceTree = "<group>"; };
+		A93840601410194300349F35 /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
+		A93840611410194300349F35 /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
+		A93840641410198000349F35 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		A9384067141019D400349F35 /* RssDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RssDetailsViewController.h; sourceTree = "<group>"; };
+		A9384068141019D400349F35 /* RssDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RssDetailsViewController.m; sourceTree = "<group>"; };
+		A9384069141019D400349F35 /* RssDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RssDetailsViewController.xib; sourceTree = "<group>"; };
+		A938406A141019D400349F35 /* RssNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RssNewsViewController.h; sourceTree = "<group>"; };
+		A938406B141019D400349F35 /* RssNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RssNewsViewController.m; sourceTree = "<group>"; };
+		A938406C141019D400349F35 /* RSSLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSLoader.h; sourceTree = "<group>"; };
+		A938406D141019D400349F35 /* RSSLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSLoader.m; sourceTree = "<group>"; };
+		A938406E141019D400349F35 /* RssTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RssTableHeaderView.h; sourceTree = "<group>"; };
+		A938406F141019D400349F35 /* RssTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RssTableHeaderView.m; sourceTree = "<group>"; };
+		A938407A14101A2E00349F35 /* arss_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arss_back.png; sourceTree = "<group>"; };
+		A938407B14101A2E00349F35 /* arss_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arss_header.png; sourceTree = "<group>"; };
+		A93840BE1410232100349F35 /* HeaderSponsorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderSponsorsViewController.h; sourceTree = "<group>"; };
+		A93840BF1410232100349F35 /* HeaderSponsorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderSponsorsViewController.m; sourceTree = "<group>"; };
+		A93840C3141024FB00349F35 /* HeaderSponsorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderSponsorView.h; sourceTree = "<group>"; };
+		A93840C4141024FB00349F35 /* HeaderSponsorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderSponsorView.m; sourceTree = "<group>"; };
 		A976F96613E8AA0C007E9290 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		A976F96A13E8AA7A007E9290 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		A976F96C13E8AA96007E9290 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -492,6 +537,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A93840651410198100349F35 /* libxml2.dylib in Frameworks */,
 				A976F96D13E8AA96007E9290 /* CoreLocation.framework in Frameworks */,
 				A976F96B13E8AA7A007E9290 /* AudioToolbox.framework in Frameworks */,
 				A976F96713E8AA0C007E9290 /* MessageUI.framework in Frameworks */,
@@ -523,6 +569,7 @@
 				A976F96E13E8AA9F007E9290 /* CoreLocation.framework in Frameworks */,
 				A976F96F13E8AAA2007E9290 /* MessageUI.framework in Frameworks */,
 				A976F97013E8AAA4007E9290 /* AudioToolbox.framework in Frameworks */,
+				A93840BC14101BC200349F35 /* libxml2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,6 +676,22 @@
 				A9384046140FC4A500349F35 /* CCBranding.m */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		A93840661410199900349F35 /* Rss */ = {
+			isa = PBXGroup;
+			children = (
+				A9384067141019D400349F35 /* RssDetailsViewController.h */,
+				A9384068141019D400349F35 /* RssDetailsViewController.m */,
+				A9384069141019D400349F35 /* RssDetailsViewController.xib */,
+				A938406A141019D400349F35 /* RssNewsViewController.h */,
+				A938406B141019D400349F35 /* RssNewsViewController.m */,
+				A938406C141019D400349F35 /* RSSLoader.h */,
+				A938406D141019D400349F35 /* RSSLoader.m */,
+				A938406E141019D400349F35 /* RssTableHeaderView.h */,
+				A938406F141019D400349F35 /* RssTableHeaderView.m */,
+			);
+			path = Rss;
 			sourceTree = "<group>";
 		};
 		A98E11A713E8A60300ABD295 /* Classes */ = {
@@ -772,6 +835,7 @@
 		A98E11EE13E8A60300ABD295 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A93840661410199900349F35 /* Rss */,
 				A98E11F113E8A60300ABD295 /* Flickr */,
 				A98E11EF13E8A60300ABD295 /* AttendeeListViewController.h */,
 				A98E11F013E8A60300ABD295 /* AttendeeListViewController.m */,
@@ -789,6 +853,8 @@
 				A98E120513E8A60300ABD295 /* TabController.m */,
 				A98E120613E8A60300ABD295 /* TwitterFeedTableViewController.h */,
 				A98E120713E8A60300ABD295 /* TwitterFeedTableViewController.m */,
+				A93840BE1410232100349F35 /* HeaderSponsorsViewController.h */,
+				A93840BF1410232100349F35 /* HeaderSponsorsViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -818,6 +884,8 @@
 				A98E120D13E8A60300ABD295 /* RegistrantListView.xib */,
 				A98E120E13E8A60300ABD295 /* TwitterFeedTableView.xib */,
 				A98E120F13E8A60300ABD295 /* TwitterFeedTableViewCell.xib */,
+				A93840C3141024FB00349F35 /* HeaderSponsorView.h */,
+				A93840C4141024FB00349F35 /* HeaderSponsorView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -838,6 +906,8 @@
 				A904B53113E8F2B200E021CF /* SampleWebServiceData */,
 				320B6C86F11D9990244A9730 /* Three20.bundle */,
 				A98E125313E8A63700ABD295 /* 512x512.png */,
+				A938407A14101A2E00349F35 /* arss_back.png */,
+				A938407B14101A2E00349F35 /* arss_header.png */,
 				A98E125413E8A63700ABD295 /* bird.png */,
 				A98E125513E8A63700ABD295 /* bump.png */,
 				A98E125613E8A63700ABD295 /* bump@2x.png */,
@@ -851,6 +921,8 @@
 				A98E125E13E8A63700ABD295 /* iPhoneAppIcon@2x.png */,
 				A98E125F13E8A63700ABD295 /* keynote-icon.png */,
 				A98E126013E8A63700ABD295 /* keynote-icon@2x.png */,
+				A93840561410133000349F35 /* news-icon.png */,
+				A93840571410133000349F35 /* news-icon@2x.png */,
 				A98E126113E8A63700ABD295 /* loading.png */,
 				A98E126213E8A63700ABD295 /* photoIcon.png */,
 				A98E126313E8A63700ABD295 /* roundrecbuttonnorm.png */,
@@ -872,6 +944,8 @@
 		A98E127813E8A73400ABD295 /* GoogleToolboxMac */ = {
 			isa = PBXGroup;
 			children = (
+				A93840601410194300349F35 /* GDataXMLNode.h */,
+				A93840611410194300349F35 /* GDataXMLNode.m */,
 				A98E127913E8A73400ABD295 /* GTMDefines.h */,
 				A98E127A13E8A73400ABD295 /* GTMNSDictionary+URLArguments.h */,
 				A98E127B13E8A73400ABD295 /* GTMNSDictionary+URLArguments.m */,
@@ -905,6 +979,7 @@
 		A9D7C3BF13E8A2B300604772 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A93840641410198000349F35 /* libxml2.dylib */,
 				3201088596B4756681693700 /* Three20UICommon.xcodeproj */,
 				320D7DCCE32703ACAB9A45E0 /* Three20.xcodeproj */,
 				320A737074758E53BA54BE90 /* Three20UINavigator.xcodeproj */,
@@ -1277,6 +1352,11 @@
 				A938403E140FC10E00349F35 /* branded.plist in Resources */,
 				A938404A140FFDFB00349F35 /* NapabaHeaderView.xib in Resources */,
 				A938404D1410054800349F35 /* Napaba-Background.png in Resources */,
+				A93840581410133000349F35 /* news-icon.png in Resources */,
+				A938405A1410133000349F35 /* news-icon@2x.png in Resources */,
+				A9384072141019D400349F35 /* RssDetailsViewController.xib in Resources */,
+				A938407C14101A2F00349F35 /* arss_back.png in Resources */,
+				A938407E14101A2F00349F35 /* arss_header.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1291,6 +1371,11 @@
 				A938403F140FC10E00349F35 /* branded.plist in Resources */,
 				A938404B140FFDFB00349F35 /* NapabaHeaderView.xib in Resources */,
 				A938404E1410054800349F35 /* Napaba-Background.png in Resources */,
+				A93840591410133000349F35 /* news-icon.png in Resources */,
+				A938405B1410133000349F35 /* news-icon@2x.png in Resources */,
+				A9384073141019D400349F35 /* RssDetailsViewController.xib in Resources */,
+				A938407D14101A2F00349F35 /* arss_back.png in Resources */,
+				A938407F14101A2F00349F35 /* arss_header.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1353,6 +1438,13 @@
 				A98E128013E8A73400ABD295 /* GTMNSString+URLArguments.m in Sources */,
 				A904B53B13E8F37600E021CF /* WebServiceUrlManager.m in Sources */,
 				A9384047140FC4A500349F35 /* CCBranding.m in Sources */,
+				A93840621410194300349F35 /* GDataXMLNode.m in Sources */,
+				A9384070141019D400349F35 /* RssDetailsViewController.m in Sources */,
+				A9384074141019D400349F35 /* RssNewsViewController.m in Sources */,
+				A9384076141019D400349F35 /* RSSLoader.m in Sources */,
+				A9384078141019D400349F35 /* RssTableHeaderView.m in Sources */,
+				A93840C11410232200349F35 /* HeaderSponsorsViewController.m in Sources */,
+				A93840C5141024FB00349F35 /* HeaderSponsorView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1367,6 +1459,12 @@
 				A904B53C13E8F37600E021CF /* WebServiceUrlManager.m in Sources */,
 				A904B53D13E8F7AB00E021CF /* AttendeeListJson.js in Sources */,
 				A9384048140FC4A500349F35 /* CCBranding.m in Sources */,
+				A93840631410194300349F35 /* GDataXMLNode.m in Sources */,
+				A9384071141019D400349F35 /* RssDetailsViewController.m in Sources */,
+				A9384075141019D400349F35 /* RssNewsViewController.m in Sources */,
+				A9384077141019D400349F35 /* RSSLoader.m in Sources */,
+				A9384079141019D400349F35 /* RssTableHeaderView.m in Sources */,
+				A93840C6141024FB00349F35 /* HeaderSponsorView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1513,10 +1611,20 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaCamp/CocoaCamp-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(BUILT_PRODUCTS_DIR)/../three20",
+					"$(BUILT_PRODUCTS_DIR)/../../three20",
+					../three20/Build/Products/three20,
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = "CocoaCamp/CocoaCamp-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/CocoaCamp/Classes/Bump\"",
+				);
+				OTHER_LDFLAGS = (
+					"-lxml2",
+					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1529,10 +1637,20 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaCamp/CocoaCamp-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(BUILT_PRODUCTS_DIR)/../three20",
+					"$(BUILT_PRODUCTS_DIR)/../../three20",
+					../three20/Build/Products/three20,
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = "CocoaCamp/CocoaCamp-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/CocoaCamp/Classes/Bump\"",
+				);
+				OTHER_LDFLAGS = (
+					"-lxml2",
+					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;

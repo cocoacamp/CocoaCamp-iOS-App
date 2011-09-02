@@ -13,6 +13,7 @@
 #import "AttendeeListViewController.h"
 #import "TwitterFeedTableViewController.h"
 #import "TabController.h"
+#import "RssNewsViewController.h"
 
 @implementation CocoaCampAppDelegate
 
@@ -40,6 +41,7 @@
 	[map from:@"tt://flickr" toViewController:[FlickrThumbnailView class]];
 	[map from:@"tt://people" toViewController:[AttendeeListViewController class]];
 	[map from:@"tt://twitter" toViewController:[TwitterFeedTableViewController class]];
+	[map from:@"tt://news" toViewController:[RssNewsViewController class]];
 	
 	[navigator openURLAction:[TTURLAction actionWithURLPath:@"tt://tabs"]];
 	

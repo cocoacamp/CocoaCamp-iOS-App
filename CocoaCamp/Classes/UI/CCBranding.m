@@ -37,9 +37,17 @@
 - (UIView *)headerView{
     NSString *headerViewXibName = [[self brandedConfig] objectForKey:kBrandedPListKeyHeaderNibName];
     if (headerViewXibName) {
+        
+       /* NSArray *nibViews = [[NSBundle mainBundle] loadNibNamed:headerViewXibName
+                                                          owner:nil
+                                                        options:nil];
+        
+        UIView *headerView = [nibViews objectAtIndex:1];
+    */
         UIViewController *tempController = [[UIViewController alloc] initWithNibName:headerViewXibName bundle:nil];
         UIView *headerView = [tempController view];
         [tempController release];
+         
         return headerView;
     }
     return nil;
