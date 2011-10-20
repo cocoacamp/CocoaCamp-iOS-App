@@ -16,14 +16,20 @@
 
 static NSString *RFC822DateFormat = @"EEE, dd MMM yyyy HH:mm:ss z";
 
+- (void)dealloc {
+    [tweetSearchUrl release], tweetSearchUrl = nil;
+    [tweetSearchString release], tweetSearchString = nil;
+    [super dealloc];
+}
+
 -(id)initWithNibName:(NSString *)nibName bundle:(NSBundle *)bundle {
 	if (self = [super initWithNibName:nibName bundle:bundle]){
 		self.title = @"Twitter Fall";
 		UIImage* image = [UIImage imageNamed:@"bird.png"];
 		self.tabBarItem = [[[UITabBarItem alloc] initWithTitle:@"Twitter Fall" image:image tag:0] autorelease];
         WebServiceUrlManager *urlManager = [[WebServiceUrlManager alloc] init];
-        tweetSearchUrl = [urlManager twitterSearchUrl];
-        tweetSearchString = [urlManager twitterFallSearchString];
+        tweetSearchUrl = [[urlManager twitterSearchUrl] retain];
+        tweetSearchString = [[urlManager twitterFallSearchString] retain];
         [urlManager release];
     }
 	return self;
@@ -232,9 +238,7 @@ static NSString *RFC822DateFormat = @"EEE, dd MMM yyyy HH:mm:ss z";
 }
 
 
-- (void)dealloc {
-    [super dealloc];
-}
+
 
 @end
 

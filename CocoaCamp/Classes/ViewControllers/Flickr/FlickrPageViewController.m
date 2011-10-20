@@ -30,7 +30,7 @@
     
 	[super viewWillAppear:animated];
 	
-	NSURL *cocoaFlickr = [[NSURL alloc] initWithString:@"http://m.flickr.com/#/photos/52319257@N06/"];
+	NSURL *cocoaFlickr = [[NSURL alloc] initWithString:@"http://m.flickr.com/#/photos/67353101@N02/"];
 
 	NSURLRequest *request = [[NSURLRequest alloc] initWithURL:cocoaFlickr];
 	

@@ -21,7 +21,7 @@
 	webView.scalesPageToFit = YES;
 	NSURL* url = [NSURL URLWithString:[item objectForKey:@"link"]];
 	[webView loadRequest:[NSURLRequest requestWithURL:url]];
-	NSLog(@"loading url...");
+	NSLog(@"loading url...%@", url);
 }
 
 - (void)didReceiveMemoryWarning {

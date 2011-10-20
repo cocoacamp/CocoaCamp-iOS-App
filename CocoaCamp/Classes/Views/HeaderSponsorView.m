@@ -11,17 +11,59 @@
 @implementation HeaderSponsorView
 @synthesize sponsorView;
 
-- (void)fadeCurrentSponsor{
-    [UIView beginAnimations:@"sponsorFade" context:nil];
-    [UIView setAnimationDuration:1.5];
-    for(UIView *subView in [[self sponsorView] subviews]){
-        [subView setAlpha:0.0];
+- (void)changeCurrentSponsor{
+    if(!sponsorLogos){
+        
+        // this should be moved to the/a plist
+        sponsorLogos = [[NSArray arrayWithObjects:
+                        @"Allstate_Platinum.jpg",
+                        @"AlstonBird_Platinum.jpg",
+                        @"Prudential_Platinum.jpg",
+                        @"SchiffHardin_Platinum.jpg",
+                        @"Seyfarth_Platinum.jpg",
+                        @"UPS.png",
+                        @"Walmart_Premier.jpg",
+                        nil] retain];
+        nextLogoIdx = 0;
     }
-    [UIView commitAnimations];
+    
+    [UIView animateWithDuration:1.5 delay:5.0 options:0 animations:^{
+        for(UIView *subView in [[self sponsorView] subviews]){
+            [subView setAlpha:0.0];
+        }
+    } completion:^(BOOL complete){
+        for(UIView *subView in [[self sponsorView] subviews]){
+            [subView removeFromSuperview];
+        }
+        
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, sponsorView.frame.size.width, sponsorView.frame.size.height)];
+        [imageView setAlpha:0.0];
+        [imageView setContentMode:UIViewContentModeScaleAspectFit];
+        NSString *logoName = [sponsorLogos objectAtIndex:nextLogoIdx];
+        if (++nextLogoIdx >= [sponsorLogos count]) {
+            nextLogoIdx = 0;
+        }
+        [imageView setImage:[UIImage imageNamed:logoName]];
+        [[self sponsorView] addSubview:imageView];
+        [imageView release];
+        
+        [UIView animateWithDuration:1.5 animations:^{
+                            [imageView setAlpha:1.0];
+                        } 
+                         completion:^(BOOL finished) {
+                             [self changeCurrentSponsor];
+                        }];
+    }];
+    
+}
+
+- (void)dealloc{
+    [sponsorLogos release], sponsorLogos = nil;
+    [super dealloc];
 }
 
 - (void)awakeFromNib{
-    [self fadeCurrentSponsor];
+    [self changeCurrentSponsor];
 
 }
 
@@ -29,8 +71,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
-        [self fadeCurrentSponsor];
+        [self changeCurrentSponsor];
     }
     return self;
 }

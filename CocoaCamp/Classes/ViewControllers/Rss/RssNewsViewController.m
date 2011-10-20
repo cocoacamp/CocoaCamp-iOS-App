@@ -7,7 +7,7 @@
 //
 
 #import "RssNewsViewController.h"
-
+#import "WebServiceUrlManager.h"
 
 @implementation RssNewsViewController
 
@@ -25,7 +25,11 @@
 }
 
 - (void)launchWeb:(id)sender{
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.apple.com"]];
+    WebServiceUrlManager *urlMgr = [[WebServiceUrlManager alloc] init];
+    NSURL *webUrl = [urlMgr newsWebUrl];
+    
+    [[UIApplication sharedApplication] openURL:webUrl];
+    [urlMgr release];
 }
 
 - (void)configureToolbar{

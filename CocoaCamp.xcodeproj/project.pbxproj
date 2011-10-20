@@ -19,9 +19,6 @@
 		A904B51813E8E63300E021CF /* SearchResultsPhotoSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A98E11E813E8A60300ABD295 /* SearchResultsPhotoSource.m */; };
 		A904B53013E8EBE400E021CF /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A904B52F13E8EBE400E021CF /* MainWindow.xib */; };
 		A904B53313E8F2B200E021CF /* AttendeeListJson.js in Resources */ = {isa = PBXBuildFile; fileRef = A904B53213E8F2B200E021CF /* AttendeeListJson.js */; };
-		A904B53B13E8F37600E021CF /* WebServiceUrlManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A904B53A13E8F37600E021CF /* WebServiceUrlManager.m */; };
-		A904B53C13E8F37600E021CF /* WebServiceUrlManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A904B53A13E8F37600E021CF /* WebServiceUrlManager.m */; };
-		A904B53D13E8F7AB00E021CF /* AttendeeListJson.js in Sources */ = {isa = PBXBuildFile; fileRef = A904B53213E8F2B200E021CF /* AttendeeListJson.js */; };
 		A904B53F13E978E800E021CF /* webServiceConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = A904B53E13E978E800E021CF /* webServiceConfig.plist */; };
 		A904B54013E978E800E021CF /* webServiceConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = A904B53E13E978E800E021CF /* webServiceConfig.plist */; };
 		A938403B140FC0D100349F35 /* Napaba-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A938403A140FC0D100349F35 /* Napaba-logo.png */; };
@@ -59,12 +56,56 @@
 		A93840C11410232200349F35 /* HeaderSponsorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A93840BF1410232100349F35 /* HeaderSponsorsViewController.m */; };
 		A93840C5141024FB00349F35 /* HeaderSponsorView.m in Sources */ = {isa = PBXBuildFile; fileRef = A93840C4141024FB00349F35 /* HeaderSponsorView.m */; };
 		A93840C6141024FB00349F35 /* HeaderSponsorView.m in Sources */ = {isa = PBXBuildFile; fileRef = A93840C4141024FB00349F35 /* HeaderSponsorView.m */; };
+		A951B63D144F187800C35649 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A951B63C144F187800C35649 /* CoreData.framework */; };
+		A951B649144F188000C35649 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A951B63C144F187800C35649 /* CoreData.framework */; };
+		A951B689144F193600C35649 /* CocoaCamp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A951B687144F193600C35649 /* CocoaCamp.xcdatamodeld */; };
+		A951B68A144F194000C35649 /* CocoaCamp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A951B687144F193600C35649 /* CocoaCamp.xcdatamodeld */; };
+		A951B695144F2FE900C35649 /* WebServiceUrlManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A951B693144F2FE900C35649 /* WebServiceUrlManager.m */; };
+		A951B696144F2FE900C35649 /* WebServiceUrlManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A951B693144F2FE900C35649 /* WebServiceUrlManager.m */; };
+		A951B699144F300800C35649 /* WebServiceDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A951B698144F300800C35649 /* WebServiceDataManager.m */; };
+		A951B69A144F300800C35649 /* WebServiceDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A951B698144F300800C35649 /* WebServiceDataManager.m */; };
+		A951B69F144F33A100C35649 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A951B69E144F33A100C35649 /* CoreDataManager.m */; };
+		A951B6A0144F33A100C35649 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A951B69E144F33A100C35649 /* CoreDataManager.m */; };
+		A951B6AB144F3AE000C35649 /* WordPressApiSessionsJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A951B6AA144F3AE000C35649 /* WordPressApiSessionsJsonParser.m */; };
+		A951B6AC144F3AE000C35649 /* WordPressApiSessionsJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A951B6AA144F3AE000C35649 /* WordPressApiSessionsJsonParser.m */; };
+		A951B6ED144F3C6A00C35649 /* WordPressApiSessionsJsonParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A951B6EC144F3C6A00C35649 /* WordPressApiSessionsJsonParserTests.m */; };
+		A951B6EE144F481700C35649 /* AttendeeListJson.js in Resources */ = {isa = PBXBuildFile; fileRef = A904B53213E8F2B200E021CF /* AttendeeListJson.js */; };
+		A951B6F0144F4F8E00C35649 /* WordPressScheduleDay.js in Resources */ = {isa = PBXBuildFile; fileRef = A951B6EF144F4F8E00C35649 /* WordPressScheduleDay.js */; };
+		A951B6F1144F4F8E00C35649 /* WordPressScheduleDay.js in Resources */ = {isa = PBXBuildFile; fileRef = A951B6EF144F4F8E00C35649 /* WordPressScheduleDay.js */; };
+		A951B6FA144FA69400C35649 /* CocoaCamp.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = A951B687144F193600C35649 /* CocoaCamp.xcdatamodeld */; };
+		A951B6FB144FA6F700C35649 /* CocoaCamp.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = A951B687144F193600C35649 /* CocoaCamp.xcdatamodeld */; };
+		A951B6FE144FB26900C35649 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = A951B6FD144FB26900C35649 /* Session.m */; };
+		A951B6FF144FB26900C35649 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = A951B6FD144FB26900C35649 /* Session.m */; };
+		A951B70E144FB5B100C35649 /* SessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A951B70C144FB5B000C35649 /* SessionViewController.m */; };
+		A951B70F144FB5B100C35649 /* SessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A951B70C144FB5B000C35649 /* SessionViewController.m */; };
+		A951B710144FB5B100C35649 /* SessionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A951B70D144FB5B100C35649 /* SessionViewController.xib */; };
+		A951B711144FB5B100C35649 /* SessionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A951B70D144FB5B100C35649 /* SessionViewController.xib */; };
+		A951B750144FCCAC00C35649 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = A951B74F144FCCAC00C35649 /* GTMNSString+HTML.m */; };
+		A951B764144FE2F000C35649 /* Allstate_Platinum.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A951B75D144FE2EE00C35649 /* Allstate_Platinum.jpg */; };
+		A951B765144FE2F000C35649 /* Allstate_Platinum.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A951B75D144FE2EE00C35649 /* Allstate_Platinum.jpg */; };
+		A951B766144FE2F000C35649 /* AlstonBird_Platinum.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A951B75E144FE2EF00C35649 /* AlstonBird_Platinum.jpg */; };
+		A951B767144FE2F000C35649 /* AlstonBird_Platinum.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A951B75E144FE2EF00C35649 /* AlstonBird_Platinum.jpg */; };
+		A951B768144FE2F000C35649 /* Prudential_Platinum.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A951B75F144FE2EF00C35649 /* Prudential_Platinum.jpg */; };
+		A951B769144FE2F000C35649 /* Prudential_Platinum.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A951B75F144FE2EF00C35649 /* Prudential_Platinum.jpg */; };
+		A951B76A144FE2F000C35649 /* SchiffHardin_Platinum.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A951B760144FE2EF00C35649 /* SchiffHardin_Platinum.jpg */; };
+		A951B76B144FE2F000C35649 /* SchiffHardin_Platinum.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A951B760144FE2EF00C35649 /* SchiffHardin_Platinum.jpg */; };
+		A951B76C144FE2F000C35649 /* Seyfarth_Platinum.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A951B761144FE2EF00C35649 /* Seyfarth_Platinum.jpg */; };
+		A951B76D144FE2F000C35649 /* Seyfarth_Platinum.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A951B761144FE2EF00C35649 /* Seyfarth_Platinum.jpg */; };
+		A951B76E144FE2F000C35649 /* UPS.png in Resources */ = {isa = PBXBuildFile; fileRef = A951B762144FE2EF00C35649 /* UPS.png */; };
+		A951B76F144FE2F000C35649 /* UPS.png in Resources */ = {isa = PBXBuildFile; fileRef = A951B762144FE2EF00C35649 /* UPS.png */; };
+		A951B770144FE2F000C35649 /* Walmart_Premier.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A951B763144FE2EF00C35649 /* Walmart_Premier.jpg */; };
+		A951B771144FE2F000C35649 /* Walmart_Premier.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A951B763144FE2EF00C35649 /* Walmart_Premier.jpg */; };
 		A976F96713E8AA0C007E9290 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A976F96613E8AA0C007E9290 /* MessageUI.framework */; };
 		A976F96B13E8AA7A007E9290 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A976F96A13E8AA7A007E9290 /* AudioToolbox.framework */; };
 		A976F96D13E8AA96007E9290 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A976F96C13E8AA96007E9290 /* CoreLocation.framework */; };
 		A976F96E13E8AA9F007E9290 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A976F96C13E8AA96007E9290 /* CoreLocation.framework */; };
 		A976F96F13E8AAA2007E9290 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A976F96613E8AA0C007E9290 /* MessageUI.framework */; };
 		A976F97013E8AAA4007E9290 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A976F96A13E8AA7A007E9290 /* AudioToolbox.framework */; };
+		A97B0F2A144FF69500E4A687 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A97B0F26144FF69500E4A687 /* Icon@2x.png */; };
+		A97B0F2B144FF69500E4A687 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A97B0F26144FF69500E4A687 /* Icon@2x.png */; };
+		A97B0F2F144FF71800E4A687 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A97B0F2E144FF71800E4A687 /* Default.png */; };
+		A97B0F31144FF72500E4A687 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A97B0F30144FF72500E4A687 /* Icon.png */; };
+		A97B0F37144FF79600E4A687 /* napaba-launch.png in Resources */ = {isa = PBXBuildFile; fileRef = A97B0F36144FF79500E4A687 /* napaba-launch.png */; };
 		A98E121313E8A60300ABD295 /* bump_button_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = A98E11AB13E8A60300ABD295 /* bump_button_blue.png */; };
 		A98E121413E8A60300ABD295 /* bump_close.png in Resources */ = {isa = PBXBuildFile; fileRef = A98E11AC13E8A60300ABD295 /* bump_close.png */; };
 		A98E121513E8A60300ABD295 /* bump_close_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = A98E11AD13E8A60300ABD295 /* bump_close_selected.png */; };
@@ -117,8 +158,8 @@
 		A98E124413E8A60300ABD295 /* SearchPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A98E11FD13E8A60300ABD295 /* SearchPhotosViewController.m */; };
 		A98E124513E8A60300ABD295 /* SessionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A98E11FF13E8A60300ABD295 /* SessionDetailViewController.m */; };
 		A98E124613E8A60300ABD295 /* SessionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A98E120013E8A60300ABD295 /* SessionDetailViewController.xib */; };
-		A98E124713E8A60300ABD295 /* SessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A98E120213E8A60300ABD295 /* SessionViewController.m */; };
-		A98E124813E8A60300ABD295 /* SessionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A98E120313E8A60300ABD295 /* SessionViewController.xib */; };
+		A98E124713E8A60300ABD295 /* OLDSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A98E120213E8A60300ABD295 /* OLDSessionViewController.m */; };
+		A98E124813E8A60300ABD295 /* OLDSessionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A98E120313E8A60300ABD295 /* OLDSessionViewController.xib */; };
 		A98E124913E8A60300ABD295 /* TabController.m in Sources */ = {isa = PBXBuildFile; fileRef = A98E120513E8A60300ABD295 /* TabController.m */; };
 		A98E124A13E8A60300ABD295 /* TwitterFeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A98E120713E8A60300ABD295 /* TwitterFeedTableViewController.m */; };
 		A98E124B13E8A60300ABD295 /* FlickrPageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A98E120913E8A60300ABD295 /* FlickrPageView.xib */; };
@@ -284,26 +325,12 @@
 			remoteGlobalIDString = EB9E6C6210B6A8F800DE563C;
 			remoteInfo = Three20CoreUnitTests;
 		};
-		A976F95313E8A999007E9290 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 320A5A189C235877202780D0 /* Three20Network.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 662D81EF12630516005851C2;
-			remoteInfo = "Three20Network-Xcode3.2.5";
-		};
 		A976F95513E8A999007E9290 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 320A5A189C235877202780D0 /* Three20Network.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = EB9E6C6210B6A8F800DE563C;
 			remoteInfo = Three20NetworkUnitTests;
-		};
-		A976F95713E8A999007E9290 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 320A5A189C235877202780D0 /* Three20Network.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 662D81B2126304EB005851C2;
-			remoteInfo = "Three20NetworkUnitTests-Xcode3.2.5";
 		};
 		A976F95A13E8A999007E9290 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -354,8 +381,6 @@
 		320F2C48872C2E2C4DF86200 /* Three20UI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20UI.xcodeproj; path = ../three20/src/Three20UI/Three20UI.xcodeproj; sourceTree = SOURCE_ROOT; };
 		A904B52F13E8EBE400E021CF /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		A904B53213E8F2B200E021CF /* AttendeeListJson.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = AttendeeListJson.js; sourceTree = "<group>"; };
-		A904B53913E8F37600E021CF /* WebServiceUrlManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebServiceUrlManager.h; path = WebService/WebServiceUrlManager.h; sourceTree = "<group>"; };
-		A904B53A13E8F37600E021CF /* WebServiceUrlManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebServiceUrlManager.m; path = WebService/WebServiceUrlManager.m; sourceTree = "<group>"; };
 		A904B53E13E978E800E021CF /* webServiceConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = webServiceConfig.plist; sourceTree = "<group>"; };
 		A938403A140FC0D100349F35 /* Napaba-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Napaba-logo.png"; sourceTree = "<group>"; };
 		A938403D140FC10E00349F35 /* branded.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = branded.plist; sourceTree = "<group>"; };
@@ -384,9 +409,40 @@
 		A93840BF1410232100349F35 /* HeaderSponsorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderSponsorsViewController.m; sourceTree = "<group>"; };
 		A93840C3141024FB00349F35 /* HeaderSponsorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderSponsorView.h; sourceTree = "<group>"; };
 		A93840C4141024FB00349F35 /* HeaderSponsorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderSponsorView.m; sourceTree = "<group>"; };
+		A951B63C144F187800C35649 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A951B688144F193600C35649 /* CocoaCamp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CocoaCamp.xcdatamodel; sourceTree = "<group>"; };
+		A951B693144F2FE900C35649 /* WebServiceUrlManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebServiceUrlManager.m; sourceTree = "<group>"; };
+		A951B694144F2FE900C35649 /* WebServiceUrlManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebServiceUrlManager.h; sourceTree = "<group>"; };
+		A951B697144F300800C35649 /* WebServiceDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebServiceDataManager.h; sourceTree = "<group>"; };
+		A951B698144F300800C35649 /* WebServiceDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebServiceDataManager.m; sourceTree = "<group>"; };
+		A951B69D144F33A100C35649 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
+		A951B69E144F33A100C35649 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
+		A951B6A9144F3AE000C35649 /* WordPressApiSessionsJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordPressApiSessionsJsonParser.h; sourceTree = "<group>"; };
+		A951B6AA144F3AE000C35649 /* WordPressApiSessionsJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordPressApiSessionsJsonParser.m; sourceTree = "<group>"; };
+		A951B6EB144F3C6A00C35649 /* WordPressApiSessionsJsonParserTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordPressApiSessionsJsonParserTests.h; sourceTree = "<group>"; };
+		A951B6EC144F3C6A00C35649 /* WordPressApiSessionsJsonParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordPressApiSessionsJsonParserTests.m; sourceTree = "<group>"; };
+		A951B6EF144F4F8E00C35649 /* WordPressScheduleDay.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = WordPressScheduleDay.js; sourceTree = "<group>"; };
+		A951B6FC144FB26900C35649 /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
+		A951B6FD144FB26900C35649 /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
+		A951B70B144FB5B000C35649 /* SessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionViewController.h; sourceTree = "<group>"; };
+		A951B70C144FB5B000C35649 /* SessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionViewController.m; sourceTree = "<group>"; };
+		A951B70D144FB5B100C35649 /* SessionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionViewController.xib; sourceTree = "<group>"; };
+		A951B74E144FCCAC00C35649 /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
+		A951B74F144FCCAC00C35649 /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
+		A951B75D144FE2EE00C35649 /* Allstate_Platinum.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Allstate_Platinum.jpg; sourceTree = "<group>"; };
+		A951B75E144FE2EF00C35649 /* AlstonBird_Platinum.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = AlstonBird_Platinum.jpg; sourceTree = "<group>"; };
+		A951B75F144FE2EF00C35649 /* Prudential_Platinum.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Prudential_Platinum.jpg; sourceTree = "<group>"; };
+		A951B760144FE2EF00C35649 /* SchiffHardin_Platinum.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SchiffHardin_Platinum.jpg; sourceTree = "<group>"; };
+		A951B761144FE2EF00C35649 /* Seyfarth_Platinum.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Seyfarth_Platinum.jpg; sourceTree = "<group>"; };
+		A951B762144FE2EF00C35649 /* UPS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UPS.png; sourceTree = "<group>"; };
+		A951B763144FE2EF00C35649 /* Walmart_Premier.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Walmart_Premier.jpg; sourceTree = "<group>"; };
 		A976F96613E8AA0C007E9290 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		A976F96A13E8AA7A007E9290 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		A976F96C13E8AA96007E9290 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		A97B0F26144FF69500E4A687 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "CocoaCamp/Resources/Icon@2x.png"; sourceTree = "<group>"; };
+		A97B0F2E144FF71800E4A687 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		A97B0F30144FF72500E4A687 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		A97B0F36144FF79500E4A687 /* napaba-launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "napaba-launch.png"; sourceTree = "<group>"; };
 		A98E11A413E8A5E400ABD295 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		A98E11A513E8A5E400ABD295 /* README.mdown */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.mdown; sourceTree = "<group>"; };
 		A98E11A913E8A60300ABD295 /* Bump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bump.h; sourceTree = "<group>"; };
@@ -468,9 +524,9 @@
 		A98E11FE13E8A60300ABD295 /* SessionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDetailViewController.h; sourceTree = "<group>"; };
 		A98E11FF13E8A60300ABD295 /* SessionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDetailViewController.m; sourceTree = "<group>"; };
 		A98E120013E8A60300ABD295 /* SessionDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionDetailViewController.xib; sourceTree = "<group>"; };
-		A98E120113E8A60300ABD295 /* SessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionViewController.h; sourceTree = "<group>"; };
-		A98E120213E8A60300ABD295 /* SessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionViewController.m; sourceTree = "<group>"; };
-		A98E120313E8A60300ABD295 /* SessionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionViewController.xib; sourceTree = "<group>"; };
+		A98E120113E8A60300ABD295 /* OLDSessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLDSessionViewController.h; sourceTree = "<group>"; };
+		A98E120213E8A60300ABD295 /* OLDSessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLDSessionViewController.m; sourceTree = "<group>"; };
+		A98E120313E8A60300ABD295 /* OLDSessionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OLDSessionViewController.xib; sourceTree = "<group>"; };
 		A98E120413E8A60300ABD295 /* TabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabController.h; sourceTree = "<group>"; };
 		A98E120513E8A60300ABD295 /* TabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabController.m; sourceTree = "<group>"; };
 		A98E120613E8A60300ABD295 /* TwitterFeedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterFeedTableViewController.h; sourceTree = "<group>"; };
@@ -508,7 +564,7 @@
 		A98E127C13E8A73400ABD295 /* GTMNSString+URLArguments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+URLArguments.h"; sourceTree = "<group>"; };
 		A98E127D13E8A73400ABD295 /* GTMNSString+URLArguments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+URLArguments.m"; sourceTree = "<group>"; };
 		A98E128213E8A77400ABD295 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
-		A9D7C3BC13E8A2B300604772 /* CocoaCamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaCamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9D7C3BC13E8A2B300604772 /* Napaba2011.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Napaba2011.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D7C3C013E8A2B300604772 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A9D7C3C213E8A2B300604772 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A9D7C3C413E8A2B300604772 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -537,6 +593,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A951B63D144F187800C35649 /* CoreData.framework in Frameworks */,
 				A93840651410198100349F35 /* libxml2.dylib in Frameworks */,
 				A976F96D13E8AA96007E9290 /* CoreLocation.framework in Frameworks */,
 				A976F96B13E8AA7A007E9290 /* AudioToolbox.framework in Frameworks */,
@@ -570,6 +627,7 @@
 				A976F96F13E8AAA2007E9290 /* MessageUI.framework in Frameworks */,
 				A976F97013E8AAA4007E9290 /* AudioToolbox.framework in Frameworks */,
 				A93840BC14101BC200349F35 /* libxml2.dylib in Frameworks */,
+				A951B649144F188000C35649 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,9 +656,7 @@
 			isa = PBXGroup;
 			children = (
 				320A5A189C235877202780D4 /* libThree20Network.a */,
-				A976F95413E8A999007E9290 /* libThree20Network-Xcode3.2.5.a */,
 				A976F95613E8A999007E9290 /* NetworkUnitTests.octest */,
-				A976F95813E8A999007E9290 /* NetworkUnitTests-Xcode3.2.5.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -644,6 +700,7 @@
 		A904B53113E8F2B200E021CF /* SampleWebServiceData */ = {
 			isa = PBXGroup;
 			children = (
+				A951B6EF144F4F8E00C35649 /* WordPressScheduleDay.js */,
 				A904B53213E8F2B200E021CF /* AttendeeListJson.js */,
 			);
 			path = SampleWebServiceData;
@@ -652,15 +709,20 @@
 		A904B53413E8F2E100E021CF /* WebService */ = {
 			isa = PBXGroup;
 			children = (
-				A904B53913E8F37600E021CF /* WebServiceUrlManager.h */,
-				A904B53A13E8F37600E021CF /* WebServiceUrlManager.m */,
+				A951B694144F2FE900C35649 /* WebServiceUrlManager.h */,
+				A951B693144F2FE900C35649 /* WebServiceUrlManager.m */,
+				A951B697144F300800C35649 /* WebServiceDataManager.h */,
+				A951B698144F300800C35649 /* WebServiceDataManager.m */,
+				A951B6A9144F3AE000C35649 /* WordPressApiSessionsJsonParser.h */,
+				A951B6AA144F3AE000C35649 /* WordPressApiSessionsJsonParser.m */,
 			);
-			name = WebService;
+			path = WebService;
 			sourceTree = "<group>";
 		};
 		A9384039140FC08000349F35 /* NAPABA */ = {
 			isa = PBXGroup;
 			children = (
+				A951B75C144FE2EE00C35649 /* sponsor-logos */,
 				A938404C1410054800349F35 /* Napaba-Background.png */,
 				A938403A140FC0D100349F35 /* Napaba-logo.png */,
 				A9384049140FFDFB00349F35 /* NapabaHeaderView.xib */,
@@ -694,11 +756,62 @@
 			path = Rss;
 			sourceTree = "<group>";
 		};
+		A951B64A144F189800C35649 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				A951B687144F193600C35649 /* CocoaCamp.xcdatamodeld */,
+				A951B6FC144FB26900C35649 /* Session.h */,
+				A951B6FD144FB26900C35649 /* Session.m */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		A951B69C144F338200C35649 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				A951B69D144F33A100C35649 /* CoreDataManager.h */,
+				A951B69E144F33A100C35649 /* CoreDataManager.m */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		A951B6E9144F3C4D00C35649 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A951B6EA144F3C4D00C35649 /* WebService */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		A951B6EA144F3C4D00C35649 /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				A951B6EB144F3C6A00C35649 /* WordPressApiSessionsJsonParserTests.h */,
+				A951B6EC144F3C6A00C35649 /* WordPressApiSessionsJsonParserTests.m */,
+			);
+			path = WebService;
+			sourceTree = "<group>";
+		};
+		A951B75C144FE2EE00C35649 /* sponsor-logos */ = {
+			isa = PBXGroup;
+			children = (
+				A951B75D144FE2EE00C35649 /* Allstate_Platinum.jpg */,
+				A951B75E144FE2EF00C35649 /* AlstonBird_Platinum.jpg */,
+				A951B75F144FE2EF00C35649 /* Prudential_Platinum.jpg */,
+				A951B760144FE2EF00C35649 /* SchiffHardin_Platinum.jpg */,
+				A951B761144FE2EF00C35649 /* Seyfarth_Platinum.jpg */,
+				A951B762144FE2EF00C35649 /* UPS.png */,
+				A951B763144FE2EF00C35649 /* Walmart_Premier.jpg */,
+			);
+			path = "sponsor-logos";
+			sourceTree = "<group>";
+		};
 		A98E11A713E8A60300ABD295 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				A98E11A813E8A60300ABD295 /* Bump */,
 				A98E11C613E8A60300ABD295 /* Contact */,
+				A951B69C144F338200C35649 /* CoreData */,
 				A98E11CC13E8A60300ABD295 /* Json */,
 				A98E11DD13E8A60300ABD295 /* Model */,
 				A98E11E913E8A60300ABD295 /* Three20Adapters */,
@@ -799,6 +912,7 @@
 		A98E11DD13E8A60300ABD295 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A951B64A144F189800C35649 /* CoreData */,
 				A98E11DE13E8A60300ABD295 /* Flickr */,
 				A98E11E113E8A60300ABD295 /* Registrant.h */,
 				A98E11E213E8A60300ABD295 /* Registrant.m */,
@@ -846,15 +960,18 @@
 				A98E11FE13E8A60300ABD295 /* SessionDetailViewController.h */,
 				A98E11FF13E8A60300ABD295 /* SessionDetailViewController.m */,
 				A98E120013E8A60300ABD295 /* SessionDetailViewController.xib */,
-				A98E120113E8A60300ABD295 /* SessionViewController.h */,
-				A98E120213E8A60300ABD295 /* SessionViewController.m */,
-				A98E120313E8A60300ABD295 /* SessionViewController.xib */,
+				A98E120113E8A60300ABD295 /* OLDSessionViewController.h */,
+				A98E120213E8A60300ABD295 /* OLDSessionViewController.m */,
+				A98E120313E8A60300ABD295 /* OLDSessionViewController.xib */,
 				A98E120413E8A60300ABD295 /* TabController.h */,
 				A98E120513E8A60300ABD295 /* TabController.m */,
 				A98E120613E8A60300ABD295 /* TwitterFeedTableViewController.h */,
 				A98E120713E8A60300ABD295 /* TwitterFeedTableViewController.m */,
 				A93840BE1410232100349F35 /* HeaderSponsorsViewController.h */,
 				A93840BF1410232100349F35 /* HeaderSponsorsViewController.m */,
+				A951B70B144FB5B000C35649 /* SessionViewController.h */,
+				A951B70C144FB5B000C35649 /* SessionViewController.m */,
+				A951B70D144FB5B100C35649 /* SessionViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -951,6 +1068,8 @@
 				A98E127B13E8A73400ABD295 /* GTMNSDictionary+URLArguments.m */,
 				A98E127C13E8A73400ABD295 /* GTMNSString+URLArguments.h */,
 				A98E127D13E8A73400ABD295 /* GTMNSString+URLArguments.m */,
+				A951B74E144FCCAC00C35649 /* GTMNSString+HTML.h */,
+				A951B74F144FCCAC00C35649 /* GTMNSString+HTML.m */,
 			);
 			path = GoogleToolboxMac;
 			sourceTree = "<group>";
@@ -958,6 +1077,10 @@
 		A9D7C3B113E8A2B300604772 = {
 			isa = PBXGroup;
 			children = (
+				A97B0F36144FF79500E4A687 /* napaba-launch.png */,
+				A97B0F26144FF69500E4A687 /* Icon@2x.png */,
+				A97B0F30144FF72500E4A687 /* Icon.png */,
+				A97B0F2E144FF71800E4A687 /* Default.png */,
 				A98E11A413E8A5E400ABD295 /* LICENSE.txt */,
 				A98E11A513E8A5E400ABD295 /* README.mdown */,
 				A9D7C3C613E8A2B300604772 /* CocoaCamp */,
@@ -970,7 +1093,7 @@
 		A9D7C3BD13E8A2B300604772 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A9D7C3BC13E8A2B300604772 /* CocoaCamp.app */,
+				A9D7C3BC13E8A2B300604772 /* Napaba2011.app */,
 				A9D7C3E513E8A2B400604772 /* CocoaCampTests.octest */,
 			);
 			name = Products;
@@ -979,6 +1102,7 @@
 		A9D7C3BF13E8A2B300604772 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A951B63C144F187800C35649 /* CoreData.framework */,
 				A93840641410198000349F35 /* libxml2.dylib */,
 				3201088596B4756681693700 /* Three20UICommon.xcodeproj */,
 				320D7DCCE32703ACAB9A45E0 /* Three20.xcodeproj */,
@@ -1051,6 +1175,7 @@
 		A9D7C3ED13E8A2B400604772 /* CocoaCampTests */ = {
 			isa = PBXGroup;
 			children = (
+				A951B6E9144F3C4D00C35649 /* Classes */,
 				A9D7C3F313E8A2B400604772 /* CocoaCampTests.h */,
 				A9D7C3F513E8A2B400604772 /* CocoaCampTests.m */,
 				A9D7C3EE13E8A2B400604772 /* Supporting Files */,
@@ -1070,9 +1195,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A9D7C3BB13E8A2B300604772 /* CocoaCamp */ = {
+		A9D7C3BB13E8A2B300604772 /* Napaba2011 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A9D7C3F913E8A2B400604772 /* Build configuration list for PBXNativeTarget "CocoaCamp" */;
+			buildConfigurationList = A9D7C3F913E8A2B400604772 /* Build configuration list for PBXNativeTarget "Napaba2011" */;
 			buildPhases = (
 				A9D7C3B813E8A2B300604772 /* Sources */,
 				A9D7C3B913E8A2B300604772 /* Frameworks */,
@@ -1089,9 +1214,9 @@
 				320A5A189C235877202780D1 /* PBXTargetDependency */,
 				320CC833B8AF0ACFD35E6221 /* PBXTargetDependency */,
 			);
-			name = CocoaCamp;
+			name = Napaba2011;
 			productName = CocoaCamp;
-			productReference = A9D7C3BC13E8A2B300604772 /* CocoaCamp.app */;
+			productReference = A9D7C3BC13E8A2B300604772 /* Napaba2011.app */;
 			productType = "com.apple.product-type.application";
 		};
 		A9D7C3E413E8A2B400604772 /* CocoaCampTests */ = {
@@ -1163,7 +1288,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				A9D7C3BB13E8A2B300604772 /* CocoaCamp */,
+				A9D7C3BB13E8A2B300604772 /* Napaba2011 */,
 				A9D7C3E413E8A2B400604772 /* CocoaCampTests */,
 			);
 		};
@@ -1233,25 +1358,11 @@
 			remoteRef = A976F94E13E8A999007E9290 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		A976F95413E8A999007E9290 /* libThree20Network-Xcode3.2.5.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libThree20Network-Xcode3.2.5.a";
-			remoteRef = A976F95313E8A999007E9290 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		A976F95613E8A999007E9290 /* NetworkUnitTests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = NetworkUnitTests.octest;
 			remoteRef = A976F95513E8A999007E9290 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A976F95813E8A999007E9290 /* NetworkUnitTests-Xcode3.2.5.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "NetworkUnitTests-Xcode3.2.5.octest";
-			remoteRef = A976F95713E8A999007E9290 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		A976F95B13E8A999007E9290 /* StyleUnitTests.octest */ = {
@@ -1289,12 +1400,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A951B6FB144FA6F700C35649 /* CocoaCamp.xcdatamodeld in Resources */,
 				A904B53313E8F2B200E021CF /* AttendeeListJson.js in Resources */,
 				320B6C86F11D9990244A9731 /* Three20.bundle in Resources */,
 				A9D7C3CB13E8A2B300604772 /* InfoPlist.strings in Resources */,
 				A9D7C3D813E8A2B300604772 /* MainWindow_iPhone.xib in Resources */,
 				A9D7C3DF13E8A2B300604772 /* MainWindow_iPad.xib in Resources */,
 				A98E121313E8A60300ABD295 /* bump_button_blue.png in Resources */,
+				A951B6F0144F4F8E00C35649 /* WordPressScheduleDay.js in Resources */,
 				A98E121413E8A60300ABD295 /* bump_close.png in Resources */,
 				A98E121513E8A60300ABD295 /* bump_close_selected.png in Resources */,
 				A98E121613E8A60300ABD295 /* bump_content_area.png in Resources */,
@@ -1322,7 +1435,7 @@
 				A98E123F13E8A60300ABD295 /* FlickrAddPhotoController.xib in Resources */,
 				A98E124113E8A60300ABD295 /* FlickrController.xib in Resources */,
 				A98E124613E8A60300ABD295 /* SessionDetailViewController.xib in Resources */,
-				A98E124813E8A60300ABD295 /* SessionViewController.xib in Resources */,
+				A98E124813E8A60300ABD295 /* OLDSessionViewController.xib in Resources */,
 				A98E124B13E8A60300ABD295 /* FlickrPageView.xib in Resources */,
 				A98E124D13E8A60300ABD295 /* RegistrantDetailView.xib in Resources */,
 				A98E124E13E8A60300ABD295 /* RegistrantListView.xib in Resources */,
@@ -1357,6 +1470,18 @@
 				A9384072141019D400349F35 /* RssDetailsViewController.xib in Resources */,
 				A938407C14101A2F00349F35 /* arss_back.png in Resources */,
 				A938407E14101A2F00349F35 /* arss_header.png in Resources */,
+				A951B710144FB5B100C35649 /* SessionViewController.xib in Resources */,
+				A951B764144FE2F000C35649 /* Allstate_Platinum.jpg in Resources */,
+				A951B766144FE2F000C35649 /* AlstonBird_Platinum.jpg in Resources */,
+				A951B768144FE2F000C35649 /* Prudential_Platinum.jpg in Resources */,
+				A951B76A144FE2F000C35649 /* SchiffHardin_Platinum.jpg in Resources */,
+				A951B76C144FE2F000C35649 /* Seyfarth_Platinum.jpg in Resources */,
+				A951B76E144FE2F000C35649 /* UPS.png in Resources */,
+				A951B770144FE2F000C35649 /* Walmart_Premier.jpg in Resources */,
+				A97B0F2A144FF69500E4A687 /* Icon@2x.png in Resources */,
+				A97B0F2F144FF71800E4A687 /* Default.png in Resources */,
+				A97B0F31144FF72500E4A687 /* Icon.png in Resources */,
+				A97B0F37144FF79600E4A687 /* napaba-launch.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1364,6 +1489,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A951B6FA144FA69400C35649 /* CocoaCamp.xcdatamodeld in Resources */,
+				A951B6EE144F481700C35649 /* AttendeeListJson.js in Resources */,
+				A951B6F1144F4F8E00C35649 /* WordPressScheduleDay.js in Resources */,
 				A9D7C3F213E8A2B400604772 /* InfoPlist.strings in Resources */,
 				A9D7C3F413E8A2B400604772 /* CocoaCampTests.h in Resources */,
 				A904B54013E978E800E021CF /* webServiceConfig.plist in Resources */,
@@ -1376,6 +1504,15 @@
 				A9384073141019D400349F35 /* RssDetailsViewController.xib in Resources */,
 				A938407D14101A2F00349F35 /* arss_back.png in Resources */,
 				A938407F14101A2F00349F35 /* arss_header.png in Resources */,
+				A951B711144FB5B100C35649 /* SessionViewController.xib in Resources */,
+				A951B765144FE2F000C35649 /* Allstate_Platinum.jpg in Resources */,
+				A951B767144FE2F000C35649 /* AlstonBird_Platinum.jpg in Resources */,
+				A951B769144FE2F000C35649 /* Prudential_Platinum.jpg in Resources */,
+				A951B76B144FE2F000C35649 /* SchiffHardin_Platinum.jpg in Resources */,
+				A951B76D144FE2F000C35649 /* Seyfarth_Platinum.jpg in Resources */,
+				A951B76F144FE2F000C35649 /* UPS.png in Resources */,
+				A951B771144FE2F000C35649 /* Walmart_Premier.jpg in Resources */,
+				A97B0F2B144FF69500E4A687 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1429,14 +1566,13 @@
 				A98E124313E8A60300ABD295 /* RegistrantDetailViewController.m in Sources */,
 				A98E124413E8A60300ABD295 /* SearchPhotosViewController.m in Sources */,
 				A98E124513E8A60300ABD295 /* SessionDetailViewController.m in Sources */,
-				A98E124713E8A60300ABD295 /* SessionViewController.m in Sources */,
+				A98E124713E8A60300ABD295 /* OLDSessionViewController.m in Sources */,
 				A98E124913E8A60300ABD295 /* TabController.m in Sources */,
 				A98E124A13E8A60300ABD295 /* TwitterFeedTableViewController.m in Sources */,
 				A98E124C13E8A60300ABD295 /* FlickrThumbnailView.m in Sources */,
 				A98E125113E8A60300ABD295 /* NSString+XMLEntities.m in Sources */,
 				A98E127E13E8A73400ABD295 /* GTMNSDictionary+URLArguments.m in Sources */,
 				A98E128013E8A73400ABD295 /* GTMNSString+URLArguments.m in Sources */,
-				A904B53B13E8F37600E021CF /* WebServiceUrlManager.m in Sources */,
 				A9384047140FC4A500349F35 /* CCBranding.m in Sources */,
 				A93840621410194300349F35 /* GDataXMLNode.m in Sources */,
 				A9384070141019D400349F35 /* RssDetailsViewController.m in Sources */,
@@ -1445,6 +1581,14 @@
 				A9384078141019D400349F35 /* RssTableHeaderView.m in Sources */,
 				A93840C11410232200349F35 /* HeaderSponsorsViewController.m in Sources */,
 				A93840C5141024FB00349F35 /* HeaderSponsorView.m in Sources */,
+				A951B689144F193600C35649 /* CocoaCamp.xcdatamodeld in Sources */,
+				A951B695144F2FE900C35649 /* WebServiceUrlManager.m in Sources */,
+				A951B699144F300800C35649 /* WebServiceDataManager.m in Sources */,
+				A951B69F144F33A100C35649 /* CoreDataManager.m in Sources */,
+				A951B6AB144F3AE000C35649 /* WordPressApiSessionsJsonParser.m in Sources */,
+				A951B6FE144FB26900C35649 /* Session.m in Sources */,
+				A951B70E144FB5B100C35649 /* SessionViewController.m in Sources */,
+				A951B750144FCCAC00C35649 /* GTMNSString+HTML.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1456,8 +1600,6 @@
 				A98E127F13E8A73400ABD295 /* GTMNSDictionary+URLArguments.m in Sources */,
 				A98E128113E8A73400ABD295 /* GTMNSString+URLArguments.m in Sources */,
 				A904B51813E8E63300E021CF /* SearchResultsPhotoSource.m in Sources */,
-				A904B53C13E8F37600E021CF /* WebServiceUrlManager.m in Sources */,
-				A904B53D13E8F7AB00E021CF /* AttendeeListJson.js in Sources */,
 				A9384048140FC4A500349F35 /* CCBranding.m in Sources */,
 				A93840631410194300349F35 /* GDataXMLNode.m in Sources */,
 				A9384071141019D400349F35 /* RssDetailsViewController.m in Sources */,
@@ -1465,6 +1607,14 @@
 				A9384077141019D400349F35 /* RSSLoader.m in Sources */,
 				A9384079141019D400349F35 /* RssTableHeaderView.m in Sources */,
 				A93840C6141024FB00349F35 /* HeaderSponsorView.m in Sources */,
+				A951B68A144F194000C35649 /* CocoaCamp.xcdatamodeld in Sources */,
+				A951B696144F2FE900C35649 /* WebServiceUrlManager.m in Sources */,
+				A951B69A144F300800C35649 /* WebServiceDataManager.m in Sources */,
+				A951B6A0144F33A100C35649 /* CoreDataManager.m in Sources */,
+				A951B6AC144F3AE000C35649 /* WordPressApiSessionsJsonParser.m in Sources */,
+				A951B6ED144F3C6A00C35649 /* WordPressApiSessionsJsonParserTests.m in Sources */,
+				A951B6FF144FB26900C35649 /* Session.m in Sources */,
+				A951B70F144FB5B100C35649 /* SessionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1508,7 +1658,7 @@
 		};
 		A9D7C3EC13E8A2B400604772 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A9D7C3BB13E8A2B300604772 /* CocoaCamp */;
+			target = A9D7C3BB13E8A2B300604772 /* Napaba2011 */;
 			targetProxy = A9D7C3EB13E8A2B400604772 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1569,6 +1719,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
+					/usr/include/libxml2,
 					"$(BUILT_PRODUCTS_DIR)/../three20",
 					"$(BUILT_PRODUCTS_DIR)/../../three20",
 					../three20/Build/Products/three20,
@@ -1585,7 +1736,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
@@ -1593,6 +1744,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
+					/usr/include/libxml2,
 					"$(BUILT_PRODUCTS_DIR)/../three20",
 					"$(BUILT_PRODUCTS_DIR)/../../three20",
 					../three20/Build/Products/three20,
@@ -1600,6 +1752,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1611,12 +1764,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaCamp/CocoaCamp-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"$(BUILT_PRODUCTS_DIR)/../three20",
-					"$(BUILT_PRODUCTS_DIR)/../../three20",
-					../three20/Build/Products/three20,
-					/usr/include/libxml2,
-				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "CocoaCamp/CocoaCamp-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1635,14 +1783,10 @@
 		A9D7C3FB13E8A2B400604772 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaCamp/CocoaCamp-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"$(BUILT_PRODUCTS_DIR)/../three20",
-					"$(BUILT_PRODUCTS_DIR)/../../three20",
-					../three20/Build/Products/three20,
-					/usr/include/libxml2,
-				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "CocoaCamp/CocoaCamp-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1653,6 +1797,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1668,7 +1813,13 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaCamp/CocoaCamp-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "CocoaCampTests/CocoaCampTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"-lxml2",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -1685,7 +1836,13 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaCamp/CocoaCamp-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "CocoaCampTests/CocoaCampTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"-lxml2",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -1704,7 +1861,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A9D7C3F913E8A2B400604772 /* Build configuration list for PBXNativeTarget "CocoaCamp" */ = {
+		A9D7C3F913E8A2B400604772 /* Build configuration list for PBXNativeTarget "Napaba2011" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A9D7C3FA13E8A2B400604772 /* Debug */,
@@ -1723,6 +1880,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A951B687144F193600C35649 /* CocoaCamp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A951B688144F193600C35649 /* CocoaCamp.xcdatamodel */,
+			);
+			currentVersion = A951B688144F193600C35649 /* CocoaCamp.xcdatamodel */;
+			path = CocoaCamp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A9D7C3B313E8A2B300604772 /* Project object */;
 }

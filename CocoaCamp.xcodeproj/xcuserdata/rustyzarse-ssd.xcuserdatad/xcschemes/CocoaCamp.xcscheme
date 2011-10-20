@@ -14,8 +14,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A9D7C3BB13E8A2B300604772"
-               BuildableName = "CocoaCamp.app"
-               BlueprintName = "CocoaCamp"
+               BuildableName = "Napaba2011.app"
+               BlueprintName = "Napaba2011"
                ReferencedContainer = "container:CocoaCamp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -49,8 +49,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A9D7C3BB13E8A2B300604772"
-            BuildableName = "CocoaCamp.app"
-            BlueprintName = "CocoaCamp"
+            BuildableName = "Napaba2011.app"
+            BlueprintName = "Napaba2011"
             ReferencedContainer = "container:CocoaCamp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -78,8 +78,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A9D7C3BB13E8A2B300604772"
-            BuildableName = "CocoaCamp.app"
-            BlueprintName = "CocoaCamp"
+            BuildableName = "Napaba2011.app"
+            BlueprintName = "Napaba2011"
             ReferencedContainer = "container:CocoaCamp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -88,7 +88,7 @@
       buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

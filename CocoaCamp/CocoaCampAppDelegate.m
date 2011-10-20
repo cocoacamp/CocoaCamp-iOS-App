@@ -4,7 +4,7 @@
 //
 //  Created by Rusty Zarse on 8/2/11.
 //  Copyright 2011 LeVous, LLC. All rights reserved.
-//
+// 
 
 #import "CocoaCampAppDelegate.h"
 #import "ContactManager.h"
@@ -34,6 +34,9 @@
 	navigator.supportsShakeToReload = YES;
 	navigator.persistenceMode = TTNavigatorPersistenceModeAll;
 	
+    // force init
+    [[CoreDataManager sharedUIThreadInstance] managedObjectContext];
+    
 	TTURLMap* map = navigator.URLMap;
 	[map from:@"*" toViewController:[TTWebController class]];
 	[map from:@"tt://tabs" toViewController:[TabController class]];
@@ -51,11 +54,6 @@
     return YES;
 }
 
-
-
-
-
-   
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     /*
@@ -84,6 +82,10 @@
     /*
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
+}
+
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application{
+    NSString *something = @"";
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

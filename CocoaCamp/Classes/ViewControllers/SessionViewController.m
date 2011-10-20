@@ -2,281 +2,41 @@
 //  SessionViewController.m
 //  CocoaCamp
 //
-//  Created by airportyh on 8/6/10.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
+//  Created by Rusty Zarse on 10/19/11.
+//  Copyright 2011 LeVous, LLC. All rights reserved.
 //
 
 #import "SessionViewController.h"
-#import "JSON.h"
-#import "SessionDetailViewController.h"
+#import "Session.h"
+#import "WebServiceDataManager.h"
 #import "CCBranding.h"
 
 @implementation SessionViewController
-@synthesize schedules;
-@synthesize progressInd;
+@synthesize coreDataManager;
 
-NSDateFormatter *dateFormatter;
-NSDateFormatter *timeFormatter;
-
-#pragma mark -
-#pragma mark View lifecycle
-
-static NSString *BaseServiceURL = @"http://cocoa:camp@cocoacamp.org";
-
-
-+ (NSString *) schedulesURL{
-	return [NSString stringWithFormat: @"%@/schedule/json", BaseServiceURL];
-}
-
-+ (NSString *) thumbnailURL: (NSString *)regID{
-	return [NSString stringWithFormat: 
-			 @"%@/photos/atlanta/%@-100x100.jpg", BaseServiceURL, regID];
+- (void)dealloc{
+    [wsMgr release], wsMgr = nil;
+    [super dealloc];
 }
 
 -(id)initWithNibName:(NSString *)nibName bundle:(NSBundle *)bundle {
-	if (self = [super initWithNibName:@"SessionViewController" bundle:bundle]){
+	if (self = [super initWithNibName:@"OLDSessionViewController" bundle:bundle]){
 		self.title = @"Schedule";
 		UIImage* image = [UIImage imageNamed:@"calendar.png"];
 		self.tabBarItem = [[[UITabBarItem alloc] initWithTitle:self.title image:image tag:0] autorelease];
-	}
+        wsMgr = [[WebServiceDataManager alloc] init];
+        [wsMgr setDelegate:self];
+    }
 	return self;
 }
 
 
-#pragma mark -
-#pragma mark Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	if (self.schedules == NULL)
-		return 0;
-    return [self.schedules count];
-}
-
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	NSDictionary *schedule = [self.schedules objectAtIndex:section];
-	NSArray *talksArray = [schedule objectForKey:@"Talk"];
-	int count = [talksArray count];
-	if (count == 0) return 1;
-	else return [talksArray count];
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	NSDictionary *schedule = [[self.schedules objectAtIndex:section] objectForKey:@"Schedule"];
-	NSDate *startTime = [dateFormatter dateFromString:[schedule objectForKey:@"start_time"]];
-	NSDate *endTime = [dateFormatter dateFromString:[schedule objectForKey:@"end_time"]];
-	NSArray *talksArray = [[self.schedules objectAtIndex:section] objectForKey:@"Talk"];
-	
-	
-	
-	NSString *timeDisplay = [NSString stringWithFormat:@"%@-%@", 
-							 [timeFormatter stringFromDate:startTime],
-							 [timeFormatter stringFromDate:endTime]];
-	
-	int weekday = [[[NSCalendar currentCalendar] components:NSWeekdayCalendarUnit fromDate:startTime] weekday];
-	
-	if (weekday == 6){
-		return [NSString stringWithFormat:@"Friday Night %@", timeDisplay];
-	}else if (section == 1) {
-		return [NSString stringWithFormat:@"Saturday %@", timeDisplay];
-	}else if ([talksArray count] <= 1){
-		return timeDisplay;
-	}else {
-		return [NSString stringWithFormat:@"%@ %@", timeDisplay, [schedule objectForKey:@"name"]];
-	}
-
-	
-}
-
-// Customize the appearance of table view cells.
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	
-	NSDictionary *schedule = [self.schedules objectAtIndex:indexPath.section];
-	NSArray *talksArray = [schedule objectForKey:@"Talk"];
-	
-	if ([talksArray count] == 0){
-		NSDictionary *sched = [schedule objectForKey:@"Schedule"];
-		UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-		if (cell == nil) {
-			cell = [[[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, 250, 60) reuseIdentifier:@"cell"] autorelease];
-			cell.textLabel.font = [UIFont boldSystemFontOfSize:16];
-		}
-		cell.textLabel.text = [sched objectForKey:@"name"];
-		return cell;
-	}
-	
-	
-	NSDictionary *talk = [talksArray objectAtIndex:indexPath.row];
-	NSString *regID = [talk objectForKey:@"register_id"];
-	NSDictionary *reg = [talk objectForKey: @"Register"];
-	NSString *speaker = [NSString stringWithFormat: @"%@ %@", 
-						 [reg objectForKey: @"first_name"], 
-						 [reg objectForKey: @"last_name"]];
-	
-	static NSString *CellIdentifier = @"talkCell";
-    
-	UILabel *speakerLabel;
-	UILabel *locationLabel;
-	UILabel *titleLabel;
-	TTImageView *ttImage;
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, 250, 60) reuseIdentifier:CellIdentifier] autorelease];
-		titleLabel = [[UILabel alloc] initWithFrame: CGRectMake(70, 5, 250, 25)];
-		titleLabel.highlightedTextColor = [UIColor whiteColor];
-		titleLabel.tag = 3;
-		[cell.contentView addSubview:titleLabel];
-		[titleLabel release];
-		
-		speakerLabel = [[UILabel alloc] initWithFrame: CGRectMake(70, 33, 250, 25)];
-		speakerLabel.tag = 2;
-		speakerLabel.textColor = [UIColor lightGrayColor];
-		speakerLabel.font = [UIFont boldSystemFontOfSize:12];
-		[cell.contentView addSubview:speakerLabel];
-		[speakerLabel release];
-		
-		locationLabel = [[UILabel alloc] initWithFrame: CGRectMake(170, 33, 140, 25)];
-		locationLabel.tag = 1;
-		locationLabel.textColor = [UIColor lightGrayColor];
-		locationLabel.font = [UIFont boldSystemFontOfSize:12];
-		locationLabel.textAlignment = UITextAlignmentRight; 			
-		[cell.contentView addSubview:locationLabel];
-		[locationLabel release];
-		
-		
-		ttImage = [[TTImageView alloc] initWithFrame: CGRectMake(0, 0, 60, 60)];
-		ttImage.defaultImage = [UIImage imageNamed:@"loading.png"];
-		ttImage.tag = 4;
-		[cell.contentView addSubview:ttImage];
-		[ttImage release];
-		 
-    }
-
-    
-	titleLabel = (UILabel *)[cell viewWithTag:3];
-	speakerLabel = (UILabel *)[cell viewWithTag:2];
-	locationLabel = (UILabel *)[cell viewWithTag:1];
-	ttImage = (TTImageView *)[cell viewWithTag:4];
-	
-	
-	titleLabel.text = [talk objectForKey:@"title"];
-	
-	speakerLabel.text = speaker;
-	locationLabel.text = [talk objectForKey: @"location"];
-	
-	[ttImage setImage: nil];
-	ttImage.urlPath = [SessionViewController thumbnailURL:regID];
-		
-	return cell;
-}
-
-- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-	NSDictionary *schedule = [self.schedules objectAtIndex:indexPath.section];
-	NSArray *talksArray = [schedule objectForKey:@"Talk"];
-	if ([talksArray count] == 0)
-		return nil;
-	else
-		return indexPath;
-}
-
-/*
-- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-	NSDictionary *schedule = [self.schedules objectAtIndex:indexPath.section];
-	NSArray *talksArray = [schedule objectForKey:@"Talk"];
-	if ([talksArray count] == 0)
-		return nil;
-	else
-		return indexPath;
-}
-*/
-
-#pragma mark -
-#pragma mark Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
-	NSDictionary *schedule = [self.schedules objectAtIndex:indexPath.section];
-	NSArray *talksArray = [schedule objectForKey:@"Talk"];
-	if ([talksArray count] == 0) return;
-	
-	NSDictionary *talk = [talksArray objectAtIndex:indexPath.row];
-	
-	SessionDetailViewController *detailViewController = [[SessionDetailViewController alloc] initWithNibName:@"SessionDetailViewController" bundle:nil];
-	
-	detailViewController.talk = talk;
-	detailViewController.schedule = [schedule objectForKey:@"Schedule"];
-	
-	[self.navigationController pushViewController:detailViewController animated:YES];
-	[detailViewController release];
-	 
-}
-
-
-#pragma mark -
-#pragma mark Memory management
-
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
     
-    // Relinquish ownership any cached data, images, etc that aren't in use.
-}
-
-NSMutableData *data;
-
-- (void)connection:(NSURLConnection *)theConnection didReceiveData:(NSData *)incrementalData {
-	if (data==nil) { data = [[NSMutableData alloc] initWithCapacity:2048]; } 
-	[data appendData:incrementalData];
-}
-
-- (void)connectionDidFinishLoading:(NSURLConnection*)connection {
-	[connection release];
-	SBJSON *jsonParser = [SBJSON new];
-	NSString *jsonText = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-	self.schedules = [jsonParser objectWithString: jsonText error: NULL];
-	[self.progressInd removeFromSuperview];
-	[jsonText release];
-	[data release];
-	data = NULL;
-	[self.tableView reloadData];
-	
-	/* auto scroll to the current session */
-	
-	//NSDate *now = [dateFormatter dateFromString: @"2010-09-25 18:00:00"];
-	NSDate *now = [NSDate date];
-	int count = 0;
-	for (NSDictionary *item in self.schedules){
-		NSDictionary *schedule = [item objectForKey:@"Schedule"];
-		NSDate *endTime = [dateFormatter dateFromString:[schedule objectForKey:@"end_time"]];
-		if ([now timeIntervalSinceDate:endTime] < 0.0){
-			NSUInteger section = count;
-			NSUInteger indexArr[] = {section, 0};
-			NSIndexPath *ipath = [NSIndexPath indexPathWithIndexes:indexArr length:2];
-			[self.tableView scrollToRowAtIndexPath:ipath atScrollPosition:UITableViewScrollPositionTop animated:NO];
-			break;
-		}
-		count++;
-	}
-	
-	
-}
-
-- (UIActivityIndicatorView *)progressInd {
-	if (progressInd == nil)
-	{
-		CGRect frame = CGRectMake(self.view.frame.size.width/2-15, self.view.frame.size.height/2-15, 30, 30);
-		progressInd = [[UIActivityIndicatorView alloc] initWithFrame:frame];
-		[progressInd startAnimating];
-		progressInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
-		[progressInd sizeToFit];
-		progressInd.autoresizingMask = (UIViewAutoresizingFlexibleLeftMargin |
-										UIViewAutoresizingFlexibleRightMargin |
-										UIViewAutoresizingFlexibleTopMargin |
-										UIViewAutoresizingFlexibleBottomMargin);
-		
-		progressInd.tag = 1;    // tag this view for later so we can remove it from recycled table cells
-	}
-	return progressInd;
+    // Release any cached data, images, etc that aren't in use.
 }
 
 - (void)applyBrandingIfPresent{
@@ -286,37 +46,234 @@ NSMutableData *data;
     [branding release];
 }
 
-- (void)viewDidLoad {
+
+#pragma mark - Schedule Update
+
+- (void)scheduleUpdateComplete{
+    
+}
+
+- (void)updateSchedule{
+    NSAutoreleasePool *apool = [[NSAutoreleasePool alloc] init];
+    [wsMgr refreshSessionSchedule];
+    [apool release];
+}
+
+- (void)checkUpdateSchedule{
+    lastSessionsUpdate = [[NSUserDefaults standardUserDefaults] objectForKey:@"lastSessionsUpdate"];
+    NSTimeInterval intervalSinceLastUpdate = [lastSessionsUpdate timeIntervalSinceNow];
+    if (!lastSessionsUpdate || ABS(intervalSinceLastUpdate) > (5 * 60) ) {
+        // [self updateSchedule];
+        [self performSelectorInBackground:@selector(updateSchedule) withObject:nil];
+        lastSessionsUpdate = [NSDate date];
+        [[NSUserDefaults standardUserDefaults] setObject:lastSessionsUpdate forKey:@"lastSessionsUpdate"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+
+    }
+    
+}
+
+
+#pragma mark - View lifecycle
+
+
+         
+         
+
+- (void)viewDidLoad
+{
     [super viewDidLoad];
+    [[self tableView] setRowHeight:64.0];
+    [self setCoreDataManager:[CoreDataManager sharedUIThreadInstance]];
+    
+    
+    
+    NSError *error;
+	if (![[self fetchedResultsController] performFetch:&error]) {
+		// Update to handle the error appropriately.
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+	}
+    
+    self.title = @"Schedule";
+    
+
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+ 
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
+    [self setFetchedResultsController:nil];
+    [coreDataManager release];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self checkUpdateSchedule];
     [self applyBrandingIfPresent];
-	
-	
-	dateFormatter = [[NSDateFormatter alloc] init];
-	timeFormatter = [[NSDateFormatter alloc] init];
-	[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-	[timeFormatter setDateFormat:@"h:mm"];
-	
-	if (self.schedules == nil){
-		[self.view addSubview: self.progressInd];
-		NSURLRequest* request = [NSURLRequest requestWithURL: [NSURL URLWithString:[SessionViewController schedulesURL]]
-												 cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
-		[[NSURLConnection alloc] initWithRequest:request delegate:self];
-	}}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation{
-	return YES;
+    [super viewWillAppear:animated];
 }
 
-- (void)viewDidUnload {
-    // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
-    // For example: self.myOutlet = nil;
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    // Return YES for supported orientations
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    NSInteger sectionCount = [[[self fetchedResultsController] sections] count];
+    return sectionCount;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    id <NSFetchedResultsSectionInfo> sectionInfo = 
+    [[[self fetchedResultsController] sections] objectAtIndex:section];
+    return [sectionInfo name]; 
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    id <NSFetchedResultsSectionInfo> sectionInfo = 
+    [[[self fetchedResultsController] sections] objectAtIndex:section];
+    return [sectionInfo numberOfObjects];
+}
+
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    Session *session = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+    cell.textLabel.text = session.sessionTimeString;
+    cell.textLabel.backgroundColor = [UIColor clearColor];
+    cell.textLabel.font = [UIFont systemFontOfSize:14.0];
+    cell.detailTextLabel.text = session.title;
+    cell.detailTextLabel.font = [UIFont systemFontOfSize:17.0];
+    cell.detailTextLabel.numberOfLines = 2;
+    cell.detailTextLabel.backgroundColor = [UIColor clearColor];
+    UIColor *cellBgColor = ([[session flagged] boolValue]) ? [UIColor whiteColor]:[UIColor colorWithRed:0.88 green:0.93 blue:0.98 alpha:1.0];
+    cell.contentView.backgroundColor = cellBgColor;
+   
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = 
+    [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] 
+                 initWithStyle:UITableViewCellStyleSubtitle 
+                 reuseIdentifier:CellIdentifier] autorelease];
+    }
+    
+    // Set up the cell...
+    [self configureCell:cell atIndexPath:indexPath];
+    
+    return cell;
+}
+
+/*
+// Override to support conditional editing of the table view.
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the specified item to be editable.
+    return YES;
+}
+*/
+
+/*
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the data source
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }   
+    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }   
+}
+*/
+
+/*
+// Override to support rearranging the table view.
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+{
+}
+*/
+
+/*
+// Override to support conditional rearranging of the table view.
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the item to be re-orderable.
+    return YES;
+}
+*/
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Session *session = (Session*)[[self fetchedResultsController] objectAtIndexPath:indexPath];
+    NSNumber *flagged = [NSNumber numberWithBool:![[session flagged] boolValue]];
+    [session setFlagged:flagged];
+    [[self coreDataManager] save];
+}
+
+#pragma mark - Fetched Results Controller
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller{
+    [[self tableView] reloadData];
 }
 
 
-- (void)dealloc {
-    [super dealloc];
+-(NSFetchedResultsController *)fetchedResultsController{
+    if(fetchedResultsController){
+        return fetchedResultsController;
+    }
+    NSFetchRequest *allSessions = [[self coreDataManager] fetchRequestForEntityNamed:@"Session"];
+    [allSessions setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"datetimeStart" ascending:YES]]];
+    
+    [allSessions setFetchBatchSize:20];
+    
+    fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:allSessions
+                                                                   managedObjectContext:[[self coreDataManager] managedObjectContext]
+                                                                     sectionNameKeyPath:@"sessionDayTitle" 
+                                                                              cacheName:@"AllSessions"
+                                ];
+    [fetchedResultsController setDelegate:self];
+    
+    return fetchedResultsController;
+    
 }
 
+- (void)setFetchedResultsController:(NSFetchedResultsController *)aFetchedResultsController{
+    id oldFrc = fetchedResultsController;
+    fetchedResultsController = [aFetchedResultsController retain];
+    [oldFrc setDelegate:nil];
+    [oldFrc release];
+}
 
 @end
-

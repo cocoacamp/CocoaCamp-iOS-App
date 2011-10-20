@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "GDataXMLNode.h"
-#define kRSSUrl @"http://feeds.feedburner.com/TouchCodeMagazine"
 
 @protocol RSSLoaderDelegate
 @required

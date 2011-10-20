@@ -34,11 +34,12 @@
         UIView *brandedHeader = [branding headerView];
         if (brandedHeader) {
             [self addSubview:brandedHeader];
-            [label setFrame:CGRectMake(10, 70, 310, 23)];
+            [label setFrame:CGRectMake(10, 64, 310, 23)];
             [label setNumberOfLines:1];
             [label setFont:[UIFont systemFontOfSize:16]];
             [label setBackgroundColor:[UIColor lightGrayColor]];
         }
+        [branding release];
         
         
     }

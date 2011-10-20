@@ -5,10 +5,19 @@
 	<key>twitterSearchUrl</key>
 	<string>http://search.twitter.com/search.json</string>
 	<key>twitterFallSearchString</key>
-	<string>patent</string>
+	<string>NAPABA</string>
 	<key>attendeeListUrl</key>
 	<string>http://cocoa:camp@cocoacamp.org/registers/json?user_name=cocoa&amp;password=camp</string>
-	<key>sessionListUrl</key>
-	<string>http://cocoa:camp@cocoacamp.org/schedule/json</string>
+	<key>rssNewsUrl</key>
+	<string>http://convention.napaba.org/category/news/feed/</string>
+	<key>newsWebUrl</key>
+	<string>http://convention.napaba.org/category/news</string>
+	<key>sessionScheduleUrlList</key>
+	<array>
+		<string>http://convention.napaba.org/api/get_category_posts/?id=6&amp;custom_fields=event_time</string>
+		<string>http://convention.napaba.org/api/get_category_posts/?id=7&amp;custom_fields=event_time</string>
+		<string>http://convention.napaba.org/api/get_category_posts/?id=8&amp;custom_fields=event_time</string>
+		<string>http://convention.napaba.org/api/get_category_posts/?id=9&amp;custom_fields=event_time</string>
+	</array>
 </dict>
 </plist>

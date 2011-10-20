@@ -7,6 +7,7 @@
 //
 
 #import "RSSLoader.h"
+#import "WebServiceUrlManager.h"
 
 @interface RSSLoader (Private)
 
@@ -55,7 +56,10 @@
 -(void)fetchRss
 {	
 	NSLog(@"fetch rss");
-	NSData* xmlData = [[NSMutableData alloc] initWithContentsOfURL:[NSURL URLWithString: kRSSUrl] ];
+    WebServiceUrlManager *urlMgr = [[WebServiceUrlManager alloc] init];
+    NSURL *rssUrl = [[urlMgr rssNewsUrl] retain];
+    [urlMgr release];
+	NSData* xmlData = [[NSMutableData alloc] initWithContentsOfURL:rssUrl];
     NSError *error;
 	
     GDataXMLDocument* doc = [[GDataXMLDocument alloc] initWithData:xmlData options:0 error:&error];
@@ -77,7 +81,7 @@
 	} else {
 		[self.delegate performSelectorOnMainThread:@selector(failedFeedUpdateWithError:) withObject:error waitUntilDone:YES];
 	}
-	
+	[rssUrl release];
     [doc autorelease];
     [xmlData release];
 }

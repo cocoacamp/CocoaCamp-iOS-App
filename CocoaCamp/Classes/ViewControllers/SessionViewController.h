@@ -2,22 +2,18 @@
 //  SessionViewController.h
 //  CocoaCamp
 //
-//  Created by airportyh on 8/6/10.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
+//  Created by Rusty Zarse on 10/19/11.
+//  Copyright 2011 LeVous, LLC. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+@class WebServiceDataManager;
 
-@interface SessionViewController : UITableViewController {
-	NSArray *schedules;
-	UIActivityIndicatorView *progressInd;
+@interface SessionViewController : UITableViewController<NSFetchedResultsControllerDelegate>{
+    NSFetchedResultsController *fetchedResultsController;
+    NSDate *lastSessionsUpdate;
+    WebServiceDataManager *wsMgr;
 }
-
-@property (nonatomic, retain) NSArray *schedules;
-@property (nonatomic, retain) UIActivityIndicatorView *progressInd;
-
-- (UIActivityIndicatorView *)progressInd;
-+ (NSString *) schedulesURL;
-+ (NSString *) thumbnailURL: (NSString *)regID;
-
+@property (retain, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (retain, nonatomic) CoreDataManager *coreDataManager;
 @end

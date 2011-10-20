@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HeaderSponsorView : UIView
+@interface HeaderSponsorView : UIView{
+    NSArray *sponsorLogos;
+    NSUInteger nextLogoIdx;
+}
 @property(retain, nonatomic) IBOutlet UIView *sponsorView;
 @end

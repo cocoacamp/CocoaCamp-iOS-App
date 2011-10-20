@@ -50,7 +50,7 @@ const static NSUInteger kFlickrBatchSize = 16;   // The number of results to pul
     NSString *path = @"/services/rest/";
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
                                 @"flickr.photos.search", @"method",
-                                @"52319257@N06", @"user_id",
+                                @"67353101@N02", @"user_id",
                                 @"url_m,url_t", @"extras",
                                 @"43f122b1a7fef3db2328bd75b38da08d", @"api_key", // I am providing my own API key as a convenience because I'm trusting you not to use it for evil.
                                 [responseProcessor format], @"format",
