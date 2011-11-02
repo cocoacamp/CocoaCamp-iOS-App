@@ -91,8 +91,6 @@
 		A951B76B144FE2F000C35649 /* SchiffHardin_Platinum.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A951B760144FE2EF00C35649 /* SchiffHardin_Platinum.jpg */; };
 		A951B76C144FE2F000C35649 /* Seyfarth_Platinum.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A951B761144FE2EF00C35649 /* Seyfarth_Platinum.jpg */; };
 		A951B76D144FE2F000C35649 /* Seyfarth_Platinum.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A951B761144FE2EF00C35649 /* Seyfarth_Platinum.jpg */; };
-		A951B76E144FE2F000C35649 /* UPS.png in Resources */ = {isa = PBXBuildFile; fileRef = A951B762144FE2EF00C35649 /* UPS.png */; };
-		A951B76F144FE2F000C35649 /* UPS.png in Resources */ = {isa = PBXBuildFile; fileRef = A951B762144FE2EF00C35649 /* UPS.png */; };
 		A951B770144FE2F000C35649 /* Walmart_Premier.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A951B763144FE2EF00C35649 /* Walmart_Premier.jpg */; };
 		A951B771144FE2F000C35649 /* Walmart_Premier.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A951B763144FE2EF00C35649 /* Walmart_Premier.jpg */; };
 		A976F96713E8AA0C007E9290 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A976F96613E8AA0C007E9290 /* MessageUI.framework */; };
@@ -210,6 +208,8 @@
 		A9D7C3F213E8A2B400604772 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A9D7C3F013E8A2B400604772 /* InfoPlist.strings */; };
 		A9D7C3F413E8A2B400604772 /* CocoaCampTests.h in Resources */ = {isa = PBXBuildFile; fileRef = A9D7C3F313E8A2B400604772 /* CocoaCampTests.h */; };
 		A9D7C3F613E8A2B400604772 /* CocoaCampTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D7C3F513E8A2B400604772 /* CocoaCampTests.m */; };
+		A9E62550145E432100CB124F /* sustainability.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9E6254E145E432100CB124F /* sustainability.jpg */; };
+		A9E62551145E432100CB124F /* sustainability@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9E6254F145E432100CB124F /* sustainability@2x.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -434,7 +434,6 @@
 		A951B75F144FE2EF00C35649 /* Prudential_Platinum.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Prudential_Platinum.jpg; sourceTree = "<group>"; };
 		A951B760144FE2EF00C35649 /* SchiffHardin_Platinum.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SchiffHardin_Platinum.jpg; sourceTree = "<group>"; };
 		A951B761144FE2EF00C35649 /* Seyfarth_Platinum.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Seyfarth_Platinum.jpg; sourceTree = "<group>"; };
-		A951B762144FE2EF00C35649 /* UPS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UPS.png; sourceTree = "<group>"; };
 		A951B763144FE2EF00C35649 /* Walmart_Premier.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Walmart_Premier.jpg; sourceTree = "<group>"; };
 		A976F96613E8AA0C007E9290 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		A976F96A13E8AA7A007E9290 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -586,6 +585,8 @@
 		A9D7C3F113E8A2B400604772 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A9D7C3F313E8A2B400604772 /* CocoaCampTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoaCampTests.h; sourceTree = "<group>"; };
 		A9D7C3F513E8A2B400604772 /* CocoaCampTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocoaCampTests.m; sourceTree = "<group>"; };
+		A9E6254E145E432100CB124F /* sustainability.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sustainability.jpg; sourceTree = "<group>"; };
+		A9E6254F145E432100CB124F /* sustainability@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "sustainability@2x.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -795,12 +796,13 @@
 		A951B75C144FE2EE00C35649 /* sponsor-logos */ = {
 			isa = PBXGroup;
 			children = (
+				A9E6254E145E432100CB124F /* sustainability.jpg */,
+				A9E6254F145E432100CB124F /* sustainability@2x.jpg */,
 				A951B75D144FE2EE00C35649 /* Allstate_Platinum.jpg */,
 				A951B75E144FE2EF00C35649 /* AlstonBird_Platinum.jpg */,
 				A951B75F144FE2EF00C35649 /* Prudential_Platinum.jpg */,
 				A951B760144FE2EF00C35649 /* SchiffHardin_Platinum.jpg */,
 				A951B761144FE2EF00C35649 /* Seyfarth_Platinum.jpg */,
-				A951B762144FE2EF00C35649 /* UPS.png */,
 				A951B763144FE2EF00C35649 /* Walmart_Premier.jpg */,
 			);
 			path = "sponsor-logos";
@@ -1195,9 +1197,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A9D7C3BB13E8A2B300604772 /* Napaba2011 */ = {
+		A9D7C3BB13E8A2B300604772 /* NAPABA */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A9D7C3F913E8A2B400604772 /* Build configuration list for PBXNativeTarget "Napaba2011" */;
+			buildConfigurationList = A9D7C3F913E8A2B400604772 /* Build configuration list for PBXNativeTarget "NAPABA" */;
 			buildPhases = (
 				A9D7C3B813E8A2B300604772 /* Sources */,
 				A9D7C3B913E8A2B300604772 /* Frameworks */,
@@ -1214,7 +1216,7 @@
 				320A5A189C235877202780D1 /* PBXTargetDependency */,
 				320CC833B8AF0ACFD35E6221 /* PBXTargetDependency */,
 			);
-			name = Napaba2011;
+			name = NAPABA;
 			productName = CocoaCamp;
 			productReference = A9D7C3BC13E8A2B300604772 /* Napaba2011.app */;
 			productType = "com.apple.product-type.application";
@@ -1288,7 +1290,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				A9D7C3BB13E8A2B300604772 /* Napaba2011 */,
+				A9D7C3BB13E8A2B300604772 /* NAPABA */,
 				A9D7C3E413E8A2B400604772 /* CocoaCampTests */,
 			);
 		};
@@ -1476,12 +1478,13 @@
 				A951B768144FE2F000C35649 /* Prudential_Platinum.jpg in Resources */,
 				A951B76A144FE2F000C35649 /* SchiffHardin_Platinum.jpg in Resources */,
 				A951B76C144FE2F000C35649 /* Seyfarth_Platinum.jpg in Resources */,
-				A951B76E144FE2F000C35649 /* UPS.png in Resources */,
 				A951B770144FE2F000C35649 /* Walmart_Premier.jpg in Resources */,
 				A97B0F2A144FF69500E4A687 /* Icon@2x.png in Resources */,
 				A97B0F2F144FF71800E4A687 /* Default.png in Resources */,
 				A97B0F31144FF72500E4A687 /* Icon.png in Resources */,
 				A97B0F37144FF79600E4A687 /* napaba-launch.png in Resources */,
+				A9E62550145E432100CB124F /* sustainability.jpg in Resources */,
+				A9E62551145E432100CB124F /* sustainability@2x.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1510,7 +1513,6 @@
 				A951B769144FE2F000C35649 /* Prudential_Platinum.jpg in Resources */,
 				A951B76B144FE2F000C35649 /* SchiffHardin_Platinum.jpg in Resources */,
 				A951B76D144FE2F000C35649 /* Seyfarth_Platinum.jpg in Resources */,
-				A951B76F144FE2F000C35649 /* UPS.png in Resources */,
 				A951B771144FE2F000C35649 /* Walmart_Premier.jpg in Resources */,
 				A97B0F2B144FF69500E4A687 /* Icon@2x.png in Resources */,
 			);
@@ -1658,7 +1660,7 @@
 		};
 		A9D7C3EC13E8A2B400604772 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A9D7C3BB13E8A2B300604772 /* Napaba2011 */;
+			target = A9D7C3BB13E8A2B300604772 /* NAPABA */;
 			targetProxy = A9D7C3EB13E8A2B400604772 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1861,7 +1863,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A9D7C3F913E8A2B400604772 /* Build configuration list for PBXNativeTarget "Napaba2011" */ = {
+		A9D7C3F913E8A2B400604772 /* Build configuration list for PBXNativeTarget "NAPABA" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A9D7C3FA13E8A2B400604772 /* Debug */,

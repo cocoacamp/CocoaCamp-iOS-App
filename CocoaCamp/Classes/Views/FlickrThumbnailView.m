@@ -27,11 +27,12 @@
 	self.view.autoresizesSubviews = YES;
 	self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 	
+    /*
 	UIBarButtonItem *addItem = [[UIBarButtonItem alloc] 
 							 initWithTitle:@"Add" style:UIBarButtonItemStylePlain 
 							 target:self action:@selector(addPhoto)];
 	self.navigationItem.rightBarButtonItem = addItem;
-	
+	*/
 	UIBarButtonItem *refreshItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
 												   target:self 
 												   action:@selector(refresh)] autorelease];

@@ -15,7 +15,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A9D7C3BB13E8A2B300604772"
                BuildableName = "Napaba2011.app"
-               BlueprintName = "Napaba2011"
+               BlueprintName = "NAPABA"
                ReferencedContainer = "container:CocoaCamp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -38,19 +38,30 @@
             </BuildableReference>
          </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "A9D7C3BB13E8A2B300604772"
+            BuildableName = "Napaba2011.app"
+            BlueprintName = "NAPABA"
+            ReferencedContainer = "container:CocoaCamp.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Debug">
+      buildConfiguration = "Debug"
+      debugDocumentVersioning = "YES"
+      allowLocationSimulation = "YES">
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A9D7C3BB13E8A2B300604772"
             BuildableName = "Napaba2011.app"
-            BlueprintName = "Napaba2011"
+            BlueprintName = "NAPABA"
             ReferencedContainer = "container:CocoaCamp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -73,13 +84,14 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Release">
+      buildConfiguration = "Release"
+      debugDocumentVersioning = "YES">
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A9D7C3BB13E8A2B300604772"
             BuildableName = "Napaba2011.app"
-            BlueprintName = "Napaba2011"
+            BlueprintName = "NAPABA"
             ReferencedContainer = "container:CocoaCamp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -88,7 +100,7 @@
       buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

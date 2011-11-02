@@ -21,7 +21,6 @@
                         @"Prudential_Platinum.jpg",
                         @"SchiffHardin_Platinum.jpg",
                         @"Seyfarth_Platinum.jpg",
-                        @"UPS.png",
                         @"Walmart_Premier.jpg",
                         nil] retain];
         nextLogoIdx = 0;

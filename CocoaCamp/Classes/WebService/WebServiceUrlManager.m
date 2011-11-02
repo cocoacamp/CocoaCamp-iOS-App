@@ -15,6 +15,7 @@
     [twitterSearchUrl release], twitterSearchUrl = nil;
     [twitterFallSearchString release], twitterFallSearchString = nil;
     [sessionScheduleUrlList release], sessionScheduleUrlList = nil;
+    [sessionSchedulePdfUrl release], sessionSchedulePdfUrl = nil;
     [super dealloc];
 }
 
@@ -32,8 +33,11 @@
         twitterFallSearchString     = [[NSString alloc] initWithString:[configDictionary objectForKey:@"twitterFallSearchString"]];
         attendeeListUrl             = [[NSURL alloc] initWithString:[configDictionary objectForKey:@"attendeeListUrl"]];
         rssNewsUrl                  = [[NSURL alloc] initWithString:[configDictionary objectForKey:@"rssNewsUrl"]];
-        newsWebUrl               = [[NSURL alloc] initWithString:[configDictionary objectForKey:@"newsWebUrl"]];
+        newsWebUrl                  = [[NSURL alloc] initWithString:[configDictionary objectForKey:@"newsWebUrl"]];
         
+        sessionSchedulePdfUrl       = [[NSURL alloc] initWithString:[configDictionary objectForKey:@"sessionSchedulePdfUrl"]];
+        
+
         
         NSArray *sessionSchedulesList = [NSArray arrayWithArray:[configDictionary objectForKey:@"sessionScheduleUrlList"]];
 
@@ -74,6 +78,10 @@
 
 - (NSArray *)sessionScheduleUrlList{
     return sessionScheduleUrlList;
+}
+
+- (NSURL *)sessionSchedulePdfUrl{
+    return sessionSchedulePdfUrl;
 }
 
 - (NSURL *)rssNewsUrl{

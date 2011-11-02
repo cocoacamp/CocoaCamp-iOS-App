@@ -10,6 +10,7 @@
 #import "Session.h"
 #import "WebServiceDataManager.h"
 #import "CCBranding.h"
+#import "WebServiceUrlManager.h"
 
 @implementation SessionViewController
 @synthesize coreDataManager;
@@ -46,6 +47,29 @@
     [branding release];
 }
 
+#pragma mark - Open PDF Schedule
+
+- (void)openPdfSchedule:(id)sender
+{
+    
+    WebServiceUrlManager *urlMgr = [[WebServiceUrlManager alloc] init];
+    NSURL *webUrl = [urlMgr sessionSchedulePdfUrl];
+    
+    [[UIApplication sharedApplication] openURL:webUrl];
+    [urlMgr release];
+}
+
+- (void)configureToolbar{
+    
+	UIBarButtonItem *launchWebItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+                                                                                    target:self 
+                                                                                    action:@selector(openPdfSchedule:)] autorelease];
+	
+	
+	self.navigationItem.rightBarButtonItem = launchWebItem;
+	
+    
+}
 
 #pragma mark - Schedule Update
 

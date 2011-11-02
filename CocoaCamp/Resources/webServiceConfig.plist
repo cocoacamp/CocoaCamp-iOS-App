@@ -19,5 +19,7 @@
 		<string>http://convention.napaba.org/api/get_category_posts/?id=8&amp;custom_fields=event_time</string>
 		<string>http://convention.napaba.org/api/get_category_posts/?id=9&amp;custom_fields=event_time</string>
 	</array>
+	<key>sessionSchedulePdfUrl</key>
+	<string>http://www.napaba.org/uploads/napaba/dayataglance101411.pdf</string>
 </dict>
 </plist>
