@@ -107,6 +107,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self configureToolbar];
+    
     [[self tableView] setRowHeight:64.0];
     [self setCoreDataManager:[CoreDataManager sharedUIThreadInstance]];
     

@@ -14,7 +14,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A9D7C3BB13E8A2B300604772"
-               BuildableName = "Napaba2011.app"
+               BuildableName = "NAPABA.app"
                BlueprintName = "NAPABA"
                ReferencedContainer = "container:CocoaCamp.xcodeproj">
             </BuildableReference>
@@ -42,7 +42,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A9D7C3BB13E8A2B300604772"
-            BuildableName = "Napaba2011.app"
+            BuildableName = "NAPABA.app"
             BlueprintName = "NAPABA"
             ReferencedContainer = "container:CocoaCamp.xcodeproj">
          </BuildableReference>
@@ -53,14 +53,14 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A9D7C3BB13E8A2B300604772"
-            BuildableName = "Napaba2011.app"
+            BuildableName = "NAPABA.app"
             BlueprintName = "NAPABA"
             ReferencedContainer = "container:CocoaCamp.xcodeproj">
          </BuildableReference>
@@ -90,7 +90,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A9D7C3BB13E8A2B300604772"
-            BuildableName = "Napaba2011.app"
+            BuildableName = "NAPABA.app"
             BlueprintName = "NAPABA"
             ReferencedContainer = "container:CocoaCamp.xcodeproj">
          </BuildableReference>

@@ -87,7 +87,7 @@
             NSDateComponents *dateComponents = [gregorianCalendar components:unitFlags fromDate:sessionDate];
             @try {
                 int hourInteger = [[numberFormatter numberFromString:hour] intValue];
-                if(!isAM) hourInteger += 12;
+                if(!isAM && hourInteger < 12) hourInteger += 12;
                 [dateComponents setHour:hourInteger];
                 [dateComponents setMinute:[[numberFormatter numberFromString:minute] intValue]];
             }

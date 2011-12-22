@@ -7,6 +7,7 @@
 //
 
 #import "HeaderSponsorView.h"
+#import "WebServiceDataManager.h"
 
 @implementation HeaderSponsorView
 @synthesize sponsorView;
@@ -16,17 +17,22 @@
         
         // this should be moved to the/a plist
         sponsorLogos = [[NSArray arrayWithObjects:
-                        @"Allstate_Platinum.jpg",
-                        @"AlstonBird_Platinum.jpg",
+                         @"Allstate_Platinum.jpg",
+                         @"AlstonBird_Platinum.jpg",
+                         @"Microsoft.jpg",
                         @"Prudential_Platinum.jpg",
                         @"SchiffHardin_Platinum.jpg",
                         @"Seyfarth_Platinum.jpg",
                         @"Walmart_Premier.jpg",
                         nil] retain];
         nextLogoIdx = 0;
+        
+         
+        
+        
     }
     
-    [UIView animateWithDuration:1.5 delay:5.0 options:0 animations:^{
+    [UIView animateWithDuration:1.5 delay:5.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
         for(UIView *subView in [[self sponsorView] subviews]){
             [subView setAlpha:0.0];
         }
@@ -46,7 +52,7 @@
         [[self sponsorView] addSubview:imageView];
         [imageView release];
         
-        [UIView animateWithDuration:1.5 animations:^{
+        [UIView animateWithDuration:1.5 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
                             [imageView setAlpha:1.0];
                         } 
                          completion:^(BOOL finished) {

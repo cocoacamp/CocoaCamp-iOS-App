@@ -8,6 +8,8 @@
 
 #import "WordPressApiSessionsJsonParserTests.h"
 #import "WordPressApiSessionsJsonParser.h"
+#import "Session.h"
+
 @implementation WordPressApiSessionsJsonParserTests
 
 #if USE_APPLICATION_UNIT_TEST     // all code under test is in the iPhone Application
@@ -34,7 +36,18 @@
     
     STAssertEquals((NSUInteger)10, [results count], @"ten sessions expected in sample data");
     
+    // find the lunch item
+    // this item date was not parsing correctly
+    NSPredicate *lunchSessionPredicate = [NSPredicate predicateWithFormat:@"title = 'Luncheon & Plenary Session: Yale Law Professor & Bestselling Author Amy Chua (Co-Sponsored by Allstate & Schiff Hardin, LLP)'"];
+    NSArray *filteredResults = [results filteredArrayUsingPredicate:lunchSessionPredicate];
+    STAssertEquals((NSUInteger)1, [filteredResults count], @"1 session expected in filtered data");
+    
+    Session *lunchSession = [filteredResults objectAtIndex:0];
+    NSDate *sessionStartDateTime = [lunchSession datetimeStart];
+    
+
 }
+
 
 #endif
 

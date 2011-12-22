@@ -12,5 +12,5 @@
 @property (assign, nonatomic) id delegate;
 
 - (int)refreshSessionSchedule;
-
+- (NSArray *)sponsorLogoUrls;
 @end

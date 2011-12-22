@@ -10,6 +10,7 @@
 #import "CoreDataManager.h"
 #import "WordPressApiSessionsJsonParser.h"
 #import "WebServiceUrlManager.h"
+#import "WordPressApiSponsorLogosJsonParser.h"
 
 @implementation WebServiceDataManager
 @synthesize delegate;
@@ -57,6 +58,19 @@
         // parse to array of model entities
         entityResults = [parser parseSessionScheduleJson:jsonText];
         
+        // HACK BEGIN
+        // find the lunch item
+        // this item date was not parsing correctly
+//        NSPredicate *lunchSessionPredicate = [NSPredicate predicateWithFormat:@"title = 'Luncheon & Plenary Session: Yale Law Professor & Bestselling Author Amy Chua (Co-Sponsored by Allstate & Schiff Hardin, LLP)'"];
+//        NSArray *filteredResults = [entityResults filteredArrayUsingPredicate:lunchSessionPredicate];
+//        if( 1 == [filteredResults count] ){
+//        
+//            NSManagedObject *lunchSession = [filteredResults objectAtIndex:0];
+//            NSDate *sessionStartDateTime = [lunchSession valueForKeyPath:@"datetimeStart"];
+//            NSLog(@"%@", lunchSession);
+//        }
+        // HACK END
+
         // clean up for this request
         [jsonText release];
         
@@ -75,8 +89,42 @@
     [scheduleUrls release];
     
     return [entityResults count];
+    
+}
+
+- (NSArray *)sponsorLogoUrls{
+    WebServiceUrlManager *webServiceUrlManager = [[WebServiceUrlManager alloc] init];
+    NSURL *sponsorLogoUrl = [[webServiceUrlManager logoLinksUrl] retain];
+    [webServiceUrlManager release];
+    NSURLResponse *urlResponse = nil;
+    NSError *error = nil;
+    NSArray *urlResults = [NSArray array];
+    
+    
+    // create request
+    NSURLRequest *request = [NSURLRequest requestWithURL:sponsorLogoUrl
+                                             cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+    
+    // get response
+    NSData *responseData = [NSURLConnection sendSynchronousRequest:request 
+                                                 returningResponse:&urlResponse 
+                                                             error:&error];
+    // convert to string
+    NSString *jsonText = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+    
+    WordPressApiSponsorLogosJsonParser *parser = [[WordPressApiSponsorLogosJsonParser alloc] init];
+    // parse to array of urls
+    urlResults = [parser parseUrlsFromJson:jsonText];
+    // clean up for this request
+    [jsonText release];
+    
+    // finished with parser
+    [parser release];
 
     
+    [sponsorLogoUrl release];
+    
+    return urlResults;
 }
 
 @end
