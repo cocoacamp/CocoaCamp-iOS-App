@@ -14,8 +14,9 @@
 
 - (void)viewDidLoad {
 	[self setTabURLs:[NSArray arrayWithObjects:
-					  //@"tt://people",
+					 
 					  @"tt://schedule",
+                      @"tt://connect",
 					  @"tt://flickr",
 					  @"tt://twitter",
 					  @"tt://news",

@@ -14,6 +14,7 @@
 #import "TwitterFeedTableViewController.h"
 #import "TabController.h"
 #import "RssNewsViewController.h"
+#import "PeepsConnectViewController.h"
 
 @implementation CocoaCampAppDelegate
 
@@ -40,6 +41,7 @@
 	TTURLMap* map = navigator.URLMap;
 	[map from:@"*" toViewController:[TTWebController class]];
 	[map from:@"tt://tabs" toViewController:[TabController class]];
+    [map from:@"tt://connect" toViewController:[PeepsConnectViewController class]];
 	[map from:@"tt://schedule" toViewController:[SessionViewController class]];
 	[map from:@"tt://flickr" toViewController:[FlickrThumbnailView class]];
 	[map from:@"tt://people" toViewController:[AttendeeListViewController class]];
