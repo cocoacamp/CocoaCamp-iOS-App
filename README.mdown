@@ -43,11 +43,10 @@ Current State
 =============
 There are 4 tabs:
  
+1. People - bump contact exchange UI
 1. Schedule - conference schedule 
-2. People - bump contact exchange UI 
-3. Flickr - take pictures and share with other attendees on Flickr 
-4. You - identify yourself on the app so that you can use bump contact 
-exchange(maybe should merge this w People in the future?) 
+3. Flickr Wall - take pictures and share with other attendees on Flickr 
+4. Twitter Fall - twitter stream for cocoacamp
 
 Merging from Main Trunk 
 =======================
@@ -107,3 +106,14 @@ point, follow the *Merging from Main Trunk* instructions above to merge back to
 your repo. Between the time you send me the pull request and 
 the time I am done with the merge, it's best that you don't do 
 anything that modifies *CocoaCamp.xcodeproj/project.pbxproj* or *MainWindow.xib*.
+
+Known Issues
+============
+CocaoCamp Atlanta 2010 is over! Here are some complaints we heard from the field:
+
+1. iPhone 3G which were upgraded to iOS 4.x crash on startup.
+2. Some have experienced problems with Bump, although it's worked for me every time, so, I believe this is more of a usability problem than a bug. 
+3. Crashing going back to the Twitter Fall tab after leaving it for a while.
+4. In the Flickr image viewer, some images failed to load.
+
+
